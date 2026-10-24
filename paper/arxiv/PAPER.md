@@ -1,8 +1,8 @@
 # Afri-Gloss-MT: Scaling Controllable Machine Translation Across African Languages with In-Place Terminology Injection
 
-**Mich-Seth Owusu, Stephen E. Moore, Akwasi Asare, Lawrence Adu Gyamfi, Paul Azunre, Joel Budu, Jonathan Asiamah**  
-*AfriSpeech & Ghana NLP*  
-`{michseth, stephen}@ghananlp.org`
+**Mich-Seth Owusu**  
+*AfriSpeech*  
+`michseth@ghananlp.org`
 
 ---
 
