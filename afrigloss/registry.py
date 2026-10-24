@@ -163,6 +163,82 @@ _CODE_LOOKUP.update({
     "finnish": "fin",
 })
 
+# NLLB-200 Language Codes for African Languages
+NLLB_LANG_CODES: Dict[str, str] = {
+    "twi": "aka_Latn",
+    "aka": "aka_Latn",
+    "tw": "aka_Latn",
+    "ak": "aka_Latn",
+    "yor": "yor_Latn",
+    "yo": "yor_Latn",
+    "swh": "swh_Latn",
+    "sw": "swh_Latn",
+    "hau": "hau_Latn",
+    "ha": "hau_Latn",
+    "ibo": "ibo_Latn",
+    "ig": "ibo_Latn",
+    "ewe": "ewe_Latn",
+    "ee": "ewe_Latn",
+    "sna": "sna_Latn",
+    "sn": "sna_Latn",
+    "nya": "nya_Latn",
+    "ny": "nya_Latn",
+    "lug": "lug_Latn",
+    "lg": "lug_Latn",
+    "kin": "kin_Latn",
+    "rw": "kin_Latn",
+    "lin": "lin_Latn",
+    "ln": "lin_Latn",
+    "run": "run_Latn",
+    "rn": "run_Latn",
+    "xho": "xho_Latn",
+    "xh": "xho_Latn",
+    "zul": "zul_Latn",
+    "zu": "zul_Latn",
+    "som": "som_Latn",
+    "so": "som_Latn",
+    "amh": "amh_Ethi",
+    "am": "amh_Ethi",
+    "orm": "gaz_Latn",
+    "om": "gaz_Latn",
+    "tir": "tir_Ethi",
+    "ti": "tir_Ethi",
+    "afr": "afr_Latn",
+    "af": "afr_Latn",
+    "wol": "wol_Latn",
+    "wo": "wol_Latn",
+    "mos": "mos_Latn",
+    "sag": "sag_Latn",
+    "sg": "sag_Latn",
+    "tsn": "tsn_Latn",
+    "tn": "tsn_Latn",
+    "tso": "tso_Latn",
+    "ts": "tso_Latn",
+    "sot": "sot_Latn",
+    "st": "sot_Latn",
+    "ssw": "ssw_Latn",
+    "ss": "ssw_Latn",
+    "nso": "nso_Latn",
+    "umb": "umb_Latn",
+    "bem": "bem_Latn",
+    "eng": "eng_Latn",
+    "en": "eng_Latn",
+    "fra": "fra_Latn",
+    "fr": "fra_Latn",
+    "spa": "spa_Latn",
+    "es": "spa_Latn",
+    "por": "por_Latn",
+    "pt": "por_Latn",
+    "deu": "deu_Latn",
+    "de": "deu_Latn",
+}
+
+
+def get_nllb_lang(code: str) -> Optional[str]:
+    """Resolve an ISO code to NLLB-200 4-character script code (e.g. aka_Latn, yor_Latn)."""
+    clean = code.strip().lower()
+    return NLLB_LANG_CODES.get(clean, NLLB_LANG_CODES.get(normalize_lang_code(clean)))
+
 
 def normalize_lang_code(token: str) -> str:
     """Normalize any language name, 2-letter code, or 3-letter code to canonical 3-letter code."""
