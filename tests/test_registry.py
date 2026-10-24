@@ -48,10 +48,10 @@ def test_find_model_multilingual_family():
     assert "alv" in m_en_zu["model_id"] or "bnt" in m_en_zu["model_id"]
     assert m_en_zu["target_token"] == ">>zul<<"
 
-    # English -> Yoruba via ALV
+    # English -> Yoruba via ALV multilingual model
     m_en_yo = find_model_for_pair("en", "yo")
-    # Direct model exists for yo
-    assert m_en_yo["model_id"] == "Helsinki-NLP/opus-mt-en-yo"
+    assert m_en_yo["model_id"] == "Helsinki-NLP/opus-mt-en-alv"
+    assert m_en_yo["target_token"] == ">>yor<<"
 
 
 def test_registry_metadata():

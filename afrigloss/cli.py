@@ -126,6 +126,56 @@ def cmd_build_data(args):
         print(f"  - {name}: {len(s):,} samples (100% with verified terminology constraints)")
 
 
+def cmd_build_custom(args):
+    """Build Gloss-MT dataset and dictionary from user-supplied parallel file."""
+    from afrigloss.corpus import load_custom_parallel_file
+
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    print(f"[AfriGloss Custom] Loading user parallel file: {args.parallel_file}...")
+    pairs = load_custom_parallel_file(args.parallel_file)
+    print(f"[AfriGloss Custom] Loaded {len(pairs):,} parallel sentence pairs.")
+
+    if not pairs:
+        print("[AfriGloss Custom] Error: No valid parallel pairs found.")
+        sys.exit(1)
+
+    if len(pairs) < 5000:
+        print(f"\n[Note on Dataset Scale] You provided {len(pairs):,} sentence pairs.")
+        print("  - Even a small dataset (1,000 - 5,000 sentences) will teach the model the Gloss-MT in-place constraint copying rule!")
+        print("  - For maximum vocabulary coverage and fluency improvements, 10k to 50k+ sentences are recommended.")
+        print("  - Proceeding with training set generation with what is available...\n")
+
+    print("[AfriGloss Custom] Aligning parallel sentences to extract dictionary...")
+    bitext = [(p.src, p.tgt) for p in pairs]
+    aligner = StatisticalWordAligner(min_pair_freq=2, min_confidence=args.min_confidence)
+    aligner.train(bitext)
+
+    lexicon = aligner.extract_bilingual_lexicon(min_confidence=args.min_confidence)
+    dictionary = build_dictionary_from_aligner(lexicon, min_confidence=args.min_confidence)
+    dict_file = out_dir / f"dictionary_{args.src}_{args.tgt}.tsv"
+    dictionary.save_tsv(dict_file)
+    print(f"[AfriGloss Custom] Extracted {len(dictionary):,} high-confidence dictionary entries -> {dict_file}")
+
+    target_count = min(len(pairs), args.target_samples or 100_000)
+    print(f"[AfriGloss Custom] Building pre-inserted Gloss-MT splits (target: {target_count:,})...")
+    splits = create_gloss_dataset(
+        bitext,
+        dictionary=dictionary,
+        aligner=aligner,
+        target_count=target_count,
+        val_ratio=args.val_ratio,
+        test_ratio=args.test_ratio,
+        min_confidence=args.min_confidence,
+    )
+
+    save_dataset_splits(splits, out_dir)
+    print(f"[AfriGloss Custom] Done! Splits saved to {out_dir}:")
+    for name, s in splits.items():
+        print(f"  - {name}: {len(s):,} samples (100% with verified terminology constraints)")
+
+
 def cmd_train(args):
     """Fine-tune OPUS-MT on a Gloss-MT dataset."""
     from afrigloss.trainer import GlossMTTrainer, TrainConfig
@@ -260,6 +310,18 @@ def main():
     p_data.add_argument("--test-ratio", type=float, default=0.05, help="Test split ratio")
     p_data.add_argument("--min-confidence", type=float, default=0.50, help="Min term confidence threshold")
     p_data.set_defaults(func=cmd_build_data)
+
+    # build-custom
+    p_custom = subparsers.add_parser("build-custom", help="Build Gloss-MT dataset & dictionary from user's own parallel file")
+    p_custom.add_argument("--parallel-file", required=True, help="Path to custom parallel file (.tsv, .csv, .jsonl, .parquet)")
+    p_custom.add_argument("--src", default="en", help="Source language code (default: en)")
+    p_custom.add_argument("--tgt", required=True, help="Target language code (e.g. tw, yo, sw)")
+    p_custom.add_argument("--out-dir", required=True, help="Output directory for generated dataset splits & dictionary")
+    p_custom.add_argument("--target-samples", type=int, default=100000, help="Max samples to include (default: 100,000)")
+    p_custom.add_argument("--val-ratio", type=float, default=0.05, help="Validation split ratio")
+    p_custom.add_argument("--test-ratio", type=float, default=0.05, help="Test split ratio")
+    p_custom.add_argument("--min-confidence", type=float, default=0.50, help="Min alignment confidence threshold")
+    p_custom.set_defaults(func=cmd_build_custom)
 
     # train
     p_train = subparsers.add_parser("train", help="Fine-tune OPUS-MT on Gloss-MT dataset")

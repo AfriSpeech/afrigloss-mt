@@ -191,6 +191,52 @@ print("Preserved:", result["constraints_honored"])
 
 ---
 
+## 🛠️ Bringing Your Own Custom Parallel Data
+
+Users can build Gloss-MT training data and dictionaries from **their own parallel text** (e.g. domain data, technical, medical, legal, or news) with a single command:
+
+```bash
+# 1. From a tabular file (.tsv, .csv, .jsonl, .parquet):
+afrigloss build-custom \
+    --parallel-file my_parallel_data.tsv \
+    --src en \
+    --tgt tw \
+    --out-dir data/my_custom_gloss_data \
+    --target-samples 100000
+
+# 2. Or from paired line-aligned text files:
+python scripts/build_from_custom_data.py \
+    --src-file english.txt \
+    --tgt-file twi.txt \
+    --src en --tgt tw \
+    --out-dir data/my_custom_gloss_data
+```
+
+This automated pipeline:
+1. Loads the sentence pairs.
+2. Trains the statistical word aligner on the full text and extracts high-confidence dictionary mappings (`dictionary_en_tw.tsv`).
+3. Extracts spaCy noun chunks from source sentences and replaces them in-place with `<target_term>`.
+4. Produces `train.jsonl`, `validation.jsonl`, and `test.jsonl` splits ready for immediate model training.
+
+---
+
+## 📈 Scaling to 100k+ Samples & Low-Resource Strategy
+
+Fine-tuning on larger datasets (50,000 to 100,000+ sentences) serves a dual purpose:
+1. **Constraint Learning:** Teaches the model the Gloss-MT in-place terminology preservation rule across diverse grammatical structures.
+2. **Translation Improvement:** Continuously exposes the model to parallel text, improving general translation vocabulary and BLEU/chrF2 quality.
+
+### Where to Get 100k+ Sentences:
+- **`AfriSpeech/africa-corpus`:** Multi-version Bible collections provide 30,000 to 350,000+ verses per language (e.g. Swahili has 13 versions / 356k sentences; Twi has 5 versions / 154k sentences).
+- **`AfriSpeech/african-corpus-jw`:** Large-scale JW300 dataset provides 100,000 to 250,000+ parallel sentences for over 100 African languages.
+
+### Advice for Low-Resource Languages (< 5,000 Sentences):
+If a language has only a few hundred or thousand sentences available:
+- **Train with what is available!** Even a small dataset (1,000–3,000 pairs) is sufficient to teach the model the abstract in-place bracket copying mechanism.
+- **Evaluate carefully:** Always check validation loss and test set chrF2/BLEU to ensure general translation quality remains fluent.
+
+---
+
 ## Remote Training on Ghana NLP H200 GPU
 
 Use the bundled `scripts/run_h200.sh` helper to run data processing and training on the H200:
