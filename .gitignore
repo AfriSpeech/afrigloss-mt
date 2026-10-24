@@ -34,6 +34,10 @@ htmlcov/
 # Model Checkpoints & Large Data
 checkpoints/
 data/gloss_dataset/
+data/align_cache/
+*.db
+*.db-shm
+*.db-wal
 *.parquet
 *.pt
 *.bin
