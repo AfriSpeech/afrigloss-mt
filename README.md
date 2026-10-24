@@ -72,7 +72,7 @@ Fine-tuned on the H200 GPU using the 10,000-verse Gloss-MT datasets and evaluate
 | **English $\rightarrow$ Igbo (`ig`)** | `Helsinki-NLP/opus-mt-en-ig` | **19.36** | **44.40** | 3.41 mins | `checkpoints/afrigloss_opus_en_ig/final` |
 | **English $\rightarrow$ Ewe (`ee`)** | `Helsinki-NLP/opus-mt-en-ee` | **18.28** | **42.85** | 3.58 mins | `checkpoints/afrigloss_opus_en_ee/final` |
 | **English $\rightarrow$ Shona (`sn`)** | `Helsinki-NLP/opus-mt-en-sn` | **9.37** | **46.22** | 3.77 mins | `checkpoints/afrigloss_opus_en_sn/final` |
-| **English $\rightarrow$ Yoruba (`yo`)** | `Helsinki-NLP/opus-mt-en-alv` (`>>yor<<`) | *training* | *training* | ~3.8 mins | `checkpoints/afrigloss_opus_en_yo/final` |
+| **English $\rightarrow$ Yoruba (`yo`)** | `Helsinki-NLP/opus-mt-en-alv` (`>>yor<<`) | **21.77** | **43.73** | 3.91 mins | `checkpoints/afrigloss_opus_en_yo/final` |
 
 ---
 
