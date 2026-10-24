@@ -36,7 +36,7 @@ QUEUE = [
 ]
 
 
-def train_single_model(job: dict, epochs: int = 5, batch_size: int = 32, lr: float = 1e-4):
+def train_single_model(job: dict, epochs: int = 15, batch_size: int = 32, lr: float = 1e-4, patience: int = 4):
     src = job["src"]
     tgt = job["tgt"]
     model_name = job["model"]
@@ -52,6 +52,7 @@ def train_single_model(job: dict, epochs: int = 5, batch_size: int = 32, lr: flo
     logger.info(f"STARTING JOB: {src.upper()} -> {tgt.upper()} ({model_name})")
     logger.info(f"Data directory: {data_dir}")
     logger.info(f"Output directory: {out_dir}")
+    logger.info(f"Max epochs: {epochs} with early stopping patience {patience}")
     logger.info("=" * 65)
 
     cmd = [
@@ -61,6 +62,7 @@ def train_single_model(job: dict, epochs: int = 5, batch_size: int = 32, lr: flo
         "--data", str(data_dir),
         "--out", str(out_dir),
         "--epochs", str(epochs),
+        "--early-stopping-patience", str(patience),
         "--batch-size", str(batch_size),
         "--lr", str(lr),
         "--eval-steps", "150",
@@ -81,7 +83,8 @@ def train_single_model(job: dict, epochs: int = 5, batch_size: int = 32, lr: flo
 
 def main():
     parser = argparse.ArgumentParser(description="Afri-Gloss-MT Sequential Training Queue")
-    parser.add_argument("--epochs", type=int, default=5, help="Epochs per model")
+    parser.add_argument("--epochs", type=int, default=15, help="Maximum epochs per model (early stops on plateau)")
+    parser.add_argument("--patience", type=int, default=4, help="Early stopping patience")
     parser.add_argument("--batch-size", type=int, default=32, help="Batch size")
     parser.add_argument("--lr", type=float, default=1e-4, help="Learning rate")
     parser.add_argument("--only", nargs="+", help="Run only specific targets (e.g. --only tw sw)")
@@ -96,7 +99,7 @@ def main():
 
     for idx, job in enumerate(active_queue, 1):
         logger.info(f"\n>>> Running job {idx}/{len(active_queue)}: {job['src']} -> {job['tgt']}")
-        train_single_model(job, epochs=args.epochs, batch_size=args.batch_size, lr=args.lr)
+        train_single_model(job, epochs=args.epochs, batch_size=args.batch_size, lr=args.lr, patience=args.patience)
 
     logger.info("\nALL TRAINING JOBS IN QUEUE COMPLETED!")
 

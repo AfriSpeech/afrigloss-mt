@@ -60,6 +60,34 @@ Inference Runtime with Terminology Fidelity
 
 ---
 
+## 📊 Trained Model Benchmarks (Afri-Gloss-MT Checkpoints)
+
+Fine-tuned on the H200 GPU using the 10,000-verse Gloss-MT datasets and evaluated on 500 held-out unseen test verses with `sacrebleu`:
+
+| Language Pair | Base Model Architecture | Test BLEU | Test chrF2 | Training Time (H200) | Checkpoint Directory |
+|:---:|---|:---:|:---:|:---:|---|
+| **English $\rightarrow$ Swahili (`sw`)** | `Helsinki-NLP/opus-mt-en-sw` | **24.49** | **53.30** | 3.66 mins | `checkpoints/afrigloss_opus_en_sw/final` |
+| **English $\rightarrow$ Twi (`tw`)** | `Helsinki-NLP/opus-mt-en-tw` | **23.72** | **49.00** | 3.87 mins | `checkpoints/afrigloss_opus_en_tw/final` |
+| **English $\rightarrow$ Hausa (`ha`)** | `Helsinki-NLP/opus-mt-en-ha` | **21.84** | **47.62** | 3.45 mins | `checkpoints/afrigloss_opus_en_ha/final` |
+| **English $\rightarrow$ Igbo (`ig`)** | `Helsinki-NLP/opus-mt-en-ig` | **19.36** | **44.40** | 3.41 mins | `checkpoints/afrigloss_opus_en_ig/final` |
+| **English $\rightarrow$ Ewe (`ee`)** | `Helsinki-NLP/opus-mt-en-ee` | **18.28** | **42.85** | 3.58 mins | `checkpoints/afrigloss_opus_en_ee/final` |
+| **English $\rightarrow$ Shona (`sn`)** | `Helsinki-NLP/opus-mt-en-sn` | **9.37** | **46.22** | 3.77 mins | `checkpoints/afrigloss_opus_en_sn/final` |
+| **English $\rightarrow$ Yoruba (`yo`)** | `Helsinki-NLP/opus-mt-en-alv` (`>>yor<<`) | *training* | *training* | ~3.8 mins | `checkpoints/afrigloss_opus_en_yo/final` |
+
+---
+
+## ⚡ Training Guidelines (Learnings from GLOSS-MT)
+
+- **Early Stopping & Checkpoint Selection:**
+  All trainers evaluate periodically (every 150 steps on 10k datasets) and use `EarlyStoppingCallback(early_stopping_patience=4)`.
+  Training automatically stops when validation loss plateaus, and `load_best_model_at_end=True` guarantees the optimal checkpoint is retained.
+- **Model Budgets:**
+  - **OPUS-MT (MarianMT):** Budget up to 15 epochs. Usually converges at 5–8 epochs with early stopping.
+  - **NLLB-200 (600M / 1.3B):** Budget 15–25 epochs.
+  - **TranslateGemma (4B LLM):** Budget 3–5 epochs with LoRA ($r=16$ or $32$).
+
+---
+
 ## Installation
 
 ```bash

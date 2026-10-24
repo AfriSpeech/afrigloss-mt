@@ -62,12 +62,13 @@ def main():
     parser.add_argument("--model", required=True, help="Hugging Face model ID (e.g. Helsinki-NLP/opus-mt-en-tw)")
     parser.add_argument("--data", required=True, help="Path to directory containing train.jsonl and validation.jsonl")
     parser.add_argument("--out", required=True, help="Output checkpoint directory")
-    parser.add_argument("--epochs", type=float, default=5, help="Number of training epochs")
+    parser.add_argument("--epochs", type=float, default=15, help="Maximum training epochs (stops early when validation plateaus)")
+    parser.add_argument("--early-stopping-patience", type=int, default=4, help="Stop training if validation does not improve for N checks")
     parser.add_argument("--batch-size", type=int, default=32, help="Per-device batch size")
     parser.add_argument("--grad-accum", type=int, default=1, help="Gradient accumulation steps")
     parser.add_argument("--lr", type=float, default=1e-4, help="Learning rate")
     parser.add_argument("--warmup-steps", type=int, default=200, help="Linear warmup steps")
-    parser.add_argument("--eval-steps", type=int, default=200, help="Evaluate and checkpoint every N steps")
+    parser.add_argument("--eval-steps", type=int, default=150, help="Evaluate and checkpoint every N steps")
     parser.add_argument("--max-src-len", type=int, default=256, help="Max source token length")
     parser.add_argument("--max-tgt-len", type=int, default=256, help="Max target token length")
     parser.add_argument("--target-prefix", type=str, default="", help="Optional target language prefix token (e.g. >>yor<<)")
@@ -160,7 +161,7 @@ def main():
         eval_dataset=val_ds,
         data_collator=DataCollatorForSeq2Seq(tokenizer, model=model, padding=True),
         processing_class=tokenizer,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=3)] if val_ds else [],
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=args.early_stopping_patience)] if val_ds else [],
     )
 
     t0 = time.time()
