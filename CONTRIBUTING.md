@@ -27,16 +27,41 @@ Once merged, any user running `afrigloss build-data` for that language will **in
 
 ---
 
-### 2. Submitting Your Fine-Tuned Gloss-MT Models
+### 2. Contributing Bilingual Dictionaries & Glossaries (Build Strong Language Dictionaries!)
+
+Bilingual dictionaries directly power the in-place terminology replacement pipeline in Afri-Gloss-MT. By sharing your domain glossaries (medical, healthcare, legal, agricultural, educational, or general vocabulary), you help build a comprehensive, open-source master dictionary for each African language!
+
+#### How to Contribute a Dictionary:
+1. Ensure your dictionary is in TSV format:
+   ```tsv
+   source_phrase	target_phrase	confidence
+   hospital	ayaresabea	0.95
+   doctor	dɔkota	0.98
+   covenant	apam	0.92
+   ```
+2. Submit a Pull Request adding your file to `data/dictionaries/` or use the CLI merge tool to merge it into the existing language dictionary:
+   ```bash
+   afrigloss merge-dicts \
+       --base data/dictionaries/eng_twi.tsv \
+       --new my_medical_terms.tsv \
+       --out data/dictionaries/eng_twi.tsv
+   ```
+3. Or submit an issue using our **[Dictionary Contribution Form](https://github.com/AfriSpeech/afrigloss-mt/issues/new?template=contribute_dictionary.yml)**.
+
+---
+
+### 3. Submitting Your Fine-Tuned Gloss-MT Models
 
 If you fine-tune an OPUS-MT, NLLB-200, or TranslateGemma model on a new African language pair or a specialized domain (e.g. medical, agricultural, legal):
 
 1. Upload your model weights, tokenizer, and evaluation metrics to the Hugging Face Hub (e.g. `your-org/opus-mt-en-lug-gloss`).
 2. Submit an issue using our **[Model Submission Form](https://github.com/AfriSpeech/afrigloss-mt/issues/new?template=submit_model.yml)**.
 3. Once verified, we will:
-   - Add your model to the official **[AfriSpeech Helsinki-NLP African Translation Models Collection](https://huggingface.co/collections/AfriSpeech/helsinki-nlp-african-translation-models-6adc5ed6acc7c9c71098e79a)**.
+   - Add your model to the dedicated **[Afri-Gloss-MT Models Collection](https://huggingface.co/collections/AfriSpeech/afri-gloss-mt-models-6adce3a3c13c6a86f07b6e6d)** on Hugging Face (kept distinct from base models).
    - Include your model in `afrigloss/registry.py` so users can resolve and translate with it directly via `afrigloss translate`.
    - Feature your model in the repository benchmarks table.
+
+> **Note on Collections:** The [Helsinki-NLP African Translation Models Collection](https://huggingface.co/collections/AfriSpeech/helsinki-nlp-african-translation-models-6adc5ed6acc7c9c71098e79a) is reserved strictly for *pretrained base models*. All fine-tuned models trained with pre-inserted terminology constraints live in the dedicated [Afri-Gloss-MT Models Collection](https://huggingface.co/collections/AfriSpeech/afri-gloss-mt-models-6adce3a3c13c6a86f07b6e6d).
 
 ---
 

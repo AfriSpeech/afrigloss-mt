@@ -150,5 +150,29 @@ def build_dictionary_from_aligner(
     return dict_instance
 
 
+def merge_dictionaries(
+    dict_a: GlossaryDictionary,
+    dict_b: GlossaryDictionary,
+    prefer_higher_confidence: bool = True,
+) -> GlossaryDictionary:
+    """
+    Merge two dictionaries together.
+    On duplicate keys, resolves conflicts by retaining the higher confidence translation.
+    """
+    merged = GlossaryDictionary(dict(dict_a.entries))
+    merged.confidences = dict(dict_a.confidences)
+
+    for k, v in dict_b.entries.items():
+        conf_b = dict_b.confidences.get(k, 1.0)
+        if k not in merged.entries:
+            merged.add(k, v, conf_b)
+        else:
+            conf_a = merged.confidences.get(k, 1.0)
+            if prefer_higher_confidence and conf_b > conf_a:
+                merged.add(k, v, conf_b)
+
+    return merged
+
+
 # Alias for convenience
 AfricanGlossary = GlossaryDictionary

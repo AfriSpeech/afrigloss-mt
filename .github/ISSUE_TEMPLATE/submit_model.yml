@@ -1,12 +1,12 @@
 name: "Submit a Fine-Tuned Gloss-MT Model"
-description: "Submit a fine-tuned African Gloss-MT model to be added to the official registry and Hugging Face collection."
+description: "Submit a fine-tuned African Gloss-MT model to be featured in the official Afri-Gloss-MT Models collection."
 title: "[Model Submission]: <Source> -> <Target> (<Model Architecture>)"
 labels: ["model-submission", "community"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for contributing to the African NLP ecosystem! Please fill out the details below so we can verify your fine-tuned Gloss-MT model and feature it in the official **AfriSpeech Helsinki-NLP African Translation Models** registry and collection.
+        Thank you for contributing to African NLP! Please fill out the details below so we can verify your fine-tuned Gloss-MT model and feature it in the dedicated **[Afri-Gloss-MT Models Collection](https://huggingface.co/collections/AfriSpeech/afri-gloss-mt-models-6adce3a3c13c6a86f07b6e6d)** on Hugging Face (kept separate from base pretrained models).
   - type: input
     id: hf_model_id
     attributes:

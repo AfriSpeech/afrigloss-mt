@@ -84,6 +84,24 @@ def cmd_build_dict(args):
     print(f"[AfriGloss] Saved to: {out_file}")
 
 
+def cmd_merge_dicts(args):
+    """Merge two bilingual dictionaries into a unified dictionary."""
+    from afrigloss.dictionary import GlossaryDictionary, merge_dictionaries
+
+    print(f"[AfriGloss] Loading base dictionary: {args.base}...")
+    d_a = GlossaryDictionary.load_tsv(args.base)
+    print(f"[AfriGloss] Base dictionary entries: {len(d_a):,}")
+
+    print(f"[AfriGloss] Loading new dictionary: {args.new}...")
+    d_b = GlossaryDictionary.load_tsv(args.new)
+    print(f"[AfriGloss] New dictionary entries: {len(d_b):,}")
+
+    merged = merge_dictionaries(d_a, d_b)
+    out_file = Path(args.out)
+    merged.save_tsv(out_file)
+    print(f"[AfriGloss] Successfully merged {len(merged):,} entries -> {out_file}")
+
+
 def cmd_build_data(args):
     """Build a Gloss-MT pre-inserted dataset for fine-tuning."""
     src = normalize_lang_code(args.src)
@@ -298,6 +316,13 @@ def main():
     p_dict.add_argument("--min-freq", type=int, default=3, help="Min co-occurrence frequency")
     p_dict.add_argument("--max-samples", type=int, default=None, help="Limit number of verses processed")
     p_dict.set_defaults(func=cmd_build_dict)
+
+    # merge-dicts
+    p_merge = subparsers.add_parser("merge-dicts", help="Merge two bilingual dictionaries into a unified dictionary")
+    p_merge.add_argument("--base", required=True, help="Path to base TSV dictionary")
+    p_merge.add_argument("--new", required=True, help="Path to new TSV dictionary to merge in")
+    p_merge.add_argument("--out", required=True, help="Output merged TSV path")
+    p_merge.set_defaults(func=cmd_merge_dicts)
 
     # build-data
     p_data = subparsers.add_parser("build-data", help="Build pre-inserted Gloss-MT training dataset")

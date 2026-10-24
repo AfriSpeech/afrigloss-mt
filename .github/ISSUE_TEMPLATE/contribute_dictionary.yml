@@ -1,0 +1,57 @@
+name: "Contribute a Bilingual Dictionary / Glossary"
+description: "Submit or propose a bilingual dictionary for an African language to expand collective vocabulary."
+title: "[Dictionary Contribution]: <Source> -> <Target> (<Domain / Term Count>)"
+labels: ["dictionary-contribution", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bilingual dictionaries directly power the in-place terminology replacement pipeline in Afri-Gloss-MT. By sharing your domain glossaries (medical, legal, agricultural, dialectal, educational, or general), you help build a comprehensive, open-source master dictionary for each African language!
+  - type: input
+    id: language_pair
+    attributes:
+      label: Language Pair (Source -> Target)
+      description: "Source and target languages with ISO codes (e.g. English (en) -> Twi (tw))."
+      placeholder: "e.g. English (en) -> Yoruba (yo)"
+    validations:
+      required: true
+  - type: input
+    id: entry_count
+    attributes:
+      label: Number of Terms
+      description: "How many entries are in your glossary?"
+      placeholder: "e.g. 2,500 entries"
+    validations:
+      required: true
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain / Topic
+      description: What domain does this dictionary cover?
+      options:
+        - "General Vocabulary"
+        - "Medical & Healthcare"
+        - "Legal & Government"
+        - "Agriculture & Farming"
+        - "Education & Science"
+        - "Technology & Digital"
+        - "Religious & Cultural"
+        - "Other"
+    validations:
+      required: true
+  - type: input
+    id: pr_link
+    attributes:
+      label: Pull Request or File Link
+      description: "Link to your Pull Request adding/merging the TSV into `data/dictionaries/` or an attachment/URL."
+      placeholder: "e.g. PR #15 or link to TSV file"
+    validations:
+      required: true
+  - type: textarea
+    id: sources_and_credits
+    attributes:
+      label: Data Source & Credits
+      description: "Where were these terms sourced from (e.g. human translators, local dictionary, open-access publication)?"
+      placeholder: "Collected and verified by local linguists / open medical glossary..."
+    validations:
+      required: false
