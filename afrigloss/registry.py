@@ -361,7 +361,6 @@ def find_model_for_pair(src: str, tgt: str) -> Optional[Dict[str, str]]:
         ("tw", "fr"): "Helsinki-NLP/opus-mt-tw-fr",
         ("tw", "fi"): "Helsinki-NLP/opus-mt-tw-fi",
         ("tw", "sv"): "Helsinki-NLP/opus-mt-tw-sv",
-        ("en", "yo"): "Helsinki-NLP/opus-mt-en-yo",
         ("yo", "en"): "Helsinki-NLP/opus-mt-yo-en",
         ("en", "ig"): "Helsinki-NLP/opus-mt-en-ig",
         ("ig", "en"): "Helsinki-NLP/opus-mt-ig-en",

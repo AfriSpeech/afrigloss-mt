@@ -28,11 +28,11 @@ logger = logging.getLogger("train_queue")
 QUEUE = [
     {"src": "en", "tgt": "tw", "model": "Helsinki-NLP/opus-mt-en-tw", "data": "data/gloss_dataset_en_tw_10k"},
     {"src": "en", "tgt": "sw", "model": "Helsinki-NLP/opus-mt-en-sw", "data": "data/gloss_dataset_en_sw_10k"},
-    {"src": "en", "tgt": "yo", "model": "Helsinki-NLP/opus-mt-en-yo", "data": "data/gloss_dataset_en_yo_10k"},
     {"src": "en", "tgt": "ha", "model": "Helsinki-NLP/opus-mt-en-ha", "data": "data/gloss_dataset_en_ha_10k"},
     {"src": "en", "tgt": "ig", "model": "Helsinki-NLP/opus-mt-en-ig", "data": "data/gloss_dataset_en_ig_10k"},
     {"src": "en", "tgt": "ee", "model": "Helsinki-NLP/opus-mt-en-ee", "data": "data/gloss_dataset_en_ee_10k"},
     {"src": "en", "tgt": "sn", "model": "Helsinki-NLP/opus-mt-en-sn", "data": "data/gloss_dataset_en_sn_10k"},
+    {"src": "en", "tgt": "yo", "model": "Helsinki-NLP/opus-mt-en-alv", "target_token": ">>yor<<", "data": "data/gloss_dataset_en_yo_10k"},
 ]
 
 
@@ -65,6 +65,9 @@ def train_single_model(job: dict, epochs: int = 5, batch_size: int = 32, lr: flo
         "--lr", str(lr),
         "--eval-steps", "150",
     ]
+
+    if job.get("target_token"):
+        cmd.extend(["--target-prefix", job["target_token"]])
 
     t0 = time.time()
     res = subprocess.run(cmd)
