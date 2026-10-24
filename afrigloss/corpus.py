@@ -53,11 +53,15 @@ class AfricaCorpusLoader:
 
         # Files are named like: Language_iso3_version.csv (e.g. Twi_twi_v1234.csv, Afrikaans_afr_v117.csv)
         pattern = re.compile(r"^.+?_([a-z]{3})_v\d+\.csv$", re.IGNORECASE)
-        for f in files:
+        # Sort to prioritize clean Latin versions over Arabic script variants
+        sorted_files = sorted(files, key=lambda x: ("arabic_script" in x.lower(), x))
+        for f in sorted_files:
             m = pattern.match(f)
             if m:
                 iso3 = m.group(1).lower()
-                # Store first or preferred file for this language
+                # Skip Arabic script variant if a Latin script exists
+                if "arabic_script" in f.lower() and iso3 in lang_to_file:
+                    continue
                 if iso3 not in lang_to_file:
                     lang_to_file[iso3] = f
 
