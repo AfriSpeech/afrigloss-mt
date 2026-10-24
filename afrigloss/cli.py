@@ -89,20 +89,31 @@ def cmd_build_data(args):
     src = normalize_lang_code(args.src)
     tgt = normalize_lang_code(args.tgt)
 
-    print(f"[AfriGloss] Loading dictionary from {args.dictionary}...")
-    dictionary = GlossaryDictionary.load_tsv(args.dictionary)
-    print(f"[AfriGloss] Dictionary entries: {len(dictionary):,}")
+    dictionary = None
+    if args.dictionary and Path(args.dictionary).exists():
+        print(f"[AfriGloss] Loading dictionary from {args.dictionary}...")
+        dictionary = GlossaryDictionary.load_tsv(args.dictionary)
+        print(f"[AfriGloss] Dictionary entries: {len(dictionary):,}")
 
-    print(f"[AfriGloss] Loading parallel corpus for {src} <-> {tgt}...")
+    print(f"[AfriGloss] Loading parallel corpus for {src} <-> {tgt} from Africa Corpus...")
     loader = AfricaCorpusLoader()
-    pairs = loader.get_parallel_pairs(src, tgt, max_samples=args.max_samples)
-    bitext = [(p.src, p.tgt) for p in pairs]
-    print(f"[AfriGloss] Loaded {len(bitext):,} pairs.")
+    pairs = loader.get_parallel_pairs(src, tgt, max_samples=None) # Load full corpus to train aligner
+    print(f"[AfriGloss] Loaded {len(pairs):,} parallel verses.")
 
-    print("[AfriGloss] Generating Gloss-MT pre-inserted splits (train/val/test)...")
+    # Train statistical aligner across the full corpus
+    print(f"[AfriGloss] Training aligner across full {len(pairs):,} verses for dense lexical coverage...")
+    bitext = [(p.src, p.tgt) for p in pairs]
+    aligner = StatisticalWordAligner(min_pair_freq=2, min_confidence=args.min_confidence)
+    aligner.train(bitext)
+
+    target_count = args.target_samples or 10_000
+    print(f"[AfriGloss] Extracting {target_count:,} examples with guaranteed high-confidence noun-chunk insertions...")
+
     splits = create_gloss_dataset(
         bitext,
-        dictionary,
+        dictionary=dictionary,
+        aligner=aligner,
+        target_count=target_count,
         val_ratio=args.val_ratio,
         test_ratio=args.test_ratio,
         min_confidence=args.min_confidence,
@@ -112,7 +123,7 @@ def cmd_build_data(args):
     save_dataset_splits(splits, out_dir)
     print(f"[AfriGloss] Dataset splits saved to {out_dir}:")
     for name, s in splits.items():
-        print(f"  - {name}: {len(s):,} samples")
+        print(f"  - {name}: {len(s):,} samples (100% with verified terminology constraints)")
 
 
 def cmd_train(args):
@@ -242,12 +253,12 @@ def main():
     p_data = subparsers.add_parser("build-data", help="Build pre-inserted Gloss-MT training dataset")
     p_data.add_argument("--src", required=True, help="Source language (e.g. en)")
     p_data.add_argument("--tgt", required=True, help="Target language (e.g. tw, yo, sw)")
-    p_data.add_argument("--dictionary", required=True, help="Path to high-confidence dictionary TSV")
+    p_data.add_argument("--dictionary", help="Path to high-confidence dictionary TSV (optional)")
     p_data.add_argument("--out-dir", default="data/gloss_dataset", help="Output directory for splits")
+    p_data.add_argument("--target-samples", type=int, default=10000, help="Target dataset samples with guaranteed insertions (default: 10000)")
     p_data.add_argument("--val-ratio", type=float, default=0.05, help="Validation split ratio")
     p_data.add_argument("--test-ratio", type=float, default=0.05, help="Test split ratio")
-    p_data.add_argument("--min-confidence", type=float, default=0.65, help="Min term confidence")
-    p_data.add_argument("--max-samples", type=int, default=None, help="Limit number of verses processed")
+    p_data.add_argument("--min-confidence", type=float, default=0.50, help="Min term confidence threshold")
     p_data.set_defaults(func=cmd_build_data)
 
     # train

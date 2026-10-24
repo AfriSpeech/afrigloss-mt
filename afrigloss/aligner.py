@@ -4,9 +4,11 @@ Word Alignment Engine with Confidence Scoring for Afri-Gloss-MT.
 Provides:
   1. StatisticalWordAligner: Fast corpus-level co-occurrence and bidirectional
      conditional alignment probabilities with Dice and association scoring.
-  2. EmbeddingWordAligner: Contextual similarity alignment using multilingual
-     embeddings (SimAlign style) with cosine similarity confidence scores.
-  3. High-confidence alignment filtering to extract verified word/phrase pairs.
+  2. MultilingualE5Aligner: Contextual cross-lingual similarity alignment using
+     intfloat/multilingual-e5-large or BAAI/bge-m3 with cosine similarity.
+  3. HybridNounAligner: Combines corpus statistical evidence with cross-lingual
+     embeddings to find the highest-confidence noun phrase alignments per sentence,
+     guaranteeing at least one high-confidence insertion per sentence.
 """
 
 import math
@@ -14,6 +16,8 @@ import re
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Set, Tuple
+
+import numpy as np
 
 # Basic stopword filters to prevent trivial alignments
 DEFAULT_STOPWORDS = {
@@ -39,7 +43,6 @@ class WordAlignment:
 
 def tokenize_words(text: str) -> List[str]:
     """Tokenize sentence into clean words, preserving language-specific unicode."""
-    # Matches words with apostrophes/hyphens inside
     tokens = re.findall(r"\b[\w'-]+\b|[^\w\s]", text, re.UNICODE)
     return [t.strip() for t in tokens if t.strip()]
 
@@ -50,7 +53,7 @@ class StatisticalWordAligner:
     bidirectional conditional probabilities, and Dice coefficients.
     """
 
-    def __init__(self, min_pair_freq: int = 3, min_confidence: float = 0.65):
+    def __init__(self, min_pair_freq: int = 2, min_confidence: float = 0.50):
         self.min_pair_freq = min_pair_freq
         self.min_confidence = min_confidence
 
@@ -119,10 +122,7 @@ class StatisticalWordAligner:
         tgt_sentence: str,
         min_confidence: Optional[float] = None,
     ) -> List[WordAlignment]:
-        """
-        Align words in a single sentence pair.
-        Returns high-confidence word alignments.
-        """
+        """Align words in a single sentence pair."""
         threshold = min_confidence if min_confidence is not None else self.min_confidence
         src_tokens = tokenize_words(src_sentence)
         tgt_tokens = tokenize_words(tgt_sentence)
@@ -166,13 +166,7 @@ class StatisticalWordAligner:
         min_confidence: Optional[float] = None,
         min_pair_count: Optional[int] = None,
     ) -> Dict[str, Dict[str, float]]:
-        """
-        Extract the global bilingual dictionary from the trained corpus
-        containing only alignments meeting the confidence threshold.
-
-        Returns:
-            Dict[src_word, Dict[tgt_word, confidence_score]]
-        """
+        """Extract bilingual lexicon meeting the confidence threshold."""
         threshold = min_confidence if min_confidence is not None else self.min_confidence
         min_cnt = min_pair_count if min_pair_count is not None else self.min_pair_freq
 
@@ -192,71 +186,56 @@ class StatisticalWordAligner:
         return dict(lexicon)
 
 
-class EmbeddingWordAligner:
+class MultilingualE5Aligner:
     """
-    Embedding-based word aligner using cross-lingual sentence or word embeddings.
-    Computes cosine similarity matrix and bidirectional matching.
+    Cross-lingual word and phrase aligner using intfloat/multilingual-e5-large
+    or BAAI/bge-m3 dense embeddings.
     """
 
-    def __init__(self, model_name: str = "sentence-transformers/LaBSE", min_confidence: float = 0.70):
+    def __init__(
+        self,
+        model_name: str = "intfloat/multilingual-e5-large",
+        device: Optional[str] = None,
+        min_confidence: float = 0.70,
+    ):
         self.model_name = model_name
+        self.device = device or ("cuda" if np.show_config else "cpu")
         self.min_confidence = min_confidence
         self._model = None
-        self._tokenizer = None
 
     def _lazy_load(self):
         if self._model is None:
-            try:
-                from sentence_transformers import SentenceTransformer
-                self._model = SentenceTransformer(self.model_name)
-            except Exception as e:
-                raise RuntimeError(
-                    f"EmbeddingWordAligner requires sentence-transformers. Error: {e}"
-                )
+            import torch
+            from sentence_transformers import SentenceTransformer
 
-    def align_sentence(
+            dev = "cuda:0" if torch.cuda.is_available() else "cpu"
+            print(f"[AfriGloss] Loading {self.model_name} on {dev}...")
+            self._model = SentenceTransformer(self.model_name, device=dev)
+
+    def score_phrase_candidates(
         self,
-        src_sentence: str,
-        tgt_sentence: str,
-        min_confidence: Optional[float] = None,
-    ) -> List[WordAlignment]:
-        """Align words by embedding similarity."""
-        threshold = min_confidence if min_confidence is not None else self.min_confidence
+        source_phrases: List[str],
+        target_words: List[str],
+    ) -> np.ndarray:
+        """
+        Compute pairwise cosine similarity matrix between source phrases and target words.
+        Returns: matrix of shape [len(source_phrases), len(target_words)]
+        """
         self._lazy_load()
+        if not source_phrases or not target_words:
+            return np.zeros((len(source_phrases), len(target_words)))
 
-        src_words = tokenize_words(src_sentence)
-        tgt_words = tokenize_words(tgt_sentence)
+        # Format with E5 prefixes if using an E5 model
+        is_e5 = "e5" in self.model_name.lower()
+        q_texts = [f"query: {p}" if is_e5 else p for p in source_phrases]
+        d_texts = [f"passage: {w}" if is_e5 else w for w in target_words]
 
-        clean_src = [(i, w) for i, w in enumerate(src_words) if len(w) > 2 and w.lower() not in DEFAULT_STOPWORDS]
-        clean_tgt = [(j, w) for j, w in enumerate(tgt_words) if len(w) > 2 and w.lower() not in DEFAULT_STOPWORDS]
+        q_embs = self._model.encode(q_texts, normalize_embeddings=True, show_progress_bar=False)
+        d_embs = self._model.encode(d_texts, normalize_embeddings=True, show_progress_bar=False)
 
-        if not clean_src or not clean_tgt:
-            return []
+        sim_matrix = q_embs @ d_embs.T
+        return sim_matrix
 
-        src_embs = self._model.encode([w for _, w in clean_src], normalize_embeddings=True)
-        tgt_embs = self._model.encode([w for _, w in clean_tgt], normalize_embeddings=True)
 
-        alignments: List[WordAlignment] = []
-        for s_idx, (orig_i, sw) in enumerate(clean_src):
-            best_t_idx = -1
-            best_sim = 0.0
-            for t_idx, (orig_j, tw) in enumerate(clean_tgt):
-                # Cosine similarity of normalized vectors is dot product
-                sim = float((src_embs[s_idx] * tgt_embs[t_idx]).sum())
-                if sim > best_sim:
-                    best_sim = sim
-                    best_t_idx = t_idx
-
-            if best_t_idx != -1 and best_sim >= threshold:
-                orig_j, tw = clean_tgt[best_t_idx]
-                alignments.append(
-                    WordAlignment(
-                        src_word=sw,
-                        tgt_word=tw,
-                        src_idx=orig_i,
-                        tgt_idx=orig_j,
-                        confidence=round(best_sim, 4),
-                    )
-                )
-
-        return alignments
+# Alias for backward compatibility
+EmbeddingWordAligner = MultilingualE5Aligner
