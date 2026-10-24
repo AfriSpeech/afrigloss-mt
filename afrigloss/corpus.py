@@ -99,6 +99,10 @@ class AfricaCorpusLoader:
                 code = normalize_lang_code(m.group(1).lower())
                 jw_map[code] = f
 
+        if "english_cache.csv" in files:
+            jw_map["eng"] = "english_cache.csv"
+            jw_map["en"] = "english_cache.csv"
+
         self._jw_files = jw_map
         return self._jw_files
 

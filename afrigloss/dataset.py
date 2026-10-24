@@ -1,9 +1,8 @@
 """
 Dataset Builder for Afri-Gloss-MT.
 
-Extracts noun phrases from the source text using spaCy noun chunks, aligns them to
-their target language translations using full-corpus statistical association or
-multilingual E5 embeddings, and replaces them IN PLACE with their target translation
+Extracts noun phrases from source text using spaCy noun chunks, aligns them to
+target language translations, and replaces them IN PLACE with their target translation
 in angle brackets:
 
   Source: "In the beginning God created the heavens and the earth."
@@ -11,8 +10,9 @@ in angle brackets:
   Target: "Mfiase no <Onyankopɔn> bɔɔ <ɔsoro> ne <asase>."
   Ref:    "Mfiase no Onyankopɔn bɔɔ ɔsoro ne asase."
 
-Guarantees at least one high-confidence aligned word/phrase across each sample in
-the 10,000 target dataset.
+Supports persistent on-disk alignment caching: if parallel samples have already been
+aligned in a previous run, they are loaded instantly and skipped, allowing the user to
+scale to 10k, 50k, or 100k+ samples incrementally.
 """
 
 import json
@@ -20,8 +20,9 @@ import random
 import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Dict, List, Optional, Set, Tuple
+from typing import Dict, List, Optional, Set, Tuple, Union
 
+from afrigloss.align_cache import AlignmentCache
 from afrigloss.aligner import StatisticalWordAligner, tokenize_words
 from afrigloss.dictionary import GlossaryDictionary
 from afrigloss.extractor import extract_noun_phrases
@@ -43,58 +44,82 @@ def build_gloss_pair(
     tgt_text: str,
     dictionary: Optional[GlossaryDictionary] = None,
     aligner: Optional[StatisticalWordAligner] = None,
+    align_cache: Optional[AlignmentCache] = None,
     max_insertions: int = 3,
     min_confidence: float = 0.45,
 ) -> Optional[GlossMTExample]:
     """
     Extract noun phrases from source text with spaCy, find the best matching target word,
     and replace the noun phrase IN PLACE in the source sentence with '<target_term>'.
+
+    Checks align_cache first to avoid redundant computation.
     """
     src_clean = src_text.strip()
     tgt_clean = tgt_text.strip()
 
-    # 1. Extract nominal chunks from source sentence
-    chunks = extract_noun_phrases(src_clean)
-    if not chunks:
-        return None
-
-    # Target words available for alignment in this sentence
-    tgt_tokens = tokenize_words(tgt_clean)
-    tgt_words_lower = set(w.lower() for w in tgt_tokens)
+    # 1. Check if alignment is already cached
+    cached_insertions = None
+    if align_cache and align_cache.contains(src_clean, tgt_clean):
+        cached_insertions = align_cache.get(src_clean, tgt_clean)
 
     valid_insertions: List[Tuple[int, int, str, str, float]] = []
 
-    # 2. Score candidate matches for each noun chunk
-    for start, end, phrase in chunks:
-        phrase_clean = phrase.lower().strip()
-        best_target = None
-        best_score = 0.0
+    if cached_insertions is not None:
+        # Load from cache
+        for item in cached_insertions:
+            valid_insertions.append((
+                item["start"],
+                item["end"],
+                item["src_phrase"],
+                item["tgt_trans"],
+                item.get("score", 1.0)
+            ))
+    else:
+        # Compute alignments
+        chunks = extract_noun_phrases(src_clean)
+        if not chunks:
+            return None
 
-        # Check dictionary first
-        if dictionary:
-            dict_trans = dictionary.lookup(phrase_clean)
-            if dict_trans and dict_trans.lower() in tgt_words_lower:
-                best_target = dict_trans
-                best_score = max(best_score, dictionary.get_confidence(phrase_clean))
+        tgt_tokens = tokenize_words(tgt_clean)
+        tgt_words_lower = set(w.lower() for w in tgt_tokens)
 
-        # Check statistical aligner association table
-        if aligner and aligner.is_trained:
-            words = phrase_clean.split()
-            for w in words:
-                candidates = tgt_words_lower.intersection(aligner.cooc_freq.get(w, {}).keys())
-                for tw in candidates:
-                    score = aligner.get_association_score(w, tw)
-                    if score > best_score:
-                        best_score = score
-                        best_target = tw
+        for start, end, phrase in chunks:
+            phrase_clean = phrase.lower().strip()
+            best_target = None
+            best_score = 0.0
 
-        if best_target and best_score >= min_confidence:
-            # Find the exact matched casing in the target text
-            pattern = re.compile(rf"\b{re.escape(best_target)}\b", re.IGNORECASE)
-            m_tgt = pattern.search(tgt_clean)
-            if m_tgt:
-                exact_tgt_text = m_tgt.group(0)
-                valid_insertions.append((start, end, phrase, exact_tgt_text, best_score))
+            # Check dictionary first
+            if dictionary:
+                dict_trans = dictionary.lookup(phrase_clean)
+                if dict_trans and dict_trans.lower() in tgt_words_lower:
+                    best_target = dict_trans
+                    best_score = max(best_score, dictionary.get_confidence(phrase_clean))
+
+            # Check statistical aligner association table
+            if aligner and aligner.is_trained:
+                words = phrase_clean.split()
+                for w in words:
+                    candidates = tgt_words_lower.intersection(aligner.cooc_freq.get(w, {}).keys())
+                    for tw in candidates:
+                        score = aligner.get_association_score(w, tw)
+                        if score > best_score:
+                            best_score = score
+                            best_target = tw
+
+            if best_target and best_score >= min_confidence:
+                pattern = re.compile(rf"\b{re.escape(best_target)}\b", re.IGNORECASE)
+                m_tgt = pattern.search(tgt_clean)
+                if m_tgt:
+                    exact_tgt_text = m_tgt.group(0)
+                    valid_insertions.append((start, end, phrase, exact_tgt_text, best_score))
+
+        # Store in cache if active
+        if align_cache is not None:
+            cache_records = [
+                {"start": s, "end": e, "src_phrase": sp, "tgt_trans": tt, "score": sc}
+                for s, e, sp, tt, sc in valid_insertions
+            ]
+            align_cache.set(src_clean, tgt_clean, cache_records)
 
     if not valid_insertions:
         return None
@@ -141,34 +166,55 @@ def create_gloss_dataset(
     parallel_pairs: List[Tuple[str, str]],
     dictionary: Optional[GlossaryDictionary] = None,
     aligner: Optional[StatisticalWordAligner] = None,
+    align_cache: Optional[Union[AlignmentCache, str, Path]] = None,
     target_count: int = DEFAULT_TARGET_SAMPLES,
     val_ratio: float = 0.05,
     test_ratio: float = 0.05,
     seed: int = 42,
     min_confidence: float = 0.45,
-    ensure_at_least_one: bool = True,
 ) -> Dict[str, List[GlossMTExample]]:
     """
     Generate train / validation / test splits of Gloss-MT pre-translated examples.
-    Guarantees every sample in the target_count (default 10k) has at least one
+    Guarantees every sample in the target_count (e.g. 10k or 100k) has at least one
     high-confidence aligned noun chunk inserted.
+
+    Automatically uses on-disk alignment caching to skip already-aligned pairs.
     """
     random.seed(seed)
     examples: List[GlossMTExample] = []
 
-    # Iterate over available parallel pairs until we collect target_count valid annotated examples
-    for src_text, tgt_text in parallel_pairs:
-        ex = build_gloss_pair(
-            src_text,
-            tgt_text,
-            dictionary=dictionary,
-            aligner=aligner,
-            min_confidence=min_confidence,
-        )
-        if ex and len(ex.inserted_terms) >= 1:
-            examples.append(ex)
-            if len(examples) >= target_count:
-                break
+    cache_inst = None
+    if isinstance(align_cache, (str, Path)):
+        cache_inst = AlignmentCache(align_cache)
+    elif isinstance(align_cache, AlignmentCache):
+        cache_inst = align_cache
+
+    skipped_cache_hits = 0
+
+    try:
+        for src_text, tgt_text in parallel_pairs:
+            is_cached = cache_inst.contains(src_text, tgt_text) if cache_inst else False
+            if is_cached:
+                skipped_cache_hits += 1
+
+            ex = build_gloss_pair(
+                src_text,
+                tgt_text,
+                dictionary=dictionary,
+                aligner=aligner,
+                align_cache=cache_inst,
+                min_confidence=min_confidence,
+            )
+            if ex and len(ex.inserted_terms) >= 1:
+                examples.append(ex)
+                if len(examples) >= target_count:
+                    break
+    finally:
+        if cache_inst:
+            cache_inst.close()
+
+    if skipped_cache_hits > 0:
+        print(f"[AfriGloss Cache] Loaded {skipped_cache_hits:,} previously aligned pairs from cache (skipped re-alignment).")
 
     print(f"[AfriGloss Dataset] Collected {len(examples):,} examples with guaranteed glossary insertions.")
 

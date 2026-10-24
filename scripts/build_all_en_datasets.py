@@ -1,7 +1,9 @@
 """
-Script to build 10k Gloss-MT training datasets for priority English -> African language pairs.
-Ensures English is the source and the African language is the target, with English noun phrases
-replaced in place by their target translation in angle brackets.
+Script to build large-scale Gloss-MT training datasets (up to 100k samples)
+for priority English -> African language pairs.
+
+Uses persistent alignment caching (JSONL) so already-aligned sentence pairs
+are loaded instantly and skipped, allowing fast resumable processing.
 """
 
 import argparse
@@ -13,6 +15,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
+from afrigloss.align_cache import AlignmentCache
 from afrigloss.aligner import StatisticalWordAligner
 from afrigloss.corpus import AfricaCorpusLoader
 from afrigloss.dataset import create_gloss_dataset, save_dataset_splits
@@ -22,17 +25,23 @@ from afrigloss.registry import normalize_lang_code
 TARGET_LANGUAGES = ["tw", "sw", "yo", "ha", "ig", "ee", "sn"]
 
 
-def build_en_dataset(tgt_lang: str, target_count: int = 10000, out_base_dir: Path = Path("data")):
+def build_en_dataset(
+    tgt_lang: str,
+    target_count: int = 100000,
+    out_base_dir: Path = Path("data"),
+    cache_base_dir: Path = Path("data/align_cache"),
+):
     src_code = "eng"
     tgt_code = normalize_lang_code(tgt_lang)
-    out_dir = out_base_dir / f"gloss_dataset_en_{tgt_lang}_10k"
+    out_dir = out_base_dir / f"gloss_dataset_en_{tgt_lang}_{target_count//1000}k"
+    cache_file = cache_base_dir / f"align_cache_en_{tgt_code}.jsonl"
 
     if (out_dir / "train.jsonl").exists():
         print(f"[{tgt_lang.upper()}] Dataset already exists at {out_dir}, skipping.")
         return
 
     print(f"\n========================================================")
-    print(f"Building 10k Gloss-MT dataset: English -> {tgt_lang.upper()} ({tgt_code})")
+    print(f"Building {target_count:,} Gloss-MT dataset: English -> {tgt_lang.upper()} ({tgt_code})")
     print(f"========================================================")
 
     # Check for precomputed dictionary
@@ -44,24 +53,31 @@ def build_en_dataset(tgt_lang: str, target_count: int = 10000, out_base_dir: Pat
 
     loader = AfricaCorpusLoader()
     t0 = time.time()
-    pairs = loader.get_parallel_pairs("eng", tgt_code, max_samples=None)
-    print(f"[{tgt_lang}] Loaded {len(pairs):,} parallel verses in {time.time()-t0:.1f}s")
+    pairs = loader.get_parallel_pairs(
+        "eng",
+        tgt_code,
+        max_samples=target_count,
+        include_all_versions=True,
+        include_jw=True,
+    )
+    print(f"[{tgt_lang}] Loaded {len(pairs):,} parallel sentences across multi-versions in {time.time()-t0:.1f}s")
 
-    # bitext is (English, African Language)
     bitext = [(p.src, p.tgt) for p in pairs]
 
-    # Train aligner on full corpus
+    # Train aligner on all available sentences
     t0 = time.time()
     aligner = StatisticalWordAligner(min_pair_freq=2, min_confidence=0.45)
     aligner.train(bitext)
     print(f"[{tgt_lang}] Trained full-corpus aligner in {time.time()-t0:.1f}s")
 
-    # Extract 10,000 samples with guaranteed in-place noun chunk insertions
+    # Extract Gloss-MT dataset with alignment caching
     t0 = time.time()
+    cache_base_dir.mkdir(parents=True, exist_ok=True)
     splits = create_gloss_dataset(
         bitext,
         dictionary=dictionary,
         aligner=aligner,
+        align_cache=cache_file,
         target_count=target_count,
         min_confidence=0.45,
     )
@@ -72,16 +88,18 @@ def build_en_dataset(tgt_lang: str, target_count: int = 10000, out_base_dir: Pat
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Build English -> African language 10k datasets")
+    parser = argparse.ArgumentParser(description="Build English -> African language large-scale Gloss-MT datasets")
     parser.add_argument("--langs", nargs="+", default=TARGET_LANGUAGES, help="Target language codes")
-    parser.add_argument("--count", type=int, default=10000, help="Target samples (default: 10000)")
+    parser.add_argument("--count", type=int, default=100000, help="Target samples (default: 100,000)")
     parser.add_argument("--out-dir", default=str(REPO_ROOT / "data"), help="Base output directory")
+    parser.add_argument("--cache-dir", default=str(REPO_ROOT / "data" / "align_cache"), help="Alignment cache directory")
 
     args = parser.parse_args()
     out_base = Path(args.out_dir)
+    cache_base = Path(args.cache_dir)
 
     for lang in args.langs:
-        build_en_dataset(lang, target_count=args.count, out_base_dir=out_base)
+        build_en_dataset(lang, target_count=args.count, out_base_dir=out_base, cache_base_dir=cache_base)
 
 
 if __name__ == "__main__":
