@@ -255,21 +255,53 @@ Use the bundled `scripts/run_h200.sh` helper to run data processing and training
 
 ---
 
-## Precomputed Dictionaries Bundled
+## 📚 Master African Base Dictionaries
 
-Pre-extracted high-confidence dictionaries ($\text{confidence} \ge 0.70$) are included in `data/dictionaries/`:
-- `eng_twi.tsv` (Twi / Akan, Ghana)
-- `eng_yor.tsv` (Yoruba, Nigeria)
-- `eng_swh.tsv` (Swahili, East Africa)
-- `eng_ibo.tsv` (Igbo, Nigeria)
-- `eng_ewe.tsv` (Ewe, Ghana / Togo)
-- `eng_sna.tsv` (Shona, Zimbabwe)
-- `eng_lug.tsv` (Luganda, Uganda)
-- `eng_kin.tsv` (Kinyarwanda, Rwanda)
-- `eng_nya.tsv` (Chichewa / Nyanja, Malawi)
-- `eng_xho.tsv` (Xhosa, South Africa)
-- `eng_zul.tsv` (Zulu, South Africa)
-- `eng_lin.tsv` (Lingala, DRC / Congo)
+Afri-Gloss-MT bundles and generates comprehensive base dictionaries across all supported African languages in `data/dictionaries/`:
+- **Source 1: Human-Curated Linguistic Wordlists:** Ingested from [`AfriSpeech/webonary-african-wordlists`](https://huggingface.co/datasets/AfriSpeech/webonary-african-wordlists) covering **168 African languages** with thousands of verified vocabulary entries per language.
+- **Source 2: Full-Corpus Statistical Alignment:** Word alignment trained over hundreds of thousands of parallel sentences from [`AfriSpeech/africa-corpus`](https://huggingface.co/datasets/AfriSpeech/africa-corpus) and [`AfriSpeech/african-corpus-jw`](https://huggingface.co/datasets/AfriSpeech/african-corpus-jw).
+
+### Building or Expanding Dictionaries:
+```bash
+# Extract Webonary linguistic dictionaries and run full alignment across all languages:
+python scripts/build_huge_base_dictionaries.py --webonary --align-all
+```
+
+---
+
+## 🤖 Optional: Expanding Dictionaries with Gemini 3.8 Flash
+
+For specialized domains or to translate custom English noun lists (such as [`AfriSpeech/africa-nouns`](https://huggingface.co/datasets/AfriSpeech/africa-nouns)), we provide a high-throughput Gemini builder script:
+
+```bash
+export GEMINI_API_KEY="your-api-key"
+python scripts/build_mega_dictionary.py --tgt twi --limit 10000 --batch-size 25 --workers 10
+```
+
+> **Why Gemini?** Gemini 3.8 Flash provides strong multilingual performance on African languages. You can inspect benchmark scores and evaluations on the **[AfriSpeech Gemini Afro-MT Bench](https://huggingface.co/spaces/AfriSpeech/gemini-afro-mt-bench)**.
+
+---
+
+## 📝 Dictionary File Template & Merging Custom Glossaries
+
+Dictionaries are stored in clean, tab-delimited TSV format (`source_phrase \t target_phrase [\t confidence \t count]`):
+
+```tsv
+source_phrase	target_phrase	confidence	count
+covenant	apam	0.9800	150
+hospital	ayaresabea	0.9500	45
+doctor	dɔkota	0.9200	32
+heavens	ɔsoro	0.9500	210
+earth	asase	0.9400	180
+```
+
+Merge any custom or community glossary into the master language dictionary:
+```bash
+afrigloss merge-dicts \
+    --base data/dictionaries/eng_twi.tsv \
+    --new my_custom_medical_glossary.tsv \
+    --out data/dictionaries/eng_twi.tsv
+```
 
 ---
 
