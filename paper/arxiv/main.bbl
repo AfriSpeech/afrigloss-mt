@@ -1,0 +1,105 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Adelani et~al.(2022)]{adelani2022few}
+David~Ifeoluwa Adelani, Jesujoba R{\"u}ckert, Vukosi Marivate, et~al.
+\newblock A few thousand translations go a long way! leveraging pre-trained
+  models for {A}frican news translation.
+\newblock In \emph{Proceedings of the 2022 Conference of the North American
+  Chapter of the Association for Computational Linguistics}, pages 3053--3070,
+  2022.
+
+\bibitem[Azunre et~al.(2021)]{azunre2021english}
+Paul Azunre, Ivan Habernal, Lawrence~Adu Gyamfi, Jonathan Asiamah, Salomey
+  Osei-Tutu, and Bernard Appiah.
+\newblock English to {Twi} neural machine translation on a very low-resource
+  parallel corpus.
+\newblock \emph{arXiv preprint arXiv:2104.09458}, 2021.
+
+\bibitem[Dinu et~al.(2019)]{dinu2019training}
+Georgiana Dinu, Prashant Mathur, Marcello Federico, and Yaser Al-Onaizan.
+\newblock Training neural machine translation to apply terminology constraints.
+\newblock In \emph{Proceedings of the 57th Annual Meeting of the Association
+  for Computational Linguistics}, pages 3063--3068, 2019.
+
+\bibitem[{Gemini Team}(2024)]{gemini2024report}
+{Gemini Team}.
+\newblock Gemini 1.5: Unlocking multimodal understanding across millions of
+  tokens of context.
+\newblock \emph{arXiv preprint arXiv:2403.05530}, 2024.
+
+\bibitem[Hokamp and Liu(2017)]{hokamp2017lexically}
+Chris Hokamp and Qun Liu.
+\newblock Lexically constrained decoding for sequence generation using grid
+  beam search.
+\newblock In \emph{Proceedings of the 55th Annual Meeting of the Association
+  for Computational Linguistics}, pages 1535--1546, 2017.
+
+\bibitem[Honnibal et~al.(2020)]{honnibal2020spacy}
+Matthew Honnibal, Ines Montani, Sofie Van~Landeghem, and Adriane Boyd.
+\newblock {spaCy}: Industrial-strength natural language processing in python.
+\newblock \emph{Zenodo}, 2020.
+
+\bibitem[Hu et~al.(2022)]{hu2022lora}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
+  Wang, Lu~Wang, and Weizhu Chen.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2022.
+
+\bibitem[{NLLB Team} et~al.(2022)]{nllb2022}
+{NLLB Team}, Marta~R. Costa-juss{\`a}, James Cross, et~al.
+\newblock No language left behind: Scaling human-centered machine translation.
+\newblock \emph{arXiv preprint arXiv:2207.04672}, 2022.
+
+\bibitem[Owusu et~al.(2024)]{owusu2024glossmt}
+Mich-Seth Owusu, Stephen~E. Moore, Akwasi Asare, Lawrence~Adu Gyamfi, Paul
+  Azunre, Joel Budu, and Jonathan Asiamah.
+\newblock {GLOSS-MT}: Controllable low-resource machine translation with an
+  editable dictionary.
+\newblock \emph{arXiv preprint}, 2024.
+
+\bibitem[Popovi{\'c}(2015)]{popovic2015chrf}
+Maja Popovi{\'c}.
+\newblock {chrF}: character n-gram f-score for automatic {MT} evaluation.
+\newblock In \emph{Proceedings of the Tenth Workshop on Statistical Machine
+  Translation}, pages 392--395, 2015.
+
+\bibitem[Post(2018)]{post2018call}
+Matt Post.
+\newblock A call for clarity in reporting {BLEU} scores.
+\newblock In \emph{Proceedings of the Third Conference on Machine Translation:
+  Research Papers}, pages 186--191, 2018.
+
+\bibitem[Sabet et~al.(2020)]{sabet2020simalign}
+Masoud~Jalili Sabet, Philipp Dufter, Fran{\c{c}}ois Yvon, and Hinrich
+  Sch{\"u}tze.
+\newblock {SimAlign}: High quality word alignments without parallel training
+  data using static and contextualized embeddings.
+\newblock In \emph{Proceedings of the 2020 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, pages 1627--1643, 2020.
+
+\bibitem[Song et~al.(2019)]{song2019code}
+Kai Song, Yue Zhang, Heng Yu, Weihua Luo, Kun Wang, and Min Zhang.
+\newblock Code-switching for enhancing {NMT} with pre-specified translation.
+\newblock In \emph{Proceedings of the 2019 Conference of the North American
+  Chapter of the Association for Computational Linguistics}, pages 449--459,
+  2019.
+
+\bibitem[Tiedemann and Thottingal(2020)]{tiedemann2020opus}
+J{\"o}rg Tiedemann and Santhosh Thottingal.
+\newblock {OPUS-MT} -- building open translation services for the world.
+\newblock In \emph{Proceedings of the 22nd Annual Conference of the European
+  Association for Machine Translation}, pages 479--480, 2020.
+
+\bibitem[Wang et~al.(2024)]{wang2024e5}
+Liang Wang, Nan Yang, Furu Huang, Binxing Jiao, Linjun Yang, Daxin Jiang,
+  Rangan Majumder, and Furu Wei.
+\newblock Multilingual {E5} text embeddings: A technical report.
+\newblock \emph{arXiv preprint arXiv:2402.05672}, 2024.
+
+\end{thebibliography}
