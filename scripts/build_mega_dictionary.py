@@ -1,19 +1,23 @@
 """
-High-Throughput Mega African Dictionary Builder for Afri-Gloss-MT.
+Mega African Dictionary Builder for Afri-Gloss-MT.
 
-Translates high-frequency English nouns from AfriSpeech/africa-nouns
+Translates top-frequency English nouns from AfriSpeech/africa-nouns
 (1.41 million African-domain English nouns) into African languages using Gemini 3.8 Flash.
 
+Safety & Quality Gate:
+  Only permits Gemini translation if:
+    1. The language is verified as 'strong' (score >= 65.0) in AfriSpeech/gemini-afro-mt-bench:
+       https://huggingface.co/spaces/AfriSpeech/gemini-afro-mt-bench
+    2. A corresponding Gloss-MT model exists / is trained for the language.
+
 Features:
-  - Batched requests (100 nouns per API call)
-  - Massive concurrency (20-40 worker threads for paid tier)
-  - API key pool support (round-robin rotation across GEMINI_API_KEYS if present)
-  - Thread-safe non-blocking SQLite database writer (WAL mode, background queue)
-  - Resumable: skips already-translated nouns automatically
+  - Batched requests (100 nouns per API call, verified non-truncating)
+  - Massive concurrency (20-30 worker threads for paid tier)
+  - Persistent SQLite caching (resumable, skips already-translated nouns)
   - Exports clean TSV dictionaries sorted by corpus frequency
 
 Usage:
-  python scripts/build_mega_dictionary.py --tgt twi --limit 500000 --workers 25
+  python scripts/build_mega_dictionary.py --tgt twi --limit 100000 --workers 20
 """
 
 import argparse
@@ -21,6 +25,7 @@ import json
 import logging
 import os
 import queue
+import re
 import sqlite3
 import sys
 import threading
@@ -36,7 +41,7 @@ from huggingface_hub import hf_hub_download
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
-from afrigloss.registry import LANGUAGE_INFO, normalize_lang_code
+from afrigloss.registry import LANGUAGE_INFO, find_model_for_pair, normalize_lang_code
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("mega_dict")
@@ -44,37 +49,63 @@ logger = logging.getLogger("mega_dict")
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
 DEFAULT_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
-TARGET_LANGUAGE_PROMPTS = {
-    "twi": "Asante Twi (Akan, Ghana)",
-    "aka": "Asante Twi (Akan, Ghana)",
-    "yor": "Yoruba (Nigeria)",
-    "swh": "Swahili (East Africa)",
-    "hau": "Hausa (Nigeria/Niger, written in Latin Boko script)",
-    "ibo": "Igbo (Nigeria)",
-    "ewe": "Ewe (Ghana/Togo)",
-    "sna": "Shona (Zimbabwe)",
-    "nya": "Chichewa / Nyanja (Malawi/Zambia)",
-    "lug": "Luganda (Uganda)",
-    "kin": "Kinyarwanda (Rwanda)",
-    "lin": "Lingala (DRC/Congo)",
-    "zul": "Zulu (South Africa)",
-    "xho": "Xhosa (South Africa)",
-    "som": "Somali (Somalia)",
-    "amh": "Amharic (Ethiopia)",
+# Verified benchmark scores from AfriSpeech/gemini-afro-mt-bench (threshold: score >= 65.0, 'strong' tier)
+GEMINI_AFRO_BENCHMARK_STRONG: Dict[str, Dict[str, any]] = {
+    "hau": {"name": "Hausa", "score": 72.55, "tier": "strong"},
+    "ewe": {"name": "Ewe", "score": 72.55, "tier": "strong"},
+    "twi": {"name": "Twi / Akan", "score": 72.06, "tier": "strong"},
+    "aka": {"name": "Akan", "score": 72.06, "tier": "strong"},
+    "yor": {"name": "Yoruba", "score": 69.12, "tier": "strong"},
+    "ibo": {"name": "Igbo", "score": 67.65, "tier": "strong"},
+    "swh": {"name": "Swahili", "score": 66.18, "tier": "strong"},
+    "swc": {"name": "Congo Swahili", "score": 66.18, "tier": "strong"},
+    "sna": {"name": "Shona", "score": 65.69, "tier": "strong"},
+    "amh": {"name": "Amharic", "score": 86.27, "tier": "strong"},
+}
+
+TARGET_LANGUAGE_PROMPTS: Dict[str, str] = {
+    "twi": "standard Asante Twi (Akan, Ghana)",
+    "aka": "standard Asante Twi (Akan, Ghana)",
+    "yor": "standard Yoruba (Nigeria, with proper tone marks)",
+    "swh": "standard Swahili (Kiswahili, East Africa)",
+    "swc": "standard Swahili (Kiswahili, East Africa)",
+    "hau": "standard Hausa (Nigeria/Niger, written in standard Latin Boko script)",
+    "ibo": "standard Igbo (Nigeria)",
+    "ewe": "standard Ewe (Ghana/Togo)",
+    "sna": "standard Shona (ChiShona, Zimbabwe)",
+    "amh": "standard Amharic (Ethiopia, in Ge'ez fidäl script)",
 }
 
 
-def get_api_key_pool(primary_key: str) -> List[str]:
-    """Retrieve pool of API keys from environment for load balancing."""
-    keys_env = os.environ.get("GEMINI_API_KEYS", "")
-    if keys_env:
-        keys = [k.strip() for k in keys_env.split(",") if k.strip()]
-        if keys:
-            return keys
-    if primary_key:
-        return [primary_key]
-    single = os.environ.get("GEMINI_API_KEY", "")
-    return [single] if single else []
+def verify_gemini_eligibility(target_lang: str, force: bool = False) -> str:
+    """
+    Ensure the target language qualifies for Gemini translation:
+      1. Must be in the 'strong' tier of gemini-afro-mt-bench.
+      2. Must have a supported Gloss-MT translation model.
+    """
+    code = normalize_lang_code(target_lang)
+    bench_info = GEMINI_AFRO_BENCHMARK_STRONG.get(code)
+
+    if not bench_info and not force:
+        raise ValueError(
+            f"Language '{target_lang}' (ISO: {code}) is NOT approved for Gemini dictionary generation.\n"
+            f"Per AfriSpeech quality standards, Gemini is only used for languages verified in the 'strong' tier (score >= 65.0) "
+            f"on https://huggingface.co/spaces/AfriSpeech/gemini-afro-mt-bench.\n"
+            f"Approved languages: {list(GEMINI_AFRO_BENCHMARK_STRONG.keys())}.\n"
+            f"To bypass, pass --force."
+        )
+
+    # Check model registry
+    model_info = find_model_for_pair("en", code)
+    if not model_info and not force:
+        raise ValueError(
+            f"No Gloss-MT base model registered for English -> {code}. "
+            f"We only build mega dictionaries for languages with trained/supported models."
+        )
+
+    score = bench_info["score"] if bench_info else "N/A"
+    logger.info(f"Verified {code} ({bench_info.get('name') if bench_info else code}): Gemini Benchmark Score = {score} (Tier: strong)")
+    return code
 
 
 class MegaDictionaryDB:
@@ -84,7 +115,7 @@ class MegaDictionaryDB:
         self.db_path = db_path
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self._init_db()
-        self.write_queue = queue.Queue(maxsize=10000)
+        self.write_queue = queue.Queue(maxsize=20000)
         self._stop_event = threading.Event()
         self._writer_thread = threading.Thread(target=self._writer_loop, daemon=True)
         self._writer_thread.start()
@@ -186,9 +217,8 @@ def translate_noun_batch_gemini(
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
 
     prompt = (
-        f"Translate the following English noun phrases into natural, standard {target_lang_name}.\n"
-        f"Return ONLY a valid JSON dictionary where the keys are the exact English nouns and values are their standard translations.\n"
-        f"If a term is an untranslatable proper name or foreign noun, keep the standard local spelling.\n"
+        f"Translate the following English noun phrases into {target_lang_name}.\n"
+        f"Return ONLY a valid JSON dictionary where keys are the exact English nouns and values are their standard translations.\n"
         f"English nouns:\n{json.dumps(nouns, ensure_ascii=False)}"
     )
 
@@ -222,24 +252,26 @@ def translate_noun_batch_gemini(
 
 def build_mega_dictionary(
     target_lang: str,
+    limit: int = 100000,
     min_freq: float = 1.0,
-    limit: Optional[int] = 500000,
     batch_size: int = 100,
-    max_workers: int = 25,
+    max_workers: int = 20,
     api_key: str = DEFAULT_API_KEY,
     model: str = GEMINI_MODEL,
+    force: bool = False,
     db_path: Path = REPO_ROOT / "data" / "mega_dictionary.db",
     out_dir: Path = REPO_ROOT / "data" / "dictionaries",
 ):
     """Main pipeline for building the Mega African Dictionary from africa-nouns-en.parquet."""
-    keys_pool = get_api_key_pool(api_key)
-    if not keys_pool:
-        raise ValueError("GEMINI_API_KEY or GEMINI_API_KEYS environment variable is required.")
-
-    tgt_code = normalize_lang_code(target_lang)
+    tgt_code = verify_gemini_eligibility(target_lang, force=force)
     lang_name = TARGET_LANGUAGE_PROMPTS.get(tgt_code, LANGUAGE_INFO.get(tgt_code, {}).get("name", tgt_code.upper()))
 
-    logger.info(f"Target language: {lang_name} ({tgt_code}) | Concurrency: {max_workers} workers | API Keys: {len(keys_pool)}")
+    if not api_key:
+        api_key = os.environ.get("GEMINI_API_KEY", "")
+    if not api_key:
+        raise ValueError("GEMINI_API_KEY is required. Pass via --api-key or set GEMINI_API_KEY environment variable.")
+
+    logger.info(f"Target language: {lang_name} ({tgt_code}) | Concurrency: {max_workers} workers | Batch size: {batch_size}")
     db = MegaDictionaryDB(db_path)
 
     # 1. Download/load africa-nouns-en.parquet
@@ -270,7 +302,7 @@ def build_mega_dictionary(
     logger.info(f"Already cached in database for {tgt_code}: {len(cached_set):,} nouns")
 
     todo_nouns = [p for p, _ in candidates if p not in cached_set]
-    logger.info(f"Nouns to translate with Gemini 3.8: {len(todo_nouns):,}")
+    logger.info(f"Nouns to translate with {model}: {len(todo_nouns):,}")
 
     if todo_nouns:
         batches = [todo_nouns[i : i + batch_size] for i in range(0, len(todo_nouns), batch_size)]
@@ -280,10 +312,8 @@ def build_mega_dictionary(
         total_translated = 0
         t0 = time.time()
 
-        def process_batch(batch_idx, batch_nouns):
-            # Round-robin key from pool
-            assigned_key = keys_pool[batch_idx % len(keys_pool)]
-            trans_dict = translate_noun_batch_gemini(batch_nouns, lang_name, assigned_key, model=model)
+        def process_batch(batch_nouns):
+            trans_dict = translate_noun_batch_gemini(batch_nouns, lang_name, api_key, model=model)
             records = []
             for en_word in batch_nouns:
                 trans = trans_dict.get(en_word)
@@ -294,13 +324,13 @@ def build_mega_dictionary(
             return len(records)
 
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            futures = {executor.submit(process_batch, i, b): i for i, b in enumerate(batches)}
+            futures = [executor.submit(process_batch, b) for b in batches]
             for f in as_completed(futures):
                 count = f.result()
                 total_translated += count
                 completed_batches += 1
 
-                if completed_batches % 25 == 0 or completed_batches == len(batches):
+                if completed_batches % 10 == 0 or completed_batches == len(batches):
                     elapsed = time.time() - t0
                     speed = (completed_batches * batch_size) / (elapsed + 1e-5)
                     remaining = (len(batches) - completed_batches) * batch_size
@@ -313,7 +343,7 @@ def build_mega_dictionary(
     db.close()
 
     # 3. Export to clean TSV dictionary
-    out_tsv = out_dir / f"mega_eng_{tgt_code}.tsv"
+    out_tsv = out_dir / f"mega_eng_{tgt_code}_100k.tsv"
     db.export_tsv(tgt_code, out_tsv)
     logger.info(f"Mega Dictionary for {lang_name} successfully built: {out_tsv}")
 
@@ -321,22 +351,24 @@ def build_mega_dictionary(
 def main():
     parser = argparse.ArgumentParser(description="Build Mega African Dictionary using Gemini 3.8 & africa-nouns-en.parquet")
     parser.add_argument("--tgt", required=True, help="Target African language (e.g. tw, sw, yo, ha, ig)")
-    parser.add_argument("--limit", type=int, default=500000, help="Target top N nouns (default: 500,000)")
+    parser.add_argument("--limit", type=int, default=100000, help="Target top N nouns (default: 100,000)")
     parser.add_argument("--min-freq", type=float, default=1.0, help="Minimum corpus frequency threshold")
-    parser.add_argument("--batch-size", type=int, default=25, help="Batch size per Gemini API call (default: 25)")
-    parser.add_argument("--workers", type=int, default=15, help="Concurrent worker threads (default: 15)")
+    parser.add_argument("--batch-size", type=int, default=100, help="Batch size per Gemini API call (default: 100)")
+    parser.add_argument("--workers", type=int, default=20, help="Concurrent worker threads (default: 20)")
     parser.add_argument("--api-key", default=DEFAULT_API_KEY, help="Gemini API Key")
     parser.add_argument("--model", default=GEMINI_MODEL, help="Gemini Model ID (default: gemini-3.8-flash)")
+    parser.add_argument("--force", action="store_true", help="Bypass benchmark tier gate")
 
     args = parser.parse_args()
     build_mega_dictionary(
         target_lang=args.tgt,
-        min_freq=args.min_freq,
         limit=args.limit,
+        min_freq=args.min_freq,
         batch_size=args.batch_size,
         max_workers=args.workers,
         api_key=args.api_key,
         model=args.model,
+        force=args.force,
     )
 
 
