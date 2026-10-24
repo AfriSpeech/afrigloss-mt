@@ -273,6 +273,17 @@ Pre-extracted high-confidence dictionaries ($\text{confidence} \ge 0.70$) are in
 
 ---
 
+## 🤝 Community Contributions & Model Sharing
+
+Afri-Gloss-MT is built to be **collectively efficient**:
+- **Shared Alignment Caches:** If an alignment cache exists for a language in `data/align_cache/`, any user generating datasets automatically **skips re-alignment** and builds their dataset in seconds.
+- **Contribute New Language Caches:** If you run word alignment on a new African language, submit a PR with your `align_cache_en_<lang>.jsonl` so the entire community benefits from your compute!
+- **Share Your Fine-Tuned Models:** Fine-tuned a model for a new language or domain? Submit it via our **[Model Submission Form](https://github.com/AfriSpeech/afrigloss-mt/issues/new?template=submit_model.yml)** to have it added to the official registry and Hugging Face collection.
+
+See **[CONTRIBUTING.md](CONTRIBUTING.md)** for detailed instructions.
+
+---
+
 ## License
 
 Apache-2.0

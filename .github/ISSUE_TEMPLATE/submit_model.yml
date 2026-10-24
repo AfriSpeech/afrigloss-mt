@@ -1,0 +1,54 @@
+name: "Submit a Fine-Tuned Gloss-MT Model"
+description: "Submit a fine-tuned African Gloss-MT model to be added to the official registry and Hugging Face collection."
+title: "[Model Submission]: <Source> -> <Target> (<Model Architecture>)"
+labels: ["model-submission", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to the African NLP ecosystem! Please fill out the details below so we can verify your fine-tuned Gloss-MT model and feature it in the official **AfriSpeech Helsinki-NLP African Translation Models** registry and collection.
+  - type: input
+    id: hf_model_id
+    attributes:
+      label: Hugging Face Model ID
+      description: "Link or ID of the uploaded model on Hugging Face Hub (e.g. your-org/opus-mt-en-tw-gloss)."
+      placeholder: "e.g. username/opus-mt-en-tw-gloss"
+    validations:
+      required: true
+  - type: dropdown
+    id: base_architecture
+    attributes:
+      label: Base Architecture
+      description: Which base model was fine-tuned?
+      options:
+        - "Helsinki-NLP OPUS-MT (MarianMT)"
+        - "Meta NLLB-200 (600M / 1.3B / 3.3B)"
+        - "Google TranslateGemma (4B)"
+        - "Google umT5 (XL / XXL)"
+        - "Other"
+    validations:
+      required: true
+  - type: input
+    id: lang_pair
+    attributes:
+      label: Language Pair (Source -> Target)
+      description: "Source and target languages with ISO codes (e.g. English (en) -> Twi (tw))."
+      placeholder: "e.g. English (en) -> Yoruba (yo)"
+    validations:
+      required: true
+  - type: input
+    id: evaluation_metrics
+    attributes:
+      label: Benchmark Evaluation Scores
+      description: "Validation or test set BLEU, chrF2, and glossary adherence rate (e.g. BLEU: 24.5, chrF2: 52.1, Glossary Adherence: 92%)."
+      placeholder: "BLEU: XX.X, chrF2: XX.X, Glossary Adherence: XX%"
+    validations:
+      required: true
+  - type: textarea
+    id: training_details
+    attributes:
+      label: Training Dataset & Hyperparameters
+      description: "Briefly describe the dataset used (e.g. 50k verses from Africa Corpus Builder + custom legal pairs), epochs, and learning rate."
+      placeholder: "Dataset: 50,000 parallel verses\nEpochs: 8\nBatch Size: 32\nLearning Rate: 1e-4\nHardware: NVIDIA H200"
+    validations:
+      required: false

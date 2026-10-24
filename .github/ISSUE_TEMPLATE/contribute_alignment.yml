@@ -1,0 +1,41 @@
+name: "Contribute Word Alignment Data / Cache"
+description: "Submit or propose a pre-computed alignment cache for an African language pair to save compute for the community."
+title: "[Alignment Cache]: <Source> -> <Target> (<Number of Pairs>)"
+labels: ["alignment-cache", "data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Pre-computed alignment caches allow other community members to **skip re-aligning from scratch** and generate Gloss-MT datasets in seconds. Thank you for making African NLP training collectively efficient!
+  - type: input
+    id: language_pair
+    attributes:
+      label: Language Pair
+      description: "Source and target languages with ISO 639 codes."
+      placeholder: "e.g. English (en) <-> Luganda (lug)"
+    validations:
+      required: true
+  - type: input
+    id: pair_count
+    attributes:
+      label: Number of Aligned Pairs
+      description: "How many parallel sentences are included in the alignment cache?"
+      placeholder: "e.g. 50,000 parallel sentences"
+    validations:
+      required: true
+  - type: input
+    id: pr_or_link
+    attributes:
+      label: Pull Request or Hugging Face Hub Dataset Link
+      description: "Link to your Pull Request adding the JSONL cache file to `data/align_cache/` or a Hugging Face Hub dataset link."
+      placeholder: "e.g. PR #12 or https://huggingface.co/datasets/username/..."
+    validations:
+      required: true
+  - type: textarea
+    id: alignment_method
+    attributes:
+      label: Alignment Method & Notes
+      description: "Which aligner was used (e.g. StatisticalWordAligner, SimAlign, multilingual-e5-large) and confidence threshold?"
+      placeholder: "Aligner: StatisticalWordAligner + E5-large\nCorpus: Africa Corpus Builder + JW300\nThreshold: 0.50"
+    validations:
+      required: false
