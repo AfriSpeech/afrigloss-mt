@@ -28,7 +28,7 @@ from transformers import (
 )
 
 from afrigloss.registry import get_nllb_lang, normalize_lang_code
-from afrigloss.trainer import GlossDataset, prepare_tokenizer
+from afrigloss.trainer import GlossMTDataset, prepare_tokenizer
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("afrigloss.train_seq2seq")
