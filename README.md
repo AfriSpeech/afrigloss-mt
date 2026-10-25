@@ -60,7 +60,18 @@ Inference Runtime with Terminology Fidelity
 
 ---
 
-## 📊 Trained Model Benchmarks (Afri-Gloss-MT Checkpoints)
+## 🚀 100k Production Demo Models (Large-Scale Pre-Translated Datasets)
+
+Fine-tuned on the H200 GPU using **100k multi-version datasets** (85k–87k training samples) and evaluated across **4,300+ unseen test verses**:
+
+| Language Pair | Architecture | Training Samples | Test BLEU | Test chrF2 | Training Time | Checkpoint Path |
+|:---:|---|:---:|:---:|:---:|:---:|---|
+| **English $\rightarrow$ Swahili (`sw`)** | `Helsinki-NLP/opus-mt-en-sw` | **78,657** | **23.75** | **53.42** | 25.4 mins | `checkpoints/afrigloss_opus_en_sw_100k/final` |
+| **English $\rightarrow$ Twi (`tw`)** | `Helsinki-NLP/opus-mt-en-tw` | **77,006** | **21.70** | **47.28** | 26.6 mins | `checkpoints/afrigloss_opus_en_tw_100k/final` |
+
+---
+
+## 📊 10k Pilot Model Benchmarks (Afri-Gloss-MT Checkpoints)
 
 Fine-tuned on the H200 GPU using the 10,000-verse Gloss-MT datasets and evaluated on 500 held-out unseen test verses with `sacrebleu`:
 
