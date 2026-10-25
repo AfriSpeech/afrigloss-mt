@@ -23,7 +23,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple, Union
 
 from afrigloss.align_cache import AlignmentCache
-from afrigloss.aligner import StatisticalWordAligner, tokenize_words
+from afrigloss.aligner import DEFAULT_STOPWORDS, StatisticalWordAligner, tokenize_words
 from afrigloss.dictionary import GlossaryDictionary
 from afrigloss.extractor import extract_noun_phrases
 
@@ -45,6 +45,7 @@ def build_gloss_pair(
     dictionary: Optional[GlossaryDictionary] = None,
     aligner: Optional[StatisticalWordAligner] = None,
     align_cache: Optional[AlignmentCache] = None,
+    precomputed_aligner_map: Optional[Dict[str, Tuple[str, float]]] = None,
     max_insertions: int = 3,
     min_confidence: float = 0.45,
 ) -> Optional[GlossMTExample]:
@@ -95,8 +96,16 @@ def build_gloss_pair(
                     best_target = dict_trans
                     best_score = max(best_score, dictionary.get_confidence(phrase_clean))
 
-            # Check statistical aligner association table
-            if aligner and aligner.is_trained:
+            # Fast check using precomputed aligner map
+            if precomputed_aligner_map:
+                words = phrase_clean.split()
+                for w in words:
+                    if w in precomputed_aligner_map:
+                        cand_t, cand_s = precomputed_aligner_map[w]
+                        if cand_t.lower() in tgt_words_lower and cand_s > best_score:
+                            best_score = cand_s
+                            best_target = cand_t
+            elif aligner and aligner.is_trained:
                 words = phrase_clean.split()
                 for w in words:
                     candidates = tgt_words_lower.intersection(aligner.cooc_freq.get(w, {}).keys())
@@ -191,6 +200,24 @@ def create_gloss_dataset(
 
     skipped_cache_hits = 0
 
+    # Precompute fast alignment lookup table for O(1) matching
+    precomputed_map: Dict[str, Tuple[str, float]] = {}
+    if aligner and aligner.is_trained:
+        for w, targets in aligner.cooc_freq.items():
+            if len(w) <= 2 or w in DEFAULT_STOPWORDS:
+                continue
+            best_t = None
+            best_s = 0.0
+            for tw in targets:
+                if len(tw) <= 2 or tw in DEFAULT_STOPWORDS:
+                    continue
+                sc = aligner.get_association_score(w, tw)
+                if sc > best_s:
+                    best_s = sc
+                    best_t = tw
+            if best_t and best_s >= min_confidence:
+                precomputed_map[w] = (best_t, best_s)
+
     try:
         for src_text, tgt_text in parallel_pairs:
             is_cached = cache_inst.contains(src_text, tgt_text) if cache_inst else False
@@ -203,6 +230,7 @@ def create_gloss_dataset(
                 dictionary=dictionary,
                 aligner=aligner,
                 align_cache=cache_inst,
+                precomputed_aligner_map=precomputed_map,
                 min_confidence=min_confidence,
             )
             if ex and len(ex.inserted_terms) >= 1:
