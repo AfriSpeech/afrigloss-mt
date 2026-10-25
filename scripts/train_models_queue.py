@@ -36,7 +36,7 @@ QUEUE = [
 ]
 
 
-def train_single_model(job: dict, epochs: int = 15, batch_size: int = 32, lr: float = 1e-4, patience: int = 4):
+def train_single_model(job: dict, epochs: int = 15, batch_size: int = 32, lr: float = 1e-4, patience: int = 10):
     src = job["src"]
     tgt = job["tgt"]
     model_name = job["model"]

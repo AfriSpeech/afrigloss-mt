@@ -63,7 +63,7 @@ def main():
     parser.add_argument("--data", required=True, help="Path to directory containing train.jsonl and validation.jsonl")
     parser.add_argument("--out", required=True, help="Output checkpoint directory")
     parser.add_argument("--epochs", type=float, default=15, help="Maximum training epochs (stops early when validation plateaus)")
-    parser.add_argument("--early-stopping-patience", type=int, default=4, help="Stop training if validation does not improve for N checks")
+    parser.add_argument("--early-stopping-patience", type=int, default=10, help="Stop training if validation does not improve for N checks (default: 10)")
     parser.add_argument("--batch-size", type=int, default=32, help="Per-device batch size")
     parser.add_argument("--grad-accum", type=int, default=1, help="Gradient accumulation steps")
     parser.add_argument("--lr", type=float, default=1e-4, help="Learning rate")

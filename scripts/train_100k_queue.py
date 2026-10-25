@@ -35,7 +35,7 @@ QUEUE = [
 ]
 
 
-def train_single_model(job: dict, max_epochs: int = 50, batch_size: int = 32, lr: float = 1e-4, patience: int = 5):
+def train_single_model(job: dict, max_epochs: int = 50, batch_size: int = 32, lr: float = 1e-4, patience: int = 10):
     src = job["src"]
     tgt = job["tgt"]
     model_name = job["model"]
@@ -87,7 +87,7 @@ def train_single_model(job: dict, max_epochs: int = 50, batch_size: int = 32, lr
 def main():
     parser = argparse.ArgumentParser(description="Afri-Gloss-MT 100k Convergence Training Queue")
     parser.add_argument("--max-epochs", type=int, default=50, help="Maximum epochs ceiling (default: 50)")
-    parser.add_argument("--patience", type=int, default=5, help="Early stopping patience (default: 5 checks)")
+    parser.add_argument("--patience", type=int, default=10, help="Early stopping patience (default: 10 checks)")
     parser.add_argument("--batch-size", type=int, default=32, help="Batch size")
     parser.add_argument("--lr", type=float, default=1e-4, help="Learning rate")
     parser.add_argument("--only", nargs="+", help="Run only specific targets (e.g. --only yo ha ig)")
