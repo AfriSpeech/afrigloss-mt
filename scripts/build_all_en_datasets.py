@@ -10,6 +10,7 @@ import argparse
 import sys
 import time
 from pathlib import Path
+from typing import Optional
 
 # Add repo root to path
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -61,6 +62,7 @@ def build_en_dataset(
         max_samples=target_count,
         include_all_versions=True,
         include_jw=True,
+        include_pristine=True,
     )
     print(f"[{tgt_lang}] Loaded {len(pairs):,} parallel sentences across multi-versions in {time.time()-t0:.1f}s")
 

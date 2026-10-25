@@ -167,7 +167,7 @@ def create_gloss_dataset(
     dictionary: Optional[GlossaryDictionary] = None,
     aligner: Optional[StatisticalWordAligner] = None,
     align_cache: Optional[Union[AlignmentCache, str, Path]] = None,
-    target_count: int = DEFAULT_TARGET_SAMPLES,
+    target_count: Optional[int] = DEFAULT_TARGET_SAMPLES,
     val_ratio: float = 0.05,
     test_ratio: float = 0.05,
     seed: int = 42,
@@ -207,7 +207,7 @@ def create_gloss_dataset(
             )
             if ex and len(ex.inserted_terms) >= 1:
                 examples.append(ex)
-                if len(examples) >= target_count:
+                if target_count is not None and len(examples) >= target_count:
                     break
     finally:
         if cache_inst:
