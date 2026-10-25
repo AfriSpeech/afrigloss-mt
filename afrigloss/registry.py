@@ -165,9 +165,9 @@ _CODE_LOOKUP.update({
 
 # NLLB-200 Language Codes for African Languages
 NLLB_LANG_CODES: Dict[str, str] = {
-    "twi": "aka_Latn",
+    "twi": "twi_Latn",
+    "tw": "twi_Latn",
     "aka": "aka_Latn",
-    "tw": "aka_Latn",
     "ak": "aka_Latn",
     "yor": "yor_Latn",
     "yo": "yor_Latn",
