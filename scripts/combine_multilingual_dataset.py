@@ -22,7 +22,9 @@ import random
 from pathlib import Path
 from typing import Dict, List
 
+import sys
 REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT))
 
 from afrigloss.registry import get_nllb_lang, normalize_lang_code
 
