@@ -29,6 +29,7 @@ CACHE_DIR = Path(os.environ.get("AFRIGLOSS_CACHE_DIR", Path.home() / ".cache" / 
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 AFRICAN_JW_REPO = "AfriSpeech/african-corpus-jw"
+PRISTINE_TWI_REPO = "ghananlpcommunity/pristine-twi-english-parallel-sentences"
 
 
 @dataclass
@@ -150,10 +151,11 @@ class AfricaCorpusLoader:
         max_samples: Optional[int] = None,
         include_all_versions: bool = True,
         include_jw: bool = True,
+        include_pristine: bool = True,
     ) -> List[ParallelPair]:
         """
         Extract aligned sentence pairs for src_lang <-> tgt_lang.
-        Aggregates across multiple translation versions and JW300 to reach 100k+ samples.
+        Aggregates across multiple translation versions, JW300, and pristine datasets to reach 500k+ samples.
         """
         src_code = normalize_lang_code(src_lang)
         tgt_code = normalize_lang_code(tgt_lang)
@@ -230,7 +232,49 @@ class AfricaCorpusLoader:
                 except Exception as e:
                     pass
 
+        # 4. Pristine Twi parallel sentences from Ghana NLP (up to 500k sentences)
+        if include_pristine and tgt_code in ("twi", "tw", "aka") and (not max_samples or len(pairs) < max_samples):
+            try:
+                needed = (max_samples - len(pairs)) if max_samples else 500000
+                pristine_pairs = load_pristine_twi_pairs(max_samples=needed, cache_dir=self.cache_dir)
+                for p in pristine_pairs:
+                    if (p.src, p.tgt) not in seen_keys:
+                        seen_keys.add((p.src, p.tgt))
+                        pairs.append(p)
+                        if max_samples and len(pairs) >= max_samples:
+                            return pairs
+            except Exception as e:
+                pass
+
         return pairs
+
+
+def load_pristine_twi_pairs(max_samples: int = 500000, cache_dir: Optional[Path] = None) -> List[ParallelPair]:
+    """
+    Load up to max_samples from ghananlpcommunity/pristine-twi-english-parallel-sentences.
+    Provides high-quality, contemporary Ghanaian news, conversational, and web text.
+    """
+    import pyarrow.parquet as pq
+    from huggingface_hub import hf_hub_download
+
+    cdir = cache_dir or CACHE_DIR
+    path = hf_hub_download(
+        PRISTINE_TWI_REPO,
+        filename="data/train-00000-of-00006.parquet",
+        repo_type="dataset",
+        cache_dir=cdir,
+    )
+    table = pq.read_table(path, columns=["english", "twi"])
+    slice_data = table.slice(0, max_samples).to_pydict()
+
+    pairs = []
+    for idx, (en, tw) in enumerate(zip(slice_data["english"], slice_data["twi"]), 1):
+        s = clean_text(en)
+        t = clean_text(tw)
+        if s and t and len(s.split()) >= 2 and len(t.split()) >= 2:
+            pairs.append(ParallelPair(key=f"pristine_{idx}", src=s, tgt=t))
+
+    return pairs
 
 
 def load_custom_parallel_file(

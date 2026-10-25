@@ -27,21 +27,23 @@ TARGET_LANGUAGES = ["tw", "sw", "yo", "ha", "ig", "ee", "sn"]
 
 def build_en_dataset(
     tgt_lang: str,
-    target_count: int = 100000,
+    target_count: Optional[int] = 100000,
     out_base_dir: Path = Path("data"),
     cache_base_dir: Path = Path("data/align_cache"),
 ):
     src_code = "eng"
     tgt_code = normalize_lang_code(tgt_lang)
-    out_dir = out_base_dir / f"gloss_dataset_en_{tgt_lang}_{target_count//1000}k"
+    tag = "full" if target_count is None else f"{target_count//1000}k"
+    out_dir = out_base_dir / f"gloss_dataset_en_{tgt_lang}_{tag}"
     cache_file = cache_base_dir / f"align_cache_en_{tgt_code}.jsonl"
 
     if (out_dir / "train.jsonl").exists():
         print(f"[{tgt_lang.upper()}] Dataset already exists at {out_dir}, skipping.")
         return
 
+    label = "ALL Available" if target_count is None else f"{target_count:,}"
     print(f"\n========================================================")
-    print(f"Building {target_count:,} Gloss-MT dataset: English -> {tgt_lang.upper()} ({tgt_code})")
+    print(f"Building {label} Gloss-MT dataset: English -> {tgt_lang.upper()} ({tgt_code})")
     print(f"========================================================")
 
     # Check for precomputed dictionary
@@ -91,15 +93,17 @@ def main():
     parser = argparse.ArgumentParser(description="Build English -> African language large-scale Gloss-MT datasets")
     parser.add_argument("--langs", nargs="+", default=TARGET_LANGUAGES, help="Target language codes")
     parser.add_argument("--count", type=int, default=100000, help="Target samples (default: 100,000)")
+    parser.add_argument("--full", action="store_true", help="Use ALL available parallel data without any cap")
     parser.add_argument("--out-dir", default=str(REPO_ROOT / "data"), help="Base output directory")
     parser.add_argument("--cache-dir", default=str(REPO_ROOT / "data" / "align_cache"), help="Alignment cache directory")
 
     args = parser.parse_args()
     out_base = Path(args.out_dir)
     cache_base = Path(args.cache_dir)
+    target_count = None if args.full else args.count
 
     for lang in args.langs:
-        build_en_dataset(lang, target_count=args.count, out_base_dir=out_base, cache_base_dir=cache_base)
+        build_en_dataset(lang, target_count=target_count, out_base_dir=out_base, cache_base_dir=cache_base)
 
 
 if __name__ == "__main__":
