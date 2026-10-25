@@ -89,10 +89,8 @@ def train_seq2seq(
     # Resolve NLLB language codes if NLLB
     is_nllb = "nllb" in model_name_or_path.lower()
     if is_nllb:
-        nllb_src = get_nllb_lang(src_lang)
-        nllb_tgt = get_nllb_lang(tgt_lang)
-        if not nllb_src or not nllb_tgt:
-            raise ValueError(f"Could not resolve NLLB language codes for {src_lang} -> {tgt_lang}")
+        nllb_src = get_nllb_lang(src_lang) or "eng_Latn"
+        nllb_tgt = get_nllb_lang(tgt_lang) or "aka_Latn"
         tokenizer.src_lang = nllb_src
         tokenizer.tgt_lang = nllb_tgt
         logger.info(f"NLLB language codes: src={nllb_src}, tgt={nllb_tgt}")
@@ -131,17 +129,30 @@ def train_seq2seq(
             return_tensors="pt",
         )
 
-        with tokenizer.as_target_tokenizer():
-            labels = tokenizer(
-                tgt_texts,
-                max_length=max_tgt_len,
-                padding=True,
-                truncation=True,
-                return_tensors="pt",
-            )["input_ids"]
+        # Check if batch contains per-example target language codes (multilingual dataset)
+        has_multi_targets = any(b.get("tgt_lang") for b in batch)
+        if has_multi_targets and is_nllb:
+            label_list = []
+            for b in batch:
+                sample_tgt_lang = b.get("tgt_lang") or nllb_tgt
+                tokenizer.tgt_lang = sample_tgt_lang
+                enc_tgt = tokenizer(text_target=b["tgt"], max_length=max_tgt_len, truncation=True)
+                label_list.append(enc_tgt["input_ids"])
 
-        labels[labels == tokenizer.pad_token_id] = -100
-        model_inputs["labels"] = labels
+            max_l = max(len(l) for l in label_list)
+            padded = [l + [-100] * (max_l - len(l)) for l in label_list]
+            model_inputs["labels"] = torch.tensor(padded, dtype=torch.long)
+        else:
+            with tokenizer.as_target_tokenizer():
+                labels = tokenizer(
+                    tgt_texts,
+                    max_length=max_tgt_len,
+                    padding=True,
+                    truncation=True,
+                    return_tensors="pt",
+                )["input_ids"]
+            labels[labels == tokenizer.pad_token_id] = -100
+            model_inputs["labels"] = labels
         return {k: v.to(dev) for k, v in model_inputs.items()}
 
     train_ds = Seq2SeqGlossDataset(train_file)
@@ -192,15 +203,16 @@ def train_seq2seq(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Fine-tune NLLB on Gloss-MT pre-translated datasets")
     parser.add_argument("--model", default="facebook/nllb-200-distilled-600M", help="NLLB or Seq2Seq model ID")
-    parser.add_argument("--src", required=True, help="Source language (e.g. en)")
-    parser.add_argument("--tgt", required=True, help="Target language (e.g. tw, yo, sw)")
+    parser.add_argument("--src", default="en", help="Source language (default: en)")
+    parser.add_argument("--tgt", default="mul", help="Target language (default: mul for unified multilingual dataset)")
     parser.add_argument("--train-file", required=True, help="Path to train.jsonl")
     parser.add_argument("--val-file", help="Path to validation.jsonl")
-    parser.add_argument("--out", default="checkpoints/nllb_model", help="Output directory")
+    parser.add_argument("--out", default="checkpoints/nllb_multilingual_african", help="Output directory")
     parser.add_argument("--lora-r", type=int, default=16, help="LoRA rank (0 for full fine-tune)")
     parser.add_argument("--batch-size", type=int, default=8, help="Batch size")
     parser.add_argument("--lr", type=float, default=2e-4, help="Learning rate")
-    parser.add_argument("--epochs", type=int, default=3, help="Training epochs")
+    parser.add_argument("--epochs", type=int, default=25, help="Training epochs")
+    parser.add_argument("--patience", type=int, default=10, help="Early stopping patience (default: 10)")
     parser.add_argument("--device", help="Device (e.g. cuda, cuda:0, cpu)")
 
     args = parser.parse_args()
