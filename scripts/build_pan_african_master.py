@@ -320,7 +320,7 @@ def main():
 
     if args.only:
         selected_langs = [normalize_lang_code(l) for l in args.only]
-    elif args.tier1-only:
+    elif args.tier1_only:
         selected_langs = jw_langs
     else:
         # Tier 1 first, then Tier 2
