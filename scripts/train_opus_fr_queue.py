@@ -80,6 +80,13 @@ def train_single_model(job: dict, max_epochs: int = 50, batch_size: int = 32, lr
 
     if res.returncode == 0:
         logger.info(f"SUCCESS: {src}->{tgt} reached convergence in {elapsed:.1f}s ({elapsed/60:.2f} mins)")
+        # Automatically push fine-tuned production model to Hugging Face
+        try:
+            from scripts.publish_models_to_hf import publish_model
+            logger.info(f"Auto-publishing {src}->{tgt} model to Hugging Face...")
+            publish_model(tgt, src=src)
+        except Exception as e:
+            logger.warning(f"Could not auto-publish to Hugging Face: {e}")
     else:
         logger.error(f"FAILURE: {src}->{tgt} failed with exit code {res.returncode}")
 
