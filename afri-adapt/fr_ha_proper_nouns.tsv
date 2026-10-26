@@ -1,0 +1,4058 @@
+source_term	target_term	confidence	frequency
+Jéhovah	Jehobah	0.9931	18913
+Jésus	Yesu	0.9906	5654
+Dieu	Allah	0.9895	4554
+Bible	Littafi	0.9944	4077
+SENYER	UBANGIJI	0.9961	2334
+Mat	Mat	0.9947	1502
+Paul	Bulus	0.9797	1332
+Satan	Shaiɗan	0.9473	1138
+Psaume	Zabura	0.9381	1067
+Izrael	Israila	0.9844	704
+Isaïe	Ishaya	0.9083	556
+David	Dawuda	0.9873	551
+Romains	Romawa	0.9212	546
+Gen	Far	0.9835	546
+Héb	Ibran	0.9651	544
+Tour	Hasumiyar	0.9943	522
+Moiz	Musa	0.9375	448
+Témoins	Shaidun	0.9977	444
+Job	Ayuba	0.9833	420
+Hébreux	Ibraniyawa	0.9703	404
+Lezip	Masar	1.0000	403
+Zerizalenm	Urushalima	1.0000	373
+Prov	Mag	0.9838	370
+Royaume	Mulkin	1.0000	368
+Adam	Adamu	0.9088	362
+Israélites	Ilawa	0.9917	360
+Jean	Yohanna	0.9684	348
+Genèse	Farawa	0.9003	341
+Pierre	Bitrus	0.9803	305
+Gal	Gal	0.9783	277
+Éphésiens	Afisawa	0.8791	273
+Garde	Hasumiyar	1.0000	273
+Aaron	Haruna	0.9775	267
+Phil	Filib	0.9885	261
+Abraham	Ibrahim	0.9767	257
+Joseph	Yusufu	0.9724	254
+Matthieu	Matta	0.8606	251
+Rom	Rom	0.9839	249
+Christ	Kristi	0.9918	244
+Marie	Maryamu	0.9669	242
+Salomon	Sulemanu	0.9457	221
+Daniel	Daniyel	0.9721	215
+Abrahanm	Ibrahim	0.9163	215
+Babylone	Babila	0.9907	214
+Jérémie	Irmiya	0.9856	208
+Proverbes	Karin	0.9512	205
+Jésus Christ	Yesu	0.9951	203
+Zida	Yahuza	0.9950	201
+Col	Kol	0.9894	188
+Discussion	Tattaunawa	1.0000	186
+Actes	Manzanni	0.8750	184
+Moïse	Musa	0.9891	183
+Sara	Saratu	0.9672	183
+Ruth	Ruth	0.9766	171
+Jéhovah l	Jehobah	0.9940	167
+Collège central	Hukumar	1.0000	167
+Mémorial	Mutuwar	1.0000	167
+Galates	Galatiyawa	0.8712	163
+Israël	Isra	1.0000	157
+Marc	Markus	0.9673	153
+Luc	Luk	1.0000	148
+Jéhovah n	Jehobah	1.0000	147
+Béthel	Bethel	0.9932	146
+Noé	Nuhu	0.9925	134
+Lazare	Azaru	0.9603	126
+Moab	Mowab	0.9762	126
+Ève	Hauwa	0.9917	120
+Zourden	Urdun	1.0000	119
+Esther	Esther	0.9737	114
+Sail	Shawulu	1.0000	111
+Jéhovah Dieu	Jehobah	0.8182	110
+Jésus n	Yesu	1.0000	109
+Asa	Asa	0.9524	105
+Senyer BONDYE	Ubangiji	0.8942	104
+Zeremi	Irmiya	1.0000	102
+Absalon	Absalom	1.0000	102
+Kris	Kiristi	0.9400	100
+Éph	Afis	0.9898	98
+Zoab	Yowab	1.0000	97
+Eli	Iliya	0.9062	96
+Cantique n	Waƙa	1.0000	95
+Ezekyas	Hezekiya	0.8925	93
+Colossiens	Kolosiyawa	0.9891	92
+Ecclésiaste	Mai-Wa	0.9890	91
+Siyon	Sihiyona	1.0000	91
+Zozye	Yoshuwa	0.8750	88
+Salle	Majami	1.0000	87
+Philippiens	Filibiyawa	1.0000	86
+Pharaon	Fir	1.0000	86
+Samari	Samariya	0.9535	86
+Jacq	Yaƙ	1.0000	84
+Josué	Joshua	0.9268	82
+Jacob	Yakubu	0.9630	81
+Naboukodonozor	Nebukadnezzar	0.9747	79
+Ezai	Isuwa	1.0000	78
+Exode	Fitowa	0.7838	74
+Filisten	Filistiyawa	0.9859	71
+Akab	Ahab	1.0000	71
+Saül	Saul	0.9718	71
+Révélation	Uyar	0.9857	70
+Yona	Yunana	1.0000	70
+Zozef	Yusuf	0.8286	70
+Hebron	Hebron	0.9000	70
+Jésus l	Yesu	1.0000	69
+Faraon	Firauna	0.9855	69
+Noël	Kirsimati	1.0000	68
+Abel	Habila	0.9552	67
+Armaguédon	Armageddon	1.0000	66
+Rahab	Rahab	0.9062	64
+Sid	Kudu	1.0000	64
+Galaad	Gileyad	1.0000	64
+Introduction	Gabatarwar	1.0000	64
+États-Unis	Amirka	1.0000	64
+Mais Jéhovah	Jehobah	0.9841	63
+Thème	Jigo	1.0000	63
+Samson	Samson	0.9839	62
+Afrique	Afirka	0.9677	62
+Efraim	Efraim	0.9672	61
+Baal	Baal	0.9836	61
+Liban	Lebanon	1.0000	59
+Nabal	Nabal	1.0000	59
+Dieu n	Allah	0.9661	59
+Abigaïl	Abigail	1.0000	59
+Zozafat	Yehoshafat	0.9138	58
+Elize	Elisha	1.0000	58
+École	Makarantar	0.9828	58
+Jéhovah d	Jehobah	1.0000	56
+Babilonn	Babilon	1.0000	55
+Jéhovah m	Jehobah	0.9815	54
+Asiri	Assuriya	1.0000	54
+Lire	Karanta	0.9815	54
+Jésus lui	Yesu	1.0000	53
+Amenn	Amin	1.0000	53
+Zonatan	Yonatan	0.9423	52
+Éliya	Iliya	0.9423	52
+Éden	Adnin	1.0000	52
+Moiz ti	Musa	1.0000	52
+Russell	Russell	1.0000	52
+Nor	Arewa	0.8627	51
+Juifs	Yahudawa	0.9804	51
+Brooklyn	Brooklyn	1.0000	50
+Zehou	Yehu	1.0000	50
+Senyer BONDYE i	Ubangiji	0.9600	50
+Izaak	Ishaku	1.0000	50
+Abranm	Abram	0.9184	49
+France	Faransa	1.0000	49
+Laban	Laban	0.9792	48
+Deutéronome	Kubawar	0.8085	47
+Néhémie	Nehemiya	1.0000	46
+Mardose	Mordekai	0.8696	46
+Jézabel	Jezebel	0.9778	45
+Manase	Manasse	0.8889	45
+Abner	Abner	0.8000	45
+Jacques	Yaƙub	0.9333	45
+Sikenm	Shekem	1.0000	44
+Canada	Kanada	0.9773	44
+Kof Lalyans	Akwatin	0.9545	44
+New York	York	1.0000	44
+Betel	Betel	0.9091	44
+Jéhovah lui	Jehobah	0.9773	44
+Isaïe 48:17	Ishaya	0.8372	43
+Gog	Gog	0.9070	43
+Marthe	Martha	0.9762	42
+Québec	Quebec	1.0000	41
+Azarya	Azariya	1.0000	40
+Allemagne	Jamus	0.9744	39
+Pentecôte	Fentakos	1.0000	39
+Benzamen	Benyamin	0.9487	39
+Rébecca	Rifkatu	1.0000	39
+Edonm	Edom	0.8974	39
+Barak	Barak	0.9737	38
+Hesbonn	Heshbon	1.0000	38
+Hab	Hab	0.9737	38
+Ézéchiel	Ezekiyel	1.0000	38
+Malawi	Malawi	1.0000	38
+Zwif	Yahudawa	0.9474	38
+Abimelek	Abimelek	1.0000	37
+Diable	Iblis	1.0000	37
+Russie	Rasha	1.0000	37
+Yiphtah	Jephthah	1.0000	37
+Bible parle	Littafi	1.0000	37
+Amos	Amos	0.9730	37
+Nomb	Ƙid	0.8889	36
+Akazya	Ahaziya	0.9714	35
+Galilée	Galili	1.0000	35
+Rome	Roma	1.0000	35
+Noémi	Naomi	1.0000	34
+Loi mosaïque	Dokar	1.0000	34
+Ézéch	Ezek	1.0000	34
+Covid-19	Korona	1.0000	34
+Caleb	Kaleb	0.9706	34
+Gad	Gad	0.7059	34
+Europe	Turai	0.9706	34
+DESCRIPTION	HOTUNA	1.0000	34
+Gat	Gat	1.0000	34
+Gedalya	Gedaliya	0.9697	33
+Legliz	Ikkilisiya	0.8485	33
+Élisabeth	Alisabatu	1.0000	33
+Horeb	Horeb	1.0000	33
+JW Library	Library	1.0000	33
+Étudiants	Ɗaliban	0.9688	32
+Hanna	Hannatu	1.0000	32
+Jér	Irm	0.9375	32
+Amonit	Ammonawa	1.0000	32
+Sidon	Sidon	0.9375	32
+Samyel	Samaila	0.8125	32
+Negev	Negeb	1.0000	31
+Nil	Nilu	1.0000	31
+Haman	Haman	0.8710	31
+Australie	Ostareliya	1.0000	30
+Caïn	Kayinu	1.0000	30
+Sezar	Kaisar	0.8000	30
+Gibea	Gibeya	0.9333	30
+Rutherford	Rutherford	1.0000	30
+César	Kaisar	1.0000	29
+Merari	Merari	1.0000	29
+Goliath	Goliyat	0.8966	29
+Cameroun	Kamaru	1.0000	29
+Senyer BONDYE ki'n deklare	Ubangiji	1.0000	28
+Zese	Yesse	1.0000	28
+Bondye Izrael	Israila	1.0000	28
+Silas	Sila	0.9643	28
+PARTIES	JAWABAI	1.0000	28
+Bondye Izrael i	Israila	1.0000	27
+Kof Lalyans SENYER	Ubangiji	1.0000	27
+Nebat	Nebat	1.0000	27
+Levit	Lawiyawa	0.9615	26
+Akis	Akish	1.0000	26
+Nazaret	Banazare	1.0000	26
+Hilkiya	Hilkiya	0.9231	26
+Timothée	Timoti	1.0000	26
+Mich	Mik	0.9615	26
+Zan	Yahaya	1.0000	26
+Balaanm	Balak	0.9231	26
+Ukraine	Yukiren	1.0000	26
+Créateur	Mahaliccinmu	1.0000	26
+Maria	Maria	0.9600	25
+Zoas	Yowash	1.0000	25
+Hananya	Hananiya	0.9200	25
+Kof SENYER	Ubangiji	0.9600	25
+Christ Jésus	Yesu	1.0000	25
+Silo	Shilo	0.9200	25
+Jonathan	Jonathan	0.9600	25
+Sihonn	Sihon	1.0000	24
+Filip	Filibus	0.8750	24
+Jésus s	Yesu	1.0000	24
+Zakari	Zakariya	1.0000	24
+Ezipsyen	Masarawa	1.0000	24
+Magog	Magog	1.0000	24
+Jéhovah t	Jehobah	1.0000	24
+Karmel	Karmel	1.0000	24
+Naboth	Naboth	1.0000	23
+Elanm	Elam	1.0000	23
+Tite	Tit	1.0000	23
+Esdras	Ezra	0.8696	23
+Néh	Neh	0.7391	23
+Sam	Sam	1.0000	23
+Photo-Drame	Photo-Drama	1.0000	23
+Kore	Kora	1.0000	23
+Rama	Rama	1.0000	23
+Simon	Siman	0.8261	23
+Boaz	Boaz	1.0000	23
+Neftali	Naftali	0.9091	22
+Sadok	Zadok	0.8182	22
+Ouza	Uzza	0.9091	22
+Nombres	Lissafi	0.8636	22
+Satan n	Shaiɗan	1.0000	22
+John	John	1.0000	22
+Zozyas	Yosiya	1.0000	22
+Mefibosheth	Mefiboshet	0.9545	22
+Nabot	Nabot	0.9048	21
+Mispa	Mizfa	1.0000	21
+Eglonn	Eglon	1.0000	21
+Hébreux 6:10	Ibraniyawa	1.0000	21
+Yonathân	Jonathan	1.0000	21
+Internet	Intane	1.0000	21
+Tamar	Tamar	1.0000	21
+Hamat	Hamat	1.0000	21
+Ninive	Nineba	1.0000	20
+Damas	Damaskus	0.9500	20
+Josias	Josiya	1.0000	20
+Jade	Rose	1.0000	20
+Révision	Bita	1.0000	20
+Irlande	Ireland	1.0000	20
+Paul l	Bulus	1.0000	20
+Natan	Natan	1.0000	20
+QUE LA BIBLE DIT	LITTAFI	1.0000	20
+Eleazar	Eleyazar	0.8947	19
+Naomi	Naomi	0.9474	19
+Amasya	Amaziya	1.0000	19
+Jean 5:28, 29	Yohanna	0.9474	19
+Cour suprême	Kotun	1.0000	19
+SENYER i deklare	Ubangiji	1.0000	19
+Kenya	Kenya	1.0000	19
+Malachie	Malakai	1.0000	19
+Corneille	Karniliyus	0.9474	19
+Naamân	Naꞌaman	0.9474	19
+Itamar	Itamar	1.0000	19
+Cuba	Cuba	1.0000	19
+Corinthe	Korinti	1.0000	18
+Rimonn	Rimmon	1.0000	18
+Latant Rankont SENYER	Tentin	0.7222	18
+Izrael i	Israila	1.0000	18
+Shilo	Shiloh	1.0000	18
+Jephté	Jephthah	0.9444	18
+Zefte	Yefta	0.8333	18
+Gaza	Gaza	1.0000	18
+Akaz	Ahaz	0.8824	17
+Jéhovah ton	Jehobah	1.0000	17
+Zacharie	Zakariya	1.0000	17
+Robert	Robert	1.0000	17
+Samaritains	Samariyawa	1.0000	17
+Balak	Balak	0.7647	17
+Latant Rankont	Tentin	1.0000	17
+Asael	Asahel	1.0000	17
+Assuérus	Ahasuerus	1.0000	17
+Philippe	Filibus	0.9412	17
+Neeta	Anita	1.0000	17
+Bible montre	Littafi	1.0000	17
+Genèse 1:28	Farawa	0.9412	17
+Quelle leçon	Darasi	1.0000	17
+Lefèvre	Lefèvre	0.9412	17
+Jael	Jael	1.0000	17
+Galile	Galili	1.0000	17
+Dieu heureux	Allah	1.0000	17
+Habacuc	Habakkuk	0.9412	17
+Dieu l	Allah	1.0000	16
+Ekronn	Ekron	1.0000	16
+Izaak ek	Ishaku	1.0000	16
+Ahikanm	Ahikam	1.0000	16
+Agag	Agag	0.8750	16
+Kof	Akwatin	0.9375	16
+Gehazi	Gehazi	1.0000	16
+EXPOSÉ	JAWABAI	1.0000	16
+Azael	Hazayel	1.0000	16
+Pak	Ƙetarewa	1.0000	16
+Harvey	Harvey	1.0000	16
+QUATRE PARTIES	JAWABAI	1.0000	16
+Efez	Afisa	1.0000	16
+Zonas	Yunusa	0.8125	16
+Nahor	Nahor	1.0000	16
+Éli	Eli	1.0000	16
+Loth	Lutu	1.0000	16
+Isaïe 41:10	Ishaya	0.9375	16
+Yotanm	Yotam	0.8750	16
+Nadab	Nadab	0.8750	16
+WBBR	WBBR	1.0000	16
+Zeriko	Yeriko	1.0000	16
+Herod	Hiridus	0.8125	16
+Yoyada	Yehohiyada	0.9375	16
+Hour	Hur	0.8750	16
+Nebo	Nebo	0.8667	15
+Asor	Hazor	1.0000	15
+Pharisiens	Farisawa	1.0000	15
+Jéhovah s	Jehobah	1.0000	15
+Michael	Michael	0.9333	15
+Angleterre	Ingila	1.0000	15
+Mali	Mali	1.0000	15
+Hérode	Hirudus	1.0000	15
+Makir	Makir	1.0000	15
+Stephen	Stephen	0.8667	15
+Zezabel	Yezebel	1.0000	15
+Lezip antye	Masar	1.0000	15
+Quel exemple	Misali	1.0000	15
+Fineas	Finehas	1.0000	15
+Kedar	Kedar	1.0000	15
+Araba	Araba	1.0000	15
+Inde	Indiya	1.0000	15
+Ahitofel	Ahitofel	0.8667	15
+Patterson	Patterson	0.9333	15
+Amoz	Amoz	1.0000	15
+Paul s	Bulus	1.0000	15
+Ted	Ted	1.0000	15
+Zwingli	Zwingli	1.0000	15
+Espagne	Sifen	1.0000	15
+Jéhovah nous	jehobah	1.0000	15
+Darius	Darius	1.0000	15
+Étienne	Istifanus	0.9286	14
+Rasel	Rahila	1.0000	14
+Tabor	Tabor	1.0000	14
+Corée	Koriya	1.0000	14
+Dieu s	Allah	1.0000	14
+Garde n	Hasumiyar	1.0000	14
+Judée	Yahudiya	1.0000	14
+Hiranm	Hiram	1.0000	14
+Siris	Sairus	0.8571	14
+Turquie	Turkiya	1.0000	14
+Arthur	Arthur	0.9286	14
+Nigéria	Najeriya	1.0000	14
+Yoranm	Yoram	0.7857	14
+Philippines	Filifin	1.0000	14
+Yabes	Yabesh	1.0000	14
+Chron	Tar	1.0000	14
+Abisai	Abishai	0.7143	14
+Anatot	Anatot	1.0000	14
+Barnabas	Barnaba	1.0000	14
+Eliasib	Eliyashib	1.0000	14
+Paul lui	Bulus	1.0000	14
+Joad	Jehoiada	1.0000	14
+Warwick	Warwick	0.9286	14
+Timna	Timna	0.8571	14
+Haïti	Haiti	1.0000	14
+Psaume 37:10	Zabura	0.9286	14
+Wallkill	Wallkill	1.0000	14
+Mexique	Meziko	0.9286	14
+Sodonm	Sodom	0.9231	13
+Ecclésiaste 8:9	Mai-Wa	0.9231	13
+Bildad	Bildad	0.6923	13
+Peninna	Peninnah	0.9231	13
+Amorit	Amoriyawa	0.8462	13
+Agar	Hajaratu	0.8462	13
+Dieu lui	Allah	1.0000	13
+Kanaan	Kan'ana	1.0000	13
+Arnon	Arnon	1.0000	13
+Bible révèle	Littafi	1.0000	13
+Lire Isaïe	Ishaya	1.0000	13
+Efronn	Efron	1.0000	13
+Isaïe 9:6	Ishaya	0.9231	13
+Gédéon	Gideyon	1.0000	13
+Basann	Bashan	0.6923	13
+Senyer Zezi	Ubangiji	1.0000	13
+Barouk	Baruk	0.8462	13
+Paul n	Bulus	0.9231	13
+Elisama	Elishama	0.8462	13
+Kanm	Ham	0.8462	13
+Putiphar	Fotifar	0.9231	13
+Brésil	Brazil	1.0000	13
+HUI	YAU	1.0000	13
+Linda	Linda	1.0000	13
+Éphèse	Afisa	1.0000	12
+Matthieu 24:14	Matta	1.0000	12
+Asdod	Ashdod	0.9167	12
+Sedron	Kidron	1.0000	12
+Riben	Ruben	0.9167	12
+Molek	Molek	1.0000	12
+Anne	Hannatu	1.0000	12
+Psaume 72:16	Zabura	1.0000	12
+Ramot	Ramot	1.0000	12
+Sodome	Saduma	1.0000	12
+Bethléhem	Talami	1.0000	12
+Hanoun	Hanun	1.0000	12
+Tony	Tony	1.0000	12
+Bible raconte	Littafi	1.0000	12
+Isakar	Issakar	0.7500	12
+Jéhovah b	Jehobah	1.0000	12
+Tyr	Tyre	1.0000	12
+Jessica	Jessica	1.0000	12
+Dinah	Dinah	1.0000	12
+Shebna	Shebna	1.0000	12
+Gosenn	Goshen	0.8333	12
+D’après la Bible	Littafi	1.0000	12
+Colossiens 3:13	Kolosiyawa	1.0000	12
+Mary	Mary	1.0000	12
+Philémon	Filimon	1.0000	12
+Lalwa Moiz	Musa	1.0000	12
+Élihou	Elihu	1.0000	12
+Pâques	Ista	1.0000	12
+Toma	Toma	0.8182	11
+Yohanann	Kareya	0.6364	11
+Pourquoi Jéhovah	Jehobah	1.0000	11
+Hamor	Hamor	1.0000	11
+Comment les paroles	Yaya	0.9091	11
+Soukot	Sukkot	0.8182	11
+Atali	Ataliya	1.0000	11
+Jessé	Jesse	1.0000	11
+Rekab	Rekab	1.0000	11
+Tarse	Tarsus	1.0000	11
+Antioche	Antakiya	1.0000	11
+Efrat	Yuferites	1.0000	11
+Lapers	Farisa	1.0000	11
+Bible transforme	Littafi	1.0000	11
+BIBLIOTHÈQUE	LABURARE	1.0000	11
+Barzillaï	Barzillai	1.0000	11
+Hérodiade	Hirudiya	1.0000	11
+Isaac	Ishaƙu	1.0000	11
+Zabilon	Zebulun	1.0000	11
+Sierra Leone	Saliyo	1.0000	11
+Rebeka	Rebeka	1.0000	11
+Zizreel	Yezireyel	1.0000	11
+Jéroboam	Jeroboam	1.0000	11
+Akab ti	Ahab	1.0000	11
+Amihoud	Ammihud	0.8182	11
+Caïphe	Kayafa	1.0000	11
+Asaf	Asaf	0.8182	11
+Nations unies	Ɗinkin	1.0000	11
+Adam n	Adamu	0.9091	11
+Jonas	Yona	1.0000	11
+Lesli	Lesli	0.9091	11
+Dagon	Dagon	1.0000	11
+Tekoa	Tekowa	1.0000	11
+Kaleb	Kalibu	0.9091	11
+Barabas	Barabbas	0.8182	11
+Seir	Seyir	0.9091	11
+Magdala	Magdalin	1.0000	11
+Yehoshaphat	Jehoshaphat	0.9091	11
+Galates 6:10	Galatiyawa	0.9091	11
+Mahanaim	Mahanayim	1.0000	11
+Aroer	Arower	1.0000	10
+Mediterane	Rum	1.0000	10
+Gaïus	Gayus	0.9000	10
+Elim	Elim	1.0000	10
+Éphésiens 4:31	Afisawa	0.8000	10
+Benaya	Benahiya	0.9000	10
+Society	Tract	1.0000	10
+Éphésiens 4:32	Afisawa	0.7000	10
+Suriname	Suriname	1.0000	10
+Aaron ti	Haruna	1.0000	10
+Hemann	Heman	0.8000	10
+Yedoutoun	Yedutun	0.8000	10
+Elkana	Elkana	0.8000	10
+Maresa	Maresha	1.0000	10
+Aryok	Ariyok	0.8000	10
+Jaïrus	Yariyus	1.0000	10
+Yarmout	Yarmut	1.0000	10
+Bondye Abrahanm	Ibrahim	1.0000	10
+Bondye Izaak e	Ishaku	1.0000	10
+Moiz ek	Musa	1.0000	10
+Gavin	Gavin	1.0000	10
+DIU	IUD	1.0000	10
+Getty Images	Getty	1.0000	10
+Kades	Kadesh	0.9000	10
+Mikmas	Mikmash	1.0000	10
+José	José	1.0000	10
+Bible l	Littafi	1.0000	10
+Abdyas	Obadiya	0.8000	10
+Jean 5:3	Yohanna	1.0000	10
+Remalia	Remaliya	1.0000	10
+Ahimelek	Ahimelek	0.8000	10
+Dina	Dina	0.9000	10
+Tarsis	Tarshish	1.0000	10
+Népal	Nepal	1.0000	10
+Sarepta	Zarefat	1.0000	10
+BIBLE DIT	LITTAFI	1.0000	10
+Semaya	Shemahiya	0.9000	10
+Agg	Hag	0.9000	10
+Matthew	Matthew	1.0000	10
+Yizréel	Jezreel	1.0000	10
+Neboukadnetsar	Nebuchadnezzar	1.0000	10
+Horma	Horma	1.0000	10
+Betlehenm	Betlehem	0.9000	10
+Amasa	Amasa	1.0000	10
+Isaïe 65:17	Ishaya	0.9000	10
+Lév	Lev	1.0000	10
+Évodie	Sintiki	1.0000	10
+Omri	Omri	0.6000	10
+Alice	Alice	1.0000	10
+Abiatar	Abiyatar	1.0000	9
+Adel	Adel	0.7778	9
+Isboset	Ish-Boshet	0.5556	9
+Elqana	Elkanah	0.8889	9
+Barnabé	Barnabas	1.0000	9
+Farizyen	Farisiyawa	1.0000	9
+Joram	Jehoram	1.0000	9
+Hanani	Hanani	0.8889	9
+Raba	Rabba	1.0000	9
+Lalyans SENYER	Ubangiji	1.0000	9
+Ninivites	Nineba	1.0000	9
+Lalwa ek bann Farizyen	Farisiyawa	1.0000	9
+Denise	Denise	1.0000	9
+Paul leur	Bulus	1.0000	9
+Hinonm	Hinnom	1.0000	9
+Jacques 4:8	Yaƙub	0.7778	9
+Moab i	Mowab	1.0000	9
+Mesoulanm	Meshullam	0.7778	9
+Allen	Allen	0.6667	9
+Jéricho	Jericho	1.0000	9
+D’après Révélation	Uyar	1.0000	9
+Asie	Asiya	1.0000	9
+Souverain Seigneur Jéhovah	Jehobah	1.0000	9
+Saragosse	Zaragoza	1.0000	9
+Mozambique	Mozambik	1.0000	9
+Elifaz	Elifaz	1.0000	9
+Yoshiya	Josiah	1.0000	9
+Kenaz	Kenaz	1.0000	9
+Écritures hébraïques	Ibrananci	1.0000	9
+Zorobabel	Zerubbabel	1.0000	9
+Dieu d	Allah	1.0000	9
+Mikal	Mikal	1.0000	9
+Tobiya	Tobiya	1.0000	9
+Pierre lui	Bitrus	0.8889	9
+Iri	Uriya	1.0000	9
+Krisifye	gicciye	1.0000	9
+Zaïre	Zaire	1.0000	9
+Rwanda	Ruwanda	1.0000	9
+Comme Jéhovah	Jehobah	1.0000	9
+Bible ensemble	Littafi	1.0000	9
+Jéhovah ensemble	Jehobah	1.0000	9
+Gabaon	Gibeyon	1.0000	9
+Amnon	Amnon	1.0000	9
+Aggée	Haggai	1.0000	9
+Amaria	Amariya	0.7778	9
+Efrata	Efrata	1.0000	9
+María	María	1.0000	9
+Vanessa	Vanessa	1.0000	9
+Izaak ti	Ishaku	1.0000	9
+Septante	Septuagint	1.0000	9
+Tirsa	Tirza	1.0000	9
+Sarah	Sarah	1.0000	9
+Karea	Kareya	1.0000	9
+Est	Cewa	0.7778	9
+Mika	Mikah	1.0000	9
+Mishael	mishayel	0.8889	9
+Mike	Mike	1.0000	9
+André	Andarawus	0.8889	9
+Amalesit	Amalekawa	1.0000	8
+Sedesyas	Zadakiya	0.8750	8
+Abinoanm	Abinowam	1.0000	8
+Simeon	Simeyon	1.0000	8
+Lazar	Lazarus	1.0000	8
+Ismael	Ishmayel	0.8750	8
+Siklag	Ziklag	1.0000	8
+Gerar	Gerar	1.0000	8
+Azrikanm	Azrikam	1.0000	8
+Pennsylvania	Tract	1.0000	8
+Daniel 2:44	Daniyel	1.0000	8
+Ouzziya	Uzziah	0.8750	8
+Ethel	Ethel	1.0000	8
+Philippes	Filibi	1.0000	8
+Ouganda	Yuganda	1.0000	8
+Kris i	Kiristi	1.0000	8
+Harann	Haran	0.7500	8
+Mais Jésus	Yesu	1.0000	8
+Baruch	Baruch	1.0000	8
+Lévite	Balawi	1.0000	8
+Absalon ti	Absalom	1.0000	8
+Ouzi	Uzzi	0.5000	8
+Li menm SENYER	Ubangiji	0.8750	8
+SENYER in	ubangiji	0.6250	8
+Esd	Ezr	1.0000	8
+Géorgie	Georgia	1.0000	8
+Évangiles	Linjila	1.0000	8
+Joseph Rutherford	Rutherford	1.0000	8
+Taïwan	Taiwan	1.0000	8
+Aaron ava	Haruna	1.0000	8
+Berlin	Berlin	1.0000	8
+Dublin	Dublin	1.0000	8
+Hénoch	Anuhu	1.0000	8
+Sibma	Sibma	1.0000	8
+Hadad	Hadad	1.0000	8
+Adoniya	Adoniya	0.8750	8
+Ahiya	Ahiya	1.0000	8
+Jeanne	Yuwanna	0.8750	8
+Osée	Hosiya	1.0000	8
+Christopher	Christopher	1.0000	8
+Diotréphès	Diyoturifis	1.0000	8
+Onann	onan	0.5000	8
+Oholiba	Oholiba	1.0000	8
+Royaume messianique	Mulkin	1.0000	8
+Zach	Zak	0.8750	8
+Baasa	Baasha	1.0000	8
+Selemia	Shelemiya	1.0000	8
+Tera	Tera	1.0000	8
+Équateur	Ecuador	1.0000	8
+Edenn	Eden	1.0000	8
+Php	Fib	0.7500	8
+Hamedata	Hammedata	1.0000	8
+Lire Matthieu	Karanta	1.0000	8
+D’après Psaume	Zabura	1.0000	8
+Naïn	Nayin	1.0000	8
+Bila	Bilha	0.7500	8
+Hébreux 5:14	Ibraniyawa	0.6250	8
+Gomorrhe	Gwamarata	1.0000	8
+Annuaire	Yearbook	1.0000	8
+Ézék	Ezek	1.0000	8
+Hermon	Harmon	1.0000	8
+Izrael in	Israila	1.0000	8
+Hans	Hans	1.0000	8
+Eunice	Afiniki	1.0000	8
+Ohio	Ohio	1.0000	8
+Pilat ti	Bilatus	1.0000	8
+Syntyche	Sintiki	1.0000	8
+C’est ce	Cewa	1.0000	8
+Victor	Victor	1.0000	8
+Kof Bondye	Akwatin	1.0000	8
+Makpela	Makfela	1.0000	8
+Amy	Amy	1.0000	8
+Kadmyel	kadmiyel	0.6250	8
+Comment sera la vie	Yaya	0.8750	8
+Marco	Marco	1.0000	7
+Matitia	Mattitiya	0.7143	7
+Askelonn	Ashkelon	1.0000	7
+Carmen	Carmen	1.0000	7
+Birmanie	Myanmar	1.0000	7
+Floride	Florida	1.0000	7
+Montréal	Montreal	1.0000	7
+Romains 1:20	Romawa	1.0000	7
+Joas	Jehoash	1.0000	7
+Elyakim	Eliyakim	1.0000	7
+Porto Rico	Rico	1.0000	7
+Abarim	Abarim	1.0000	7
+Galates 6:4	Galatiyawa	0.8571	7
+Italie	Italiya	0.7143	7
+Térah	Terah	1.0000	7
+D’après Proverbes	Karin	1.0000	7
+Soph	Zaf	1.0000	7
+JW Télédiffusion	Tashar	1.0000	7
+Vénézuéla	Benezuwela	1.0000	7
+David ek son bann	Dawuda	1.0000	7
+Sen Izrael	Israila	1.0000	7
+Ecclésiaste 9:5	Mai-Wa	1.0000	7
+Lire Révélation	Karanta	1.0000	7
+Elnatan	elnatan	0.5714	7
+Jéhu	Jehu	1.0000	7
+Sue	Sue	1.0000	7
+Betouel	Betuwel	1.0000	7
+Soar	Zowar	1.0000	7
+Eliab	Eliyab	1.0000	7
+Londres	Landan	1.0000	7
+Vashti	Vashti	1.0000	7
+Gabriel	Jibra	1.0000	7
+Pérou	Peru	1.0000	7
+Ofra	ofra	0.5714	7
+Finlande	Finlan	1.0000	7
+Yoa	Yowa	1.0000	7
+Tim	Tim	1.0000	7
+Romains 8:38	Romawa	1.0000	7
+Jean 5:19	Yohanna	1.0000	7
+Nathanaël	Natanayilu	1.0000	7
+Sandra	Sandra	1.0000	7
+Niniv	Ninebe	0.8571	7
+Salomon ti	Sulemanu	0.5714	7
+Afek	Afek	1.0000	7
+Thomas	Thomas	1.0000	7
+Antyos	Antiyok	1.0000	7
+Akbor	Akbor	1.0000	7
+Guidéôn	Gideon	1.0000	7
+Jokébed	Jochebed	0.8571	7
+Belfast	Belfast	1.0000	7
+Juges	Alƙa	1.0000	7
+Romains 8:21	Romawa	0.5714	7
+Sezare	Kaisariya	1.0000	7
+Texas	Texas	1.0000	7
+Abihou	Abihu	1.0000	7
+Satan l	Shaiɗan	1.0000	7
+Bulletin	Bulletin	1.0000	7
+Quel	Misali	0.8571	7
+Pout	Fut	0.7143	7
+Zebizit	Yebusiyawa	1.0000	7
+Nathan Knorr	Knorr	1.0000	7
+SEPT PARTIES	JAWABAI	1.0000	7
+Zafet	Yafet	1.0000	7
+Viv lerwa	Sarki	1.0000	7
+Asiri in	Assuriya	1.0000	7
+Deutéronome 6:4	Kubawar	0.8571	7
+Shoulammite	Bashulammiya	1.0000	7
+Margaret	Margaret	1.0000	7
+Lystres	Listra	1.0000	7
+C’est Dieu	allah	0.5714	7
+Ecclésiaste 9:11	Mai-Wa	1.0000	7
+Moldavie	Moldova	1.0000	7
+Talmai	Talmai	1.0000	7
+Jos	Yosh	0.8571	7
+Gera	Gera	1.0000	7
+Japon	Jafan	1.0000	7
+Bondye Izrael, i	Israila	1.0000	7
+Toronto	Toronto	1.0000	7
+Hénok	Anuhu	1.0000	7
+Antonio	Antonio	0.8571	7
+Congo	Kwango	1.0000	7
+South Lansing	Lansing	1.0000	7
+Cedar Point	Cedar	1.0000	7
+Kedes	Kedesh	1.0000	7
+Dieu t	Allah	1.0000	7
+Libéria	Laberiya	1.0000	7
+Sarai	Saira	1.0000	7
+Pablo	Pablo	1.0000	7
+Gersonn	Gershon	1.0000	7
+Alex	Alex	1.0000	7
+Manmre	Mamre	1.0000	7
+Pauline	Pauline	0.8571	7
+Lakis	Lakish	1.0000	7
+Abram	Ibram	1.0000	7
+Sisera	Sisera	1.0000	7
+Sheila	Sheila	1.0000	7
+Crystal	Crystal	1.0000	7
+Yahat	Yahat	1.0000	6
+Tyndale	Tyndale	1.0000	6
+Josaphat	Jehoshaphat	1.0000	6
+Frederick Franz	Frederick	1.0000	6
+Suse	Shushan	1.0000	6
+Janice	Janice	1.0000	6
+Philippiens 4:8	Filibiyawa	1.0000	6
+Kof Temwannyaz	Akwatin	1.0000	6
+Festis	Festas	1.0000	6
+Californie	Kalifoniya	1.0000	6
+Aba	Abba	0.6667	6
+Lilongwe	Lilongwe	1.0000	6
+Zambie	Zambiya	1.0000	6
+Erika	Erika	1.0000	6
+Zerizalenm i	Urushalima	1.0000	6
+Libna	Libna	0.6667	6
+Mesak	Meshak	0.6667	6
+Jean 8:32	Yohanna	1.0000	6
+Comment la Bible montre-t	Littafi	1.0000	6
+Berseba	Beyersheba	0.6667	6
+Éphésiens 5:17	Afisawa	0.5000	6
+Dir li: La sa ki Senyer BONDYE i	Ubangiji	1.0000	6
+Paul nous	Bulus	1.0000	6
+Babylone la Grande	Babila	1.0000	6
+Abinadab	Abinadab	0.8333	6
+Halloween	Halloween	1.0000	6
+Yeous	Yewush	1.0000	6
+D’après Actes	Manzanni	1.0000	6
+C’est	Cewa	1.0000	6
+Hivit	Hiwiyawa	0.6667	6
+Sylvia	Sylvia	1.0000	6
+Filip ti	Filibus	1.0000	6
+Artakzerzes	Artazerzes	1.0000	6
+Abiya	Abiya	0.8333	6
+Argentine	Ajantina	1.0000	6
+Quel exemple Jésus	Yesu	1.0000	6
+Jean 8:44	Yohanna	0.8333	6
+Mais qu	Amma	1.0000	6
+Brian	Brian	1.0000	6
+Esdras ti	Ezra	1.0000	6
+Carol	Carol	1.0000	6
+Fernando	Fernando	1.0000	6
+Knorr	Knorr	1.0000	6
+Akila	Akwila	1.0000	6
+Jéhovah lui-même	Jehobah	1.0000	6
+Romains 3:23	Romawa	1.0000	6
+Naaman	Naaman	1.0000	6
+Aristark	Aristarkus	1.0000	6
+Matousalenm	Metusela	1.0000	6
+Hagit	Haggit	1.0000	6
+Ammonites	Ammoniyawa	1.0000	6
+Mwan SENYER ki	Ubangiji	1.0000	6
+Bethsabée	Bath-sheba	1.0000	6
+Lezip e	Masar	1.0000	6
+Éliézer	Eliezer	1.0000	6
+Cleveland	Cleveland	1.0000	6
+Eilat	Elat	1.0000	6
+Laodicée	Lawudikiya	1.0000	6
+Malte	Malita	1.0000	6
+Kapernaoum	Kafarnahum	1.0000	6
+Que peux	Cewa	1.0000	6
+Lije	Lije	1.0000	6
+Zurich	Zurich	1.0000	6
+Temann	Teman	1.0000	6
+Veronica	Veronica	1.0000	6
+Ezekyas anbet	Hezekiya	1.0000	6
+SENYER, mon Bondye	Ubangiji	1.0000	6
+Slovénie	Slovenia	1.0000	6
+Zanbatis	Maibaftisma	0.8333	6
+Paraguay	Paraguay	1.0000	6
+Josèphe	Josephus	1.0000	6
+Alain	Alain	1.0000	6
+Babel	Babel	1.0000	6
+Nick	Nick	1.0000	6
+Datann ek Abiranm	datan	1.0000	6
+Sorea	Zora	1.0000	6
+Geba	Geba	1.0000	6
+Eloi	Eloi	1.0000	6
+Henadad	Henadad	1.0000	6
+Graham	Graham	1.0000	6
+Ahitoub	Ahitub	1.0000	6
+Zwif koman	Yahudawa	1.0000	6
+Queensland	Queensland	1.0000	6
+Lire Genèse	Farawa	1.0000	6
+Athalie	Athaliah	1.0000	6
+Beltasar	Belteshazzar	0.5000	6
+Malkiya	Malkiya	0.6667	6
+Madianites	Midiyanawa	1.0000	6
+Karen	Karen	1.0000	6
+Sidonit	Sidoniyawa	1.0000	6
+Samai	Shammai	1.0000	6
+Kenneth	Kenneth	0.8333	6
+Pret ti	Firist	1.0000	6
+Blessing	Blessing	1.0000	6
+Adoulanm	Adullam	1.0000	6
+Krisifye li	Gicciye	1.0000	6
+Kevin	Kevin	1.0000	6
+Oholiab	Oholiyab	1.0000	6
+George	George	0.6667	6
+Meriba	Meriba	1.0000	6
+Kanm ek Zafet	yafet	1.0000	6
+Prenons l’exemple	Misali	1.0000	6
+Cyrus	Cyrus	1.0000	6
+Julian	Julian	1.0000	6
+Yimna	Imna	0.6667	6
+Granville	Granville	0.8333	6
+Matthieu 6:9	Matta	1.0000	6
+D’après Hébreux	Ibraniyawa	1.0000	6
+Toubal	tubal	1.0000	6
+Troas	Taruwasa	1.0000	6
+Olaf	Olaf	1.0000	6
+Joy	Joy	1.0000	6
+FAQ	FAQ	1.0000	6
+Jude	Yahu	0.8333	6
+Jéhovah heureux	Jehobah	1.0000	6
+Reob	Rehob	0.8333	6
+Pittsburgh	Pittsburgh	1.0000	6
+Havila	Hawila	1.0000	6
+Joanna	Joanna	1.0000	6
+Gouni	Guni	0.6667	6
+Lire Psaume	Zabura	1.0000	6
+Sonja	Sonja	1.0000	6
+Lire Actes	Karanta	1.0000	6
+Antilles	Karibiya	1.0000	6
+Beraka	Beraka	1.0000	6
+Hamoutal	Hamutal	1.0000	6
+Vasti	Bashti	1.0000	6
+Shigeo	Shigeo	1.0000	6
+Joseph n	Yusufu	1.0000	6
+Lidia	Lidia	1.0000	6
+Éphésiens 6:4	Afisawa	0.8333	6
+DPA	DPA	1.0000	6
+Abdonn	Abdon	1.0000	5
+Med	Medes	1.0000	5
+Ribla	Ribla	0.6000	5
+Biniam	Biniam	1.0000	5
+Winnipeg	Winnipeg	1.0000	5
+Romains 2:14, 15	Romawa	0.8000	5
+Hasabya	Hashabiya	1.0000	5
+Tychique	Tikikus	1.0000	5
+CLH	HLC	1.0000	5
+Bonn Nouvel Kris	Kiristi	1.0000	5
+Comment cela	Yaya	1.0000	5
+Proverbes 19:11	Karin	1.0000	5
+Reobot	Rehobot	1.0000	5
+Soutela	Shutela	0.6000	5
+Kemouel	Kemuwel	1.0000	5
+Yediael	Yediyayel	0.6000	5
+Jean 3:16	Yohanna	0.8000	5
+Orpa	Orpah	1.0000	5
+Demen i	gobe	0.8000	5
+Athènes	Atina	1.0000	5
+Ryan	Ryan	1.0000	5
+Pret Hilkiya	Hilkiya	1.0000	5
+Pak an	Ƙetarewa	1.0000	5
+Hamoul	Hamul	1.0000	5
+Comment Paul	Bulus	1.0000	5
+Dieu aujourd’hui	Allah	1.0000	5
+Psaume 37:29	Zabura	1.0000	5
+Antoine	Antoine	1.0000	5
+Éphraïmites	Ifrayim	1.0000	5
+Yerohanm	Yeroham	1.0000	5
+Bible rapporte	Littafi	0.8000	5
+Bible m	Littafi	1.0000	5
+Alfredo	Alfredo	1.0000	5
+Saskatchewan	Saskatchewan	1.0000	5
+Menmfis	Memfis	1.0000	5
+Elifelet	Elifelet	0.8000	5
+Bible transforme des vies	Littafi	1.0000	5
+Fidji	Fiji	1.0000	5
+Ahiloud	Ahilud	1.0000	5
+Isaïe 46:10	Ishaya	1.0000	5
+Hongrie	Hungary	1.0000	5
+Php 4:8	Fib	1.0000	5
+Rehob	Rehob	1.0000	5
+Haykanush	Haykanush	1.0000	5
+Luc 21:34	Luk	1.0000	5
+Riana	Riana	1.0000	5
+Washington	Washington	1.0000	5
+Doris	Doris	0.6000	5
+Ourim	Urim	1.0000	5
+Hophni	Hophni	1.0000	5
+Brigitte	Brizit	1.0000	5
+Yoyakim	Yehohiyakim	1.0000	5
+Laura	Laura	0.8000	5
+Arpaksad	arfakshad	0.6000	5
+Rankont	Tentin	1.0000	5
+Manahat	manahat	0.8000	5
+Ribeiro	Ribeiro	1.0000	5
+Zeremi i	Irmiya	1.0000	5
+Christine	Christine	1.0000	5
+Garizim	Gerizim	1.0000	5
+Zetro	Yetro	0.8000	5
+Hofni	hofni	0.6000	5
+Priscilla	Priscilla	1.0000	5
+Joseph lui	Yusufu	1.0000	5
+Mart	Marta	1.0000	5
+David in	Dawuda	1.0000	5
+Déborah	Deborah	1.0000	5
+Trinité	Allah-Uku-Cikin-Ɗaya	0.6000	5
+Lea	Liyatu	1.0000	5
+Dieu écoute	Allah	1.0000	5
+Comment ceux	Yaya	1.0000	5
+Zan ti	Yahaya	1.0000	5
+Élifaz	Elifaz	1.0000	5
+Zida ek Benzamen	Benyamin	0.6000	5
+Korney	Korneliyus	0.8000	5
+Jéhovah qu	Jehobah	1.0000	5
+Étude biblique de l	Nazarin	1.0000	5
+Peter	Peter	0.6000	5
+Wichita	Wichita	1.0000	5
+Mais Dieu	Allah	0.8000	5
+Micronésie	Micronesia	1.0000	5
+Andrew	Andrew	1.0000	5
+Tokmok	Tokmok	1.0000	5
+Yoas	Yehowash	1.0000	5
+Zerahia	Zerahiya	0.6000	5
+Vancouver	Vancouver	1.0000	5
+Guyane	Guiana	1.0000	5
+Jean 2:15	Yohanna	1.0000	5
+Juif	Bayahude	1.0000	5
+Sri Lanka	Lanka	1.0000	5
+Bann Filisten in	Filistiyawa	1.0000	5
+Nadia	Nadia	1.0000	5
+Pharisien	Bafarisi	1.0000	5
+Tabita	Tabita	1.0000	5
+Alors Jéhovah	Jehobah	1.0000	5
+Tom	Tom	0.8000	5
+Yair	Yayir	1.0000	5
+Nasonn	Nashon	1.0000	5
+Emmaüs	Imwasu	1.0000	5
+Hatous	Hattush	0.6000	5
+Nabuchodonosor	Nebuchadnezzar	1.0000	5
+Comment Isaïe	Ishaya	1.0000	5
+Hasoub	Hasshub	1.0000	5
+Bahourim	Bahurim	1.0000	5
+Simeulue	Simeulue	1.0000	5
+Sefatya	Shefatiya	1.0000	5
+Christ Jésus notre Seigneur	Yesu	1.0000	5
+Zered	Zered	1.0000	5
+Wycliffe	Wycliffe	1.0000	5
+Burundi	Burundi	1.0000	5
+Ozana	Hosanna	1.0000	5
+Abiezer	Abiyezer	1.0000	5
+Maaka	Maaka	1.0000	5
+Grecs	Helenawa	1.0000	5
+Mikael	Mikailu	0.8000	5
+Paris	Paris	0.8000	5
+Hong	Kong	1.0000	5
+Apollos	Afollos	1.0000	5
+Eliezer	Eliyezer	1.0000	5
+Karítsa	Karítsa	1.0000	5
+Andy	Andy	1.0000	5
+Tuvalu	Tuvalu	1.0000	5
+Beria	beriya	0.6000	5
+Samira	Samira	0.6000	5
+S-401	S-401	1.0000	5
+Serouya	Zeruhiya	1.0000	5
+Tatiana	Tatyana	1.0000	5
+Anmranm	Amram	1.0000	5
+Pergame	Birgamum	1.0000	5
+Naboukodonozor lerwa	Nebukadnezzar	1.0000	5
+Genèse 2:7	Farawa	0.8000	5
+Érythrée	Eritrea	1.0000	5
+Julia	Julia	1.0000	5
+Sisak	Shishak	0.8000	5
+Stephanie	Stephanie	0.8000	5
+Dibonn	Dibon	1.0000	5
+Helen	Helen	1.0000	5
+Écoutez Dieu	Allah	1.0000	5
+Tamar ti	Tamar	1.0000	5
+Perse	Fasiya	1.0000	5
+Guadeloupe	Guadeloupe	0.8000	5
+Soua	Shuwa	1.0000	5
+Ner	Ner	1.0000	5
+Tofet	Tofet	1.0000	5
+Zhiming	Zhiming	0.8000	5
+Éléazar	Eleazar	1.0000	5
+Azarias	Mishayel	1.0000	5
+Bonn Nouvel lape	Salama	1.0000	5
+Jéthro	Jethro	1.0000	5
+Alexandra	Alexandra	1.0000	5
+Refidim	Refidim	1.0000	5
+Neelanm	Nehelam	1.0000	5
+Salomon n	Sulemanu	1.0000	5
+Joël	Yowel	1.0000	5
+Hemsworth	Hemsworth	1.0000	5
+Kano	Kano	1.0000	5
+Jésus d	Yesu	1.0000	5
+Php 2:3	Fib	1.0000	5
+Peka	Feka	1.0000	5
+Adadezer	Hadadezer	1.0000	5
+Angelena	Angelena	1.0000	5
+Cheri	Cheri	1.0000	5
+Ouriya	Uriah	0.8000	5
+Chili	Chile	1.0000	5
+Matthieu 7:12	Matta	1.0000	5
+Ezekyas i	Hezekiya	1.0000	5
+D’après Éphésiens	Afisawa	1.0000	5
+Artaxerxès	Artaxerxes	1.0000	5
+Kimberly	Kimberly	1.0000	5
+Zakour	Zakkur	1.0000	5
+Semiramot	Shemiramot	0.8000	5
+Ela	Ela	1.0000	5
+Kansas	Kansas	1.0000	5
+Adria	Adria	1.0000	5
+Comme Jésus	Yesu	1.0000	5
+Jéhovah désire	Jehobah	0.8000	5
+Jean le Baptiseur	Yohanna	1.0000	5
+Empire perse	Daular	0.6000	5
+Henri	Henri	1.0000	5
+Jane	Jane	1.0000	5
+Horst	Horst	0.8000	5
+Serebya	sherebiya	0.8000	5
+Quel conseil Paul	Bulus	1.0000	5
+Kinshasa	Kinshasa	1.0000	5
+Toru	Toru	0.8000	5
+Rumph	Rumph	1.0000	5
+Nicaragua	Nicaragua	1.0000	5
+Ararat	Ararat	0.8000	5
+Paula	Paula	1.0000	5
+Vulgate	Vulgate	1.0000	4
+Jacques 4:7	Yaƙub	0.7500	4
+Akzib	Akzib	1.0000	4
+Nabiha	Nabiha	1.0000	4
+Akân	Achan	1.0000	4
+Pisga	Fisga	1.0000	4
+Yozabad	Yozabad	0.7500	4
+Dieu vivant	Allah	1.0000	4
+Monique	Monique	1.0000	4
+Yoyakin	yekoniya	0.7500	4
+Coron	Coron	1.0000	4
+Talmonn	talmon	1.0000	4
+Kilyonn	Kiliyon	1.0000	4
+Dodo	Dodo	1.0000	4
+Yasobeanm	Yashobeyam	1.0000	4
+Was larivyer Zourden	Urdun	1.0000	4
+Abrahanm in	Ibrahim	1.0000	4
+Mais par la suite	Amma	1.0000	4
+Eski SENYER	Ubangiji	1.0000	4
+Senyer BONDYE i deklare	Ubangiji	1.0000	4
+Betsalel	Oholiab	1.0000	4
+Sermon	Huɗuba	1.0000	4
+Jorge	Jorge	1.0000	4
+Ozias	Uzziya	0.7500	4
+Matthieu 22:37	Matta	1.0000	4
+Rogelim	Rogelim	1.0000	4
+Bérée	Biriya	1.0000	4
+Jason	Jason	1.0000	4
+Php 4:6	Fib	1.0000	4
+Elanann	Elhanan	1.0000	4
+VIDÉO ÊTES	BIDIYON	1.0000	4
+Lezip i	Masar	1.0000	4
+Autriche	Ostiriya	1.0000	4
+Tomáš	Tomáš	1.0000	4
+I ti dir, SENYER	Ubangiji	1.0000	4
+Orealla	Orealla	1.0000	4
+Adrián	Adrián	1.0000	4
+Pine Bluff	Bluff	1.0000	4
+Estemoa	Eshtemowa	1.0000	4
+Tola	Tola	1.0000	4
+Lazi	Asiya	1.0000	4
+Bruni	Bruni	1.0000	4
+Gaal	Ga'al	0.7500	4
+Joseph s	Yusufu	1.0000	4
+Seled	Seled	1.0000	4
+Amsterdam	Amsterdam	1.0000	4
+L’ange	Ika	1.0000	4
+Psaume 83:18	Zabura	1.0000	4
+Gisèle	Gisèle	1.0000	4
+Israël antique	Isra	1.0000	4
+Kenizit	Bakenizze	1.0000	4
+Lire Exode	Karanta	1.0000	4
+Columbus	Columbus	1.0000	4
+Jésus parle	Yesu	1.0000	4
+Matthieu 20:28	Matta	0.5000	4
+Moiz in	Musa	1.0000	4
+Jean 4	Yohanna	1.0000	4
+Jean 4:8	Yohanna	1.0000	4
+Laglwar SENYER i	Ubangiji	1.0000	4
+Abigail	Abigiyel	0.5000	4
+Goim	Goyim	1.0000	4
+Bianca	Bianca	1.0000	4
+Comment le Collège central	Hukumar	1.0000	4
+Sinai	Sinai	1.0000	4
+Pedro	Pedro	1.0000	4
+Thaïlande	Thailand	1.0000	4
+Edonm antye	Edom	1.0000	4
+C’est Satan	Shaiɗan	1.0000	4
+Abisoua	Abishuwa	1.0000	4
+Kis	Kish	0.5000	4
+Jean 18:36	Yohanna	1.0000	4
+Waldo	Waldo	1.0000	4
+Charles Russell	Russell	1.0000	4
+Ebal	Ebal	1.0000	4
+Jésus leur	Yesu	1.0000	4
+Grete	Grete	0.7500	4
+Isaïe 57:15	Ishaya	0.7500	4
+Psaume 97:10	Zabura	1.0000	4
+Atlanta	Atlanta	1.0000	4
+Eli ti	Iliya	1.0000	4
+Zot in vann	Sayar	1.0000	4
+Masuko	Masuko	0.5000	4
+Église	Coci	1.0000	4
+Sebna	eliyakim	0.5000	4
+Hakalya	Hakaliya	1.0000	4
+Yekolya	Yekoliya	1.0000	4
+Géraldine	Géraldine	1.0000	4
+Mais Paul	Bulus	1.0000	4
+Ahinoanm	Ahinowam	1.0000	4
+Éphésiens 5:1	Afisawa	0.7500	4
+Ehoud ti	Ehud	1.0000	4
+Alexandru	Alexandru	1.0000	4
+Poua	Fuwa	1.0000	4
+Genèse 17:1	farawa	0.7500	4
+Kaftor	Kaftor	1.0000	4
+Siba ti reponn	Ziba	1.0000	4
+Satan lui	Shaiɗan	1.0000	4
+Gezer	Gezer	1.0000	4
+Nathan	Nathan	0.7500	4
+Kehat	Kohat	1.0000	4
+Jerry	Jerry	0.5000	4
+Vanuatu	Vanuatu	1.0000	4
+Neh	Neh	0.7500	4
+Aser	Asher	1.0000	4
+Vale Disel	Kwarin	1.0000	4
+Pourquoi Adam	Adamu	1.0000	4
+Alor, lerwa Asiri ti	Assuriya	1.0000	4
+Aaron ek son bann garson ava	Haruna	1.0000	4
+Seera	uzzen-sheyera	0.5000	4
+Judith	Judith	1.0000	4
+Adams Street	Adams	1.0000	4
+Jésus lui-même	Yesu	1.0000	4
+Sara ava ganny en garson	Saratu	1.0000	4
+Pa al Lezip	Masar	1.0000	4
+Hatak	Hatak	1.0000	4
+Comment Adam	Adamu	1.0000	4
+Dinaba	Dinhaba	1.0000	4
+Kampala	Kampala	1.0000	4
+Mehola	Adriyel	1.0000	4
+Mitspa	Mizpah	1.0000	4
+Comment sait-on	Yaya	1.0000	4
+Neriya	Neriya	1.0000	4
+Hill	Hill	1.0000	4
+Methoushélah	Methuselah	1.0000	4
+Pella	Pella	1.0000	4
+Jérémie l	Irmiya	1.0000	4
+Roi Jésus	Yesu	1.0000	4
+Ou lafwa in geri ou	Warkar	1.0000	4
+Nikolaï	Nikolai	1.0000	4
+Danielle	Danielle	1.0000	4
+Oris	Oris	0.7500	4
+Ananyas	Ananiyas	0.7500	4
+Zozef Lezip	Masar	1.0000	4
+Ouver ou lizye, SENYER, get byen	Ubangiji	1.0000	4
+Kof lalyans ti	Akwatin	1.0000	4
+Naama	Naama	0.7500	4
+Colorado	Colorado	1.0000	4
+Marianne	Marianne	0.7500	4
+Gersonit	Gershonawa	1.0000	4
+Abner in	Abner	1.0000	4
+Supot	Supot	0.7500	4
+Diane	Diane	1.0000	4
+Jean 15:12	Yohanna	1.0000	4
+Oulanm	Ulam	1.0000	4
+Daniel 9:25	Daniyel	1.0000	4
+Sedeour	Shedeyur	1.0000	4
+Tisbit	Tishbe	1.0000	4
+Language	Language	1.0000	4
+Alamy	Alamy	0.7500	4
+Stock	Stock	1.0000	4
+Yasmeen	Yasmeen	1.0000	4
+Pret Seraya	Serahiya	0.5000	4
+Tema	Tema	1.0000	4
+Kozbi	Kozbi	1.0000	4
+Kisyonn	Kishiyon	1.0000	4
+Wendy	Wendy	1.0000	4
+C’est Jéhovah	jehobah	0.5000	4
+Lezyon	tuli	0.5000	4
+Hesronn	Hesruna	0.7500	4
+Gomer	Gomer	1.0000	4
+Obot	Obot	1.0000	4
+Pret Kaif	Kayifas	0.5000	4
+Hébreux 4:13	Ibraniyawa	0.7500	4
+Shounem	Shunem	1.0000	4
+Dir Aaron	Haruna	1.0000	4
+Gloria	Gloria	1.0000	4
+Aminadab	Amminadab	1.0000	4
+Chinois	Caina	1.0000	4
+Ken	Ken	1.0000	4
+Fleegle	Fleegle	1.0000	4
+Gadit	Gadawa	0.7500	4
+Ranmses	Rameses	1.0000	4
+Matthieu chapitres	Matta	1.0000	4
+Sinaï	Sinai	1.0000	4
+Desi	Desi	1.0000	4
+Zour	Ubangiji	1.0000	4
+Charles Russell et ses collaborateurs	Russell	1.0000	4
+Comment le principe	Yaya	1.0000	4
+Ou SENYER	Ubangiji	1.0000	4
+Ezekyas ki	Hezekiya	1.0000	4
+Atarot	Atarot	1.0000	4
+Gary	Gary	1.0000	4
+Hena	Hena	1.0000	4
+Iva	Hena	1.0000	4
+Lape i	salama	0.5000	4
+Dor	Dor	1.0000	4
+Besalel	Bezalel	1.0000	4
+Louz	Luz	1.0000	4
+Lagres ki	Kitsen	1.0000	4
+Naasonn	Salmon	1.0000	4
+Sydney	Sydney	1.0000	4
+Toñi	Toñi	1.0000	4
+Colossiens 3:5	Kolosiyawa	1.0000	4
+Menahenm	Menahem	1.0000	4
+Hananeel	Hananel	1.0000	4
+Hilda	Hilda	1.0000	4
+Golgota	Golgota	1.0000	4
+Gilgal	Gilgal	1.0000	4
+Masedwann	Makidoniya	1.0000	4
+Bill	Bill	1.0000	4
+Matthieu 6:33	matta	0.5000	4
+Javier	Javier	1.0000	4
+Sobal	Shobal	1.0000	4
+Samaritain	Basamariye	1.0000	4
+Suède	Sweden	1.0000	4
+Jennifer	Jennifer	1.0000	4
+Patrick	Patrick	1.0000	4
+Zak ek Zan	Yahaya	1.0000	4
+Yeter	Yeter	1.0000	4
+Jessie	Jessie	0.7500	4
+Bible régulièrement	Littafi	1.0000	4
+Tanzanie	Tanzaniya	1.0000	4
+Job n	Ayuba	1.0000	4
+Nazaret ki	Banazare	1.0000	4
+Éphésiens 4:26	Afisawa	0.7500	4
+Nahat	Nahat	0.5000	4
+Azriel	azriyel	0.5000	4
+Apolos	Afolos	1.0000	4
+Sekanya	Shekaniya	1.0000	4
+Sénégal	Senegal	1.0000	4
+Hutter	Hutter	1.0000	4
+Yoël	Joel	0.7500	4
+Comment la Bible montre	Littafi	1.0000	4
+Panama	Panama	1.0000	4
+Monika	Monika	1.0000	4
+Nazareth	Nazarat	1.0000	4
+Wayne	Wayne	1.0000	4
+Annette	Annette	1.0000	4
+Timothée 3:1-5	Timoti	1.0000	4
+Tattenaï	Tattenai	1.0000	4
+Zeres	Zeresh	1.0000	4
+SENYER kan i dir	Ubangiji	1.0000	4
+Neftali, Gad ek Aser	Naftali	0.5000	4
+Missouri	Missouri	1.0000	4
+Agze	Haggai	1.0000	4
+Moiz ti'n ordonn zot	Musa	1.0000	4
+Rhonda	Rhonda	0.7500	4
+Mishna	Mishnah	1.0000	4
+Simei	Shimeyi	1.0000	4
+Sissera	Sisera	1.0000	4
+Abisag	Abishag	1.0000	4
+Paul les	Bulus	1.0000	4
+Eli ki	Iliya	1.0000	4
+Même Jésus	Yesu	1.0000	4
+Hébreux 4:15	Ibraniyawa	1.0000	4
+Église catholique	Katolika	1.0000	4
+Ki SENYER in dir	Ubangiji	1.0000	4
+Nor pei	Arewa	1.0000	4
+Jean le Baptiste	Yohanna	1.0000	4
+Siz	Shusha	1.0000	4
+Lanmer	Teku	1.0000	4
+Madai	tiras	1.0000	4
+Sadok ti	Zadok	1.0000	4
+Tafanes	Tafanes	1.0000	4
+Abrahanm i	ibrahim	0.5000	4
+Connecticut	Connecticut	1.0000	4
+Pelet	Felet	1.0000	4
+Tabitha	Tabitha	1.0000	4
+Jésus contenues	Yesu	1.0000	4
+Andrea	Andrea	1.0000	4
+Seraya	Serahiya	1.0000	4
+Pret ki	Firist	1.0000	4
+Sara ti	Saratu	1.0000	4
+Louis	Louis	0.7500	4
+Aaron ek Mirianm	Haruna	1.0000	4
+Isaïe l	Ishaya	1.0000	4
+Talita	Talita	1.0000	4
+Job 38:4-7	Ayuba	1.0000	4
+Eski SENYER i	Ubangiji	1.0000	4
+Prepar semen Senyer	Ubangiji	1.0000	4
+Abner, garson Ner	Abner	0.5000	4
+SENYER ti'n livre	Ubangiji	1.0000	4
+Noël n	Kirsimati	1.0000	4
+Garson David, pran pitye pour nou	Dawuda	1.0000	4
+Lubumbashi	Lubumbashi	1.0000	4
+Sabta	Sabta	1.0000	4
+Dedann	Dedan	1.0000	4
+Hetlonn	Hetlon	1.0000	4
+Jéhovah ton Dieu	Jehobah	0.7500	4
+Nimsi	Nimshi	1.0000	4
+Monsieur	Sir	0.7500	4
+Rehoum	Rehum	1.0000	4
+Babylone antique	Babila	1.0000	4
+Jean 2:16	Yohanna	1.0000	4
+Shadrak	Shadrach	1.0000	4
+Lisbonne	Lisbon	1.0000	4
+Gethsémané	Jathsaimani	1.0000	4
+Hilkiya in	Hilkiya	1.0000	4
+Aaron ki	Haruna	1.0000	4
+Melchisédech	Melkizedek	1.0000	4
+Platon	Plato	1.0000	4
+Dorothée	Dorothée	0.7500	4
+Edwin	Edwin	0.7500	4
+Amisadai	Ammishaddai	1.0000	4
+Jésus qu	Yesu	1.0000	4
+Perrine	Perrine	1.0000	4
+Mais en réalité	Amma	1.0000	4
+Hébreux 1:3	Ibraniyawa	1.0000	4
+Sefora	Ziffora	1.0000	4
+Chris	Chris	1.0000	4
+Asnat	Fotifera	1.0000	4
+MEPS	MEPS	1.0000	4
+Kristine	Kristine	1.0000	4
+Ouriel	Uriyel	1.0000	4
+Luc 4:5	Luk	1.0000	4
+Thessalonique	Tasalonika	1.0000	4
+Bible apporte	Littafi	1.0000	4
+Matthieu 22:39	Matta	1.0000	4
+Hoskin	Hoskin	1.0000	4
+Box JW	Box	1.0000	4
+Jéhovah imitent	Jehobah	1.0000	4
+Mesek	Meshek	1.0000	4
+Makeda	Makkeda	1.0000	4
+Debora	debora	0.7500	4
+Père aimant, Jéhovah	Jehobah	1.0000	4
+Graz	Graz	1.0000	4
+Mahalat	Mahalat	1.0000	4
+Habor	Habor	1.0000	4
+Jacques 1:14	Yaƙub	1.0000	4
+Iran	Iran	1.0000	4
+Zerzes	Zerzes	1.0000	4
+Corinna	Corinna	0.7500	4
+Hitoshi	Hitoshi	1.0000	4
+Lotann	Lotan	1.0000	4
+Silenm	Yezer	1.0000	4
+Nairobi	Nairobi	1.0000	4
+Parole écrite	Kalmar	1.0000	4
+Amonit ti	Ammonawa	1.0000	4
+Que devrais	Cewa	1.0000	4
+Disel	Gishiri	1.0000	4
+Milet	Militus	1.0000	4
+Hawaii	Hawaii	1.0000	4
+Pierre l	Bitrus	1.0000	4
+Digeste	Justinian	1.0000	4
+Zida Iskaryot	iskariyot	0.5000	4
+Zimbabwe	Zimbabuwe	1.0000	4
+Mario	Mario	1.0000	4
+Comment des anges	Iku	1.0000	4
+Peor	Feyor	1.0000	4
+Nisrok	Nisrok	1.0000	4
+Barzilai	Barzillai	1.0000	4
+Cananéens	Aniyawa	1.0000	3
+Quels objectifs	Maƙasudai	1.0000	3
+Sobak	shobak	0.6667	3
+Harim	Harim	1.0000	3
+Karttula	Karttula	1.0000	3
+Kenaana	Kenaana	1.0000	3
+Cache-toi	Ɗakunanku	1.0000	3
+Kazakhstan	Kazakhstan	1.0000	3
+Comment l’assemblée	Yaya	1.0000	3
+Culion	Culion	1.0000	3
+Erek	erek	0.6667	3
+Dzaleka	Dzaleka	1.0000	3
+Jésus Christ lui-même	Yesu	1.0000	3
+Jacques 5:16	Yaƙub	1.0000	3
+QUESTIONS BIBLIQUES	TAMBAYOYI	1.0000	3
+Zeremi konsernan	Irmiya	1.0000	3
+Johanna	Johanna	1.0000	3
+Malkiel	Malkiyel	1.0000	3
+Hébreux 12:16	Ibraniyawa	1.0000	3
+Kent	Kent	1.0000	3
+Didier	Didier	1.0000	3
+Isaïe 65:13	Ishaya	1.0000	3
+Hiedi	Hiedi	1.0000	3
+Filomena	Filomena	1.0000	3
+Sergeï	Sergei	1.0000	3
+Watch	Tract	1.0000	3
+Jacques 1:5	Yaƙub	1.0000	3
+Philip	Philip	1.0000	3
+Pourquoi Hanna	Hannatu	1.0000	3
+Mais au lieu	Amma	1.0000	3
+Matthieu 6:10	Matta	1.0000	3
+Ernest	Ernest	1.0000	3
+Dieu m	Allah	1.0000	3
+Genèse 3:1-6	Farawa	1.0000	3
+Témoins m	Shaidun	1.0000	3
+Lisa	Lisa	1.0000	3
+Tori	Tori	1.0000	3
+Jean 15:15	Yohanna	1.0000	3
+Girgasit	girgashiyawa	1.0000	3
+Katie	Katie	1.0000	3
+Luis	Luis	1.0000	3
+Andre	andarawas	0.6667	3
+Sapphira	Safiratu	1.0000	3
+Caracas	Caracas	1.0000	3
+Derb	Derbe	1.0000	3
+Saskatoon	Saskatoon	1.0000	3
+Gomor	Gomorra	1.0000	3
+Niger	Nijar	1.0000	3
+Amorit ki	Amoriyawa	1.0000	3
+Ayalonn	Aiyalon	1.0000	3
+Psaume 72:7	Zabura	1.0000	3
+Norvège	Norway	1.0000	3
+Adélaïde	Adelaide	1.0000	3
+Senyer BONDYE, mon vivan	Ubangiji	1.0000	3
+VIDÉO Apprends	BIDIYON	1.0000	3
+Keila	Kaila	1.0000	3
+Yoakaz	Yehoyahaz	1.0000	3
+Silisi	Kilikiya	1.0000	3
+Yeoudi	yehudi	0.6667	3
+Minyamin	miniyamin	0.6667	3
+Aruba	Aruba	1.0000	3
+Arabi	Arabiya	1.0000	3
+Christ aujourd’hui	Kristi	1.0000	3
+Lezip ziska ozordi	Masar	1.0000	3
+Comment Psaume	Zabura	0.6667	3
+Joyce	Joyce	1.0000	3
+Vietnamienne	Vietnam	1.0000	3
+Henry	Henry	1.0000	3
+Paros	Farosh	1.0000	3
+Brown	Brown	1.0000	3
+Sezare Filipi	Kaisariya	1.0000	3
+Pierre leur	Bitrus	1.0000	3
+Comment les chrétiens	Yaya	0.6667	3
+Bible audio	Littafi	1.0000	3
+The Trustees of the British Museum. Licensed	Licensed	1.0000	3
+CONTACT	HAƊUWA	1.0000	3
+Job 14:14	Ayuba	1.0000	3
+Encyclopædia Britannica	Britannica	1.0000	3
+Prisil	Akwila	1.0000	3
+C’est Jésus	Yesu	0.6667	3
+Bulacan	Bulacan	1.0000	3
+Siyon i	Sihiyona	1.0000	3
+Bulgarie	Bulgeriya	1.0000	3
+Berekya	Berekiya	1.0000	3
+Steven	Steven	0.6667	3
+Moré	Moreh	1.0000	3
+Isaïe 55:6	Ishaya	1.0000	3
+Bahamas	Bahamas	1.0000	3
+Harold	Harold	1.0000	3
+Priscille	Akila	1.0000	3
+Jean 14:2, 3	Yohanna	0.6667	3
+Algérie	Aljeriya	1.0000	3
+Jupiter	Jufita	1.0000	3
+Php 2:13	Fib	1.0000	3
+Jean 4:23	Yohanna	1.0000	3
+Sen Izrael i	Israila	1.0000	3
+Olinda	Olinda	1.0000	3
+I ti dir zot, Lape i	Salama	1.0000	3
+Ruth 1:16	Ruth	1.0000	3
+Cour européenne	Kotun	1.0000	3
+Joël 2:7	Yowel	1.0000	3
+Bethzatha	Baitasda	1.0000	3
+Kris ki	Kiristi	1.0000	3
+Dorcas	Dorcas	1.0000	3
+George Gangas	Gangas	1.0000	3
+Harpe	Harp	1.0000	3
+Jean 17:3	Yohanna	1.0000	3
+Abbey	Abbey	1.0000	3
+Jéhovah plus forte	Jehobah	1.0000	3
+Jéhovah » (15 min	Minti	1.0000	3
+Psaume 34:18	Zabura	1.0000	3
+Edonm ti	Edom	1.0000	3
+Raquel	Raquel	0.6667	3
+Genèse chapitres	Farawa	1.0000	3
+Kris in	Kiristi	1.0000	3
+Aleksann	Alekzanda	0.6667	3
+Kananeen	Kananiyawa	1.0000	3
+Bible t	Littafi	1.0000	3
+Faraon ek	Firauna	1.0000	3
+Romains 8:32	Romawa	1.0000	3
+Mais moi	Amma	1.0000	3
+Dieu fera de la terre un paradis	Aljanna	1.0000	3
+Et Jésus	Yesu	1.0000	3
+Ecclésiaste 9:6	Mai-Wa	1.0000	3
+Yomara	Yomara	0.6667	3
+Isaïe 49:15	Ishaya	1.0000	3
+Moi, Jéhovah	jehobah	1.0000	3
+Hanann	Hanan	1.0000	3
+Tennessee	Tennessee	1.0000	3
+Hor	Hor	1.0000	3
+GPS	GPS	1.0000	3
+Jéhovah » ( ÉPH	AFIS	1.0000	3
+Annefe, SENYER	Ubangiji	1.0000	3
+Biafra	Biafra	1.0000	3
+Kefira	Kefira	1.0000	3
+Daniel 11:44	Daniyel	1.0000	3
+Zehou ti dir	Yehu	1.0000	3
+Ghana	Ghana	1.0000	3
+Stanley	Stanley	1.0000	3
+Éphésiens 6:14	Afisawa	1.0000	3
+Zida ti	Yahuza	1.0000	3
+Bible individuellement	Littafi	1.0000	3
+Azaria	Azariah	1.0000	3
+Karkemis	Karkemish	1.0000	3
+Helga	Helga	1.0000	3
+Que vas	Cewa	1.0000	3
+Psaume 8:3	Zabura	1.0000	3
+Bondye Abrahanm, Izaak ek	Ishaku	1.0000	3
+Thi	Thi	1.0000	3
+Yabîn	Jabin	1.0000	3
+Johnson	Johnson	1.0000	3
+Yedaya	Yedahiya	1.0000	3
+Jéhovah aimez	Jehobah	1.0000	3
+Melkisedek	Malkisadik	1.0000	3
+Ornann	Ornan	1.0000	3
+Sofoni ek trwa gardyen laport	Zefaniya	0.6667	3
+Osborne	Osborne	1.0000	3
+Romains 5:1	Romawa	1.0000	3
+Dieu d’Israël	Allah	1.0000	3
+Éphésiens 4:14	Afisawa	1.0000	3
+Danemark	Denmark	1.0000	3
+Maurizio	Maurizio	1.0000	3
+Comment la prophétie	Yaya	1.0000	3
+Hanameel	Hanamel	1.0000	3
+Senyer li menm	Ubangiji	0.6667	3
+Mical	Michal	0.6667	3
+Frère Macmillan	Macmillan	1.0000	3
+Madrid	Madrid	1.0000	3
+Mais Jéhovah m	Jehobah	0.6667	3
+Zida e	Yahuza	1.0000	3
+Éphésiens 5:10	afisawa	0.6667	3
+Jacques 1:14, 15	Yaƙub	1.0000	3
+Amaléqites	Amalakawa	1.0000	3
+Dieu promet	Allah	1.0000	3
+Resin	Rezin	0.6667	3
+Comment est Dieu	Allah	1.0000	3
+Dekapol	Dekafolis	1.0000	3
+Moïse n	Musa	1.0000	3
+Éphésiens 4:22	Afisawa	1.0000	3
+Oleg	Oleg	1.0000	3
+Luc 6:38	Luk	1.0000	3
+Lioudmila	Lyudmila	1.0000	3
+Miles	Miles	1.0000	3
+Apostolidis	Apostolidis	1.0000	3
+Craindre Jéhovah, c	Jehobah	1.0000	3
+Méshak	shadrach	1.0000	3
+Jésus prêche	Yesu	1.0000	3
+Romains 12:10	Romawa	1.0000	3
+Jéhovah jusqu	Jehobah	1.0000	3
+Ono	Ono	1.0000	3
+Hakos	Hakkoz	1.0000	3
+Nahoum	Nahum	1.0000	3
+Hébreux 11:5	Ibraniyawa	1.0000	3
+Gordon	Gordon	1.0000	3
+Madagascar	Madagaska	1.0000	3
+Kaif	Kayifas	0.6667	3
+Kim	Kim	1.0000	3
+Charles	Charles	0.6667	3
+Jésus pria	Yesu	1.0000	3
+Baana	Baana	1.0000	3
+Absalon ki	Absalom	1.0000	3
+Moiz i	Musa	1.0000	3
+Mikhaïlov	Mikhaylov	1.0000	3
+T-32	T-32	1.0000	3
+Mibsanm	mibsam	1.0000	3
+Maureen	Maureen	1.0000	3
+Paul écrit	Bulus	1.0000	3
+Juanita	Juanita	1.0000	3
+Isabel	Isabel	1.0000	3
+Estonie	Estoniya	1.0000	3
+Ou ki nou SENYER	Ubangiji	1.0000	3
+Yadoua	Yadduwa	1.0000	3
+Tracadie	Tracadie	1.0000	3
+Baltazar	Belshazar	1.0000	3
+Mandalay	Mandalay	1.0000	3
+Proverbes 3:27	Karin	1.0000	3
+Jésus guérit	Yesu	1.0000	3
+Témoins locaux	Shaidun	1.0000	3
+Jean 13:34	Yohanna	1.0000	3
+Index	Index	1.0000	3
+Kiribati	Kiribati	0.6667	3
+Yisva	yimna	0.6667	3
+Zozyas ki	Yosiya	1.0000	3
+Conakry	Konakiri	1.0000	3
+Colossiens 3:10	Kolosiyawa	1.0000	3
+Tessie	Tessie	1.0000	3
+Quel bel exemple	Misali	1.0000	3
+L’amour caractérise les vrais chrétiens	Kiristoci	1.0000	3
+Yoshiko	Yoshiko	1.0000	3
+Yehoyarib	Yehoyarib	0.6667	3
+Sao Paulo	Paulo	1.0000	3
+Aaron e	Haruna	1.0000	3
+Bronx	Bronx	1.0000	3
+Matthieu 6:25-34	Matta	1.0000	3
+Haserot	Hazerot	1.0000	3
+Que ressens	Cewa	1.0000	3
+Moreset	Moreshet	1.0000	3
+Holly	Holly	1.0000	3
+Ramapo	Ramapo	1.0000	3
+Zope	Yoffa	1.0000	3
+Véro	Vero	1.0000	3
+Ouver	Buɗe	1.0000	3
+Méroz	Meroz	1.0000	3
+Maaseya	Maasehiya	0.6667	3
+Nicodème	Nikodimus	1.0000	3
+Mombasa	Mombasa	1.0000	3
+Anna	Anna	1.0000	3
+Comment ce	Yaya	1.0000	3
+Jacques 5:14	Yaƙub	1.0000	3
+Léa	Leah	1.0000	3
+D’après 2 Pierre 3:9	Bitrus	1.0000	3
+Frizi	Firjiya	1.0000	3
+Séoul	Seoul	1.0000	3
+Asmara	Asmara	1.0000	3
+Doura	Dura	1.0000	3
+Mais nous	Amma	0.6667	3
+Armavir	Armavir	1.0000	3
+Hébreux 4:14	Ibraniyawa	1.0000	3
+Damaris	Damaris	1.0000	3
+Proverbes 3:5, 6	Karin	0.6667	3
+Obed	Obed	1.0000	3
+Quel exemple Jéhovah et Jésus	Jehobah	1.0000	3
+Palesa	Palesa	1.0000	3
+Heather	Heather	1.0000	3
+Siba	Ziba	1.0000	3
+Ouzyel	Uzziyel	1.0000	3
+Watchtower	Watchtower	1.0000	3
+Léonce	Léonce	0.6667	3
+Senyer Bondye Toupwisan	Ubangiji	0.6667	3
+Dorothy	Dorothy	0.6667	3
+Asalya	Azaliya	1.0000	3
+Catherine	Catherine	1.0000	3
+Thyatire	Birgamum	1.0000	3
+Vale Eskol	Eshkol	1.0000	3
+Adbeel, Mibsanm	Adbeyel	1.0000	3
+Lemek	Lamek	1.0000	3
+Thierry	Thierry	0.6667	3
+Jean 2:15-17	Yohanna	1.0000	3
+Belgique	Beljiyam	1.0000	3
+Ezekyas fer	Hezekiya	1.0000	3
+Job s	Ayuba	1.0000	3
+Zerizalenm pa pou	Urushalima	1.0000	3
+RÉSEAUX	ZUMUNTA	1.0000	3
+Asael ti	Asahel	1.0000	3
+Jacques 3:2	Yaƙub	1.0000	3
+Romains 5:8	Romawa	0.6667	3
+Portugal	Portugal	1.0000	3
+Josabeth	Jehosheba	1.0000	3
+Pakistan	Pakistan	1.0000	3
+Jéhovah seul	Jehobah	1.0000	3
+JEUNES S	MATASA	1.0000	3
+Eglaim	Eglayim	1.0000	3
+Sobab, Natan, Salomon	shobab	1.0000	3
+Samari ti	Samariya	1.0000	3
+Molada	Molada	0.6667	3
+Hegai	Hegai	1.0000	3
+Jean 13:34, 35	Yohanna	1.0000	3
+Ruth lui	Ruth	1.0000	3
+Angelito	Angelito	1.0000	3
+Bolivie	Bolibiya	1.0000	3
+Tibère	Tiberius	1.0000	3
+Fred	Fred	1.0000	3
+Romains 2:14	Romawa	1.0000	3
+I pa ti les okenn sirvivan	Kuma	1.0000	3
+Hazel	Hazel	1.0000	3
+Merab	Merab	1.0000	3
+Nekoda	Nekoda	1.0000	3
+Seychelles	Seychelles	1.0000	3
+VIDÉO Zoom	BIDIYON	1.0000	3
+Franz	Franz	1.0000	3
+Julio	Julio	1.0000	3
+Loue	Ubangiji	1.0000	3
+Sasak	Shashak	1.0000	3
+Bagdad	Baghdad	1.0000	3
+D’après Colossiens	Kolosiyawa	1.0000	3
+Moab in	Mowab	1.0000	3
+Eva	Eva	0.6667	3
+Sail in	Shawulu	1.0000	3
+Jéhovah Dieu et Jésus Christ	Jehobah	1.0000	3
+SENYER in konsakre	Ubangiji	1.0000	3
+Azazel	Azazel	1.0000	3
+Zide	Yahudiya	1.0000	3
+Yvonne	Yvonne	1.0000	3
+Ecclésiaste 5:8	Mai-Wa	1.0000	3
+Matthieu 3:17	Matta	1.0000	3
+Elias	Elias	1.0000	3
+Amyel	Ammiyel	1.0000	3
+Janet	Janet	1.0000	3
+Europe centrale	Turai	1.0000	3
+Isaïe 40:11	Ishaya	0.6667	3
+D’après 1 Thessaloniciens	Tasalonikawa	1.0000	3
+Lerwa ti	Sarki	1.0000	3
+Gozann	Gozan	1.0000	3
+Resef	rezef	1.0000	3
+Manaën	Manayen	1.0000	3
+Deouel	Deyuwel	1.0000	3
+Ein Gedi	Ein	1.0000	3
+ADV	ADV	1.0000	3
+Lire Hébreux	Ibraniyawa	1.0000	3
+Neiva	Neiva	1.0000	3
+Lire Deutéronome	Karanta	1.0000	3
+Yitreanm ki	Egla	1.0000	3
+Egla	Egla	1.0000	3
+Marily	Marily	1.0000	3
+Marcelo	yomara	0.3333	3
+Nora	Nora	1.0000	3
+Bible est-elle	Littafi	1.0000	3
+Ariel	Ariyel	1.0000	3
+Stephany	Stephany	1.0000	3
+Yerousa	Yerusha	1.0000	3
+Ahiezer	Ahiyezer	1.0000	3
+Kentucky	Kentucky	1.0000	3
+Jésus les	Yesu	1.0000	3
+Aristarque	Aristarkus	1.0000	3
+Havane	Havana	1.0000	3
+Kant	Kant	1.0000	3
+Marina	Marina	1.0000	3
+D’après Galates	Galatiyawa	1.0000	3
+Moiz dan laplenn Moab	Mowab	1.0000	3
+Pret Zozye	Yoshuwa	1.0000	3
+Sina	Sina	1.0000	3
+Genèse 6:5	Farawa	1.0000	3
+Victoria	Victoria	1.0000	3
+Quelle mission Jéhovah	Jehobah	1.0000	3
+Abidjan	Abidjan	1.0000	3
+Tatenai	Shetar-Bozenai	0.6667	3
+Nestor	Nestor	1.0000	3
+Etanm	Etam	1.0000	3
+Ray	Ray	0.6667	3
+Komsomol	Komsomol	1.0000	3
+Lara	Lara	1.0000	3
+Kia	Kia	1.0000	3
+Lei	Lihai	1.0000	3
+Mais contrairement à Adam	Adamu	0.6667	3
+Éphésiens 4:2	Afisawa	0.6667	3
+Nou ti sant kantik dey	Makoki	1.0000	3
+Haiyan	Haiyan	1.0000	3
+Marc 1:14	Markus	1.0000	3
+Lauri	lauri	0.6667	3
+Oksana	Oksana	1.0000	3
+Peu avant sa mort	Kafin	1.0000	3
+Katia	Katya	1.0000	3
+Yehiel	Yehiyel	1.0000	3
+Bastogne	Bastogne	1.0000	3
+Katarína	Katarína	1.0000	3
+Jéhovah aujourd’hui	Jehobah	1.0000	3
+Ecclésiaste 7:20	Mai-Wa	1.0000	3
+Keréthiens	Pelethawa	1.0000	3
+Eliana	Eliana	1.0000	3
+Romains 12:9	Romawa	0.6667	3
+Ecclésiaste 12:13	Mai-Wa	1.0000	3
+Abraham n	Ibrahim	1.0000	3
+Geydi	Geydi	1.0000	3
+Mistelbach	Mistelbach	1.0000	3
+Judy	Judy	1.0000	3
+Basmat	Basemat	1.0000	3
+Arad	Arad	0.6667	3
+Connie	Connie	1.0000	3
+Proverbes 15:15	Karin	1.0000	3
+Feliks	Felis	1.0000	3
+Manitoba	Manitoba	1.0000	3
+DC-50	DC-50	1.0000	3
+Macmillan	Macmillan	1.0000	3
+Enos	Enosh	1.0000	3
+Quel conseil Jésus	Yesu	1.0000	3
+Azouba, fiy Sili	Azuba	1.0000	3
+Kong	Kong	1.0000	3
+Pourquoi Dieu	Allah	1.0000	3
+Almodad, Selef, Hasarmavet, Yera	Shelef	1.0000	3
+Moiz depi	Musa	1.0000	3
+Geoffrey	Geoffrey	1.0000	3
+Jéhovah grandira	Jehobah	1.0000	3
+Éphésiens 4:29	Afisawa	0.6667	3
+Alekseï	Aleksey	0.6667	3
+Royaume céleste	Mulkin	1.0000	3
+Hogla	Hogla	1.0000	3
+Ethniël	Ethniël	0.6667	3
+Giovanni	Giovanni	1.0000	3
+Judas	Iskariyoti	1.0000	3
+Gallatin	Gallatin	1.0000	3
+Proverbes 23:23	Karin	1.0000	3
+Comment décrirais	Yaya	1.0000	3
+Jéhovah procure	Jehobah	1.0000	3
+Bedad	Bedad	1.0000	3
+Gemarya	Gemariya	1.0000	3
+Jean 14:2	Yohanna	1.0000	3
+Donald	Donald	1.0000	3
+Jésus est-il Dieu	Yesu	1.0000	3
+Jéhovah remarque	Jehobah	1.0000	3
+Bilga	Bilga	0.6667	3
+Batseba	Batsheba	1.0000	3
+Niue	Niue	0.6667	3
+Holonn	Holon	1.0000	3
+Nancy	Nancy	1.0000	3
+Jésus nous	Yesu	1.0000	3
+Matthieu 7:14	Matta	1.0000	3
+Richmond	Richmond	1.0000	3
+Jacques 1:13	Yaƙub	1.0000	3
+Abrahanm ti krwar	Ibrahim	1.0000	3
+Rosa	Rosa	1.0000	3
+Curaçao	Curaçao	1.0000	3
+Matthieu 6:9, 10	Matta	1.0000	3
+D’après Exode	Fitowa	1.0000	3
+Jedele	Jedele	1.0000	3
+Rajeev	Rajeev	1.0000	3
+AFP	AFP	1.0000	3
+Hébreux 2:14	Ibraniyawa	0.6667	3
+Ezekyas Zerizalenm	Hezekiya	1.0000	3
+Proverbes 4:23	Karin	1.0000	3
+Éphratha	Ephrathah	1.0000	3
+Elizabeth	Elizabeth	1.0000	3
+Concord Street	Concord	1.0000	3
+Nah	Nah	0.6667	3
+Legliz i	Ikkilisiya	1.0000	3
+Senyer Zezi-Kri	Ubangiji	1.0000	3
+Amanda	Amanda	1.0000	3
+Yamin	Yamin	0.6667	3
+Willem	Willem	1.0000	3
+Willie	Willie	1.0000	3
+Cardo	Cardo	1.0000	3
+Juan	Juan	1.0000	3
+Comme les premiers chrétiens	Kiristoci	0.6667	3
+Manase ti	Manasse	1.0000	3
+Gene	Gene	1.0000	3
+Bélize	Belize	1.0000	3
+Pourquoi Paul	Bulus	1.0000	3
+Jean 4:24	Yohanna	1.0000	3
+Ignacio	Ignacio	1.0000	3
+Karina	Karina	1.0000	3
+Kristina	Kristina	1.0000	3
+Pekaya	Fekahiya	0.6667	3
+Avery	Avery	1.0000	3
+Romains 8:20, 21	romawa	0.6667	3
+Karnak	Karnak	1.0000	3
+Sealtiel	Sheyaltiyel	1.0000	3
+Laodise	Lawodiseya	1.0000	3
+Éliphaz	Eliphaz	1.0000	3
+Simea	Shimeya	1.0000	3
+Alfa	Alfa	1.0000	3
+Omega	Alfa	1.0000	3
+Matthieu 11:28, 29	Matta	0.6667	3
+Myra	Myra	1.0000	3
+Satan d	Shaiɗan	1.0000	3
+Colosses	Kolosi	1.0000	3
+Gabaonites	Gibeyonawan	1.0000	3
+Jacques 1:27	Yaƙub	1.0000	3
+Sara s	Saratu	1.0000	3
+Constantin	Constantine	1.0000	3
+Adramelek	Adrammelek	0.6667	3
+Jean 3:19, 20	Yohanna	1.0000	3
+Hanuni	Hanuni	1.0000	3
+D’après Philippiens	Filibiyawa	1.0000	3
+Emilia	Emilia	1.0000	3
+Sidse	Sidse	1.0000	2
+Yakim, Zikri, Zabdi	Yakim	1.0000	2
+Salmonn	Zalmon	1.0000	2
+Miseal	Mishal	1.0000	2
+Zebina	yaddai	1.0000	2
+Dieu invisible	Allah	1.0000	2
+Habasinia	Habazziniya	1.0000	2
+SENYER ti'n ordonn Moiz	musa	1.0000	2
+Makeda enn	Makkeda	1.0000	2
+Antiochus	Antiochus	1.0000	2
+Sid Negev	Negeb	1.0000	2
+Atarim	Atarim	1.0000	2
+Bartelemi	Bartolomeyu	1.0000	2
+Akoz malfeter	Mugaye	1.0000	2
+Akoz bann malfeter i viv trankilman	Mugaye	1.0000	2
+Alor Akazya, garson Yoranm	Ahaziya	1.0000	2
+Lezip e Lasiri	Masar	1.0000	2
+Asiri ziska	Assuriya	1.0000	2
+Jéhovah est-elle	Jehobah	1.0000	2
+Senyer i vin enn, spirityelman avek li	Ubangiji	1.0000	2
+I ti dir li, Ki semen lespri SENYER in pran	Ubangiji	1.0000	2
+Sema, Molada	Shema	1.0000	2
+Atali ti'n ganny	Ataliya	1.0000	2
+Abimelek dan en rev	Abimelek	1.0000	2
+Même les disciples	Kuma	1.0000	2
+Jacques 3:17	Yaƙub	1.0000	2
+Rekab ek Baana ti al kot Isboset e	ish-boshet	1.0000	2
+Pret Bondye ki ou pe ensilte	Firist	1.0000	2
+D’après Ézéchiel	Ezekiyel	1.0000	2
+Nea	Neya	1.0000	2
+Gouverner rezyon, Simsai	Shimshai	1.0000	2
+Zida ti port dey pour Zozyas	Makoki	0.5000	2
+Hatita ek Sobai	shobai	1.0000	2
+Zot ava bwar zot disan konmsi diven	Inabi	1.0000	2
+Yered	Yared	1.0000	2
+Isaïe 65:14	ishaya	0.5000	2
+Pret Aaron in apez	Haruna	1.0000	2
+Elimelek e	Elimelek	1.0000	2
+Malonn	Malon	1.0000	2
+Neko	Neko	1.0000	2
+Samari kot tou bann sef Zizreel	Samariya	1.0000	2
+Laurier Saumur	Laurier	1.0000	2
+I pa ti retourn kot lerwa ankor, sof si lerwa	Sarki	1.0000	2
+Senyer BONDYE, ki ou pou donn mwan	Ubangiji	1.0000	2
+Jean 3:15	Yohanna	1.0000	2
+Makrónisos	Makrónisos	1.0000	2
+Isaïe 54:17	ishaya	0.5000	2
+Yoyakin annegzil Babilonn	Yekoniya	0.5000	2
+Kris krisifye lo lakrwa	Gicciyen	0.5000	2
+Lezip i zis fer tapaz	Masar	1.0000	2
+Milka, e Tirsa	Milka	1.0000	2
+Alak ki	Halak	1.0000	2
+Zot in ofer lansan	Turare	1.0000	2
+Wilson	Wilson	1.0000	2
+Lagos	Legas	1.0000	2
+Erann	Eran	1.0000	2
+Néron	Nero	1.0000	2
+Siltai	zilletai	1.0000	2
+Yazer	Yazer	1.0000	2
+Zour SENYER i pros	Ubangiji	1.0000	2
+Paul lorsqu	Bulus	1.0000	2
+Miguel	Miguel	1.0000	2
+Mais la femme	Amma	1.0000	2
+Yedida	Yedida	1.0000	2
+Luc 6:45	Luk	1.0000	2
+Genèse 2:22, 23	Farawa	1.0000	2
+Chatham	Chatham	1.0000	2
+Amonit pa ti ekout	Ammonawa	1.0000	2
+Annefe, bann zabitan Niniv ti repanti	Ninebe	1.0000	2
+Yoyada ti konmann larme bann Keretit	Feletiyawa	1.0000	2
+Bebai	Bebai	1.0000	2
+Lalyans SENYER, ziska aswar	Ubangiji	1.0000	2
+Joseph nous	Yusufu	1.0000	2
+Ochozias	Ahaziah	1.0000	2
+I ti dir, Lape i	Salama	1.0000	2
+Moiz ek bann pret	Musa	1.0000	2
+Nou dan ou kote, garson Zese	Yesse	1.0000	2
+Ecclésiaste 7:1	Mai-Wa	1.0000	2
+Oulai	Ulai	1.0000	2
+SENYER in prefere	Ubangiji	1.0000	2
+Sail i	Shawulu	1.0000	2
+Kret	Kirit	1.0000	2
+TEKEL, PARSIN	TEKEL	1.0000	2
+Jéhovah a-t-il honoré Marie	maryamu	1.0000	2
+Antipas	Antibas	1.0000	2
+Alor Zoab ti termin	Yowab	1.0000	2
+Tang	Murɗiya	1.0000	2
+David ti annan son de fanm: Ahinoanm	Ahinowam	1.0000	2
+Biblical	Biblical	1.0000	2
+Archaeology Review	Review	1.0000	2
+Marc 11:25	Markus	1.0000	2
+Minit	Abel-Keramim	0.5000	2
+Plus de 200 ans	200	1.0000	2
+Aya ek	Aiya	1.0000	2
+Sibeonn	Zibeyon	1.0000	2
+Laport Vale	Ƙofar	1.0000	2
+Fimyen	Juji	1.0000	2
+Moab pandan	Mowab	1.0000	2
+Kaboul	Kabul	1.0000	2
+Helea	Hela	1.0000	2
+Seret, Sohar ek Etnan	Etnan	1.0000	2
+Darrel	darrel	1.0000	2
+Télédiffusion	Tashar	1.0000	2
+Lire Marc	Karanta	1.0000	2
+Melbourne	Melbourne	1.0000	2
+Pak dat ki i ganny fikse	Ƙetarewa	1.0000	2
+Aprezan zot in rasi e zot an	Fumfuna	1.0000	2
+Lezip e zot	Masar	1.0000	2
+Bitini	Bitiniya	1.0000	2
+Satan pou ganny large dan son prizon	Shaiɗan	1.0000	2
+Dieu magnifique	Allah	1.0000	2
+Kof in	Akwatin	1.0000	2
+Bann fig	Ɓaure	1.0000	2
+Hor e al kanp Salmona	Hor	1.0000	2
+Zerizalenm lo ou size	Urushalima	1.0000	2
+Propriyete SENYER	Ubangiji	1.0000	2
+Mari Madlenn	Magadaliya	1.0000	2
+Lespri Eli i lo Elize	elisha	1.0000	2
+Sadrak	Meshak	1.0000	2
+Louisiane	Louisiana	1.0000	2
+Rebeka ti	Rebeka	1.0000	2
+Sanmson ti plere avek li	Samson	1.0000	2
+Manase ti dan Nor	Arewa	1.0000	2
+Algeciras	Algeciras	1.0000	2
+Lire Philippiens 2:4	Filibiyawa	1.0000	2
+Fer bann malfeter disparet	Mugaye	1.0000	2
+Crésus	Bokar	1.0000	2
+Delphes	Delphi	1.0000	2
+Korney ti	Korneliyus	1.0000	2
+Bondye ti dir lerwa	Sarki	1.0000	2
+Honduras	Honduras	1.0000	2
+Aya	Aiya	1.0000	2
+Isboset ti	Ish-boshet	0.5000	2
+Disonn	Dishon	1.0000	2
+Esbann	eshban	1.0000	2
+Me Zozafat ti apel osekour	Yehoshafat	1.0000	2
+Absalon Zerizalenm	Absalom	1.0000	2
+Hébreux 11:10	Ibraniyawa	1.0000	2
+Satan s	Shaiɗan	1.0000	2
+C’était Jéhovah	Jehobah	0.5000	2
+I annan en lyon dan milye semen	Zaki	1.0000	2
+L’esclave de Jéhovah	Jehobah	1.0000	2
+Bible foisonne	Littafi	1.0000	2
+Bann komannman SENYER i	Ubangiji	1.0000	2
+Senyer in ordonn	Ubangiji	0.5000	2
+Dieu Très-Haut	Allah	1.0000	2
+Comment Jérémie	Irmiya	1.0000	2
+Rebeka bann bizou larzan ek lor	Zinariya	1.0000	2
+David alekar	Dawuda	1.0000	2
+Tatiana Vileïska	Vileyska	1.0000	2
+Giáros	Yíaros	1.0000	2
+Barouk, parol SENYER ti ariv kot Zeremi	Baruk	1.0000	2
+Ramoni	Lauri	1.0000	2
+Yarobam	Jeroboam	1.0000	2
+Antre fanm Zeroboanm	yerobowam	1.0000	2
+Abimelek mouton	Abimelek	1.0000	2
+Senyer in donn mwan	Ubangiji	1.0000	2
+Makbena	Makbena	1.0000	2
+Anna Gardner	Anna	1.0000	2
+Yezerit	Helek	1.0000	2
+Gran Lanmar ki dan Gabaon	Gibeyon	1.0000	2
+Luc 8:14	Luk	1.0000	2
+Abraham l	Ibrahim	1.0000	2
+Perizit, Hivit, ek Zebizit	ferizziyawa	1.0000	2
+Kades Barnea	Kadesh	0.5000	2
+Oulanm premye ne	Ulam	1.0000	2
+Lael	Layel	1.0000	2
+Juges 8:1-3	Alƙa	1.0000	2
+Éla	Elah	1.0000	2
+Konmsa, i'n etabli lape	Salama	1.0000	2
+Azbouk	Azbuk	1.0000	2
+Vaheb	Waheb	1.0000	2
+SENYER, nou Bondye	Ubangiji	1.0000	2
+Zerizalenm ti dir, I posede par Belzebil	Urushalima	1.0000	2
+Aaron ava asperz	Haruna	1.0000	2
+Tsephania	Zephaniah	0.5000	2
+Dan Zerizalenm, zot ti	Urushalima	1.0000	2
+YHWH	YHWH	1.0000	2
+Lemouël	Lemuel	1.0000	2
+Kades Barnea ziska Gaza	Gaza	1.0000	2
+Gosenn ziska Gabaon	Goshen	1.0000	2
+Yeoudi sers	Yehudi	1.0000	2
+Yeoudi ti al pran dan lasal Elisama	Yehudi	1.0000	2
+Samyel ti retourn Rama	Samaila	0.5000	2
+Akis ti	Akish	1.0000	2
+Elize ti redonn lavi	Elisha	1.0000	2
+Abimelek dimal	Abimelek	1.0000	2
+David ti kontiny	Dawuda	1.0000	2
+Susan	Susan	1.0000	2
+Filisten ti ganny konseye	Filistiyawa	1.0000	2
+Zikri	Zikri	1.0000	2
+Hébreux 6:1	Ibraniyawa	1.0000	2
+Moiz ki ti priy SENYER	Ubangiji	1.0000	2
+Luc 8:1	Luk	1.0000	2
+Ayos	Ayos	1.0000	2
+Beker	Beker	1.0000	2
+Tahann	Tahan	0.5000	2
+Gerhard	Gerhard	1.0000	2
+Jéhovah jusque	Jehobah	1.0000	2
+Tabael	Tabeyel	1.0000	2
+Zerizalenm aktyel	Urushalima	1.0000	2
+Hébreux 12:9	Ibraniyawa	1.0000	2
+Petouel	Fetuwel	1.0000	2
+I ti dir, Mon'n fer en zonm avek led SENYER	Ubangiji	1.0000	2
+Antandroy	Antandroy	1.0000	2
+Naboukodonozor in	Nebukadnezzar	1.0000	2
+Mais où que tu vives	Cewa	0.5000	2
+Luc 16:10	Luk	1.0000	2
+Kof Lalyans SENYER ti swiv zot	Ubangiji	1.0000	2
+Matthieu 24:13	Matta	1.0000	2
+Jésus signifient	Yesu	1.0000	2
+Senyer ganny	Ubangiji	1.0000	2
+Semaya ek vizyoner Ido	Iddo	1.0000	2
+Zeroboanm ti toultan	Yerobowam	1.0000	2
+Jean 3:17	Yohanna	1.0000	2
+Matthieu 7:16, 17	Matta	1.0000	2
+SENYER in pran	Ubangiji	1.0000	2
+Yer	jiya	1.0000	2
+Pisidie	Bisidiya	1.0000	2
+Yeramelit ek bann Kainit	Rakal	1.0000	2
+Bani	bani	1.0000	2
+Leonard	leonard	0.5000	2
+Ner, Nadab	Nadab	1.0000	2
+Alor bann Filisten	Filistiyawa	1.0000	2
+Temeni	ahuzzam	1.0000	2
+Ahastari	Ahuzzam	1.0000	2
+Moiz in ordonnen	Musa	1.0000	2
+Lalenn SENYER	Ubangiji	1.0000	2
+Quant à Adam	Adamu	1.0000	2
+Mispa dan Galaad	Mizfa	1.0000	2
+Lezip e al	Masar	1.0000	2
+Libni, Yahat, Zima	Libni	1.0000	2
+Zerizalenm pou ganny detri	Urushalima	1.0000	2
+Yaroa	Yeshishai	1.0000	2
+Isaïe 63:9	Ishaya	1.0000	2
+Souha ti ganny Mehir ki ti papa Estonn	eshton	1.0000	2
+Ilaria	Ilaria	1.0000	2
+Lerwa David ti swazir Yeriya	Dawuda	0.5000	2
+Raúl	Raúl	1.0000	2
+Livija	Livija	1.0000	2
+SENYER i viv	Ubangiji	1.0000	2
+Senyer ki pou rann li sa ki i merite	Ubangiji	1.0000	2
+Lire Philippiens	Filibiyawa	1.0000	2
+Pas Jésus	Yesu	1.0000	2
+Jézabel l	Jezebel	1.0000	2
+Eli ti repar lotel SENYER ki ti'n ganny detri	Ubangiji	1.0000	2
+Reouel, Yeous, Yalanm, ek Kora	reyuwel	1.0000	2
+Bala, Esenm	ezem	1.0000	2
+BONNES NOUVELLES DE LA PART DE DIEU	ALLAH	1.0000	2
+Moiz dan milye nyaz	Musa	1.0000	2
+Zerizalenm ti'n ranpli avek disan	Urushalima	1.0000	2
+Simei ti'n kit Zerizalenm, al Gat e retournen	Urushalima	1.0000	2
+Pitye SENYER	Ubangiji	1.0000	2
+Edonm i	Edom	1.0000	2
+Organisation mondiale	Ƙungiyar	1.0000	2
+Filipi	Filibbi	1.0000	2
+Bann Ezipsyen ti	Masarawa	1.0000	2
+David ti'n masakre bann troup son met	Dawuda	1.0000	2
+Naboukodonozor, lerwa Babilonn in vin	Nebukadnezzar	1.0000	2
+Dieu entraîne	Allah	1.0000	2
+Dalila ti dir li, Sanmson	Samson	1.0000	2
+DigitalVision	digitalvision	0.5000	2
+Kedar pou rasanble kot	Kedar	1.0000	2
+Besodya	Katakanta	1.0000	2
+Aaron ava vin	Haruna	1.0000	2
+Atara	Atara	1.0000	2
+Onanm	Onam	1.0000	2
+Matthieu 6:13	Matta	0.5000	2
+I ti anmenn zot Samari	Samariya	1.0000	2
+Sin	Zin	1.0000	2
+Lanmenm la, ki mon pou anmenn lape, SENYER	Ubangiji	1.0000	2
+Alor Zoab ti dir li, Bon, taye	Yowab	1.0000	2
+Quelles méthodes Satan utilise	Shaiɗan	1.0000	2
+Moiz ti'n dir zot	Musa	1.0000	2
+Satan i	Shaiɗan	1.0000	2
+Parey bann letensel i anvole dan ler	Tartsatsin	1.0000	2
+Lamas	Kitlish	1.0000	2
+Kitlis	Kitlish	1.0000	2
+Aaron, lo pous	Haruna	1.0000	2
+Askelonn e	Ashkelon	1.0000	2
+Annou retourn Zide	yahudiya	1.0000	2
+SENYER ti donn Izrael antye en gran laviktwar	Ubangiji	1.0000	2
+Satan anba	Shaiɗan	1.0000	2
+Lycaoniens	Likoniya	1.0000	2
+Toute la Bible	Littafi	1.0000	2
+Nebo ek Medba	medeba	1.0000	2
+Hadad ti demann Faraon	Hadad	1.0000	2
+Sid avek lanmer Mor	Kudu	1.0000	2
+Bann levit i pour mwan	Lawiyawa	1.0000	2
+Sicurella	Sicurella	1.0000	2
+Latant Rankont, pour al Zerizalenm	Urushalima	1.0000	2
+Milo	Millo	1.0000	2
+Lezip ti'n dir zot	Masar	1.0000	2
+Matthieu 24:36	Matta	1.0000	2
+Israël n	Isra	1.0000	2
+Amitai	Amittai	1.0000	2
+Sebat	Shebat	1.0000	2
+Mwan Ezai	Isuwa	1.0000	2
+Haref, papa	Haref	1.0000	2
+Cheshire	Cheshire	1.0000	2
+Kof Lalyans Bondye e i ti dres en latant	Akwatin	1.0000	2
+Quel exemple biblique	Misali	1.0000	2
+Jean 1:29	Yohanna	1.0000	2
+Edward	Edward	1.0000	2
+Mikmash	Tsallakewa	1.0000	2
+SENYER in donn zot saba	Ubangiji	1.0000	2
+Etta Huth	Etta	1.0000	2
+Etta	Etta	1.0000	2
+Bann dimoun enportan dan Sikenm, ekout mwan	Shekem	1.0000	2
+Mwan SENYER, ou Bondye	Ubangiji	1.0000	2
+Zida e dan bann lari Zerizalenm	Urushalima	1.0000	2
+Parey rezen	Inabi	1.0000	2
+Fer zot desann dan labatwar	Mayanka	1.0000	2
+Abdyas ti en zonm ki	Obadiya	1.0000	2
+Hararit	Harar	1.0000	2
+Senyer BONDYE, mon priy ou	Ubangiji	1.0000	2
+Sidon ek	Sidon	1.0000	2
+Jéhovah Dieu n	Jehobah	1.0000	2
+Zerizalenm avan mwan	Urushalima	1.0000	2
+Moscou	Moscow	1.0000	2
+Hébreux 10:10	Ibraniyawa	1.0000	2
+Me ki son lespri i ganny sove zour Senyer	Ubangiji	1.0000	2
+Lezip pou retournen	Masar	1.0000	2
+Moab pou diminyen malgre	Mowab	1.0000	2
+Daniel 2:41-43	Daniyel	0.5000	2
+Psaume 46:8	Zabura	1.0000	2
+Levi	Lawi	1.0000	2
+Donn Levi	Lawi	1.0000	2
+Rasel li	Rahila	1.0000	2
+Rakonn	rakkon	1.0000	2
+Zafa	Yaffa	1.0000	2
+Oswestry	Oswestry	1.0000	2
+Youta	Yutta	1.0000	2
+Zorobabel: Mesoulanm ek Hananya: Selomit zot	Shelomit	1.0000	2
+Patricia	Patricia	1.0000	2
+D’après	Filibiyawa	0.5000	2
+Hakila	Hakila	1.0000	2
+Genoubat	Genubat	1.0000	2
+June	June	1.0000	2
+Apeles	Aristobulus	1.0000	2
+Jacques 5:17	Yaƙub	1.0000	2
+CDC	CDC	1.0000	2
+Zabitan Askelonn nepli	Ashkelon	1.0000	2
+Zozyas ziska ozordi	Yosiya	1.0000	2
+Dalene	Dalene	1.0000	2
+Junia	Junia	1.0000	2
+Guinness	Records	1.0000	2
+Abia	Abijah	1.0000	2
+Jésus partit	Yesu	0.5000	2
+Iri ti aprann ki son mari Iri ti'n mor, i ti	Uriya	1.0000	2
+Fineas ti papa Abisoua	Abishuwa	1.0000	2
+ANGES AIDENT	IKU	1.0000	2
+Asa ti demoli sa zidol e	Asa	1.0000	2
+Yeedo konsernan Zeroboanm, garson	Yerobowam	1.0000	2
+Comment réagissons	Yaya	1.0000	2
+Laport Gad, laport Aser, laport Neftali	Naftali	1.0000	2
+Tob	Tob	1.0000	2
+Sumatra	Sumatra	1.0000	2
+Ou ava les sa	Kuma	1.0000	2
+Sud-Est	Maso	1.0000	2
+Bann levit ti zwe	Lawiyawa	1.0000	2
+Pret Hilkiya ek Ahikanm	Hilkiya	1.0000	2
+Zabitan Sidon pou nepli	Sidon	1.0000	2
+Sip	Saifurus	1.0000	2
+Job 2:7	Ayuba	1.0000	2
+Jésus partout	Yesu	1.0000	2
+Pelatya	Felatiya	1.0000	2
+Satan qu	Shaiɗan	1.0000	2
+Para, Ofra	Awwim	1.0000	2
+Éphésiens 6:10	Afisawa	1.0000	2
+Zwif i	Yahudawa	1.0000	2
+Jésus aujourd’hui	Yesu	1.0000	2
+Daniel 11:40	Daniyel	1.0000	2
+Vicky	Vicky	1.0000	2
+Bered	bered	1.0000	2
+Eleada	eleyada	1.0000	2
+Titanic	Titanic	1.0000	2
+Legliz Galasi	Galatiya	1.0000	2
+Kis papa	Kish	1.0000	2
+Mitsear	Mizar	1.0000	2
+I ti dir, Mon pa responsab disan sa zonm	Jinin	1.0000	2
+Zide antye	Yahudiya	1.0000	2
+Jésus Roi	Yesu	1.0000	2
+Zot ti donn mwan zot lor ki mon ti	Zinariya	1.0000	2
+Mais une fois	Amma	1.0000	2
+Zida e dan bann semen Zerizalenm	Urushalima	1.0000	2
+Jacques 4:4	Yaƙub	1.0000	2
+Zerizalenm ziska	Urushalima	1.0000	2
+Sef	Nahat	1.0000	2
+Nahat, sef Zera, sef Sama ek sef Miza	Mizza	1.0000	2
+Laban ti dir li	Laban	1.0000	2
+Manaquiri	Guilherme	1.0000	2
+Pa mwan, SENYER	Ubangiji	1.0000	2
+Garson byenneme	Ƙaunataccena	1.0000	2
+Malheureusement, Adam	Adamu	1.0000	2
+Croatie	Kuroshiya	1.0000	2
+Sedesyas ti lerwa	Zadakiya	1.0000	2
+Zafirah	Zafirah	1.0000	2
+Senyer Zezi-Kri ava donn zot lagras ek lape	Ubangiji	1.0000	2
+Pandan ki Manoa ti pe regarde avek son fanm	Manowa	1.0000	2
+Eskol	Eshkol	1.0000	2
+Asna	Ashna	1.0000	2
+Nesib	Nezib	1.0000	2
+Php 4:13	Fib	1.0000	2
+Juifs exilés	Yahudawa	1.0000	2
+Ki mesaz sorti kot SENYER	Ubangiji	1.0000	2
+Manman Roboanm ti en Amonit ki ti apel Naama	Rehobowam	1.0000	2
+Nadine	Nadine	1.0000	2
+Jerry l	Jerry	1.0000	2
+Nimrim in	Nimrim	1.0000	2
+Bann Arab osi ti anmenn	Larabawa	1.0000	2
+Abandonn tou zot bann pratik degoutan	Banƙyama	1.0000	2
+Niamey	Yamai	1.0000	2
+Lezip kot zot pe soufer e	Masar	1.0000	2
+Isar	Izhar	1.0000	2
+Zason	yason	1.0000	2
+Sa pa David	dawuda	1.0000	2
+Eski pa lo David ki zot ti sante e danse	Dawuda	1.0000	2
+Sora Estaol	Eshtawol	1.0000	2
+Lezip e al enstal zot	Masar	1.0000	2
+Nor i pour bann	Arewa	1.0000	2
+Me SENYER i touzour delivre	Ubangiji	1.0000	2
+Jacques 1:26	Yaƙub	1.0000	2
+Bann levit i pour mwan, mwan menm SENYER	Ubangiji	1.0000	2
+Lezip, depi Lezip ziska kot larivyer Zourden	Masar	1.0000	2
+Basmat ti ganny	Basemat	1.0000	2
+Daniel 2:43-45	Daniyel	1.0000	2
+Temann ziska Dedann	Dedan	1.0000	2
+Akoz ou'n les Satan pran kontrol ou leker	Shaiɗan	1.0000	2
+Sibia	Sibia	1.0000	2
+Gust Maki	Gust	1.0000	2
+Yagour	yagur	1.0000	2
+Kontan li parey SENYER	Ubangiji	1.0000	2
+Bondye Izrael, lo bor larivyer Kebar	Kebar	1.0000	2
+Premye ranze: Ribi, topaz	Tofaz	1.0000	2
+Titiis Zistis, en adorater Bondye e ki	Yustus	1.0000	2
+Naboukodonozor pou	Nebukadnezzar	1.0000	2
+Romains 7:25	Romawa	1.0000	2
+SENYER ki koze	Ubangiji	1.0000	2
+Lezip kot i	Masar	1.0000	2
+Andor	Endor	1.0000	2
+Galaad ziska larivyer Arnon, ki	Arnon	1.0000	2
+Quels bienfaits Dieu	Allah	1.0000	2
+Hor devan	Hor	1.0000	2
+Lo son kote, Ester ti met Mardose	Esta	1.0000	2
+Hermès	Harmasa	1.0000	2
+Sheshonq	Shishak	1.0000	2
+Kades Barnea pour eksplor pei	Kadesh-barneya	0.5000	2
+Porsiis Festis ti ranplas Feliks koman	Festas	0.5000	2
+Yake	Agur	1.0000	2
+Mais au moment	Amma	1.0000	2
+Darius I	Darius	1.0000	2
+Lezip anba direksyon Moiz	Masar	1.0000	2
+Zonatan in	Yonatan	1.0000	2
+Palawan	Palawan	1.0000	2
+Mémorial terminé	Mutuwar	1.0000	2
+Alor, la Sibekai	Sibbekai	1.0000	2
+Moiz apre	Musa	1.0000	2
+Danny	Danny	1.0000	2
+Tap Amnon	Amnon	1.0000	2
+Hodiya	Hodiya	1.0000	2
+Nahanm	Bagarme	1.0000	2
+Nazireen	Keɓewarsa	1.0000	2
+Quant à Jésus	Yesu	1.0000	2
+Lalwa Moiz pa ti kapab liber	Musa	1.0000	2
+Me li, i'n lav mon lipye avek son larm	Wanke	1.0000	2
+Bedann	Bedan	1.0000	2
+Zot in ganny sirkonsi, me pa zot leker	Kaciya	1.0000	2
+Kenann ti	Kenan	1.0000	2
+Éden n	Adnin	1.0000	2
+Tour David ki servi koman	Hasumiyar	1.0000	2
+Rankont SENYER	Ubangiji	1.0000	2
+Isaïe 65:11, 12	ishaya	0.5000	2
+Zerizalenm i dan son lanmen drwat	Urushalima	1.0000	2
+Doeg	Doyeg	1.0000	2
+Parnak	Farnak	1.0000	2
+Zehou pa pou mank li	Yehu	1.0000	2
+Comment les chefs	Yaya	1.0000	2
+Kalne	Kalne	1.0000	2
+Saronn	Sharon	1.0000	2
+Rimouski	Rimouski	1.0000	2
+Apaim	Affayim	1.0000	2
+Yisei: Sesann. Garson Sesann: Ahlai	Sheshan	1.0000	2
+I ti al zwenn Abrahanm ki	Ibrahim	1.0000	2
+Marie n	Maryamu	1.0000	2
+Lakoler SENYER in eklate e fleo in konmanse	Ubangiji	1.0000	2
+Jésus aimez	Yesu	1.0000	2
+Salaf	Zalaf	1.0000	2
+Comment Galates	Galatiyawa	1.0000	2
+Comment l’espoir	Yaya	1.0000	2
+Mesoulemet	Haruz	1.0000	2
+Harous	Haruz	1.0000	2
+Alor Elize	Elisha	1.0000	2
+Dieu Tout-Puissant, Jéhovah	Jehobah	1.0000	2
+Nuremberg	Nuremberg	1.0000	2
+Matthieu 4:4, 7, 10	Matta	1.0000	2
+Comment Jéhovah manifeste-t	Jehobah	1.0000	2
+Assomption	Asunción	1.0000	2
+Nabot in ganny	Nabot	1.0000	2
+Pons	Buntus	1.0000	2
+Lezip e tou son pep	Masar	1.0000	2
+Satan ti'n	Shaiɗan	1.0000	2
+Quel exemple Paul	Bulus	1.0000	2
+Angie	Angie	1.0000	2
+Argob antye	Argob	1.0000	2
+Ebes	Ebez	1.0000	2
+Francisco	Francisco	1.0000	2
+Eli in	Iliya	1.0000	2
+Bible conseille	Littafi	1.0000	2
+Hilkiah	Hilkiah	1.0000	2
+Lezip kot zot pou mor	Masar	1.0000	2
+Mésopotamie	Mesopotamiya	1.0000	2
+Samari ek Galile	galili	1.0000	2
+Lapers ti	Farisa	1.0000	2
+Quels termes Jéhovah	Jehobah	1.0000	2
+Rouyn	Rouyn	1.0000	2
+Ashland	Ashland	1.0000	2
+Tofet oubyen	Tofet	1.0000	2
+Jacques 1:2-4	Yaƙub	1.0000	2
+Moiz in donn nou	Musa	1.0000	2
+David partou	Dawuda	1.0000	2
+Dibonn, Atarot, Aroer	Dibon	1.0000	2
+Rekonnet laglwar ek lapwisans SENYER	Ubangiji	1.0000	2
+Dezer pou	Hamada	1.0000	2
+Aaron osi	Haruna	1.0000	2
+Galaad ti dir antre zot	Gileyad	1.0000	2
+I pa ti abandonn bann pese Zeroboanm	Yerobowam	1.0000	2
+Basann i	Bashan	1.0000	2
+Ezai ti	Isuwa	1.0000	2
+Zot tanmiz	Mitsil	1.0000	2
+Sihor	Shihor	1.0000	2
+ACCEPTONS L’AIDE DE JÉHOVAH	JEHOBAH	1.0000	2
+Hesronn ti	Hesruna	1.0000	2
+Liv SENYER	Ubangiji	1.0000	2
+I ti dir, Tabita, Leve	Tabita	1.0000	2
+Bann zonm Galaad	Gileyad	1.0000	2
+Jean 2:27	Yohanna	1.0000	2
+Lina	Lina	1.0000	2
+Sidnei	sidnei	0.5000	2
+Aaron ek son bann garson: La rityel	Haruna	1.0000	2
+Zerizalenm ki pa ti lwen	Urushalima	1.0000	2
+Yair ti osi pret pour David	Yayir	1.0000	2
+John s	John	1.0000	2
+Zeremi e anpese	Irmiya	1.0000	2
+Hanyel	riziya	1.0000	2
+Ritsya	Riziya	1.0000	2
+Krispis	Kirisbus	1.0000	2
+Leonard Smith	Leonard	1.0000	2
+Alonso	Alonso	1.0000	2
+Hébreux 11:30	Ibraniyawa	1.0000	2
+Gat ek Ekronn	Ekron	1.0000	2
+Reaya	reyahiya	0.5000	2
+Senyer in donn sakenn nou	Ubangiji	1.0000	2
+Marion	Marion	1.0000	2
+Konmsa, i'n vin zot Gran-Pret ranpli	Firist	1.0000	2
+George Young	George	1.0000	2
+Izrael ti ador Baal-Peor e SENYER	Ubangiji	1.0000	2
+Moab in ganny devaste	Mowab	1.0000	2
+Asael, Semiramot	Shemiramot	1.0000	2
+Zezi ti'n geri bokou dimoun e	warkar	1.0000	2
+Ann ti priy SENYER e plere asodlarm	Ubangiji	1.0000	2
+Ou ava vin ris dan Efrata	Efrata	1.0000	2
+Perizit	ferizziyawa	1.0000	2
+Benaya ti	Benahiya	1.0000	2
+Filolog	Yuliya	1.0000	2
+Sid ki mezir	Kudu	1.0000	2
+Laport Simeon, laport Isakar, laport Zabilon	Issakar	0.5000	2
+Comment la fidélité	Yaya	1.0000	2
+I ava mezir santimet	Kamu	1.0000	2
+Timo	Lina	1.0000	2
+Haroumaf	Harumaf	1.0000	2
+Madmen	madmen	1.0000	2
+Mediterane ki	Rum	1.0000	2
+Eli i bezwen	Iliya	1.0000	2
+Zehou pou	Yehu	1.0000	2
+Abisour	Abishur	1.0000	2
+Siyon, lavil gran lerwa	sarki	1.0000	2
+Amasya e anvoy en profet	Amaziya	1.0000	2
+João	João	1.0000	2
+Salmann	Bet-arbel	0.5000	2
+Dan lannwit ki i ti ganny livre, Senyer Zezi	Ubangiji	1.0000	2
+Jean 6:15	Yohanna	1.0000	2
+Audrey Hyde	Hyde	1.0000	2
+La Tour	hasumiyar	1.0000	2
+Izraelit Silo	Shilo	1.0000	2
+Pireanm	Firam	1.0000	2
+Asdod pou ganny sase gran lizour; Ekronn	Ekron	1.0000	2
+Ezai ti annan dan lakaz e i	Isuwa	1.0000	2
+Lalwa Moiz , Mari ek	Musa	1.0000	2
+Révélation 17:15	uyar	0.5000	2
+Indianapolis	Indianapolis	1.0000	2
+Sid tou dilon larivyer Zourden	Urdun	1.0000	2
+Aner, Eskol ek Manmre pran zot par	Aner	1.0000	2
+Pran semen legzil touni	Shafir	1.0000	2
+Zabitan Saanann pa	Shafir	1.0000	2
+Salmouna	Zalmunna	1.0000	2
+Matthieu 11:28-30	Matta	1.0000	2
+Dieu est-elle	Allah	1.0000	2
+Rina	ben-hanan	1.0000	2
+Tilonn	Ben-Hanan	0.5000	2
+Bann garson Yisei: Zohet ek Benn-Zohet	Ben-Hanan	0.5000	2
+Takemonit	Takemon	1.0000	2
+Adino	Takemon	1.0000	2
+Esnit	Takemon	1.0000	2
+Dieu saint	Allah	1.0000	2
+Madanm Marye	Daɗinki	1.0000	2
+Arodit	Areli	1.0000	2
+Areli	Areli	1.0000	2
+Daniel 7:13	Daniyel	1.0000	2
+Archaeology	Archaeology	1.0000	2
+Bondye Abrahanm, Izaak e Izrael	Ibrahim	0.5000	2
+Hagit in vin lerwa	Haggit	1.0000	2
+Lerwa lape	Salama	1.0000	2
+Zis SENYER, nou Bondye ki kapab	Ubangiji	1.0000	2
+Smyrne	Simirna	1.0000	2
+Tekoa ti	Tekowa	1.0000	2
+Gran-Pret ti kestyonn zot	Firist	1.0000	2
+Hali, Beten, Aksaf	Beten	1.0000	2
+Ler bann Filisten	Filistiyawa	1.0000	2
+Abrahanm ti'n aste	Ibrahim	1.0000	2
+Abrahanm ti ganny antere	Ibrahim	1.0000	2
+Proverbes 22:6	Karin	1.0000	2
+Aussi Paul	Bulus	1.0000	2
+T-36	T-36	1.0000	2
+Paul parle d	Bulus	0.5000	2
+Ou ki pe asiz lo tronn lerwa David	Dawuda	1.0000	2
+Adna	Adna	1.0000	2
+Karta	Karta	1.0000	2
+Hofni ek Fineas ti	finehas	1.0000	2
+Montanny Negev	Negeb	1.0000	2
+Pak ek lafet Dipen	Ƙetarewa	1.0000	2
+Hagi	Haggi	1.0000	2
+Souni	Haggi	1.0000	2
+Samari pandan an	Samariya	1.0000	2
+Izrael, mon serviter	israila	1.0000	2
+Orenm	horem	1.0000	2
+Zetro ti dir Moiz, Al anpe	Yetro	1.0000	2
+Senyer i konnen	Ubangiji	1.0000	2
+Tofel	Suf	1.0000	2
+Haserot ek Di-Zahab	suf	1.0000	2
+Kiryataim in ganny imilye, in ganny kaptire	Kiriyatayim	1.0000	2
+Zide, Zerizalenm e lo lakot Tir ek Sidon	Yahudiya	1.0000	2
+Moiz ti'n dir li pour al lager kont	Musa	1.0000	2
+Si Absalon	Absalom	1.0000	2
+Parol SENYER kont	Ubangiji	1.0000	2
+Ecclésiaste 3:11	Mai-Wa	1.0000	2
+Demen ava	Gobe	1.0000	2
+Abidann	Abidan	1.0000	2
+Zese ti	Yesse	1.0000	2
+Vale Larme Gog	Gog	1.0000	2
+Zan koman	Yahaya	1.0000	2
+Lasanble antye ti dir, Amenn	Amin	1.0000	2
+Yua	Yua	1.0000	2
+Elkos	Elkosh	1.0000	2
+Angat	Angat	1.0000	2
+Larenn i	Sarauniya	1.0000	2
+Leab, Naftou	Anamawa	1.0000	2
+Debir	Debir	1.0000	2
+Aaron ki ti pe esper zot	Haruna	1.0000	2
+Hamoleket	hammoleket	1.0000	2
+Cantabrique	Cantabria	1.0000	2
+Emma	Emma	1.0000	2
+Me plito pran mon garson Kimhanm	Kimham	1.0000	2
+Ouzai	Falal	1.0000	2
+SENYER nou	Ubangiji	1.0000	2
+Jéhovah montre	Jehobah	1.0000	2
+Jean 14:28	Yohanna	1.0000	2
+Eski zot krwar ki tousala i kapab apez mwan	Rabonku	1.0000	2
+Jack Redford	Redford	1.0000	2
+Nani	Nani	1.0000	2
+Romains 1:16	Romawa	1.0000	2
+Lalwa Moiz e ofer sakrifis	Miƙa	1.0000	2
+Aminadab; Aminadab ti	Amminadab	1.0000	2
+Kontan SENYER, zot Bondye	Ubangiji	1.0000	2
+Me sa bann komandan Filisten in dir	Filistiyawa	1.0000	2
+République tchèque	Czech	1.0000	2
+SENYER in swazir	Ubangiji	1.0000	2
+Hofra	Hofra	1.0000	2
+Dmitri	Dmitrii	1.0000	2
+Dan tribi Zabilon: Rimono	Kabilar	0.5000	2
+Parce que Satan	Shaiɗan	1.0000	2
+Aaron ti antre dan Latant Rankont	Haruna	1.0000	2
+Netofatit	Netofa	1.0000	2
+Romains 5:2	Romawa	1.0000	2
+Sara ti vye	Saratu	1.0000	2
+Sara ti'n aret ganny son reg	Saratu	1.0000	2
+Betoul, Horma	Horma	1.0000	2
+Zot ti'n pas set zour	Bakwai	1.0000	2
+Zerizalenm pandan	Urushalima	1.0000	2
+Yip Yee	Yip	1.0000	2
+Dieu influence	Allah	1.0000	2
+Jean 4:25, 26	Yohanna	1.0000	2
+Marcela	Marcela	1.0000	2
+Mais Pierre	Bitrus	1.0000	2
+Sema, Anaya	Hashbaddana	1.0000	2
+Hasbadana	hashbaddana	1.0000	2
+Manille	Manila	1.0000	2
+Misma	Mishma	1.0000	2
+Luc 2:41	Luk	1.0000	2
+Frederik Federspiel	Federspiel	1.0000	2
+I ti dir zot, Bann fiy Zerizalenm	Urushalima	1.0000	2
+Pasour	Fashhur	0.5000	2
+Yekamya e Yekamya	Yekamiya	1.0000	2
+Akab lo	Ahab	1.0000	2
+Nabot ti	Nabot	1.0000	2
+Éliaqim	Eliakim	1.0000	2
+Asiz an silans dan fernwanr	Duhu	1.0000	2
+Mehouyael ti	Metushayel	1.0000	2
+Zabdiel	Zabdiyel	1.0000	2
+Satan attaque	Shaiɗan	1.0000	2
+Pelalya	Felaliya	1.0000	2
+Anmsi	Felaliya	1.0000	2
+Jésus m	Yesu	1.0000	2
+Yetour, Nafis ek Nodab	Nafish	1.0000	2
+Hébreux 13:2	Ibraniyawa	1.0000	2
+Quel vœu Yiphtah	Jephthah	1.0000	2
+Lor nepli	Zinariya	1.0000	2
+Lor pir in melanze	Zinariya	1.0000	2
+Camagüey	Camagüey	1.0000	2
+Paquito	paquito	0.5000	2
+Lezot Filisten ti	Filistiyawa	1.0000	2
+Trophim Nsomba	Trophim	1.0000	2
+Dieu » ( 1 JEAN 4:7	Allah	1.0000	2
+Personn pa pou pler zot lanmor, ni anter zot	Binne	1.0000	2
+Akab ti dir Nabot, Donn mwan ou plantasyon	Nabot	1.0000	2
+Makayla	Makayla	1.0000	2
+Zekarya	yehiya	1.0000	2
+Yehiya	Yehiya	1.0000	2
+Dife SENYER	Ubangiji	1.0000	2
+I ti apel Manoa	Manowa	1.0000	2
+Alor Moiz ti priy pour lepep	Musa	1.0000	2
+Harada	Harada	1.0000	2
+Ozordi SENYER	Ubangiji	1.0000	2
+Bela, Beker ek Yediael, trwa an tou	Bela	1.0000	2
+Latant Rankont e	Tentin	1.0000	2
+Lezip ek pei Kanaan ti soufer	Masar	1.0000	2
+DEUX PARTIES	JAWABAI	1.0000	2
+Strasbourg	Strasbourg	1.0000	2
+Aaron ti tonm lafas	Haruna	1.0000	2
+Jéhovah lorsqu	Jehobah	1.0000	2
+Zerizalenm ziska lannmen	Urushalima	1.0000	2
+I ti dir Natan, Lo lavi SENYER	Natan	0.5000	2
+Yoed	Yowed	1.0000	2
+Pekod	Fekod	1.0000	2
+Et	Cewa	1.0000	2
+Obed ti	Obed	1.0000	2
+Absalon ti fer	absalom	1.0000	2
+Erast	Erastus	1.0000	2
+Kof Bondye Zerizalenm	Urushalima	1.0000	2
+Isaïe 40:28	Ishaya	1.0000	2
+Mwan ki SENYER	Ubangiji	1.0000	2
+Avan ki ou ti rekonmans konstri mon tanp	Haikalin	1.0000	2
+Kisonn	Kishon	1.0000	2
+Zida Iskaryot, sa enn ki ti trai Zezi	Iskariyot	0.5000	2
+Isaïe 46:4	Ishaya	1.0000	2
+Jéhovah quelle que	Jehobah	1.0000	2
+Lor, larzan ek	Zinariya	1.0000	2
+Nebraska	Nebraska	1.0000	2
+Propaganda	Propaganda	1.0000	2
+Lor, larzan	Zinariya	1.0000	2
+Zot ava soufle tronpet e kriye	Busa	1.0000	2
+Wisconsin	Wisconsin	1.0000	2
+Kris ava	Kiristi	1.0000	2
+SENYER ti dir Gad	gad	1.0000	2
+Barakel	Barakel	1.0000	2
+Bouzit	Barakel	1.0000	2
+Me SENYER i son protekter	Ubangiji	1.0000	2
+William Tyndale	William	1.0000	2
+Bann pret ki ti gard laport	Firist	1.0000	2
+Yeter ek	Yeter	1.0000	2
+Ziska kan, SENYER	Ubangiji	1.0000	2
+Armoni ek	Armoni	1.0000	2
+Loue SENYER zot Bondye	Ubangiji	1.0000	2
+Éliézèr	Eliyeza	1.0000	2
+Gog ek Magog	magog	1.0000	2
+Alva, Yetet	alwa	1.0000	2
+Zozef Lezip avek	Masar	1.0000	2
+Kris dan provens Lazi	Asiya	1.0000	2
+S-55	WHOSE	1.0000	2
+Hébreux 9:11	Ibraniyawa	1.0000	2
+Jean 6:53	Yohanna	1.0000	2
+Zerizalenm pou	Urushalima	1.0000	2
+Latour Hananeel	Hananel	1.0000	2
+Yeous ek Beria	beriya	1.0000	2
+Sheffield	Sheffield	1.0000	2
+Royaume est	Mulkin	1.0000	2
+Cantwell	Cantwell	1.0000	2
+Luc 12:15	Luk	1.0000	2
+Eri	Eri	1.0000	2
+Juliana	Juliana	1.0000	2
+Persépolis	Fasassun	1.0000	2
+Sartann	Zaretan	1.0000	2
+Sid ziska lo kote Nor	Arewa	1.0000	2
+Lezip ti dir	Masar	1.0000	2
+Bondye ki Zerizalenm	Urushalima	1.0000	2
+Rido Tanp	Labulen	1.0000	2
+Sitim	Shittim	1.0000	2
+Abranm ti ariv Lezip	Masar	1.0000	2
+Nyaz ti al aret dan dezer Parann	Faran	1.0000	2
+Hyun	Hyun	1.0000	2
+Eliasib, Eliasib ti papa Yoyada	Eliyashib	1.0000	2
+Comment un enseignant	Yaya	1.0000	2
+Arkit	Arkiyawa	1.0000	2
+Sinit	Siniyawa	1.0000	2
+Amazonie	Amazon	1.0000	2
+Gihonn	Gihon	1.0000	2
+Pandan tou lavi Samyel, SENYER ti	Ubangiji	1.0000	2
+Aaron ti al kot Faraon	Haruna	1.0000	2
+Candice	Candice	1.0000	2
+Eski lekor, i an bronz	Tagulla	1.0000	2
+Mais Dieu promet	Allah	1.0000	2
+Longer	Kamu	1.0000	2
+Migronn	Migron	1.0000	2
+Ineke	Ineke	1.0000	2
+Yisei	ishi	1.0000	2
+Selsa	Zelza	1.0000	2
+Kit Zerizalenm	Urushalima	1.0000	2
+Moabit Rit, vev Malonn	Malon	1.0000	2
+Genèse 1:20	Farawa	1.0000	2
+Zide ki	Yahudiya	1.0000	2
+Comment les Témoins	Shaidun	1.0000	2
+Pa mwan SENYER, ki fer tousala	Ubangiji	1.0000	2
+Karkor	Karkor	1.0000	2
+Accra	Accra	1.0000	2
+Bekorat	Zeror	1.0000	2
+Rébecca n	Rifkatu	1.0000	2
+Louz avan	Luz	1.0000	2
+Comment ce verset	Yaya	1.0000	2
+Akad	Akkad	1.0000	2
+I ti anmenn tou son desandans avek li Lezip	Masar	1.0000	2
+Einann	Enan	1.0000	2
+I ti dir, Mon garson Sikenm i kontan ou fiy	Shekem	1.0000	2
+Manaus	Manaus	1.0000	2
+Moiz ti per	Musa	1.0000	2
+Moïse lorsqu	Musa	1.0000	2
+Jéhovah cherche des occasions	Jehobah	1.0000	2
+Kontan SENYER	Ubangiji	1.0000	2
+Ljubljana	Ljubljana	1.0000	2
+D’après la prophétie	Annabcin	1.0000	2
+Safanm	yanai	1.0000	2
+Yanai	yanai	1.0000	2
+Safat	Shafat	1.0000	2
+LIGNE Watchtower	Watchtower	1.0000	2
+Kleopas	Kilofas	1.0000	2
+Madlenn	Magadaliya	1.0000	2
+Frère Jedele	Jedele	1.0000	2
+Jean 16:33	Yohanna	1.0000	2
+I parey en marmit rouye	Tsatsarta	1.0000	2
+Samoa	Samoa	1.0000	2
+Serebya, Hasabya ek parmi zot frer	Sherebiya	1.0000	2
+Elisafat	Elishafat	1.0000	2
+Golann	Golan	1.0000	2
+Dumas	Dumas	1.0000	2
+Ahiann	Ahiyan	1.0000	2
+Likwi	ahiyan	1.0000	2
+Anianm	Ahiyan	1.0000	2
+Thècle	Thecla	1.0000	2
+Jéhovah grandit	Jehobah	1.0000	2
+Surmonte	Hujja	1.0000	2
+Jéhovah » ( 1 Chron	Jehobah	1.0000	2
+Farizyen ti dir Zezi	Farisiyawa	1.0000	2
+Hezionn	Heziyon	1.0000	2
+Gesour pandan	Geshur	1.0000	2
+SENYER pou livre	ubangiji	1.0000	2
+Me SENYER in kree lesyel	Ubangiji	1.0000	2
+Danit	Danawa	1.0000	2
+Kaslou	kaftorawa	1.0000	2
+Desandan Zese pou aparet	Yesse	1.0000	2
+Jeffries	Jeffries	1.0000	2
+Ou pa aksepte okenn sakrifis konplet	Ƙonawa	1.0000	2
+Cesar	Cesar	1.0000	2
+Rocio	Rocio	1.0000	2
+Fer ki bann pov	Matalauta	1.0000	2
+John Charuk	Charuk	1.0000	2
+Iri, sa Hitit	Uriya	1.0000	2
+Lene	Eliyab	1.0000	2
+Eliab, dezyenm Abinadab	Abinadab	1.0000	2
+Sove, kit pei Nor	Arewa	1.0000	2
+Tasmanie	Tasmaniya	1.0000	2
+Haman ti	Haman	1.0000	2
+Vin Hesbonn	Heshbon	1.0000	2
+Laroul ti	Raƙuman	1.0000	2
+Jacob n	Yakubu	1.0000	2
+Bann ansyen dan lavil	Dattawan	1.0000	2
+Yisma	hazzelelfoni	1.0000	2
+Yidbas	Hazzelelfoni	1.0000	2
+Licensed	Licensed	1.0000	2
+Esther n	Esther	1.0000	2
+Isaïe 65:25	Ishaya	1.0000	2
+Anaharat	Hafarayim	1.0000	2
+Boston	Boston	1.0000	2
+Dieu fidèles	Allah	1.0000	2
+Iouri	Yury	1.0000	2
+Hesmonn	heshmon	1.0000	2
+Anoub	Aharhel	1.0000	2
+Hatsobeba desandan	Aharhel	1.0000	2
+Jéhovah joyeusement	Jehobah	1.0000	2
+Akoz zour SENYER	Ubangiji	1.0000	2
+Douma, Eseann	Duma	1.0000	2
+Pierre 3:12	Bitrus	1.0000	2
+Zerizalenm i dir	Urushalima	1.0000	2
+Seule la Bible	Littafi	1.0000	2
+Biélorussie	Belarus	1.0000	2
+Larivyer Nil i pour mwan, mwan ki'n fer li	Nilu	1.0000	2
+Adam nous	Adamu	1.0000	2
+Gebal, Amonn ek Amalek	Amalek	1.0000	2
+Salamin	Salamis	1.0000	2
+Nouvo Zerizalenm	Urushalima	1.0000	2
+Matthieu 5:23, 24	Matta	0.5000	2
+Zozye dan kan Gilgal	Gilgal	1.0000	2
+Elifaz sorti	Elifaz	1.0000	2
+Mesoulanm dan tanp SENYER	Meshullam	1.0000	2
+I ti dir SENYER	Ubangiji	1.0000	2
+SENYER ti'n montre Moiz	musa	1.0000	2
+I ti dir, Mwan ki pou vin lerwa	Sarki	1.0000	2
+SENYER in swazir zot	Ubangiji	1.0000	2
+Comment la patience	Yaya	0.5000	2
+Rezouir dan SENYER	Ubangiji	1.0000	2
+Genèse 2:16	Farawa	1.0000	2
+Samari ek son bann zidol	Samariya	1.0000	2
+Genèse 2:8	Farawa	1.0000	2
+Zoab egzekite	Yowab	1.0000	2
+Horonaim	Horonayim	1.0000	2
+Depi bomaten ziska aswar	Safe	1.0000	2
+Lalwa Moiz ek liv bann profet	Musa	1.0000	2
+Angèle	Angèle	1.0000	2
+L’amour et la reconnaissance pour Jéhovah	Jehobah	1.0000	2
+Petet SENYER i	Ubangiji	1.0000	2
+Jenny	jenny	0.5000	2
+Ahava	Ahawa	1.0000	2
+Was ver Gasin	Neftowa	1.0000	2
+Djovidon	Jovidon	0.5000	2
+Ruth s	Ruth	1.0000	2
+David koze	Dawuda	1.0000	2
+Detroit	Detroit	1.0000	2
+Michigan	Michigan	1.0000	2
+Suiter	Suiter	1.0000	2
+Bann Kretwa i	Haɗamammu	1.0000	2
+Yogli	Yogli	1.0000	2
+Omwen fernwanr	Duhu	1.0000	2
+Romains 9:14	Romawa	1.0000	2
+Sior	Ziyor	1.0000	2
+Pennsylvanie	Pennsylvania	1.0000	2
+Toudswit son lannmen	Kashegari	1.0000	2
+Gibea koman	Gibeya	1.0000	2
+Comment l’étude	Yaya	1.0000	2
+Mikhaïl	Mikhail	1.0000	2
+Inga	Inga	1.0000	2
+Jéhovah éprouve	Jehobah	1.0000	2
+Tour Liban ki anfas avek Damas	Lebanon	1.0000	2
+SOCIAUX	ZUMUNTA	1.0000	2
+Jean 3:14, 15	Yohanna	1.0000	2
+Diana	Diana	1.0000	2
+Al mezir Tanp Bondye	Haikalin	1.0000	2
+Jack Nathan	Jack	1.0000	2
+Tou ti la, kasyet dan latant, larzan dan fon	Azurfa	1.0000	2
+Mwan SENYER, sa ki mon i vre	Ubangiji	1.0000	2
+Jean 4:9	Yohanna	1.0000	2
+Simeon ti al avek bann zonm, tribi Zida	Simeyon	0.5000	2
+Kehat ti ganny bann lavil	Kohat	1.0000	2
+Yazanya	Yaazaniya	1.0000	2
+Alicante	Alicante	1.0000	2
+Menm kri	Luhit	1.0000	2
+Binoui	Binnuyi	0.5000	2
+Kekfwa SENYER ava	Ubangiji	1.0000	2
+Comment un frère	Yaya	1.0000	2
+Jéhovah grandissant	Jehobah	1.0000	2
+Rann glwar SENYER, Bondye Senm	Ubangiji	1.0000	2
+Annefe, larivyer Arnon i	Arnon	1.0000	2
+Proverbes 19:17	Karin	1.0000	2
+Zot ti abandonn SENYER	Ubangiji	1.0000	2
+Isaïe 60:17	Ishaya	1.0000	2
+Evi	Reba	1.0000	2
+Safonn	Zafon	1.0000	2
+Aaron ti sef tou bann Levit	Haruna	1.0000	2
+Mayli	Mayli	1.0000	2
+Bann garson Yedoutoun	Yedutun	1.0000	2
+Aaron kan i prezant li devan mwan	Haruna	1.0000	2
+Ruth 3:11	Ruth	1.0000	2
+Granville m	Granville	1.0000	2
+Iri pa'n	Uriya	1.0000	2
+Al Betel	Betel	1.0000	2
+Serge	Serge	1.0000	2
+CERTITUDE QUE JÉHOVAH T’AIME	JEHOBAH	1.0000	2
+Père Jéhovah	Jehobah	1.0000	2
+Kouler	Shuɗi	1.0000	2
+Corwin Robison	Corwin	1.0000	2
+Alor, bann zonm David ti fer li pret serman	Dawuda	1.0000	2
+Quetta	Quetta	1.0000	2
+Samyel ti dir, SENYER	Ubangiji	1.0000	2
+Daniel l	Daniyel	1.0000	2
+Kresans	Dalmatiya	1.0000	2
+Dalmasi	Dalmatiya	1.0000	2
+Pou annan disan, dife, ek en nyaz lafimen	Hayaƙi	1.0000	2
+Zot vin selebre non SENYER	Ubangiji	1.0000	2
+Silo menm	Shilo	1.0000	2
+Me mwan, mon ti obei SENYER, nou Bondye	Ubangiji	1.0000	2
+Felice	Felice	1.0000	2
+Azazel ava	Azazel	1.0000	2
+Bouna, Oren, Osenm ek Ahiya	oren	1.0000	2
+Dieu Jéhovah	Jehobah	1.0000	2
+BONDYE pou soufle tronpet	busa	1.0000	2
+Tripoli	Tripoli	1.0000	2
+Avan dele fikse par lerwa	Sarki	1.0000	2
+Eski zot konn Laban, garson Nahor	nahor	1.0000	2
+Abihail ti sef fanmir bann Merari	Merari	1.0000	2
+Hilkiya ti	Hilkiya	1.0000	2
+Putiphar l	Fotifar	1.0000	2
+Me SENYER, pa pou reponn zot	Ubangiji	1.0000	2
+Jean 1:7	Yohanna	1.0000	2
+Faraon i	Firauna	1.0000	2
+Proverbes 3:32	Karin	1.0000	2
+SENYER i pros; i pe vin dan vale zizman	kwarin	1.0000	2
+Adam savait	Adamu	1.0000	2
+Jéhovah éternellement	Jehobah	1.0000	2
+Zif, Youta	zif	1.0000	2
+Kri i Senyer, pour laglwar Bondye Papa	ubangiji	1.0000	2
+Alicia	Alicia	0.5000	2
+Aschwin	Aschwin	1.0000	2
+Mardose tousel	Mordekai	1.0000	2
+Me Mikal, fanm David	Mikal	1.0000	2
+Jean 14:6	Yohanna	1.0000	2
+Tou dimoun dan zanviron Zide ti	Yahudiya	1.0000	2
+Nazaret dan Galile	Galili	1.0000	2
+Moiz ki	Musa	1.0000	2
+Comme Jéhovah l	Jehobah	1.0000	2
+Karl	Karl	1.0000	2
+Romains 15:13	Romawa	1.0000	2
+Bann Ezipsyen ti per bann Izraelit	Masarawa	1.0000	2
+Paul d	Bulus	1.0000	2
+Konsakre zot pour demen	Gobe	1.0000	2
+Set flanbo ti	Bakwai	1.0000	2
+Lalwa ek bann Farizyen, Eski nou	Farisiyawa	1.0000	2
+Ricardo	Ricardo	1.0000	2
+Dann ti kit Sorea ek	Zora	1.0000	2
+Lezip san demann	Masar	1.0000	2
+Hanae	Hanae	1.0000	2
+Loes	Hallohesh	1.0000	2
+Pret Zozye ki ti pe debout	Yoshuwa	1.0000	2
+Satan ti	Shaiɗan	1.0000	2
+C’étaient des anges	Iku	1.0000	2
+Faraon ki	Firauna	1.0000	2
+Zefte, David, Samyel, ek bann profet	Yefta	1.0000	2
+Bondye pa pou konsider li konmsi in sirkonsi	Kaciya	1.0000	2
+Ofel	Ofel	1.0000	2
+Gerard	Gerard	1.0000	2
+Mikmetat dan Nor	Mikmetat	1.0000	2
+Yesana	Yeshana	1.0000	2
+Libyen, Soukit, ek Nibyen	Libiyawa	1.0000	2
+Priy SENYER nou	Ubangiji	1.0000	2
+Ene	Eniyas	0.5000	2
+Natalie	Natalie	1.0000	2
+Natan in konsakre li koman lerwa	Natan	1.0000	2
+Giyonn	Gihon	1.0000	2
+Mesa	Mesha	1.0000	2
+Sefar	Sefar	1.0000	2
+Samir, Yatir, Soko	Shamir	1.0000	2
+Lerwa Moab in revolte kont mwan	Mowab	1.0000	2
+Jacques 5:14, 15	Yaƙub	1.0000	2
+Edrei	Edireyi	1.0000	2
+Sesai	sheshai	1.0000	2
+Ahimann	Ahiman	1.0000	2
+Karachi	Karachi	1.0000	2
+Ecclésiaste 4:1	Mai-Wa	1.0000	2
+Mais Jéhovah n	Jehobah	1.0000	2
+Aaron ti'n mor, pep antye	Haruna	1.0000	2
+Melek, Tarea	Fiton	1.0000	2
+Éliézer lui	Eliezer	1.0000	2
+Moab an morso	Mowab	1.0000	2
+Hebron, Libna ek zot lerwa	Hebron	1.0000	2
+Tunapuna	Tunapuna	1.0000	2
+Jimmy	Jimmy	1.0000	2
+Comment s	Yaya	1.0000	2
+Salvatore	Salvatore	1.0000	2
+David ti pe reste Horsa	Horesh	1.0000	2
+Mered	mered	1.0000	2
+Sitim ziska Gilgal	Gilgal	1.0000	2
+Lezip e anmenn zot	Masar	1.0000	2
+Zerizalenm ti pe dir	Urushalima	1.0000	2
+Izaak tou	Ishaku	1.0000	2
+Japhet	Japheth	1.0000	2
+Bruce Metzger	Metzger	1.0000	2
+Lagres, Toubal ek Mesek	Meshek	1.0000	2
+Arnon ziska Yabok	Arnon	1.0000	2
+Tutsis	Tutsi	1.0000	2
+Moab ek bann sef	Mowab	1.0000	2
+Iranm	Magdiyel	1.0000	2
+Izaak ki ou pou ganny	Ishaku	1.0000	2
+Hébreux 11:32	Ibraniyawa	1.0000	2
+I ti plas lerwa lo tronn rwayal	Sarki	1.0000	2
+Kof Lalyans Bondye kot mwan	Akwatin	1.0000	2
+Amasya ti'n fer ale	Amaziya	1.0000	2
+Luke	Luke	1.0000	2
+Bouki; Bouki	Bukki	1.0000	2
+Nahas	Nahash	1.0000	2
+Pourtan SENYER, zot Bondye, ki zot lerwa	Ubangiji	1.0000	2
+Hispaniola	Hispaniola	1.0000	2
+I ti geri tou bann maladi	Warkar	1.0000	2
+Malouk	Malluk	1.0000	2
+Lucy	Lucy	1.0000	2
+Lezip dan lanbousir larivyer Nil	Nilu	0.5000	2
+Jarrod	Jarrod	1.0000	2
+Jean 14:12	Yohanna	1.0000	2
+Ikes	Ikkesh	1.0000	2
+Lareopaz	Areyofagus	1.0000	2
+David ti'n ariv	Dawuda	1.0000	2
+CRAINDRE DIEU	ALLAH	1.0000	2
+Eski garson Zese, ava donn sakenn zot	Yesse	1.0000	2
+Adi	Addi	1.0000	2
+Kosanm	Addi	1.0000	2
+Dieu » ( Jacq	Allah	0.5000	2
+Sorbonne	Sorbonne	1.0000	2
+N’aie pas peur, Paul	bulus	1.0000	2
+Afrique occidentale	Afirka	1.0000	2
+Laban li	Laban	1.0000	2
+Lafore Liban	Lebanon	1.0000	2
+SENYER. Siyon	Sihiyona	1.0000	2
+Lo kote Nor, kat sak zour	Arewa	1.0000	2
+Dieu révélé	Allah	1.0000	2
+Izrael tonm	Israila	1.0000	2
+Berne	Bern	1.0000	2
+Jéhovah d’Allemagne	Jehobah	1.0000	2
+Joan	Joan	1.0000	2
+Gibea lontan	Gibeya	1.0000	2
+Adaya	Adahiya	1.0000	2
+I ti dir li, Ki ou pe fer isi, Eli	Iliya	1.0000	2
+Atali ti	Ataliya	1.0000	2
+Laba, dan Nor, obor larivyer Efrat	Arewa	1.0000	2
+Bann promes SENYER	Ubangiji	1.0000	2
+Quel honneur Jéhovah	Jehobah	1.0000	2
+Henschel	Henschel	1.0000	2
+Jésus investi	Yesu	1.0000	2
+Kaori	Kaori	1.0000	2
+Isaïe 40:29	Ishaya	1.0000	2
+Romains 8:31	Romawa	1.0000	2
+Quelle alliance Jéhovah	Jehobah	1.0000	2
+Tanmouz	Tammuz	1.0000	2
+Daniel 6:10	Daniyel	1.0000	2
+Mais l	Amma	1.0000	2
+Jéhovah garantit	Jehobah	1.0000	2
+Yogboa	Yogbeha	1.0000	2
+Sesbasar	Sheshbazzar	1.0000	2
+Colossiens 1:15	Kolosiyawa	1.0000	2
+Yismakya	ismakiya	1.0000	2
+Hadadezer e anmenn Zerizalenm	Urushalima	1.0000	2
+Zida ek	Yahuza	1.0000	2
+Nor avek vale bann Refait	Kwarin	1.0000	2
+Siriyen	Suriyawa	1.0000	2
+Makir pei Galaad	Makir	1.0000	2
+Zéruïah	Zeruiah	1.0000	2
+Adam vécut	Adamu	1.0000	2
+Bosnie	Bosnia	1.0000	2
+Lerwa Dariis, lape i	Dariyus	1.0000	2
+Sealtiel ti papa	Sheyaltiyel	1.0000	2
+Lezip ti	Masar	1.0000	2
+Ezai, se li menm Edonm	Edom	0.5000	2
+Hebron koman lerwa Zida	Hebron	1.0000	2
+Zerizalenm koman lerwa	Urushalima	1.0000	2
+I ti kaptir Zeba ek Salmouna	Zalmunna	1.0000	2
+Lalwa ek bann Farizyen ti pe dir dan zot menm	Farisiyawa	1.0000	2
+Pa mansyonn non SENYER	Ubangiji	1.0000	2
+Bere	Bereya	1.0000	2
+David bann dizenn milye	Dawuda	1.0000	2
+Jean Marc	Markus	1.0000	2
+Aaron ava ofer SENYER sa lofrann	Haruna	1.0000	2
+Alors Satan	Shaiɗan	1.0000	2
+Temann, Omar, Sefo, Gatanm, ek Kenaz	Teman	1.0000	2
+Ahitofel in	ahitofel	1.0000	2
+Alors Moïse	Musa	1.0000	2
+Zeres ek	Zeresh	1.0000	2
+Si Mardose	Mordekai	1.0000	2
+Mari piblikman	Mijinta	1.0000	2
+Daniel 12:1	Daniyel	1.0000	2
+Hebron koman son par teritwar	Hebron	1.0000	2
+Zwif konverti	Yahudawa	1.0000	2
+Allan	Allan	1.0000	2
+SATAN SERA	SHAIƊAN	1.0000	2
+Yeous, Yalanm, ek Kora	Yewush	1.0000	2
+Staten Island	Staten	1.0000	2
+Irak	Iraƙi	1.0000	2
+Anak	Anak	1.0000	2
+Zourden i	Urdun	1.0000	2
+Theological	Theological	1.0000	2
+Isaïe 43:11	Ishaya	1.0000	2
+Irpeel	Tarala	1.0000	2
+Tarala	Tarala	1.0000	2
+Rubén	Rubén	1.0000	2
+Bann Amorit ki	Amoriyawa	1.0000	2
+C’est Jésus Christ	yesu	1.0000	2
+Pourquoi les Israélites	Kuma	0.5000	2
+Zemaraim	Zemarayim	1.0000	2
+Ekout mwan, Zeroboanm ek	Yerobowam	1.0000	2
+Alep	Aleppo	1.0000	2
+Plere	Inabi	1.0000	2
+Mais le soir	Amma	1.0000	2
+Baton Aaron ti dan milye	Haruna	1.0000	2
+Katat	Idala	1.0000	2
+Matthieu 24:37-39	matta	0.5000	2
+I pou apel li Emanouel	Immanuwel	1.0000	2
+Zerizalenm ki ti apel Simeon	Urushalima	1.0000	2
+Rimonn, Token ek Asann; senk lavil an tou	Rimmon	1.0000	2
+Fernwanr pou tonm	Duhu	1.0000	2
+Dieu produit	Allah	1.0000	2
+Lagrel pou balye	Ƙanƙara	1.0000	2
+Ravensbrück	Ravensbrück	1.0000	2
+Edgefield	Edgefield	1.0000	2
+Sedad	Zedad	1.0000	2
+Me bann levit pa ti prese	Lawiyawa	1.0000	2
+Kefira, Beerot e Kiryat-Yearim	Kefira	1.0000	2
+Satan utilise	Shaiɗan	1.0000	2
+Eliezer: Rehabia	Rehabiya	1.0000	2
+Quel bon usage Jésus	Yesu	1.0000	2
+Kenit	Keniyawa	1.0000	2
+Kadmonit	kadmoniyawa	1.0000	2
+Nou pou fer tou sa ki SENYER in dir	Ubangiji	1.0000	2
+Aravna	Arauna	1.0000	2
+Kasifya	Kasifiya	1.0000	2
+Ou ki SENYER, depi touzour	Ubangiji	1.0000	2
+Simronn	Shimron	1.0000	2
+Ezekyas tronp zot e anmenn zot dan move semen	Hezekiya	1.0000	2
+Ann	Feninna	1.0000	2
+Zour SENYER i	Ubangiji	1.0000	2
+D’après Isaïe	Ishaya	1.0000	2
+Saül n	Saul	1.0000	2
+Harnefer, Soual, Beri, Yimra	Harnefer	1.0000	2
+Eskiz mwan mon senyer	ubangiji	1.0000	2
+Si SENYER i avek	Ubangiji	1.0000	2
+Moab lo kote	Mowab	1.0000	2
+Menm larenn	Sarauniya	1.0000	2
+Zeroboanm ti fer	Yerobowam	1.0000	2
+SENYER ti fer en divan	Ubangiji	1.0000	2
+Tou bann zonm Efraim ti ganny mobilize	Efraim	0.5000	2
+Zilyis	Juliyos	1.0000	2
+Hébreux 7:25	Ibraniyawa	1.0000	2
+Zerizalenm tou bann maler ki mon	Urushalima	1.0000	2
+Moiz ti annan an, e Aaron an	Haruna	1.0000	2
+Bann zabitan Kemos in disparet	Kemosh	1.0000	2
+Lezip vin	Masar	1.0000	2
+Lalwa Moiz i	Musa	1.0000	2
+Kri ava donn zot lagras ek lape	salama	1.0000	2
+Proverbes 13:10	Karin	1.0000	2
+Ahihoud	Ahihud	1.0000	2
+Quel intérêt Dieu porte-t-il à ceux	Allah	1.0000	2
+In dir: SENYER	Ubangiji	1.0000	2
+Lezip vin en pei	Masar	1.0000	2
+Ecclésiaste 9:10	Mai-Wa	1.0000	2
+Steele	Steele	1.0000	2
+Jérémie 29:11	Irmiya	1.0000	2
+Teba	Gaham	1.0000	2
+Gahanm, Tahas ek Maaka	Gaham	1.0000	2
+Nil ki ava vin disan	Nilu	1.0000	2
+Oli SENYER, ou Bondye, pou vin en spektak	Ubangiji	1.0000	2
+Bondye zis bann Zwif	Yahudawa	1.0000	2
+Jean 4:31-38	Yohanna	1.0000	2
+Miseanm	misham	1.0000	2
+D’après Hébreux 13:16	Ibraniyawa	1.0000	2
+Lakizater ti kit prezans SENYER	Ubangiji	1.0000	2
+Jésus heureux	Yesu	1.0000	2
+Ou lalev i distil dimyel	Zuma	1.0000	2
+SENYER i avek	Ubangiji	1.0000	2
+Vale Lerwa	Kwarin	1.0000	2
+Dieu révélé dans la Bible	Littafi	1.0000	2
+Wire	Wire	1.0000	2
+Jéhovah est	Jehobah	1.0000	2
+Rispa	Rizfa	1.0000	2
+Moab pou vin	Mowab	1.0000	2
+Negede	Negede	0.5000	2
+Proverbes 30:18	Karin	1.0000	2
+Jéhovah Dieu en personne	Jehobah	1.0000	2
+Tobia	Eliashib	1.0000	2
+Pret ava aplik lo li tou sa ki lalwa i dir	Firist	1.0000	2
+Abrahanm depi lot	Ibrahim	1.0000	2
+Laport Fimyen ki i	Juji	1.0000	2
+Pak katorzyenm zour, premye mwan	Ƙetarewa	1.0000	2
+Senyer koman en lesklav	Ubangiji	1.0000	2
+Tabaot	Hasufa	1.0000	2
+Éphésiens 4:28	Afisawa	1.0000	2
+Arnon ek	Arnon	1.0000	2
+Mardose ti	mordekai	1.0000	2
+Kris koman zot Senyer	Ubangiji	1.0000	2
+Hodes i ti ganny Yobab, Sibya, Mesa, Malkanm	Malkam	1.0000	2
+Vale Ben Hinonm	Hinnom	1.0000	2
+Pispa	fisfa	1.0000	2
+Ara	Ara	1.0000	2
+Aaron ti dir pep	Haruna	1.0000	2
+Dir David lerwa pa oule	Dawuda	1.0000	2
+Lalwa bann Zwif, ni kont Tanp, ni kont Sezar	Kaisar	1.0000	2
+Port Moresby	Port	1.0000	2
+Zerizalenm ti vin	Urushalima	1.0000	2
+Annefe SENYER pa pou pardonn sa enn ki	Ubangiji	1.0000	2
+Me lisyen	Karnuka	1.0000	2
+Edonm pour dir li	Edom	1.0000	2
+Quels bienfaits Bryant	bryant	0.5000	2
+Letan Zoab	Yowab	1.0000	2
+SENYER ti livre zot dan mon lanmen	Ubangiji	1.0000	2
+Pret siprenm	Firist	1.0000	2
+Cependant, Satan	Shaiɗan	1.0000	2
+Vladimir	Vladimir	1.0000	2
+Nou konnen ki tou et imen i zis divan	Iska	1.0000	2
+Eliflehou	elifelehu	1.0000	2
+Mikneya	Elifelehu	1.0000	2
+Proverbes 21:5	Karin	1.0000	2
+Zerizalenm ki	Urushalima	1.0000	2
+Kof Lalyans ki annan dokiman lalyans	Akwatin	1.0000	2
+Ashtoreth	Ashtaroth	1.0000	2
+Quel avenir Dieu	Allah	1.0000	2
+Zot tou, zot ti reponn, Krisifye li	Gicciye	1.0000	2
+Sourisadai, ti diriz larme tribi Simeon	Zurishaddai	1.0000	2
+Romains 1:14	Romawa	1.0000	2
+Nenfa	Nimfa	1.0000	2
+Nabot ti dir Akab	Ahab	1.0000	2
+Depi Sid a Was, depi Nor pei	Arewa	1.0000	2
+Stratton	Stratton	1.0000	2
+Mise garson, Yimla	Imla	1.0000	2
+Ester lakaz Haman	Esta	1.0000	2
+Mardose ti prezant li devan lerwa	Mordekai	1.0000	2
+Amalesit ki i ti masakre par lepe	Amalekawa	1.0000	2
+Asoufa	Hasufa	1.0000	2
+Ozordi SENYER in	Ubangiji	1.0000	2
+Gareb	Gareb	1.0000	2
+Calgary	Calgary	1.0000	2
+Bariya, Nearya ek Safat; sis an tou	bariya	1.0000	2
+Petor	Fetor	1.0000	2
+Elyel koman	Eliyel	1.0000	2
+Amonit in	Ammonawa	1.0000	2
+Seharia	Shehariya	1.0000	2
+Fanm Zeroboanm	Yerobowam	1.0000	2
+Kan mon ti kit Masedwann	Makidoniya	1.0000	2
+Moiz avek	Musa	1.0000	2
+Moab i rezonnen avek lapel osekour	Mowab	1.0000	2
+Nadab ti	Nadab	1.0000	2
+Bann ansyen ti prosternen e	Dattawan	1.0000	2
+Ezekyas, lerwa Zida	Hezekiya	1.0000	2
+Mikaya	Mikaya	1.0000	2
+Fiy Zerizalenm i sekwe latet deryer ou ledo	Urushalima	1.0000	2
+Rezin, lerwa Lasiri, ek Peka, garson Remalia	Remaliya	1.0000	2
+I pa en labriz pour vannen, ni pour netwaye	Rairaye	1.0000	2
+Nou ti travers montanny bann Amorit	Amoriyawa	1.0000	2
+Comment les prêtres	Yaya	1.0000	2
+Ki larepons SENYER	Ubangiji	1.0000	2
+Comment certains frères	Yaya	1.0000	2
+Satan ti antre dan li	Shaiɗan	1.0000	2
+Dabrat	Daberat	1.0000	2
+Arkit ek bann Sinit	Siniyawa	1.0000	2
+Alor Zeremi ti anfonse dan labou	Irmiya	1.0000	2
+Retournen David, mon garson	Dawuda	1.0000	2
+Tou bann zetwal ki briye	Taurari	1.0000	2
+Comment David	Yaya	1.0000	2
+Balaanm in	balak	1.0000	2
+Adma	Adma	0.5000	2
+Seboim	Zeboyim	1.0000	2
+Matilda	Matilda	1.0000	2
+Absalon ti dir, Apel ankor Housai	Absalom	1.0000	2
+Kolonn ki ti mezir	Kamu	1.0000	2
+Yerohanm, Elkana	Yeroham	1.0000	2
+Ou pa konnen ki bann Filisten in vin	Filistiyawa	1.0000	2
+I pou mezir kilomet	Kamu	1.0000	2
+Comment Philippiens	Filibiyawa	1.0000	2
+Senakerib	sennakerib	0.5000	2
+Bann Libyen	Libiyawa	1.0000	2
+Lezip kot Zozef pour aste dible	Masar	1.0000	2
+Zehou peye	Yehu	1.0000	2
+Lalwa Moiz, i ganny	Musa	1.0000	2
+Tou dimoun ki krwar, i posed lavi eternel	Madawwami	1.0000	2
+Asiri pou	Assuriya	1.0000	2
+Abiya ti vin lerwa	Sarki	0.5000	2
+Aroer ki	Arower	1.0000	2
+Kharkiv	Kharkiv	1.0000	2
+Annou al ofer bann sakrifis pour SENYER	Ubangiji	1.0000	2
+Lais	Layish	1.0000	2
+David Siklag	Ziklag	1.0000	2
+Abiya ek bann gerye Zida	Abiya	0.5000	2
+Simone	Simone	0.5000	2
+Hiranm ti	Hiram	1.0000	2
+David! Ozana	Hosanna	1.0000	2
+Bondye liniver i deklare	Maɗaukaki	1.0000	2
+Senyer in fer pour mwan	Ubangiji	1.0000	2
+Larissa	Larissa	1.0000	2
+Parol SENYER ti ariv kot mwan	Ubangiji	1.0000	2
+Matthieu 4:4	Matta	0.5000	2
+Atai, Ziza, ek Selomit	Attai	1.0000	2
+Zoli Laport, en zonm	Ƙofar	1.0000	2
+Maok	Mawok	1.0000	2
+Gibetonn	Gibbeton	1.0000	2
+Moiz ki i ti'n kit	Musa	1.0000	2
+Kote fernwanr	Duhu	1.0000	2
+Bichkek	Bishkek	1.0000	2
+Sin, ler zot	Zin	1.0000	2
+Doreen	Doreen	1.0000	2
+Marcel Filteau	Marcel	1.0000	2
+Heles	Helez	1.0000	2
+Sirenn	Sairin	1.0000	2
+Monica	Monica	1.0000	2
+Ambra	Ambra	1.0000	2
+Zozafat devan	Yehoshafat	1.0000	2
+Zerizalenm dan lazwa	Urushalima	1.0000	2
+Comment une personne	Yaya	1.0000	2
+Yesouroun	Yeshurun	1.0000	2
+Nefeg, Yafya	Nefeg	1.0000	2
+Lemek ti viv ankor an	lamek	1.0000	2
+Lo kote Nor, i ava	Arewa	1.0000	2
+Akab ti'n fer, akoz son fanm ti en fiy Akab	Ahab	1.0000	2
+I ti dir li, Fer en lakaz pour ou Zerizalenm	Urushalima	1.0000	2
+Ezai ti al dan lakanpanny	Isuwa	1.0000	2
+Adoulamit	Ba'adullame	1.0000	2
+Zot in fouy en trou pour mwan	Haƙa	1.0000	2
+Faraon pou ekout mwan	Firauna	1.0000	2
+Izaak ki ou pou ganny en desandan	Ishaku	1.0000	2
+Zwif ti	Yahudawa	1.0000	2
+Yeremot	yerimot	0.5000	2
+Samari ti vin reste Betel	Betel	1.0000	2
+Siltai, Eliel	Zilletai	1.0000	2
+Menm bann kolekter	Karɓar	1.0000	2
+Angelines	Maƙwabciyata	1.0000	2
+Gamala	Gamla	1.0000	2
+SENYER pou swazir	Ubangiji	1.0000	2
+Annefe, Senyer Bondye	Ubangiji	1.0000	2
+Divan ti	Iska	1.0000	2
+Abel ti en berze	Habila	1.0000	2
+Bigtan ek Teres	teresh	1.0000	2
+SENYER in abandonn mwan	Ubangiji	1.0000	2
+Kof Lalyans nou Bondye	Akwatin	1.0000	2
+Zozafat lerwa	Yehoshafat	1.0000	2
+Bezek	Bezek	1.0000	2
+Iri ti gannyen pour David	Dawuda	1.0000	2
+Lezip kot ou sorti	Masar	1.0000	2
+Mais la Bible parle	Littafi	1.0000	2
+Madián	Marcela	1.0000	2
+Etann	etan	1.0000	2
+Earline	Earline	1.0000	2
+Zidim	Zer	1.0000	2
+Rakat, Zenezaret	Kinneret	1.0000	2
+Krett	Józef	1.0000	2
+Moiz fas	Musa	1.0000	2
+Tihomir	Tihomir	1.0000	2
+New	York	1.0000	2
+BONDYE i dir lo size Edonm	Edom	1.0000	2
+Isaiah Adagbona	Adagbona	1.0000	2
+Timna, Alva, Yetet	Timna	1.0000	2
+Romains 8:26	Romawa	1.0000	2
+Romains 8:20	Romawa	1.0000	2
+Horit	Horiyawa	1.0000	2
+Bible utilise	Littafi	1.0000	2
+Zifronn	Zifron	1.0000	2
+Pa oubliy mwan, vin sekour mwan SENYER	Ubangiji	1.0000	2
+Peléthiens	Pelethawa	1.0000	2
+Béthel d’Allemagne	Jamus	1.0000	2
+Sofia	Sofiya	1.0000	2
+Rehabia	Rehabiya	1.0000	2
+Lanmen SENYER, son Bondye, ti avek li	Ubangiji	1.0000	2
+Psaume 78:40, 41	zabura	0.5000	2
+Jéhovah approche	Jehobah	1.0000	2
+Personn pa vin kraz rezen pour fer diven	Inabi	1.0000	2
+Nor dan rezyon Basann, ziska Salka	Bashan	1.0000	2
+Moiz lo	Musa	1.0000	2
+Elyada	Rezon	1.0000	2
+Ou menm SENYER	Ubangiji	1.0000	2
+Raimo Kuokkanen	Kuokkanen	1.0000	2
+Melek	Fiton	1.0000	2
+Tarea ek Akaz	Ahaz	1.0000	2
+Mesezabeel	meshezabel	1.0000	2
+Garson Yefoune, ti desir	Yefunne	1.0000	2
+Cindy	Cindy	1.0000	2
+I ti dir pret Abiatar, Anmenn lefod	Abiyatar	0.5000	2
+Piratonit	Firaton	1.0000	2
+Bosra	Bozra	1.0000	2
+Steing	Steing	1.0000	2
+Kof Bondye ti'n ariv Gat, lanmen SENYER	Ubangiji	1.0000	2
+Alexandre	Iskandari	1.0000	2
+Kiliôn	Chilion	1.0000	2
+Comment les activités	Yaya	0.5000	2
+Berenis	bernis	0.5000	2
+Talk	Talk	1.0000	2
+Akab in	Ahab	1.0000	2
+Moab depi	Mowab	1.0000	2
+Lotel annor	Bagaden	1.0000	2
+Semaa	Yeziyel	1.0000	2
+Yezyel	Yeziyel	1.0000	2
+Quel exemple Joseph	Yusufu	0.5000	2
+Zeroboanm pou mor dan lager, e	Yerobowam	1.0000	2
+John Cooke	Cooke	1.0000	2
+Gran-Pret ti konn byen sa lot disip	Firist	1.0000	2
+Kof Bondye, lo lekel non SENYER	Ubangiji	1.0000	2
+Jean 11:11-14	Yohanna	1.0000	2
+Leslie	leslie	0.5000	2
+Alor Kimhanm ava	Kimham	1.0000	2
+Reste for e kouraze, akoz konmsa ki SENYER	Ubangiji	1.0000	2
+VIDÉO MERCI	BIDIYON	1.0000	2
+Sainte Bible	Littafi	1.0000	2
+Hebron granmaten	Hebron	1.0000	2
+Tofet ki dan laplenn bann garson	Tofet	1.0000	2
+Moiz in donn zot	Musa	1.0000	2
+Jéhovah » (4:47	Jehobah	1.0000	2
+Yaazya	Beno	1.0000	2
+Larzer lespas	Kamu	1.0000	2
+Luc 17:3, 4	Luk	1.0000	2
+Lezip koman en ranson pour ou delivrans	Masar	1.0000	2
+Dabor bann Zwif, answit bann non-Zwif	Yahudawa	1.0000	2
+Donn lerwa laviktwar	Sarki	1.0000	2
+Senyer i bon	Ubangiji	1.0000	2
+Move dezir natir imen	Mutuntaka	1.0000	2
+Leipzig	Leipzig	1.0000	2
+Sakia ek Mirma	sakiya	1.0000	2
+Matri	Matri	1.0000	2
+Agostinho	Agostinho	1.0000	2
+Colossiens 3:23	Kolosiyawa	1.0000	2
+Legliz Zerizalenm	Urushalima	1.0000	2
+Legliz ki	Ikkilisiya	1.0000	2
+Masreka	Masreka	1.0000	2
+Megido	Magiddo	1.0000	2
+Faraon larzan	Firauna	0.5000	2
+Daniel lui	Daniyel	1.0000	2
+I ti dir li, Sa maler i sorti kot SENYER	Ubangiji	1.0000	2
+Kof lalyans in ganny sezi	Akwatin	1.0000	2
+Ekout byen, garson Ahitoub	Ahitub	1.0000	2
+Zeriko, dan Les larivyer Zourden	Urdun	1.0000	2
+Tous les Témoins	Shaidun	0.5000	2
+Jean 3:13	yohanna	0.5000	2
+Parey Elize	Elisha	1.0000	2
+Hesbonn ziska Romat-Mispe	Heshbon	1.0000	2
+Betonim	Betonim	1.0000	2
+Jésus Christ ( Mat	Mat	1.0000	2
+Moiz reprodwir	Musa	1.0000	2
+Adadezer lerwa Soba	Zoba	1.0000	2
+Amnon ti dir lerwa	Amnon	1.0000	2
+Tamar vin	Tamar	1.0000	2
+Zozyas vin lerwa	Sarki	0.5000	2
+Ido, Zera, Yeatrai	Iddo	1.0000	2
+Tapoua, Rekenm ek Sema	Taffuwa	1.0000	2
+Daniel qu	Daniyel	1.0000	2
+Izaak ti annan	Ishaku	1.0000	2
+Zida e ki	Yahuza	1.0000	2
+Jean-David	Jean-David	1.0000	2
+SENYER in revel	ubangiji	1.0000	2
+Gelilot	Bohan	1.0000	2
+Bohann	Bohan	1.0000	2
+Pa bwar diven ni okenn labwason for	Inabi	1.0000	2
+Doratine	Sylvie	1.0000	2
+Yekabseel	Yekabzeyel	1.0000	2
+Hara pre larivyer Gozann	Hara	1.0000	2
+Konmsa, SENYER Bondye	Ubangiji	1.0000	2
+SENYER Bondye ti dir, Zonm in vin parey	Ubangiji	1.0000	2
+Pedael	Fedahel	1.0000	2
+Hilkiya sef	Hilkiya	1.0000	2
+Asaf ki ti arsivis	Asaf	1.0000	2
+Me an de fwa, David ti saye	Dawuda	1.0000	2
+Et c’est ce	Cewa	1.0000	2
+Nou napa lerwa	Sarki	1.0000	2
+Psaume 90:10	Zabura	1.0000	2
+Bondye lesyel pour tanp Bondye	Haikalin	1.0000	2
+Mais examinons	Amma	1.0000	2
+Lezip e aret son lorgey	Masar	1.0000	2
+Liv Listwar bann Lerwa	Sarki	1.0000	2
+Ahikanm, Akbor	Akbor	1.0000	2
+Baltimore	Maryland	1.0000	2
+Maryland	Maryland	1.0000	2
+Collection	Collection	1.0000	2
+Emily	Emily	1.0000	2
+Regina	Regina	1.0000	2
+John lui	John	1.0000	2
+Salmouna kont ki zot ti fer mwan en repros	Zalmunna	1.0000	2
+Eski Zeba ek Saloumanna i	Zalmunna	1.0000	2
+Cuirassé	Battleship	1.0000	2
+Moiz dan pei Lezip	Masar	1.0000	2
+Comment la prière	Yaya	1.0000	2
+Donn SENYER, Donn SENYER laglwar ek	Ubangiji	1.0000	2
+Semaraim, Betel	zemarayim	1.0000	2
+Asaf ti lo son kote drwat	Asaf	1.0000	2
+Matthieu 5:9	Matta	1.0000	2
+Zot in obei tou bann lord ki Moiz	Musa	1.0000	2
+Iri sa Hitit	Uriya	1.0000	2
+Lafanmin oubyen	Yunwa	1.0000	2
+Esdras ek	Ezra	1.0000	2
+Datann	Datan	1.0000	2
+Nicoleau	Nicoleau	1.0000	2
+Adoulanm ek bann vilaz	Adullam	1.0000	2
+Tofet kot SENYER ti'n anvoy li pour koz	Tofet	1.0000	2
+Bondye Izrael, parey SENYER li menm	Ubangiji	1.0000	2
+Ezai i	Isuwa	1.0000	2
+Béthel d’Australie	Ostareliya	1.0000	2
+Toussaint	Samhain	1.0000	2
+Samain	Samhain	1.0000	2
+Luc 1:13	Luk	1.0000	2
+Sara osi	Saratu	1.0000	2
+Senyer in fer pour li alafen	Ubangiji	1.0000	2
+Ner e Zoab	Ner	1.0000	2
+Pisga ki anfas avek Zeriko	Fisga	1.0000	2
+Lespas ant bann lasal tanp	Haikalin	1.0000	2
+Zot pa ni priy SENYER	Ubangiji	1.0000	2
+I annan en lyon deor	Zaki	1.0000	2
+Céline	Céline	1.0000	2
+Arnon ziska	Arnon	1.0000	2
+Israélites d	Ilawa	1.0000	2
+Jésus a d’ailleurs	Yesu	1.0000	2
+I ti dir, Konmsa ki ou reponn Gran-Pret	Firist	1.0000	2
+Et comment peux	Yaya	1.0000	2
+Samari in bwar	Samariya	1.0000	2
+Netanya	Netaniya	1.0000	2
+Pitonm	Fitom	1.0000	2
+Sebanya	Shebaniya	1.0000	2
+Ribenit	Gadawa	1.0000	2
+Aaron zot bann frer dan servis tanp SENYER	Haruna	1.0000	2
+Moiz in mor	Musa	1.0000	2
+Hebron devan David	Hebron	1.0000	2
+Dokter geri ou, ou menm	Warkar	1.0000	2
+Senyer in resisite	ubangiji	1.0000	2
+SENYER in anmenn	ubangiji	1.0000	2
+Alor, parey SENYER	Ubangiji	1.0000	2
+Aaron ek	Haruna	1.0000	2
+Jean 8:31	Yohanna	1.0000	2
+Hofni ek Fineas	finehas	1.0000	2
+Aaron ava bril lansan aromatik	Haruna	1.0000	2
+Jeffrey	Jeffrey	1.0000	2
+Lezip e mon'n fer zot	Masar	1.0000	2
+Jean 4:4	Yohanna	1.0000	2
+Abraham s	Ibrahim	1.0000	2
+Mais Hophni	Hophni	1.0000	2
+Phinéas	Hophni	1.0000	2
+Hod	Hod	1.0000	2
+Silsa	hod	1.0000	2
+Personn pa ti kapab trouv laport	Ƙofar	1.0000	2
+Iri pa ti al	Uriya	1.0000	2
+Kof Bondye Ekronn	Ekron	1.0000	2
+Ekronn, bann zabitan Ekronn	ekron	1.0000	2
+Zerizalenm e	Urushalima	1.0000	2
+I ti dir, Zabitan Efez	Afisa	1.0000	2
+Efez i	Afisa	1.0000	2
+Cambyse	Cambyses	1.0000	2
+Yorai, Yakann, Zia ek Eber; set an tou	yorai	1.0000	2
+Maas, Yamin ek Eker	Eker	1.0000	2
+Me mwan, zot in oubliy mwan, Senyer BONDYE ki	Ubangiji	1.0000	2
+Pret Abiatar	Firist	0.5000	2
+Blantyre	Blantyre	1.0000	2
+Abimélech	Abimelech	1.0000	2
+Ahitofel i	ahitofel	1.0000	2
+Absalon parmi bann ki ti fer konplo	Absalom	1.0000	2
+Si SENYER i	Ubangiji	1.0000	2
+Tanoumet	Efai	1.0000	2
+Netofat	Tanhumet	1.0000	2
+Daniel n	Daniyel	1.0000	2
+Bible énumère	Littafi	1.0000	2
+Aristote	Aristotle	1.0000	2
+Milan	Milan	1.0000	2
+Amasya pa ti ekoute	Amaziya	1.0000	2
+Hiel	Hiyel	1.0000	2
+Oul	geter	1.0000	2
+SENYER ti sezi mwan	Ubangiji	1.0000	2
+Béréens	Biriya	1.0000	2
+Avek bann malfeter	Mugaye	1.0000	2
+Luc 6:31	Luk	1.0000	2
+Peor ki vir lo dezer	Feyor	1.0000	2
+Jumpei	Jumpei	1.0000	2
+I ti geri tou bann ki ti malad	Warkar	1.0000	2
+Vitaly	Vitaly	1.0000	2
+Lalenn kouler ble	Shuɗi	1.0000	2
+Garson Bondye, i reste pret pour touzour	Firist	1.0000	2
+Afeka	Afeka	1.0000	2
+Ilias	Ilias	1.0000	2
+Daniel 3:28	Daniyel	0.5000	2
+Gabaon ziska Gezer	Gezer	1.0000	2
+Hadad ki i ti fer li	Hadad	1.0000	2
+Agze, mesaze SENYER	ubangiji	1.0000	2
+Mispa, e mon ava priy SENYER pour zot	Mizfa	1.0000	2
+Zimri papa Mosa	Zimri	1.0000	2
+Boskat	Bozkat	1.0000	2
+Senyer, eski letan in	ubangiji	1.0000	2
+I kimen, i grens ledan e	Kumfa	1.0000	2
+Senazar, Yekamya, Hosama ek Nedabya	shenazzar	1.0000	2
+Me si disel i	Gishiri	1.0000	2
+Éphésiens 4:16	Afisawa	1.0000	2
+Harold King	Harold	1.0000	2
+Psaume 72:14	Zabura	1.0000	2
+Comment te	Yaya	1.0000	2
+Me Moiz ti sove	Musa	1.0000	2
+Pak Zwif ti pros	Ƙetarewa	1.0000	2
+Medellín	Medellín	1.0000	2
+Lezip atraver bann mirak e bann prodiz	Masar	1.0000	2
+Hosa	Hosa	1.0000	2
+Genèse 8:21	farawa	0.5000	2
+Jacques 3:2-4	Yaƙub	1.0000	2
+Jéhovah a- t	Jehobah	1.0000	2
+Ismaelit	Isma'ilawa	1.0000	2
+I ti plas en lasenn annor devan Lasal	Zinariya	1.0000	2
+Izrael tir vanzans kont Edonm	Edom	1.0000	2
+Christa	Christa	1.0000	2
+Dennis	Dennis	0.5000	2
+Abrahanm, Izaak	Ishaku	1.0000	2
+Mehoumann	Zetar	1.0000	2
+Me zot pa remark sa ki SENYER in fer	Ubangiji	1.0000	2
+Jean 5:29	Yohanna	1.0000	2
+I ti dir li, Abrahanm	Ibrahim	1.0000	2
+Genèse 24:67	Farawa	1.0000	2
+Phinéhas	Phinehas	1.0000	2
+Kirghizstan	Kyrgyzstan	1.0000	2
+David ek	Dawuda	1.0000	2
+Romains 8:5	Romawa	1.0000	2
+Mais il n	Amma	1.0000	2
+Zebadya	Zebadiya	1.0000	2
+Israélites infidèles	Ilawa	1.0000	2
+Écosse	Scotland	1.0000	2
+Romains 8:38, 39	Romawa	0.5000	2
+Moab pou ganny detri	Mowab	1.0000	2
+Arpaksad, Loud ek Aranm	Arfakshad	1.0000	2
+Lalyans	Ubangiji	1.0000	2
+Comment une femme	Yaya	1.0000	2
+Sakura	Sakura	1.0000	2
+Pout ek pep Libyen	Fut	1.0000	2
+SENYER, Bondye nou zanset	Ubangiji	1.0000	2
+Gutenberg	Gutenberg	1.0000	2
+Zida ek Zerizalenm	urushalima	0.5000	2
+Pearl	Pearl	1.0000	2
+Genèse 41:42	Farawa	1.0000	2
+Tou zonm ki fer li ganny sirkonsi, i oblize	Kaciya	1.0000	2
+Mais les prêtres	Amma	1.0000	2
+ECCLÉSIASTE 3:13	MAI-WA	1.0000	2
+Nabonide	Nabonidus	1.0000	2
+Araba antye	Araba	1.0000	2
+Izaak ti demann	Ishaku	1.0000	2
+Jésus aussi	Yesu	1.0000	2
+Hefer	Hefer	1.0000	2
+John Wycliffe	Wycliffe	1.0000	2
+Ki Moiz ti ordonn zot	Musa	1.0000	2
+Yer mon ti	Jiya	1.0000	2
+Zozef ki ti apel Barsabas	Barsaba	0.5000	2
+Lezip ti atak Gaza, SENYER	Ubangiji	1.0000	2
+Eleazar e	Eleyazar	1.0000	2
+Zida, garson Senoua, ti dezyenm sef dan lavil	Hassenuwa	1.0000	2
+Arann	Aran	1.0000	2
+Rifis	Rufus	1.0000	2
+Quel travail Jéhovah	Jehobah	1.0000	2
+Tous les regards	Kuma	1.0000	2
+Tabeel	Bishlam	1.0000	2
+Zerizalenm pou vin	Urushalima	1.0000	2
+Izrael set	Bakwai	1.0000	2
+Rébecca s	Rifkatu	1.0000	2
+I ti annan dis korn ek set latet	Bakwai	1.0000	2
+Sesbasar ti anmenn tousala	Sheshbazzar	1.0000	2
+Zetsemane	Getsemane	1.0000	2
+D’après 1 Corinthiens	Korintiyawa	1.0000	2
+Sibérie	Saiberiya	1.0000	2
+Sofai, Nahat	Zofai	1.0000	2
+SENYER ti sekour li	Ubangiji	1.0000	2
+Isaïe utilise	Ishaya	1.0000	2
+Asrielit	Asriyel	1.0000	2
+Myre	Mira	1.0000	2
+Depi Nor ziska	Arewa	1.0000	2
+Maria m	Maria	1.0000	2
+Iconium	Ikoniya	1.0000	2
+Senyer sov mwan	ubangiji	1.0000	2
+Côte d’Ivoire	Kwaddebuwa	1.0000	2
+Tabera	Tabera	1.0000	2
+Trinité-et-Tobago	Tobago	1.0000	2
+Eddie	Eddie	1.0000	2
+Keretit	Feletiyawa	1.0000	2
+Bann garson David	Dawuda	1.0000	2
+Balthazar	Belshazzar	1.0000	2
+Arménie	Armeniya	1.0000	2
+Akrabim	Akrabbim	1.0000	2
+Kebar	Kebar	1.0000	2
+Ézéchiel 34:12	Ezekiyel	1.0000	2
+Laport Zozef, laport Benzamen, laport Dann	Benyamin	0.5000	2
+Eli i	Iliya	1.0000	2
+Moiz ti'n dir	Musa	1.0000	2
+Amon	Amun	1.0000	2
+Kiev	Kyiv	0.5000	2
+Youbal	Makaɗan	1.0000	2
+Nou ti azenou lo bor lanmer e	Durƙusa	0.5000	2
+Agagit	Ba'agage	1.0000	2
+Alaska	Alaska	1.0000	2
+Éphésiens 5:33	Afisawa	0.5000	2
+I ti prezant li dile	Madara	1.0000	2
+Kathryn	Kathryn	1.0000	2
+Tour Hananeel	Hananel	1.0000	2
+Sant louanz, zot tou bann serviter SENYER	Ubangiji	1.0000	2
+Sisera ti	Sisera	1.0000	2
+David ek bann	Dawuda	1.0000	2
+SENYER ti dir li: Satan! SENYER	UBANGIJI	1.0000	2
+Vann tou sa ki ou posede	Sayar	1.0000	2
+Lezip vin zis	Masar	1.0000	2
+Migdol ziska	Migdol	1.0000	2
+Ruby	Ruby	1.0000	2
+Esdras, Mesoulanm	Ezra	1.0000	2
+Laport Pwason	Ƙofar	1.0000	2
+SENYER ti'n ordonn Moiz, i	musa	1.0000	2
+Non, Papa Abrahanm	Ibrahim	1.0000	2
+Lezip ki pou rasanble zot	Masar	1.0000	2
+Lavil Menmfis pou vin zot tonbo	Memfis	1.0000	2
+Abrahanm pa'n zanmen fer	Ibrahim	1.0000	2
+Temann, Omar, Sefo, Kenaz	Teman	1.0000	2
+Kote lespri SENYER	ubangiji	1.0000	2
+Salomon ti'n fer	Sulemanu	1.0000	2
+Sen dan tanp	Haikalin	1.0000	2
+Mais un jour	Amma	1.0000	2
+Abimelek in	Abimelek	1.0000	2
+Lezip ki	Masar	1.0000	2
+Php 2:15	Fib	1.0000	2
+Mefaat	Mefaat	1.0000	2
+Pran enn bann fiy Laban	Laban	1.0000	2
+Refael	Otni	1.0000	2
+Elzabad	Elzabad	1.0000	2
+Semakya	Otni	1.0000	2
+Jean 2:1-11	Yohanna	1.0000	2
+Sesann ti fer son fiy	Sheshan	1.0000	2
+Ahisamak	Ahisamak	1.0000	2
+Alor i ti apel sa pwi Esek	Esek	1.0000	2
+Lebra SENYER	Ubangiji	1.0000	2
+Pagiel	Okran	1.0000	2
+Laisa	Gallim	1.0000	2
+Acan	Achan	1.0000	2
+Mon sipliy SENYER	ubangiji	1.0000	2
+Asiri koman	Assuriya	1.0000	2
+Ebed in	Ebed	1.0000	2
+Hong Kong	Kong	1.0000	2
+Matat	Mattat	1.0000	2
+Pa per, pa tranble, akoz SENYER, ou Bondye, i	Ubangiji	1.0000	2
+SENYER ti beni zour saba e i ti konsakre li	Ubangiji	1.0000	2
+Dir avek bann pret, zanfan Aaron	Haruna	1.0000	2
+Horst Henschel	Horst	1.0000	2
+Dan Vale Vizyon, miray i ganny kraze	Kwarin	1.0000	2
+Montanny Tabor	Tabor	1.0000	2
+Amonn ti ofer sakrifis devan tou stati	Amon	0.5000	2
+David ti'n ariv Keila	Dawuda	1.0000	2
+I ti dir, Sadrak, Mesak ek	Meshak	1.0000	2
+Sadrak, Mesak ek Abed-Nego ti sorti dan dife	Meshak	1.0000	2
+Heber, Eliel	eber	1.0000	2
+Matthieu 19:9	Matta	0.5000	2
+Salomon ti ofer sakrifis konplet	Ƙonawa	1.0000	2
+Torben	Torben	1.0000	2
+Aaron ki i ti	Haruna	1.0000	2
+Kenat ek son teritwar dan zalantour	Kenat	1.0000	2
+Lezip kot ou ti lesklav	Masar	1.0000	2
+Renar	yanyawa	1.0000	2
+Charlie	Charlie	1.0000	2
+Erfurt	Erfurt	1.0000	2
+Artem	Artem	1.0000	2
+Genèse 2:24	Farawa	1.0000	2
+Simon Iskaryot	Siman	1.0000	2
+Ou lafwa in geri	Warkar	1.0000	2
+Si Ezai i	Isuwa	1.0000	2
+Sophonie	Zafaniya	1.0000	2
+Isaïe 7:14	Ishaya	1.0000	2
+Yaazya, Sohanm, Zakour ek Ibri	Beno	1.0000	2
+Zot tou, zot ti raport kot pret Yoyada	Yehohiyada	0.5000	2
+Mwan SENYER, ou Bondye, mon en Bondye zalou	Ubangiji	1.0000	2
+Pourquoi Romains	Romawa	1.0000	2
+Herodyad	Hiridiyas	1.0000	2
+Galim	Gallim	1.0000	2
+D’autres proclamateurs	Shela	1.0000	2
+Carmel	Karmel	1.0000	2
+Cahier Vie et ministère de mars 2016	2016	1.0000	2
+Nebo in	Nebo	1.0000	2
+Amonit ozordi	Ammonawa	1.0000	2
+The Companion Bible	Companion	1.0000	2
+Los Angeles	Angeles	1.0000	2
+Pa mwan Kris	Kiristi	1.0000	2
+Bet-Yesimot, Baal-Meonn ek Kiryataim	Kiriyatayim	1.0000	2
+Katerina	Katerina	1.0000	2
+I pa ti dir nanryen son mari, Nabal	Nabal	1.0000	2
+Zerizalenm ti	Urushalima	1.0000	2
+Rei	Reyi	1.0000	2
+Kazumi	Kazumi	1.0000	2
+Eli ti vin rankontre li	Iliya	1.0000	2
+Abdyas ti	Obadiya	1.0000	2
+Zabitan Gebim	Madmena	1.0000	2
+Regenm, Yotanm, Gesann, Pelet, Efa ek Saaf	Yadai	1.0000	2
+Aurore	Millennial	1.0000	2
+Ou lema in	Katakanki	1.0000	2
+Bondye Sadrak, Mesak e	Meshak	1.0000	2
+Épaphrodite	Abafroditus	1.0000	2
+Sak palye ti en mezir larzer	Matakanta	1.0000	2
+Matana	Mattana	1.0000	2
+Naaliel zot	Nahaliyel	1.0000	2
+David koman	Dawuda	1.0000	2
+VIDÉO Êtes-vous	BIDIYON	1.0000	2
+Aroer ki obor	Arower	1.0000	2
+César Auguste	Augustus	1.0000	2
+Zehou ti'n ariv Zizreel, i	Yehu	1.0000	2
+Elaine m	Elaine	1.0000	2
+Eutyche	Aftikos	1.0000	2
+Colossiens 4:3	Kolosiyawa	1.0000	2
+Beor	Beyor	1.0000	2
+I ti'n bwar e soule kot Arsa	Arza	1.0000	2
+Bondye Abrahanm ou papa e Bondye Izaak	Ishaku	1.0000	2
+Nagoya	Nagoya	1.0000	2
+Yokdeanm	Yokdeyam	1.0000	2
+Zanoa	Zanowa	1.0000	2
+Satan tonbe	Shaiɗan	1.0000	2
+Rabouni	rabboni	1.0000	2
+Aven	Awen	1.0000	2
+Kir	Kir	1.0000	2
+Bann Filisten ki ti'n ganny	Filistiyawa	1.0000	2
+Anvoy mwan David ou garson, ki pe vey troupo	Dawuda	1.0000	2
+Senyer BONDYE, SENYER	Ubangiji	1.0000	2
+Mais Marie	Maryamu	1.0000	2
+Jetha	Jetha	1.0000	2
+Nou pa fer parti lannwit ni fernwanr	Duhu	1.0000	2
+Sered, Elonn ek Yaleel	Yaleyel	1.0000	2
+Izrael ava	Israila	1.0000	2
+Senyer BONDYE, bann profet	ubangiji	1.0000	2
+Questions fréquentes	Tambayoyi	1.0000	2
+Kris i totalman prezan dan Legliz	Ikkilisiya	1.0000	2
+Eli ti dir Elize	Elisha	1.0000	2
+Noadya	Nowadiya	1.0000	2
+Ki i annan, larenn Ester	esta	1.0000	2
+Kalkol	Kalkol	1.0000	2
+Ecclésiaste 5:18	Mai-Wa	1.0000	2
+SENYER lor koman lofrann	zinariya	1.0000	2
+Jésus sauve	Yesu	1.0000	2
+Mart ek	Marta	1.0000	2
+Barabas ti en bandi	Barabbas	1.0000	2
+Jean 5:28	Yohanna	1.0000	2
+Tifsa	Tifsa	1.0000	2
+Lire Isaïe 48:17	Ishaya	1.0000	2
+Comment celui	Yaya	1.0000	2
+Klaus	Klaus	1.0000	2
+David ti'n fer	Dawuda	1.0000	2
+Jéhovah ‘n	Jehobah	1.0000	2
+Asiri ti	Assuriya	1.0000	2
+Donn mwan en lerwa ek bann sef	Sarki	1.0000	2
+Mwan SENYER, mon pa pou	Ubangiji	1.0000	2
+Bann garson Dedann	Dedan	1.0000	2
+Lezip ki pa ti'n ekout SENYER	Ubangiji	1.0000	2
+Ahohit	Aho	1.0000	2
+Larezin	Galbanum	1.0000	2
+Tirhana	Sheber	1.0000	2
+Yair ziska Basann	Bashan	1.0000	2
+Barry	Barry	1.0000	2
+Samari pa konn lalwa bondye sa pei	Samariya	1.0000	2
+Anat	Anat	1.0000	2
+Bondye Zerizalenm	Urushalima	1.0000	2
+Wakaw	Wakaw	1.0000	2
+Hor kot i ti mor	Hor	1.0000	2
+Rekab ki ti vin zwenn li	Rekab	1.0000	2
+I ti geri sa garson	Warkar	1.0000	2
+HUIT PARTIES	JAWABAI	1.0000	2
+Dofka	Dofka	1.0000	2
+Aminadab koman	Amminadab	1.0000	2
+Faizal	Faizal	1.0000	2
+Jean 4:7	Yohanna	1.0000	2
+Silim	Shilhim	1.0000	2
+Simsai	shimshai	1.0000	2
+Bondye Izrael i dir ou Barouk	Baruk	1.0000	2
+Kemos	Kemosh	1.0000	2
+Ierchov	Yershov	1.0000	2
+D’après Zacharie	Zakariya	1.0000	2
+Laplenn Basann ek Karmel i deperi; fler	Bashan	1.0000	2
+Tou bann Zwif i annan	Yahudawa	1.0000	2
+Que dirais	Cewa	1.0000	2
+Montanny Siyon e lo Zerizalenm	Urushalima	1.0000	2
+Nibaz	Tartak	1.0000	2
+Adramelek ek	Adrammelek	1.0000	2
+Comment Jéhovah montre-t-il	Jehobah	1.0000	2
+Gilboa	Gilbowa	1.0000	2
+Nouvo Zerizalenm ki	Urushalima	1.0000	2
+Abisalonm	Abisalom	1.0000	2
+Gabai ek Salai	gabbai	1.0000	2
+D’après Jésus	Yesu	1.0000	2
+Omri komandan larme	Omri	1.0000	2
+Vale Akor ziska ozordi	Akor	1.0000	2
+Eliab trwazyenm	Eliyab	1.0000	2
+Amnon, garson David, ti tonm anmoure	Amnon	1.0000	2
+Galaad e Basann	bashan	1.0000	2
+Nadab, Abihou	Abihu	1.0000	2
+Latant SENYER	Ubangiji	1.0000	2
+Ahiloud ti	Ahilud	1.0000	2
+Lalwa ek bann Farizyen ti anmenn en fanm	Farisiyawa	1.0000	2
+Gard bann komannman SENYER, zot Bondye	Ubangiji	1.0000	2
+Tadmor	Tadmor	1.0000	2
+Charles Capen	Capen	1.0000	2
+Gedera	Gedera	1.0000	2
+Liberty	Liberty	1.0000	2
+Kesil	Kesil	1.0000	2
+Zerizalenm tou bann lobze ki	Urushalima	1.0000	2
+Zis SENYER ki	Ubangiji	1.0000	2
+Obei bann lord lerwa	Sarki	1.0000	2
+Lezip pou mor	Masar	1.0000	2
+Lezip devan tou bann Ezipsyen	Masarawa	1.0000	2
+Kof SENYER ti'n ariv dan kan	Ubangiji	1.0000	2
+Zerizalenm zour saba	Urushalima	1.0000	2
+Sadiseen	Sadukiyawa	1.0000	2
+Lalyans SENYER in antre i sakre	Ubangiji	1.0000	2
+Adolfo	Adolfo	1.0000	2
+Jéhovah jour	Jehobah	1.0000	2
+Demen pou annan en lafet pour SENYER	Ubangiji	1.0000	2
+SENYER ti fer tonm	Ubangiji	1.0000	2
+Comment les	Yaya	1.0000	2
+Comment les anciens	Dattawa	1.0000	2
+I ti al lager e SENYER	Ubangiji	1.0000	2
+Oli SENYER	Ubangiji	1.0000	2
+Magdalene	Magdalene	1.0000	2
+Lezip kot ou ti	Masar	1.0000	2
+Pa vin devan mwan, san anmenn Mikal, fiy Sail	Mikal	1.0000	2
+Lezip avek gran pwisans e par ou lanmen for	Masar	1.0000	2
+Eleale	Eleyale	1.0000	2
+Zifa, Tirya ek Azarel	Tiriya	1.0000	2
+Haman i	Haman	1.0000	2
+SENYER ti livre zot dan lanmen bann Madyanit	Ubangiji	1.0000	2
+James Hoffmeier	Hoffmeier	1.0000	2
+Sorea ek	Zora	1.0000	2
+SENYER in plas lo li tou	Ubangiji	1.0000	2
+Bakboukya	Bakbukiya	1.0000	2
+Akoub	Akkub	1.0000	2
+Zwif dabor	Yahudawa	1.0000	2
+Kitawala	Kitawala	1.0000	2
+Me David pa ti oule bwar	Dawuda	1.0000	2
+Zerizalenm akoz larme	Urushalima	1.0000	2
+Pranas	Pranas	1.0000	2
+Zot ti ganny pourswiv ziska Gidonm	Gidom	1.0000	2
+Certains scientifiques	Kimiyya	1.0000	2
+Galasi	Galatiya	1.0000	2
+Comment chaque membre	Yaya	1.0000	2
+Pedasour	Fedazur	1.0000	2
+Hanann, garson Yigdalia zot abitye	Igdaliya	1.0000	2
+Bann Filisten ava	Filistiyawa	1.0000	2
+Gilly	Gilly	0.5000	2
+Yispa	Yoha	1.0000	2
+I ti anter	Binne	1.0000	2
+Abranm an dizan	Abram	1.0000	2
+Beni Abranm	Abram	1.0000	2
+Georgina	Georgina	1.0000	2
+SENYER zot Bondye ki deklare	Ubangiji	1.0000	2
+Bann fiy Raba	Rabba	1.0000	2
+Dieu très	Allah	1.0000	2
+Walden	Walden	1.0000	2
+Jésus ressuscité	Yesu	1.0000	2
+D’après Genèse	Farawa	1.0000	2
+Bromsgrove	Bromsgrove	1.0000	2
+Bann Levit pa ti ganny okenn	Lawiyawa	1.0000	2
+Yeberekya	Yeberekiya	1.0000	2
+Kris i'n	Kiristi	1.0000	2
+Larg Barabas	Barabbas	1.0000	2
+Que diriez	Cewa	1.0000	2
+Amonit konsernan	Ammonawa	1.0000	2
+Answit, en pret	Firist	1.0000	2
+Armaguédon approche	Armageddon	1.0000	2
+Mauricio	Mauricio	1.0000	2
+Bilann, Zaavann, ek Akan	Bilhan	1.0000	2
+Mais grâce à Jéhovah	Jehobah	1.0000	2
+Élise	Elise	1.0000	2
+Absalon in vin lerwa dan Hebron	Hebron	1.0000	2
+Jean nous	Yohanna	1.0000	2
+Tsanannim	Lakkum	1.0000	2
+Éphésiens 4:15	Afisawa	1.0000	2
+Abner ek	Abner	1.0000	2
+Nortey	Nortey	1.0000	2
+Lire Zacharie	Karanta	1.0000	2
+I annan en plas dan fernwanr	Duhu	1.0000	2
+Mélissa	Melissa	1.0000	2
+I'n	Galili	1.0000	2
+Vasti napa	Bashti	1.0000	2
+Lo sa bann latab	Tebur	1.0000	2
+Bible ajoute	Littafi	1.0000	2
+Tonga	Tonga	1.0000	2
+Gera, Abihoud	gera	1.0000	2
+Robert Martin	Martin	1.0000	2
+Moiz ti dir lepep	Musa	1.0000	2
+Saül lui	Saul	1.0000	2
+James	James	1.0000	2
+Kozeba	Yokim	1.0000	2
+Silo e ki	Shilo	1.0000	2
+Psaume 37:25	Zabura	1.0000	2
+Mizi e	Misiya	1.0000	2
+Hazo	Yidlaf	1.0000	2
+Pildas	Yidlaf	1.0000	2
+Ofni	Ofni	1.0000	2
+Akab ziska lantre lavil Zizreel	Ahab	1.0000	2
+Zezi ki'n geri li	Warkar	1.0000	2
+Akazya, Zoas	Yowash	1.0000	2
+Lerwa Roboanm	Rehobowam	1.0000	2
+Jean 10:11, 14	yohanna	0.5000	2
+Jean 6:38	Yohanna	1.0000	2
+D’après 2 Corinthiens	Korintiyawa	1.0000	2
+Moiz in dir	Musa	1.0000	2
+David setyenm	Dawuda	1.0000	2
+Quelles choses Jéhovah	Jehobah	1.0000	2
+Bondye Izaak son papa	Ishaku	1.0000	2
+Aaron ti vin devan Latant prezans SENYER	Haruna	1.0000	2
+Abranm dan en vizyon	Abram	1.0000	2
+Lezip ti dir zot, Moiz ek Aaron	Haruna	1.0000	2
+Tousala pou ganny servi pour alim dife	Wuta	1.0000	2
+Pou touzour annan en desandan David	Dawuda	1.0000	2
+Bokou Korentyen	Kirisbus	1.0000	2
+Noa	Hogla	1.0000	2
+Pran dife dan tourbiyon	Wuta	1.0000	2
+Yetour, Nafis, e Kedma	nafish	1.0000	2
+Fer bann malfeter desann	Mugaye	1.0000	2
+Levit Konanya	Konaniya	1.0000	2
+Jean 3:3, 5	Yohanna	1.0000	2
+Asiri ek	Assuriya	1.0000	2
+Yimla	Imla	1.0000	2
+Bann laport Zerizalenm pa pou ganny	Urushalima	1.0000	2
+SENYER, dan Mispa	UBANGIJI	1.0000	2
+Paolo	Paolo	1.0000	2
+Samos	Kiyos	1.0000	2
+Mitka	Mitka	1.0000	2
+Hébreux 5:12–6:3	Ibraniyawa	1.0000	2
+Nehousta	Nehushta	1.0000	2
+Ivan	Ivan	1.0000	2
+Nou pa pour fer personn vin lerwa	Sarki	1.0000	2
+Konmsa ki i ava annan legalite	Yalwarku	1.0000	2
+Frank	Frank	1.0000	2
+Lezip e ki pa ti	Masar	1.0000	2
+Jean 21:15	Yohanna	1.0000	2
+Yavin	Yabin	1.0000	2
+Albert Schroeder	Albert	1.0000	2
+Vespasien	Vespasian	0.5000	2
+Lire Galates	Galatiyawa	1.0000	2
+Hadadezer	Hadadezer	1.0000	2
+Tacite	Tacitus	1.0000	2
+Matann	Mattan	1.0000	2
+Pret Yoyada ti nonm bann gard dan tanp SENYER	Ubangiji	1.0000	2
+Zwif ki	Yahudawa	1.0000	2
+Amorit devan zot	Amoriyawa	1.0000	2
+Premye Yeyel, Zakari	Yehiyel	1.0000	2
+Erica	Erica	1.0000	2
+Sezar i	Kaisar	1.0000	2
+Mais Adam	Adamu	1.0000	2
+Kof Lalyans e	Akwatin	1.0000	2
+Konn Senyer	Ubangiji	1.0000	2
+Balyktchy	Balykchy	1.0000	2
+Sour	Shur	1.0000	2
+Himmler	Himmler	1.0000	2
+Amorit, bann Hitit, bann Perizit, bann Hivit	hiwiyawa	1.0000	2
+Birdwell	Birdwell	1.0000	2
+Timothy	Timothy	1.0000	2
+Claude Lindsay et moi	Lindsay	1.0000	2
+Tamara	Tamara	1.0000	2
