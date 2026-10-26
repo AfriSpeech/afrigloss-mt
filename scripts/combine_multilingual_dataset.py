@@ -106,9 +106,12 @@ def main():
         priority_langs = ["tw", "sw", "yo", "ha", "ig", "ee", "sn"]
         dirs_to_merge = []
         for l in priority_langs:
+            d_full = data_path / f"gloss_dataset_en_{l}_full"
             d_100k = data_path / f"gloss_dataset_en_{l}_100k"
             d_10k = data_path / f"gloss_dataset_en_{l}_10k"
-            if d_100k.exists():
+            if d_full.exists():
+                dirs_to_merge.append(d_full)
+            elif d_100k.exists():
                 dirs_to_merge.append(d_100k)
             elif d_10k.exists():
                 dirs_to_merge.append(d_10k)
