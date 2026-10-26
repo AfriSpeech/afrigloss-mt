@@ -47,10 +47,15 @@ def merge_splits(data_dirs: List[Path], out_dir: Path, seed: int = 42):
                 logger.warning(f"Split file missing: {split_file}")
                 continue
 
-            # Infer target language from directory name: e.g. gloss_dataset_en_sw_100k -> sw
+            # Infer source and target language from directory name:
+            # e.g. gloss_dataset_en_sw_full -> src=en, tgt=sw
+            # e.g. gloss_dataset_fr_tw_full -> src=fr, tgt=tw
             parts = d.name.split("_")
+            src_raw = parts[2] if len(parts) >= 3 else "en"
             tgt_raw = parts[3] if len(parts) >= 4 else "twi"
+            src_iso = normalize_lang_code(src_raw)
             tgt_iso = normalize_lang_code(tgt_raw)
+            nllb_src = get_nllb_lang(src_iso) or ("fra_Latn" if src_iso in {"fr", "fra"} else "eng_Latn")
             nllb_tgt = get_nllb_lang(tgt_iso)
 
             if not nllb_tgt:
@@ -62,14 +67,15 @@ def merge_splits(data_dirs: List[Path], out_dir: Path, seed: int = 42):
                 for line in f:
                     if line.strip():
                         item = json.loads(line)
-                        item["src_lang"] = "eng_Latn"
+                        item["src_lang"] = nllb_src
                         item["tgt_lang"] = nllb_tgt
                         item["lang_code"] = tgt_iso
                         merged_examples.append(item)
                         count += 1
 
-            lang_counts[tgt_iso] = count
-            logger.info(f"Loaded {count:,} {split} examples for {tgt_iso} ({nllb_tgt}) from {d.name}")
+            lang_pair_key = f"{src_raw}->{tgt_iso}"
+            lang_counts[lang_pair_key] = count
+            logger.info(f"Loaded {count:,} {split} examples for {lang_pair_key} ({nllb_src}->{nllb_tgt}) from {d.name}")
 
         # Shuffle merged split so batches contain mixed languages
         random.shuffle(merged_examples)
@@ -90,6 +96,18 @@ def main():
         help="List of dataset directories to merge (default: auto-detects all en_*_100k and en_*_10k dirs in data/)",
     )
     parser.add_argument(
+        "--src-langs",
+        nargs="+",
+        default=["en", "fr"],
+        help="Source language prefixes to include when auto-discovering datasets (default: en fr)",
+    )
+    parser.add_argument(
+        "--langs",
+        nargs="+",
+        default=["tw", "sw", "yo", "ha", "ig", "ee", "sn"],
+        help="Target languages to include (default: tw sw yo ha ig ee sn)",
+    )
+    parser.add_argument(
         "--out-dir",
         default=str(REPO_ROOT / "data" / "gloss_dataset_multilingual_african"),
         help="Output directory for unified dataset",
@@ -102,19 +120,19 @@ def main():
     if args.data_dirs:
         dirs_to_merge = [Path(d) for d in args.data_dirs]
     else:
-        # Auto-discover priority datasets, preferring 100k when available
-        priority_langs = ["tw", "sw", "yo", "ha", "ig", "ee", "sn"]
+        # Auto-discover datasets for all requested source and target language pairs
         dirs_to_merge = []
-        for l in priority_langs:
-            d_full = data_path / f"gloss_dataset_en_{l}_full"
-            d_100k = data_path / f"gloss_dataset_en_{l}_100k"
-            d_10k = data_path / f"gloss_dataset_en_{l}_10k"
-            if d_full.exists():
-                dirs_to_merge.append(d_full)
-            elif d_100k.exists():
-                dirs_to_merge.append(d_100k)
-            elif d_10k.exists():
-                dirs_to_merge.append(d_10k)
+        for s in args.src_langs:
+            for l in args.langs:
+                d_full = data_path / f"gloss_dataset_{s}_{l}_full"
+                d_100k = data_path / f"gloss_dataset_{s}_{l}_100k"
+                d_10k = data_path / f"gloss_dataset_{s}_{l}_10k"
+                if d_full.exists():
+                    dirs_to_merge.append(d_full)
+                elif d_100k.exists():
+                    dirs_to_merge.append(d_100k)
+                elif d_10k.exists():
+                    dirs_to_merge.append(d_10k)
 
     logger.info(f"Merging datasets from {len(dirs_to_merge)} directories: {[d.name for d in dirs_to_merge]}")
     merge_splits(dirs_to_merge, Path(args.out_dir), seed=args.seed)
