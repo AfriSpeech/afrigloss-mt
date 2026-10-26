@@ -48,6 +48,7 @@ def build_gloss_pair(
     precomputed_aligner_map: Optional[Dict[str, Tuple[str, float]]] = None,
     max_insertions: int = 3,
     min_confidence: float = 0.45,
+    src_lang: str = "en",
 ) -> Optional[GlossMTExample]:
     """
     Extract noun phrases from source text with spaCy, find the best matching target word,
@@ -76,8 +77,8 @@ def build_gloss_pair(
                 item.get("score", 1.0)
             ))
     else:
-        # Compute alignments
-        chunks = extract_noun_phrases(src_clean)
+        # Compute alignments (supports English or French noun chunks)
+        chunks = extract_noun_phrases(src_clean, lang=src_lang)
         if not chunks:
             return None
 
@@ -181,6 +182,7 @@ def create_gloss_dataset(
     test_ratio: float = 0.05,
     seed: int = 42,
     min_confidence: float = 0.45,
+    src_lang: str = "en",
 ) -> Dict[str, List[GlossMTExample]]:
     """
     Generate train / validation / test splits of Gloss-MT pre-translated examples.
@@ -227,6 +229,7 @@ def create_gloss_dataset(
             ex = build_gloss_pair(
                 src_text,
                 tgt_text,
+                src_lang=src_lang,
                 dictionary=dictionary,
                 aligner=aligner,
                 align_cache=cache_inst,

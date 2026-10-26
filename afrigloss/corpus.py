@@ -76,6 +76,12 @@ class AfricaCorpusLoader:
 
         if "english_cache.csv" in files:
             lang_to_files["eng"] = ["english_cache.csv"]
+            lang_to_files["en"] = ["english_cache.csv"]
+
+        fr_files = [f for f in files if "french" in f.lower() or "reference_caches/french" in f.lower()]
+        if fr_files:
+            lang_to_files["fra"] = fr_files
+            lang_to_files["fr"] = fr_files
 
         self._lang_to_files = lang_to_files
         return lang_to_files
@@ -103,6 +109,11 @@ class AfricaCorpusLoader:
         if "english_cache.csv" in files:
             jw_map["eng"] = "english_cache.csv"
             jw_map["en"] = "english_cache.csv"
+
+        fr_jw = [f for f in files if "fr_fr" in f.lower() or "french" in f.lower()]
+        if fr_jw:
+            jw_map["fra"] = fr_jw[0]
+            jw_map["fr"] = fr_jw[0]
 
         self._jw_files = jw_map
         return self._jw_files
@@ -173,6 +184,8 @@ class AfricaCorpusLoader:
 
         pairs: List[ParallelPair] = []
         seen_keys: Set[Tuple[str, str]] = set()
+        src_verses: Dict[str, str] = {}
+        tgt_verses: Dict[str, str] = {}
 
         # 1. Primary Bible version join
         primary_src_file = src_files[0] if src_files else None
