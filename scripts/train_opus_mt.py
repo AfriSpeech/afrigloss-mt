@@ -72,6 +72,7 @@ def main():
     parser.add_argument("--max-src-len", type=int, default=256, help="Max source token length")
     parser.add_argument("--max-tgt-len", type=int, default=256, help="Max target token length")
     parser.add_argument("--target-prefix", type=str, default="", help="Optional target language prefix token (e.g. >>yor<<)")
+    parser.add_argument("--run-test", action="store_true", help="Run beam search test evaluation after training (default: False)")
 
     args = parser.parse_args()
 
@@ -176,9 +177,9 @@ def main():
     trainer.save_model(str(final_dir))
     tokenizer.save_pretrained(str(final_dir))
 
-    # Evaluate on test set if available
+    # Evaluate on test set only if explicitly requested
     test_file = data_dir / "test.jsonl"
-    if test_file.exists():
+    if test_file.exists() and args.run_test:
         logger.info(f"Evaluating final model on test set: {test_file}...")
         test_raw = load_dataset_from_jsonl(test_file)
         model.eval()
