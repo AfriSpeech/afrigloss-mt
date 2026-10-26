@@ -24,14 +24,22 @@ sys.path.insert(0, str(REPO_ROOT))
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("train_100k_queue")
 
+def get_dataset_dir(tgt: str) -> str:
+    """Return full dataset directory if available, else 100k."""
+    full_dir = REPO_ROOT / f"data/gloss_dataset_en_{tgt}_full"
+    if full_dir.exists():
+        return f"data/gloss_dataset_en_{tgt}_full"
+    return f"data/gloss_dataset_en_{tgt}_100k"
+
+
 QUEUE = [
-    {"src": "en", "tgt": "tw", "model": "Helsinki-NLP/opus-mt-en-tw", "data": "data/gloss_dataset_en_tw_100k"},
-    {"src": "en", "tgt": "sw", "model": "Helsinki-NLP/opus-mt-en-sw", "data": "data/gloss_dataset_en_sw_100k"},
-    {"src": "en", "tgt": "yo", "model": "Helsinki-NLP/opus-mt-en-alv", "target_token": ">>yor<<", "data": "data/gloss_dataset_en_yo_100k"},
-    {"src": "en", "tgt": "ha", "model": "Helsinki-NLP/opus-mt-en-ha", "data": "data/gloss_dataset_en_ha_100k"},
-    {"src": "en", "tgt": "ig", "model": "Helsinki-NLP/opus-mt-en-ig", "data": "data/gloss_dataset_en_ig_100k"},
-    {"src": "en", "tgt": "ee", "model": "Helsinki-NLP/opus-mt-en-ee", "data": "data/gloss_dataset_en_ee_100k"},
-    {"src": "en", "tgt": "sn", "model": "Helsinki-NLP/opus-mt-en-sn", "data": "data/gloss_dataset_en_sn_100k"},
+    {"src": "en", "tgt": "tw", "model": "Helsinki-NLP/opus-mt-en-tw", "data": get_dataset_dir("tw")},
+    {"src": "en", "tgt": "sw", "model": "Helsinki-NLP/opus-mt-en-sw", "data": get_dataset_dir("sw")},
+    {"src": "en", "tgt": "yo", "model": "Helsinki-NLP/opus-mt-en-alv", "target_token": ">>yor<<", "data": get_dataset_dir("yo")},
+    {"src": "en", "tgt": "ha", "model": "Helsinki-NLP/opus-mt-en-ha", "data": get_dataset_dir("ha")},
+    {"src": "en", "tgt": "ig", "model": "Helsinki-NLP/opus-mt-en-ig", "data": get_dataset_dir("ig")},
+    {"src": "en", "tgt": "ee", "model": "Helsinki-NLP/opus-mt-en-ee", "data": get_dataset_dir("ee")},
+    {"src": "en", "tgt": "sn", "model": "Helsinki-NLP/opus-mt-en-sn", "data": get_dataset_dir("sn")},
 ]
 
 
@@ -40,7 +48,7 @@ def train_single_model(job: dict, max_epochs: int = 50, batch_size: int = 32, lr
     tgt = job["tgt"]
     model_name = job["model"]
     data_dir = REPO_ROOT / job["data"]
-    out_dir = REPO_ROOT / "checkpoints" / f"afrigloss_opus_{src}_{tgt}_100k"
+    out_dir = REPO_ROOT / "checkpoints" / f"afrigloss_opus_{src}_{tgt}_full"
 
     final_marker = out_dir / "final" / "config.json"
     if final_marker.exists():
