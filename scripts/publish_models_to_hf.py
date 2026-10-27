@@ -105,7 +105,7 @@ tags:
 - opus-mt
 - afrigloss-mt
 - {name.lower()}
-license: apache-2.0
+license: cc-by-nc-4.0
 datasets:
 - AfriSpeech/gloss-mt-train-{src}
 widget:
@@ -158,6 +158,12 @@ print("Output Translation:", translation)
 This model was trained on the **{meta['iso']}** subset of the official dataset:
 - Dataset Repository: **[AfriSpeech/gloss-mt-train-{src}](https://huggingface.co/datasets/AfriSpeech/gloss-mt-train-{src})**
 - Subset Name: `"{meta.get('lang_code', lang)}"`
+
+---
+
+## ⚖️ License
+
+This model is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International ([CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/))** license.
 
 ---
 

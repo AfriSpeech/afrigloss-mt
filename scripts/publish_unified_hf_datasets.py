@@ -133,7 +133,7 @@ def generate_unified_dataset_card(
 language:
 - {src_prefix}
 - multilingual
-license: apache-2.0
+license: cc-by-nc-4.0
 task_categories:
 - translation
 tags:
