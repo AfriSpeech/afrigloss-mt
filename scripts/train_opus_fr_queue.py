@@ -27,6 +27,7 @@ logger = logging.getLogger("train_fr_queue")
 
 QUEUE = [
     {"src": "fr", "tgt": "tw", "model": "Helsinki-NLP/opus-mt-fr-tw", "data": "data/gloss_dataset_fr_tw_full"},
+    {"src": "fr", "tgt": "sw", "model": "Helsinki-NLP/opus-mt-fr-swc", "data": "data/gloss_dataset_fr_sw_full"},
     {"src": "fr", "tgt": "yo", "model": "Helsinki-NLP/opus-mt-fr-yo", "data": "data/gloss_dataset_fr_yo_full"},
     {"src": "fr", "tgt": "ha", "model": "Helsinki-NLP/opus-mt-fr-ha", "data": "data/gloss_dataset_fr_ha_full"},
     {"src": "fr", "tgt": "ig", "model": "Helsinki-NLP/opus-mt-fr-ig", "data": "data/gloss_dataset_fr_ig_full"},
