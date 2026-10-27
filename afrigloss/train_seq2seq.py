@@ -118,16 +118,33 @@ def train_seq2seq(
     model.to(dev)
 
     def collate_fn(batch: List[Dict]) -> Dict[str, torch.Tensor]:
-        src_texts = [b["input"] for b in batch]
-        tgt_texts = [b["tgt"] for b in batch]
+        # Handle dynamic per-sample src_lang (for multi-source English + French training)
+        has_multi_sources = any(b.get("src_lang") for b in batch)
+        if has_multi_sources and is_nllb:
+            input_list = []
+            for b in batch:
+                sample_src = b.get("src_lang") or nllb_src
+                tokenizer.src_lang = sample_src
+                enc_src = tokenizer(b["input"], max_length=max_src_len, truncation=True)
+                input_list.append(enc_src["input_ids"])
 
-        model_inputs = tokenizer(
-            src_texts,
-            max_length=max_src_len,
-            padding=True,
-            truncation=True,
-            return_tensors="pt",
-        )
+            max_in_l = max(len(l) for l in input_list)
+            pad_id = tokenizer.pad_token_id
+            padded_inputs = [l + [pad_id] * (max_in_l - len(l)) for l in input_list]
+            attn_mask = [[1] * len(l) + [0] * (max_in_l - len(l)) for l in input_list]
+            model_inputs = {
+                "input_ids": torch.tensor(padded_inputs, dtype=torch.long),
+                "attention_mask": torch.tensor(attn_mask, dtype=torch.long),
+            }
+        else:
+            src_texts = [b["input"] for b in batch]
+            model_inputs = tokenizer(
+                src_texts,
+                max_length=max_src_len,
+                padding=True,
+                truncation=True,
+                return_tensors="pt",
+            )
 
         # Check if batch contains per-example target language codes (multilingual dataset)
         has_multi_targets = any(b.get("tgt_lang") for b in batch)
@@ -143,6 +160,7 @@ def train_seq2seq(
             padded = [l + [-100] * (max_l - len(l)) for l in label_list]
             model_inputs["labels"] = torch.tensor(padded, dtype=torch.long)
         else:
+            tgt_texts = [b["tgt"] for b in batch]
             with tokenizer.as_target_tokenizer():
                 labels = tokenizer(
                     tgt_texts,
