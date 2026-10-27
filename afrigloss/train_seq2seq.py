@@ -67,7 +67,9 @@ def train_seq2seq(
     lora_r: int = 0,
     batch_size: int = 8,
     lr: float = 2e-4,
-    epochs: int = 3,
+    epochs: int = 20,
+    patience: int = 10,
+    eval_steps: int = 500,
     max_src_len: int = 256,
     max_tgt_len: int = 256,
     grad_accum: int = 2,
@@ -185,11 +187,16 @@ def train_seq2seq(
     total_steps = (len(train_loader) // grad_accum) * epochs
     scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=int(0.05 * total_steps), num_training_steps=total_steps)
 
-    logger.info(f"Training started for {epochs} epochs ({total_steps} steps) on {dev}")
+    logger.info(f"Training started for up to {epochs} epochs ({total_steps} steps) on {dev} with early stopping (patience={patience})")
     global_step = 0
+    best_val_loss = float("inf")
+    patience_counter = 0
+    stop_training = False
     model.train()
 
     for epoch in range(1, epochs + 1):
+        if stop_training:
+            break
         for step, batch in enumerate(train_loader):
             outputs = model(**batch)
             loss = outputs.loss / grad_accum
@@ -205,6 +212,37 @@ def train_seq2seq(
                 if global_step % 50 == 0:
                     logger.info(f"Epoch {epoch} | Step {global_step}/{total_steps} | Loss: {loss.item() * grad_accum:.4f}")
 
+                # Validation & Early Stopping convergence check
+                if val_loader and global_step % eval_steps == 0:
+                    model.eval()
+                    v_loss_sum = 0.0
+                    v_batches = 0
+                    with torch.no_grad():
+                        for v_b in val_loader:
+                            v_out = model(**v_b)
+                            v_loss_sum += v_out.loss.item()
+                            v_batches += 1
+                            if v_batches >= 100:  # evaluate on 100 batches (1,600 sentences)
+                                break
+                    val_loss = v_loss_sum / max(1, v_batches)
+                    logger.info(f"[EVAL] Step {global_step} | Validation Loss: {val_loss:.4f} (best: {best_val_loss:.4f})")
+
+                    if val_loss < best_val_loss:
+                        best_val_loss = val_loss
+                        patience_counter = 0
+                        best_dir = out_path / "best"
+                        logger.info(f"New best validation loss: {best_val_loss:.4f}. Saving best checkpoint to {best_dir}...")
+                        model.save_pretrained(best_dir)
+                        tokenizer.save_pretrained(best_dir)
+                    else:
+                        patience_counter += 1
+                        logger.info(f"Early stopping patience: {patience_counter}/{patience}")
+                        if patience_counter >= patience:
+                            logger.info(f"Early stopping triggered at step {global_step}! Reached convergence.")
+                            stop_training = True
+                            break
+                    model.train()
+
         # Save checkpoint after each epoch
         ckpt = out_path / f"epoch-{epoch}"
         logger.info(f"Saving checkpoint to {ckpt}")
@@ -212,9 +250,16 @@ def train_seq2seq(
         tokenizer.save_pretrained(ckpt)
 
     final_dir = out_path / "final"
-    logger.info(f"Saving final model to {final_dir}")
-    model.save_pretrained(final_dir)
-    tokenizer.save_pretrained(final_dir)
+    logger.info(f"Saving final model to {final_dir}...")
+    if (out_path / "best").exists():
+        logger.info(f"Restoring best checkpoint from {out_path / 'best'} to {final_dir}...")
+        import shutil
+        if final_dir.exists():
+            shutil.rmtree(final_dir)
+        shutil.copytree(out_path / "best", final_dir)
+    else:
+        model.save_pretrained(final_dir)
+        tokenizer.save_pretrained(final_dir)
     logger.info("Training complete!")
 
 
