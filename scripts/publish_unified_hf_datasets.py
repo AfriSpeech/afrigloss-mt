@@ -298,18 +298,18 @@ def publish_unified_dataset(src_prefix: str, api: HfApi):
     )
     logger.info(f"Successfully published: https://huggingface.co/datasets/{repo_id}")
 
-        # Add to collection
-        try:
-            logger.info(f"Adding {repo_id} to collection {COLLECTION_SLUG}...")
-            api.add_collection_item(
-                collection_slug=COLLECTION_SLUG,
-                item_id=repo_id,
-                item_type="dataset",
-                exists_ok=True,
-            )
-            logger.info(f"Added to collection: https://huggingface.co/collections/{COLLECTION_SLUG}")
-        except Exception as e:
-            logger.warning(f"Could not add to collection: {e}")
+    # Add to collection
+    try:
+        logger.info(f"Adding {repo_id} to collection {COLLECTION_SLUG}...")
+        api.add_collection_item(
+            collection_slug=COLLECTION_SLUG,
+            item_id=repo_id,
+            item_type="dataset",
+            exists_ok=True,
+        )
+        logger.info(f"Added to collection: https://huggingface.co/collections/{COLLECTION_SLUG}")
+    except Exception as e:
+        logger.warning(f"Could not add to collection: {e}")
 
 
 def clean_legacy_repositories(api: HfApi):
