@@ -239,55 +239,64 @@ def publish_unified_dataset(src_prefix: str, api: HfApi):
 
     subsets_stats: Dict[str, Dict[str, int]] = {}
 
-    with tempfile.TemporaryDirectory() as tmp_dir_str:
-        tmp_dir = Path(tmp_dir_str)
-        upload_data_dir = tmp_dir / "data"
-        upload_data_dir.mkdir(parents=True, exist_ok=True)
+    staging_dir = data_dir / "staging_parquet" / f"gloss_mt_train_{src_prefix}"
+    upload_data_dir = staging_dir / "data"
+    upload_data_dir.mkdir(parents=True, exist_ok=True)
 
-        for d in candidate_dirs:
-            parts = d.name.split("_")
-            if len(parts) < 4:
-                continue
-            tgt_code = parts[3]
+    for idx, d in enumerate(candidate_dirs, 1):
+        parts = d.name.split("_")
+        if len(parts) < 4:
+            continue
+        tgt_code = parts[3]
 
-            train_file = d / "train.jsonl"
-            if not train_file.exists() or train_file.stat().st_size == 0:
-                continue
+        train_file = d / "train.jsonl"
+        if not train_file.exists() or train_file.stat().st_size == 0:
+            continue
 
-            tgt_target_dir = upload_data_dir / tgt_code
-            tgt_target_dir.mkdir(parents=True, exist_ok=True)
+        tgt_target_dir = upload_data_dir / tgt_code
+        tgt_target_dir.mkdir(parents=True, exist_ok=True)
 
-            pair_stats = {}
-            for split in ["train", "validation", "test"]:
-                jsonl_file = d / f"{split}.jsonl"
-                if not jsonl_file.exists():
+        pair_stats = {}
+        for split in ["train", "validation", "test"]:
+            parquet_file = tgt_target_dir / f"{split}.parquet"
+            jsonl_file = d / f"{split}.jsonl"
+
+            # Reuse existing converted parquet if already present and valid
+            if parquet_file.exists() and parquet_file.stat().st_size > 0:
+                try:
+                    df = pd.read_parquet(parquet_file, columns=[])
+                    pair_stats[split] = len(df)
                     continue
-                parquet_file = tgt_target_dir / f"{split}.parquet"
+                except Exception:
+                    pass
+
+            if jsonl_file.exists():
                 count = convert_jsonl_to_parquet(jsonl_file, parquet_file)
                 pair_stats[split] = count
 
-            if pair_stats.get("train", 0) > 0:
-                subsets_stats[tgt_code] = pair_stats
-                logger.info(f"[{src_prefix}->{tgt_code}] Converted subset: {pair_stats}")
+        if pair_stats.get("train", 0) > 0:
+            subsets_stats[tgt_code] = pair_stats
+            if idx % 25 == 0 or idx == len(candidate_dirs):
+                logger.info(f"[{idx}/{len(candidate_dirs)}] [{src_prefix}->{tgt_code}] Converted subset: {pair_stats}")
 
-        if not subsets_stats:
-            logger.warning(f"No valid subsets found for {src_prefix}!")
-            return
+    if not subsets_stats:
+        logger.warning(f"No valid subsets found for {src_prefix}!")
+        return
 
-        # Generate README.md
-        readme_path = tmp_dir / "README.md"
-        card_content = generate_unified_dataset_card(src_prefix, subsets_stats, repo_id)
-        with open(readme_path, "w", encoding="utf-8") as f:
-            f.write(card_content)
+    # Generate README.md
+    readme_path = staging_dir / "README.md"
+    card_content = generate_unified_dataset_card(src_prefix, subsets_stats, repo_id)
+    with open(readme_path, "w", encoding="utf-8") as f:
+        f.write(card_content)
 
-        logger.info(f"Uploading unified repository with {len(subsets_stats)} subsets to {repo_id}...")
-        api.upload_folder(
-            folder_path=str(tmp_dir),
-            repo_id=repo_id,
-            repo_type="dataset",
-            commit_message=f"feat: upload unified {src_prefix.upper()} dataset with {len(subsets_stats)} African language subsets",
-        )
-        logger.info(f"Successfully published: https://huggingface.co/datasets/{repo_id}")
+    logger.info(f"Uploading unified repository with {len(subsets_stats)} subsets to {repo_id}...")
+    api.upload_folder(
+        folder_path=str(staging_dir),
+        repo_id=repo_id,
+        repo_type="dataset",
+        commit_message=f"feat: upload unified {src_prefix.upper()} dataset with all {len(subsets_stats)} African language subsets",
+    )
+    logger.info(f"Successfully published: https://huggingface.co/datasets/{repo_id}")
 
         # Add to collection
         try:
