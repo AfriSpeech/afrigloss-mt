@@ -50,9 +50,6 @@ license: cc-by-nc-4.0
 task_categories:
 - translation
 - token-classification
-task_ids:
-- terminology-constrained-translation
-- named-entity-recognition
 tags:
 - african-languages
 - proper-nouns
@@ -111,7 +108,7 @@ print(dataset_en[0])
 # 2. Filter for a specific target language (e.g. Swahili, Twi, Yoruba, Amharic)
 df = dataset_en.to_pandas()
 swahili_entities = df[df["tgt_lang"] == "sw"]
-print(f"Swahili loanword adaptations: {len(swahili_entities):,}")
+print("Swahili loanword adaptations:", len(swahili_entities))
 print(swahili_entities.head(10))
 
 # 3. Load French source loanwords (224k+ pairs across 74 African languages)
