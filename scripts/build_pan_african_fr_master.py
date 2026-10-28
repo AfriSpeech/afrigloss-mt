@@ -359,6 +359,16 @@ def main():
         with open(STATUS_FILE, "w", encoding="utf-8") as f:
             json.dump(status_history, f, indent=2)
 
+        # Auto-sync newly completed French subsets to Hugging Face every 10 languages
+        if completed_count > 0 and completed_count % 10 == 0:
+            try:
+                from scripts.publish_unified_hf_datasets import publish_unified_dataset
+                from huggingface_hub import HfApi
+                logger.info("Auto-syncing newly completed French subsets to Hugging Face (AfriSpeech/gloss-mt-train-fr)...")
+                publish_unified_dataset("fr", HfApi())
+            except Exception as e:
+                logger.warning(f"Could not auto-sync French subsets to HF: {e}")
+
     total_time = time.time() - t_start
     logger.info("=" * 65)
     logger.info(f"PAN-AFRICAN FRENCH RUN COMPLETE!")
@@ -366,6 +376,14 @@ def main():
     logger.info(f"Total time elapsed: {total_time:.1f}s ({total_time/3600:.2f} hours)")
     logger.info(f"Status file: {STATUS_FILE}")
     logger.info("=" * 65)
+
+    try:
+        from scripts.publish_unified_hf_datasets import publish_unified_dataset
+        from huggingface_hub import HfApi
+        logger.info("Final auto-sync of French subsets to Hugging Face (AfriSpeech/gloss-mt-train-fr)...")
+        publish_unified_dataset("fr", HfApi())
+    except Exception as e:
+        logger.warning(f"Could not perform final French sync to HF: {e}")
 
 
 if __name__ == "__main__":
