@@ -30,6 +30,14 @@ from huggingface_hub import HfApi
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
+from afrigloss.registry import normalize_lang_code
+
+try:
+    from africa_g2p import GraphemeConverter
+    HAVE_AFRICA_G2P = True
+except ImportError:
+    HAVE_AFRICA_G2P = False
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("afri_loanwords")
 
@@ -37,6 +45,32 @@ REPO_ID = "AfriSpeech/afri-loanwords"
 COLLECTION_SLUG = "AfriSpeech/afri-gloss-mt-datasets-6adf1e6b82063570470d8738"
 SRC_TSV_DIR = REPO_ROOT / "afri-adapt"
 STAGING_DIR = REPO_ROOT / "data" / "staging_parquet" / "afri_loanwords"
+
+_CONVERTERS: Dict[str, Optional[any]] = {}
+
+
+def get_converter(lang: str):
+    """Retrieve or initialize cached GraphemeConverter for a language."""
+    if not HAVE_AFRICA_G2P:
+        return None
+    iso = normalize_lang_code(lang)
+    if iso not in _CONVERTERS:
+        try:
+            _CONVERTERS[iso] = GraphemeConverter(iso, "universal")
+        except Exception:
+            _CONVERTERS[iso] = None
+    return _CONVERTERS[iso]
+
+
+def safe_convert(conv, text: str) -> str:
+    """Safely convert text to universalized representation."""
+    if not text:
+        return ""
+    try:
+        res = conv.convert(str(text))
+        return res if res else str(text).lower()
+    except Exception:
+        return str(text).lower()
 
 
 def generate_loanwords_dataset_card(subsets_stats: Dict[str, int]) -> str:
@@ -128,28 +162,23 @@ from datasets import load_dataset
 # 1. Load English -> Twi (Akan) loanword adaptations
 ds_en_tw = load_dataset("AfriSpeech/afri-loanwords", "en-tw", split="train")
 print(ds_en_tw[0])
-# {{'source_term': 'Jehovah', 'target_term': 'Yehowa', 'confidence': 0.9949, 'frequency': 32545}}
+# {{'source_term': 'Jehovah', 'target_term': 'Yehowa', 'universalised': 'yehowa', 'confidence': 0.9949, 'frequency': 32545}}
 
-# 2. Load English -> Swahili loanword adaptations
-ds_en_sw = load_dataset("AfriSpeech/afri-loanwords", "en-sw", split="train")
-print(ds_en_sw[0])
-# {{'source_term': 'Jesus', 'target_term': 'Yesu', 'confidence': 0.9963, 'frequency': 18384}}
-
-# 3. Load French -> Twi loanword adaptations
-ds_fr_tw = load_dataset("AfriSpeech/afri-loanwords", "fr-tw", split="train")
-print(ds_fr_tw[0])
-# {{'source_term': 'Jéhovah', 'target_term': 'Yehowa', 'confidence': 0.9925, 'frequency': 45080}}
-
-# 4. Load English -> Amharic loanword adaptations
+# 2. Load English -> Amharic loanword adaptations
 ds_en_amh = load_dataset("AfriSpeech/afri-loanwords", "en-amh", split="train")
 print(ds_en_amh[0])
-# {{'source_term': 'Jesus', 'target_term': 'ኢየሱስ', 'confidence': 1.0, 'frequency': 21841}}
+# {{'source_term': 'Jesus', 'target_term': 'ኢየሱስ', 'universalised': 'iyasuse', 'confidence': 1.0, 'frequency': 21841}}
+
+# 3. Load French -> Swahili loanword adaptations
+ds_fr_sw = load_dataset("AfriSpeech/afri-loanwords", "fr-sw", split="train")
+print(ds_fr_sw[0])
 ```
 
 ### Data Fields
 
 - `source_term`: The foreign loanword or named entity in English or French.
 - `target_term`: The adapted translation / localized transliteration in the African language.
+- `universalised`: The phonetically universalized representation generated via [africa-g2p](https://github.com/AfriSpeech/africa-g2p), mapping African orthographies to common cross-lingual phonetic units.
 - `confidence`: Empirical consensus score across all parallel sentence occurrences (0.00 – 1.00).
 - `frequency`: Total number of occurrences observed across the corpus bitext.
 
@@ -207,24 +236,35 @@ def publish_afri_loanwords(api_token: Optional[str] = None):
         pair_dir.mkdir(parents=True, exist_ok=True)
         parquet_file = pair_dir / "train.parquet"
 
-        # Check if already converted
+        # Check if already converted with universalised column
         if parquet_file.exists() and parquet_file.stat().st_size > 0:
             try:
-                df = pd.read_parquet(parquet_file, columns=[])
-                subsets_stats[pair_key] = len(df)
-                continue
+                df = pd.read_parquet(parquet_file)
+                if "universalised" in df.columns:
+                    subsets_stats[pair_key] = len(df)
+                    continue
             except Exception:
                 pass
 
         try:
             df = pd.read_csv(f, sep="\t", on_bad_lines="skip")
             cols = [c for c in ["source_term", "target_term", "confidence", "frequency"] if c in df.columns]
-            df = df[cols]
+            df = df[cols].dropna(subset=["source_term", "target_term"])
+
+            # Universalise African target language text using africa-g2p
+            conv = get_converter(tgt)
+            if conv:
+                df["universalised"] = df["target_term"].apply(lambda w: safe_convert(conv, w))
+            else:
+                df["universalised"] = df["target_term"].astype(str).str.lower()
+
+            cols_out = ["source_term", "target_term", "universalised", "confidence", "frequency"]
+            df = df[cols_out]
             df.to_parquet(parquet_file, engine="pyarrow", compression="snappy", index=False)
             subsets_stats[pair_key] = len(df)
 
             if idx % 50 == 0 or idx == len(tsv_files):
-                logger.info(f"[{idx}/{len(tsv_files)}] Converted {pair_key}: {len(df):,} entries")
+                logger.info(f"[{idx}/{len(tsv_files)}] Converted {pair_key}: {len(df):,} entries (with universalised)")
         except Exception as e:
             logger.warning(f"Error processing {f}: {e}")
 
