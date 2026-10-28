@@ -32,7 +32,7 @@ sys.path.insert(0, str(REPO_ROOT))
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("publish_afri_adapt")
 
-REPO_ID = "AfriSpeech/afri-adapt"
+REPO_ID = "AfriSpeech/afri-loanwords"
 COLLECTION_SLUG = "AfriSpeech/afri-gloss-mt-datasets-6adf1e6b82063570470d8738"
 AFRI_ADAPT_SRC_DIR = REPO_ROOT / "afri-adapt"
 
@@ -71,9 +71,9 @@ configs:
     path: data/fr/train.parquet
 ---
 
-# `AfriSpeech/afri-adapt` 🌍
+# `AfriSpeech/afri-loanwords` 🌍
 
-**Afri-Adapt** is a continental-scale, human-grounded bilingual dataset of **proper nouns, named entities, personal names, geographical places, organizations, and cultural terms** translated into African languages.
+**Afri-Loanwords** is a continental-scale, human-grounded bilingual dataset documenting how **foreign words, named entities, personal names, geographical places, and loanwords** are phonologically, morphologically, and orthographically adapted into **723 African languages**.
 
 All pairs are extracted directly from authentic multi-source parallel text (`AfriSpeech/africa-corpus` and `AfriSpeech/african-corpus-jw`) using dependency-parsed noun-phrase alignments and consensus majority voting (**100% grounded in human bitext, zero synthetic LLM translations**).
 
@@ -103,19 +103,19 @@ Load either subset directly in Python using Hugging Face `datasets`:
 from datasets import load_dataset
 import pandas as pd
 
-# 1. Load English source proper nouns (868k+ pairs across 723 African languages)
-dataset_en = load_dataset("AfriSpeech/afri-adapt", "en", split="train")
+# 1. Load English source loanwords (868k+ pairs across 723 African languages)
+dataset_en = load_dataset("AfriSpeech/afri-loanwords", "en", split="train")
 print(dataset_en[0])
-# {{'src_lang': 'en', 'tgt_lang': 'tw', 'source_term': 'Jehovah', 'target_term': 'Yehowa', 'confidence': 0.9949, 'frequency': 32545}}
+# {'src_lang': 'en', 'tgt_lang': 'aab', 'source_term': 'Jesus', 'target_term': 'Yeso', 'confidence': 1.0, 'frequency': 627}
 
 # 2. Filter for a specific target language (e.g. Swahili, Twi, Yoruba, Amharic)
 df = dataset_en.to_pandas()
 swahili_entities = df[df["tgt_lang"] == "sw"]
-print(f"Swahili entities: {{len(swahili_entities):,}}")
+print(f"Swahili loanword adaptations: {len(swahili_entities):,}")
 print(swahili_entities.head(10))
 
-# 3. Load French source proper nouns (224k+ pairs across 74 African languages)
-dataset_fr = load_dataset("AfriSpeech/afri-adapt", "fr", split="train")
+# 3. Load French source loanwords (224k+ pairs across 74 African languages)
+dataset_fr = load_dataset("AfriSpeech/afri-loanwords", "fr", split="train")
 df_fr = dataset_fr.to_pandas()
 twi_fr_entities = df_fr[df_fr["tgt_lang"] == "tw"]
 print(twi_fr_entities.head(10))
