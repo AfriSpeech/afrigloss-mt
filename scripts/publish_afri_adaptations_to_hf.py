@@ -1,16 +1,20 @@
 """
-Publish Afri-Loanwords Dataset to Hugging Face with Directional Subsets.
+Publish Afri-Adaptations Dataset to Hugging Face Hub under AfriSpeech.
 
-Architecture:
-  AfriSpeech/afri-loanwords
-  Each unique language direction gets its OWN SUBSET:
-    - en-tw, en-sw, en-yo, en-ha, en-ig, en-ee, en-sn, en-amh, en-lin, en-zul, ... (723 English pairs)
-    - fr-tw, fr-sw, fr-yo, fr-ha, fr-ig, fr-ee, fr-sn, fr-kin, fr-kon, fr-loz, ... (76+ French pairs)
+Afri-Adaptations is a dataset of words that have been phonetically adapted into
+African languages from English and French.
 
-Usage:
-  from datasets import load_dataset
-  ds_en_tw = load_dataset("AfriSpeech/afri-loanwords", "en-tw")
-  ds_fr_sw = load_dataset("AfriSpeech/afri-loanwords", "fr-sw")
+Subsets architecture:
+  Each unique language direction gets its own subset:
+    - en-tw, en-sw, en-yo, en-ha, en-ig, en-ee, en-sn, en-amh, en-lin, en-zul, ... (723 English directions)
+    - fr-tw, fr-sw, fr-yo, fr-ha, fr-ig, fr-ee, fr-sn, fr-kin, fr-kon, fr-loz, ... (76+ French directions)
+
+Fields:
+  - source_term: Original word in English or French
+  - target_term: Phonetically adapted word in the African language
+  - universalised: Universalized phonetic representation via africa-g2p
+  - confidence: Consensus score (0.00 - 1.00)
+  - frequency: Occurrence count across the corpus bitext
 
 License: CC-BY-NC-4.0
 """
@@ -39,12 +43,12 @@ except ImportError:
     HAVE_AFRICA_G2P = False
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
-logger = logging.getLogger("afri_loanwords")
+logger = logging.getLogger("afri_adaptations")
 
-REPO_ID = "AfriSpeech/afri-loanwords"
+REPO_ID = "AfriSpeech/afri-adaptations"
 COLLECTION_SLUG = "AfriSpeech/afri-gloss-mt-datasets-6adf1e6b82063570470d8738"
 SRC_TSV_DIR = REPO_ROOT / "afri-adapt"
-STAGING_DIR = REPO_ROOT / "data" / "staging_parquet" / "afri_loanwords"
+STAGING_DIR = REPO_ROOT / "data" / "staging_parquet" / "afri_adaptations"
 
 _CONVERTERS: Dict[str, Optional[any]] = {}
 
@@ -73,7 +77,7 @@ def safe_convert(conv, text: str) -> str:
         return str(text).lower()
 
 
-def generate_loanwords_dataset_card(subsets_stats: Dict[str, int]) -> str:
+def generate_adaptations_dataset_card(subsets_stats: Dict[str, int]) -> str:
     """Generate YAML frontmatter configs and Markdown documentation for Hugging Face."""
     configs_yaml = []
     for pair in sorted(subsets_stats.keys()):
@@ -90,6 +94,7 @@ def generate_loanwords_dataset_card(subsets_stats: Dict[str, int]) -> str:
     total_en_terms = sum(subsets_stats[p] for p in en_pairs)
     total_fr_terms = sum(subsets_stats[p] for p in fr_pairs)
     grand_total = total_en_terms + total_fr_terms
+    total_african_langs = len(set([p.split("-")[1] for p in subsets_stats.keys()]))
 
     # Markdown table for top/sample subsets
     sample_rows = []
@@ -115,36 +120,40 @@ task_categories:
 - token-classification
 tags:
 - african-languages
+- adaptations
 - loanwords
 - proper-nouns
 - named-entities
 - terminology
 - transliteration
-- afri-loanwords
+- afri-adaptations
 - afrigloss
 configs:
 {configs_str}
 ---
 
-# `AfriSpeech/afri-loanwords` 🌍
+# `AfriSpeech/afri-adaptations` 🌍
 
-**Afri-Loanwords** is a comprehensive, human-grounded dataset documenting how **foreign loanwords, named entities, personal names, geographical places, and cultural concepts** from English and French have been phonologically, morphologically, and orthographically adapted into African languages.
+**Afri-Adaptations** is a dataset of words that have been phonetically adapted into **{total_african_langs} African languages** from English and French.
 
-Every pair is extracted directly from authentic multi-source parallel text (`AfriSpeech/africa-corpus` and `AfriSpeech/african-corpus-jw`) using dependency-parsed noun-phrase alignments and consensus majority voting (**100% human bitext, zero synthetic LLM translations**).
+Every pair documents how foreign words, named entities, personal names, geographical places, and loanwords from English and French undergo phonological, morphological, and orthographic adaptation when borrowed into indigenous African languages. The dataset includes a `universalised` column generated using [africa-g2p](https://github.com/AfriSpeech/africa-g2p) to provide cross-lingual phonetic grounding.
+
+All pairs are extracted directly from authentic multi-source parallel text (`AfriSpeech/africa-corpus` and `AfriSpeech/african-corpus-jw`) using dependency-parsed noun-phrase alignments and consensus majority voting (**100% human bitext, zero synthetic LLM translations**).
 
 - **Author**: Mich-Seth Owusu (`michseth@ghananlp.org`)
 - **Organization**: [AfriSpeech](https://huggingface.co/AfriSpeech) & Ghana NLP
 - **Codebase**: [github.com/AfriSpeech/afrigloss-mt](https://github.com/AfriSpeech/afrigloss-mt)
+- **African Languages Covered**: **{total_african_langs} languages**
 - **Total Directional Subsets**: **{len(subsets_stats)} language pairs**
-  - **English Source (`en-*`)**: {len(en_pairs)} African target languages ({total_en_terms:,} loanword pairs)
-  - **French Source (`fr-*`)**: {len(fr_pairs)} African target languages ({total_fr_terms:,} loanword pairs)
-- **Total Verified Loanword Adaptations**: **{grand_total:,}**
+  - **English Source (`en-*`)**: {len(en_pairs)} African target languages ({total_en_terms:,} adaptations)
+  - **French Source (`fr-*`)**: {len(fr_pairs)} African target languages ({total_fr_terms:,} adaptations)
+- **Total Verified Word Adaptations**: **{grand_total:,}**
 
 ---
 
 ## 📊 Sample Directional Subsets
 
-| Subset (`config`) | Language Direction | Verified Adapted Loanwords |
+| Subset (`config`) | Language Direction | Verified Adapted Words |
 | :---: | :--- | :---: |
 {sample_table}
 | ... | *(and {len(subsets_stats) - len(sample_rows)} more language directions)* | ... |
@@ -159,25 +168,31 @@ Load any specific directional subset directly with Hugging Face `datasets`:
 ```python
 from datasets import load_dataset
 
-# 1. Load English -> Twi (Akan) loanword adaptations
-ds_en_tw = load_dataset("AfriSpeech/afri-loanwords", "en-tw", split="train")
+# 1. Load English -> Twi (Akan) phonetic adaptations
+ds_en_tw = load_dataset("AfriSpeech/afri-adaptations", "en-tw", split="train")
 print(ds_en_tw[0])
 # {{'source_term': 'Jehovah', 'target_term': 'Yehowa', 'universalised': 'yehowa', 'confidence': 0.9949, 'frequency': 32545}}
 
-# 2. Load English -> Amharic loanword adaptations
-ds_en_amh = load_dataset("AfriSpeech/afri-loanwords", "en-amh", split="train")
+# 2. Load English -> Swahili phonetic adaptations
+ds_en_sw = load_dataset("AfriSpeech/afri-adaptations", "en-sw", split="train")
+print(ds_en_sw[0])
+# {{'source_term': 'Jesus', 'target_term': 'Yesu', 'universalised': 'yesu', 'confidence': 0.9963, 'frequency': 18384}}
+
+# 3. Load English -> Amharic phonetic adaptations
+ds_en_amh = load_dataset("AfriSpeech/afri-adaptations", "en-amh", split="train")
 print(ds_en_amh[0])
 # {{'source_term': 'Jesus', 'target_term': 'ኢየሱስ', 'universalised': 'iyasuse', 'confidence': 1.0, 'frequency': 21841}}
 
-# 3. Load French -> Swahili loanword adaptations
-ds_fr_sw = load_dataset("AfriSpeech/afri-loanwords", "fr-sw", split="train")
+# 4. Load French -> Swahili phonetic adaptations
+ds_fr_sw = load_dataset("AfriSpeech/afri-adaptations", "fr-sw", split="train")
 print(ds_fr_sw[0])
+# {{'source_term': 'Jéhovah', 'target_term': 'Yehova', 'universalised': 'yehova', 'confidence': 0.9925, 'frequency': 45080}}
 ```
 
 ### Data Fields
 
-- `source_term`: The foreign loanword or named entity in English or French.
-- `target_term`: The adapted translation / localized transliteration in the African language.
+- `source_term`: The original foreign word or named entity in English or French.
+- `target_term`: The phonetically and orthographically adapted word in the African language.
 - `universalised`: The phonetically universalized representation generated via [africa-g2p](https://github.com/AfriSpeech/africa-g2p), mapping African orthographies to common cross-lingual phonetic units.
 - `confidence`: Empirical consensus score across all parallel sentence occurrences (0.00 – 1.00).
 - `frequency`: Total number of occurrences observed across the corpus bitext.
@@ -204,12 +219,12 @@ This dataset is distributed under the **Creative Commons Attribution-NonCommerci
     return card
 
 
-def publish_afri_loanwords(api_token: Optional[str] = None):
+def publish_afri_adaptations(api_token: Optional[str] = None):
     """Convert all directional TSV files into Parquet subsets and upload to HF."""
     api = HfApi(token=api_token)
 
     logger.info("=" * 65)
-    logger.info(f"PUBLISHING AFRI-LOANWORDS DATASET TO HF: {REPO_ID}")
+    logger.info(f"PUBLISHING AFRI-ADAPTATIONS DATASET TO HF: {REPO_ID}")
     logger.info("=" * 65)
 
     api.create_repo(repo_id=REPO_ID, repo_type="dataset", exist_ok=True)
@@ -217,7 +232,6 @@ def publish_afri_loanwords(api_token: Optional[str] = None):
     data_dir = STAGING_DIR / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
 
-    # Find all TSV files in afri-adapt
     tsv_files = sorted(glob.glob(str(SRC_TSV_DIR / "*_*_proper_nouns.tsv")))
     logger.info(f"Found {len(tsv_files)} directional TSV files.")
 
@@ -272,17 +286,17 @@ def publish_afri_loanwords(api_token: Optional[str] = None):
 
     # Write README.md dataset card
     readme_path = STAGING_DIR / "README.md"
-    card_content = generate_loanwords_dataset_card(subsets_stats)
+    card_content = generate_adaptations_dataset_card(subsets_stats)
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write(card_content)
 
     # Upload to Hugging Face
-    logger.info(f"Uploading afri-loanwords to https://huggingface.co/datasets/{REPO_ID}...")
+    logger.info(f"Uploading afri-adaptations to https://huggingface.co/datasets/{REPO_ID}...")
     api.upload_folder(
         folder_path=str(STAGING_DIR),
         repo_id=REPO_ID,
         repo_type="dataset",
-        commit_message=f"feat: upload Afri-Loanwords dataset with all {len(subsets_stats)} directional subsets",
+        commit_message=f"feat: upload Afri-Adaptations dataset with all {len(subsets_stats)} directional subsets",
     )
     logger.info(f"Successfully published: https://huggingface.co/datasets/{REPO_ID}")
 
@@ -299,21 +313,21 @@ def publish_afri_loanwords(api_token: Optional[str] = None):
     except Exception as e:
         logger.warning(f"Could not add to collection: {e}")
 
-    # Remove legacy afri-adapt repo if it exists
+    # Clean up deprecated afri-loanwords repo
     try:
-        logger.info("Cleaning up deprecated AfriSpeech/afri-adapt...")
-        api.delete_repo(repo_id="AfriSpeech/afri-adapt", repo_type="dataset")
-        logger.info("Deleted deprecated repo AfriSpeech/afri-adapt")
+        logger.info("Cleaning up deprecated AfriSpeech/afri-loanwords...")
+        api.delete_repo(repo_id="AfriSpeech/afri-loanwords", repo_type="dataset")
+        logger.info("Deleted deprecated repo AfriSpeech/afri-loanwords")
     except Exception as e:
-        logger.info(f"AfriSpeech/afri-adapt cleanup notice: {e}")
+        logger.info(f"AfriSpeech/afri-loanwords cleanup notice: {e}")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Publish Afri-Loanwords dataset with directional subsets")
+    parser = argparse.ArgumentParser(description="Publish Afri-Adaptations dataset with directional subsets")
     parser.add_argument("--token", help="Hugging Face API token (optional)")
     args = parser.parse_args()
 
-    publish_afri_loanwords(api_token=args.token)
+    publish_afri_adaptations(api_token=args.token)
 
 
 if __name__ == "__main__":
