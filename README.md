@@ -118,6 +118,30 @@ Evaluated directly on the **exact official Helsinki-NLP test sets** (`https://ob
 
 ---
 
+## 🏅 Model Selection Guide: Rankings Across Architectures per Language
+
+For the complete technical breakdown, latency benchmarks, and language analysis, see **[MODELS_RANKING.md](MODELS_RANKING.md)**.
+
+### Head-to-Head Comparison WITH Dictionary (BLEU / chrF2):
+
+| Target African Language | Family | Afri-Gloss OPUS-MT (77M) | Afri-Gloss NLLB-600M | Afri-Gloss NLLB-1.3B | 🥇 Best Model (Quality Winner) |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **Twi / Akan (`tw`)** | Kwa | 23.21 / 47.50 | 24.49 / 48.40 | **27.37 / 50.95** | 🥇 **NLLB-1.3B** (+4.16 BLEU over OPUS) |
+| **Hausa (`ha`)** | Chadic | 21.78 / 46.77 | 23.82 / 49.27 | **26.78 / 51.08** | 🥇 **NLLB-1.3B** (+5.00 BLEU over OPUS) |
+| **Ewe (`ee`)** | Gbe | 27.28 / 51.38 | 23.17 / 50.09 | **27.41 / 53.69** | 🥇 **NLLB-1.3B** (+2.31 chrF2 over OPUS) |
+| **Shona (`sn`)** | Bantu | 21.53 / 53.21 | 22.78 / 55.51 | **24.70 / 56.46** | 🥇 **NLLB-1.3B** (+3.17 BLEU over OPUS) |
+| **Igbo (`ig`)** | Igboid | 21.69 / 47.78 | 21.19 / 48.00 | **22.45 / 50.05** | 🥇 **NLLB-1.3B** (+2.27 chrF2 over OPUS) |
+| **Swahili (`sw`)** | Bantu | 13.20 / 42.47 | 18.27 / 48.76 | **19.17 / 49.01** | 🥇 **NLLB-1.3B** (+5.97 BLEU over OPUS) |
+| **Yoruba (`yo`)** | Defoid | **26.54 / 45.49** | 18.51 / 37.56 | 21.39 / 40.08 | 🥇 **OPUS-MT** (+5.15 BLEU over NLLB-1.3B) |
+
+### Production Selection Rules:
+1. 🏆 **Top Overall Quality:** Use **[`AfriSpeech/afrigloss-nllb-1.3b`](https://huggingface.co/AfriSpeech/afrigloss-nllb-1.3b)** — wins 6 out of 7 African languages, delivering the highest grammatical fluency and handling complex Bantu concordial noun prefixes with high precision.
+2. 🎯 **Yoruba Tonal Precision:** Use **[`AfriSpeech/afrigloss-opus-mt-en-yo`](https://huggingface.co/AfriSpeech/afrigloss-opus-mt-en-yo)** — dedicated vocabulary models prevent diacritic tone fragmentation (`ọ́`, `è`, `à`, `ṣ`), outperforming NLLB by **+5.15 BLEU**.
+3. ⚡ **Ultra-Low Latency & Edge CPU Serving:** Use **[`AfriSpeech/afrigloss-opus-mt-*`](https://huggingface.co/collections/AfriSpeech/afri-gloss-mt-models-6adce3a3c13c6a86f07b6e6d)** — lightweight (~280 MB per model) and translates in ~30–50ms on a single CPU core.
+4. 🌐 **Balanced Multilingual Serving:** Use **[`AfriSpeech/afrigloss-nllb-600m`](https://huggingface.co/AfriSpeech/afrigloss-nllb-600m)** — single 2.4 GB unified model translating from both English and French to all 7 African languages simultaneously.
+
+---
+
 ## ⚡ Training Guidelines (Learnings from GLOSS-MT)
 
 - **Early Stopping & Checkpoint Selection:**
