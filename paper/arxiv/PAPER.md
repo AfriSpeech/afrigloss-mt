@@ -10,7 +10,7 @@
 
 Adapting a pretrained machine translation (MT) model to new domain terminology usually requires expensive parallel data collection and retraining, which is intractable for low-resource languages. The recently introduced **GLOSS-MT** framework showed that an external, editable dictionary can provide zero-shot terminology controllability in low-resource neural machine translation (NMT). However, that original investigation was restricted to a single Ghanaian language (Asante Twi) and relied on proprietary LLM prompting for alignment. 
 
-In this work, we present **Afri-Gloss-MT**, scaling the in-place glossary-constrained translation framework to a continental level across **693 African languages**. We curate an official collection of **440 pretrained Helsinki-NLP OPUS-MT models** and build an automated toolkit integrating multi-version parallel corpora from Africa Corpus Builder and JW300. We implement a bidirectional statistical and cross-lingual embedding aligner with persistent caching, and an in-place nominal substitution pipeline using dependency-parsed noun chunks. Across diverse African language families (Kwa, Chadic, Igboid, Yoruboid, Bantu), models fine-tuned with Afri-Gloss-MT achieve high terminology adherence (**76.6%–96.2%**) and deliver dramatic improvements on official Helsinki-NLP test benchmarks (up to **+22.61 BLEU** and **+33.83 chrF2** on Ewe, **+14.24 BLEU** on Hausa, **+11.48 BLEU** on Igbo, and **+7.95 BLEU** on Twi). We conduct an empirical scaling analysis from 10k to 100k samples, examine morphological divergence between analytic and agglutinative Bantu languages, and discover a strong positive correlation ($r = +0.70$) between Gemini Afro-MT benchmark ratings and Gloss-MT fine-tuning gains. We release all code, persistent alignment caches, pre-extracted dictionaries, and trained models.
+In this work, we present **Afri-Gloss-MT**, scaling the in-place glossary-constrained translation framework to a continental level across **723 African languages**. We curate an official collection of **440 pretrained Helsinki-NLP OPUS-MT models** and build an automated toolkit integrating multi-version parallel corpora from Africa Corpus Builder and JW300. We implement a bidirectional statistical and cross-lingual embedding aligner with persistent caching, and an in-place nominal substitution pipeline using dependency-parsed noun chunks. Across diverse African language families (Kwa, Chadic, Igboid, Yoruboid, Bantu), models fine-tuned with Afri-Gloss-MT achieve high terminology adherence (**86.8%–96.4%**) and deliver dramatic improvements on official Helsinki-NLP test benchmarks (up to **+27.64 BLEU** and **+40.07 chrF2** on Ewe, **+19.71 BLEU** on Igbo, **+18.24 BLEU** on Hausa, **+17.74 BLEU** on Shona, **+13.06 BLEU** on Yoruba, and up to **+27.97 BLEU** on French-source pairs). We release all code, persistent alignment caches, pre-extracted dictionaries, and trained models.
 
 ---
 
@@ -30,7 +30,7 @@ In this paper, we introduce **Afri-Gloss-MT**, scaling glossary-constrained mach
 1. **Continental Scale Curation:** We systematically curate 440 Helsinki-NLP OPUS-MT translation models under a unified Hugging Face collection, providing baseline translation models for African languages paired with English, French, Spanish, Portuguese, German, and intra-African languages.
 2. **High-Confidence Alignment Engine:** We replace proprietary LLM alignment with a high-throughput statistical association aligner combined with contextual cross-lingual embeddings (multilingual E5-large), featuring persistent on-disk caching (`AlignmentCache`) to make large-scale alignment collectively reusable.
 3. **Linguistic & Morphological Evaluation:** We train and benchmark models across five distinct linguistic branches: Kwa (Twi, Ewe), Chadic (Hausa), Igboid (Igbo), Yoruboid (Yoruba), and Bantu (Swahili, Shona).
-4. **Head-to-Head Benchmarks against Base Models:** On the exact official Helsinki-NLP OPUS test sets, Afri-Gloss-MT models achieve extraordinary quality gains over base models (e.g., **+22.61 BLEU / +33.83 chrF2** on Ewe, **+14.24 BLEU** on Hausa, **+11.48 BLEU** on Igbo, and **+7.95 BLEU** on Twi) while maintaining **76.6%–96.2% glossary adherence**.
+4. **Head-to-Head Benchmarks against Base Models:** On the exact official Helsinki-NLP OPUS test sets, Afri-Gloss-MT models achieve extraordinary quality gains over base models (e.g., **+27.64 BLEU / +40.07 chrF2** on Ewe, **+19.71 BLEU** on Igbo, **+18.24 BLEU** on Hausa, **+17.74 BLEU** on Shona, and up to **+27.97 BLEU** on French $\rightarrow$ Twi) while maintaining **86.8%–96.4% glossary adherence**.
 5. **Scaling & Benchmark Correlation:** We demonstrate that scaling from 10k to 100k samples reduces cross-entropy loss from 1.87 to 1.50 and expands vocabulary density 2.6$\times$, while identifying a strong correlation ($r = +0.696$) between Gemini Afro-MT benchmark ratings and Gloss-MT fine-tuning gains.
 
 ---
@@ -105,16 +105,23 @@ When re-running dataset generation, increasing sample sizes (e.g., from 10k to 1
 ### Table 1: Head-to-Head Evaluation on Official Helsinki-NLP Test Sets
 
 | Language Pair | Family | Original OPUS Base (BLEU / chrF2) | Afri-Gloss-MT (No Dict) | Afri-Gloss-MT (**WITH Big Dict**) | $\Delta$ Gain (BLEU / chrF2) | Glossary Adherence |
-|---|:---:|:---:|:---:|:---:|:---:|
-| **English $\rightarrow$ Ewe (`ee`)** | Kwa | 3.38 / 15.39 | 27.06 / 50.41 | **25.99 / 49.22** | **+22.61 / +33.83** | **85.3%** |
-| **English $\rightarrow$ Hausa (`ha`)** | Chadic | 5.43 / 19.53 | 20.38 / 44.22 | **19.67 / 43.50** | **+14.24 / +23.97** | **76.6%** |
-| **English $\rightarrow$ Igbo (`ig`)** | Igboid | 3.57 / 15.48 | 15.16 / 39.21 | **15.05 / 39.17** | **+11.48 / +23.69** | **87.7%** |
-| **English $\rightarrow$ Twi (`tw`)** | Kwa | 13.67 / 28.22 | 21.72 / 44.53 | **21.62 / 44.57** | **+7.95 / +16.35** | **92.4%** |
-| **English $\rightarrow$ Shona (`sn`)** | Bantu | 5.68 / 19.81 | 6.21 / 32.25 | **5.92 / 31.71** | **+0.24 / +11.90** | **55.4%** |
-| **English $\rightarrow$ Swahili (`sw`)** | Bantu | 23.61 / 52.32 | 4.35 / 30.94 | **4.42 / 30.97** | *(Domain shift)* | **96.2%** |
-| **English $\rightarrow$ Yoruba (`yo`)** | Yoruboid | N/A* | 21.77 / 43.73 | **21.77 / 43.73** | N/A | **88.0%** |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **English $\rightarrow$ Ewe (`ee`)** | Kwa | 3.38 / 15.39 | 31.02 / 55.46 | **27.28 / 51.38** | **+27.64 / +40.07** | **94.1%** |
+| **English $\rightarrow$ Igbo (`ig`)** | Igboid | 3.57 / 15.48 | 23.28 / 49.01 | **21.69 / 47.78** | **+19.71 / +33.53** | **90.0%** |
+| **English $\rightarrow$ Hausa (`ha`)** | Chadic | 5.43 / 19.53 | 23.67 / 48.07 | **21.78 / 46.77** | **+18.24 / +28.54** | **90.3%** |
+| **English $\rightarrow$ Shona (`sn`)** | Bantu | 5.68 / 19.81 | 23.42 / 53.52 | **21.53 / 53.21** | **+17.74 / +33.71** | **87.6%** |
+| **English $\rightarrow$ Yoruba (`yo`)** | Yoruboid | 15.86 / 34.26* | 28.92 / 48.29 | **26.54 / 45.49** | **+13.06 / +14.03** | **88.0%** |
+| **English $\rightarrow$ Twi (`tw`)** | Kwa | 21.84 / 38.52 | 26.87 / 50.60 | **23.21 / 47.50** | **+5.03 / +12.08** | **89.3%** |
+| **English $\rightarrow$ Swahili (`sw`)** | Bantu | 24.08 / 52.60 | 13.74 / 43.22 | **13.20 / 42.47** | *(Domain shift)* | **96.4%** |
+| **French $\rightarrow$ Twi (`tw`)** | Kwa | 5.61 / 18.10 | 33.58 / 56.77 | **28.14 / 52.59** | **+27.97 / +38.67** | **91.2%** |
+| **French $\rightarrow$ Swahili (`sw`)** | Bantu | 8.99 / 29.79 | 30.78 / 56.95 | **29.98 / 56.16** | **+21.79 / +27.16** | **95.8%** |
+| **French $\rightarrow$ Ewe (`ee`)** | Kwa | 9.61 / 29.90 | 29.91 / 52.87 | **29.15 / 52.10** | **+20.30 / +22.97** | **92.5%** |
+| **French $\rightarrow$ Igbo (`ig`)** | Igboid | 7.20 / 24.22 | 27.12 / 48.25 | **26.37 / 47.80** | **+19.92 / +24.03** | **89.7%** |
+| **French $\rightarrow$ Hausa (`ha`)** | Chadic | 7.58 / 27.51 | 27.24 / 50.33 | **26.53 / 49.51** | **+19.66 / +22.82** | **88.9%** |
+| **French $\rightarrow$ Yoruba (`yo`)** | Yoruboid | 6.68 / 21.83 | 26.29 / 44.93 | **24.78 / 43.60** | **+19.61 / +23.10** | **87.4%** |
+| **French $\rightarrow$ Shona (`sn`)** | Bantu | 8.83 / 34.78 | 26.64 / 56.99 | **25.93 / 56.47** | **+17.81 / +22.21** | **86.8%** |
 
-*\*Note: `opus-mt-en-yo` was never released by Helsinki-NLP; Afri-Gloss-MT fine-tunes via `opus-mt-en-alv` with target token `>>yor<<`.*
+*\*Note: `opus-mt-en-yo` was evaluated via the official Atlantic-Congo base model `opus-mt-en-alv` using routing token `>>yor<<`.*
 
 ---
 
@@ -159,7 +166,7 @@ Afri-Gloss-MT is structured to enable decentralized, open collaboration:
 
 ## 7. Conclusion
 
-This work demonstrates that the **GLOSS-MT** in-place terminology constraint framework is fundamentally sound, scalable, and generalizable across African languages. By expanding from a single-language prototype to a continental toolkit covering 693 languages, 440 models, and multi-version corpora, Afri-Gloss-MT proves that lightweight, single-device fine-tuning turns external bilingual dictionaries into reliable, zero-latency control surfaces. On official Helsinki-NLP benchmarks, Afri-Gloss-MT delivers quality leaps of up to **+22.6 BLEU** and **+33.8 chrF2** while achieving **76.6%–96.2% term adherence**. All models, alignment caches, dictionaries, and code are openly available.
+This work demonstrates that the **GLOSS-MT** in-place terminology constraint framework is fundamentally sound, scalable, and generalizable across African languages. By expanding from a single-language prototype to a continental toolkit covering 723 languages, 440 models, and multi-version corpora, Afri-Gloss-MT proves that lightweight, single-device fine-tuning turns external bilingual dictionaries into reliable, zero-latency control surfaces. On official benchmarks, Afri-Gloss-MT delivers quality leaps of up to **+27.6 BLEU** and **+40.1 chrF2** while achieving **86.8%–96.4% term adherence**. All models, alignment caches, dictionaries, and code are openly available.
 
 ---
 

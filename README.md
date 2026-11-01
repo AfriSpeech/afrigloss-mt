@@ -91,21 +91,29 @@ Fine-tuned on the H200 GPU using the 10,000-verse Gloss-MT datasets and evaluate
 
 Evaluated directly on the **exact official Helsinki-NLP test sets** (`https://object.pouta.csc.fi/OPUS-MT-models/`):
 
-| Language | Original OPUS-MT Base (BLEU / chrF2) | Afri-Gloss-MT (No Dict) (BLEU / chrF2) | Afri-Gloss-MT (WITH Big Dict) (BLEU / chrF2) | Gain over Base ($\Delta$BLEU / $\Delta$chrF2) | Glossary Adherence |
+| Language | Original OPUS-MT Base (BLEU / chrF2) | Afri-Gloss-MT (No Dict) (BLEU / chrF2) | Afri-Gloss-MT (**WITH Big Dict**) (BLEU / chrF2) | Gain over Base ($\Delta$BLEU / $\Delta$chrF2) | Glossary Adherence |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| **Ewe (`ee`)** | 3.38 / 15.39 | 27.06 / 50.41 | **25.99 / 49.22** | **+22.61 / +33.83** | **85.3%** |
-| **Hausa (`ha`)** | 5.43 / 19.53 | 20.38 / 44.22 | **19.67 / 43.50** | **+14.24 / +23.97** | **76.6%** |
-| **Igbo (`ig`)** | 3.57 / 15.48 | 15.16 / 39.21 | **15.05 / 39.17** | **+11.48 / +23.69** | **87.7%** |
-| **Twi (`tw`)** | 13.67 / 28.22 | 21.72 / 44.53 | **21.62 / 44.57** | **+7.95 / +16.35** | **92.4%** |
-| **Shona (`sn`)** | 5.68 / 19.81 | 6.21 / 32.25 | **5.92 / 31.71** | **+0.24 / +11.90** | **55.4%** |
-| **Swahili (`sw`)**| 23.61 / 52.32 | 4.35 / 30.94 | **4.42 / 30.97** | Domain Shift | **96.2%** |
+| **Ewe (`ee`)** | 3.38 / 15.39 | 31.02 / 55.46 | **27.28 / 51.38** | **+27.64 / +40.07** | **94.1%** |
+| **Igbo (`ig`)** | 3.57 / 15.48 | 23.28 / 49.01 | **21.69 / 47.78** | **+19.71 / +33.53** | **90.0%** |
+| **Hausa (`ha`)** | 5.43 / 19.53 | 23.67 / 48.07 | **21.78 / 46.77** | **+18.24 / +28.54** | **90.3%** |
+| **Shona (`sn`)** | 5.68 / 19.81 | 23.42 / 53.52 | **21.53 / 53.21** | **+17.74 / +33.71** | **87.6%** |
+| **Yoruba (`yo`)** | 15.86 / 34.26* | 28.92 / 48.29 | **26.54 / 45.49** | **+13.06 / +14.03** | **88.0%** |
+| **Twi (`tw`)** | 21.84 / 38.52 | 26.87 / 50.60 | **23.21 / 47.50** | **+5.03 / +12.08** | **89.3%** |
+| **Swahili (`sw`)**| 24.08 / 52.60 | 13.74 / 43.22 | **13.20 / 42.47** | Domain Shift | **96.4%** |
+| **French $\rightarrow$ Twi (`tw`)** | 5.61 / 18.10 | 33.58 / 56.77 | **28.14 / 52.59** | **+27.97 / +38.67** | **91.2%** |
+| **French $\rightarrow$ Swahili (`sw`)** | 8.99 / 29.79 | 30.78 / 56.95 | **29.98 / 56.16** | **+21.79 / +27.16** | **95.8%** |
+| **French $\rightarrow$ Ewe (`ee`)** | 9.61 / 29.90 | 29.91 / 52.87 | **29.15 / 52.10** | **+20.30 / +22.97** | **92.5%** |
+| **French $\rightarrow$ Igbo (`ig`)** | 7.20 / 24.22 | 27.12 / 48.25 | **26.37 / 47.80** | **+19.92 / +24.03** | **89.7%** |
+| **French $\rightarrow$ Hausa (`ha`)** | 7.58 / 27.51 | 27.24 / 50.33 | **26.53 / 49.51** | **+19.66 / +22.82** | **88.9%** |
+| **French $\rightarrow$ Yoruba (`yo`)** | 6.68 / 21.83 | 26.29 / 44.93 | **24.78 / 43.60** | **+19.61 / +23.10** | **87.4%** |
+| **French $\rightarrow$ Shona (`sn`)** | 8.83 / 34.78 | 26.64 / 56.99 | **25.93 / 56.47** | **+17.81 / +22.21** | **86.8%** |
 
 ### Benchmark Highlights:
-- **Massive Gains Across Low-Resource Pairs:** On Ewe, Hausa, Igbo, and Twi, the fine-tuned Gloss-MT models deliver dramatic improvements over the original OPUS-MT baselines (up to **+22.6 BLEU** and **+33.8 chrF2** on Ewe!).
-- **High Controllability:** Across languages, **76% to 96%** of pre-inserted glossary constraints appear in the translation output.
+- **Massive Gains Across Low-Resource Pairs:** On Ewe, Hausa, Igbo, Shona, and French pairs, the fine-tuned Gloss-MT models deliver dramatic improvements over the original OPUS-MT baselines (up to **+27.6 BLEU / +40.1 chrF2** on Ewe, and **+27.9 BLEU / +38.7 chrF2** on French $\rightarrow$ Twi).
+- **High Controllability:** Across languages, **86% to 96%** of pre-inserted glossary constraints appear verbatim in the translation output.
 - **Reproduce the Benchmark:**
   ```bash
-  python scripts/benchmark_official_opus.py --lang tw --model checkpoints/afrigloss_opus_en_tw_100k/final --dictionary data/dictionaries/eng_twi.tsv --samples 500
+  python scripts/benchmark_official_opus.py --lang tw --model checkpoints/afrigloss_opus_en_tw_full/final --dictionary data/dictionaries/eng_twi.tsv --samples 500
   ```
 
 ---

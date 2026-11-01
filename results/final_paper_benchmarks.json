@@ -1,0 +1,198 @@
+{
+  "en-tw": {
+    "opus_base": {
+      "bleu": 21.84,
+      "chrf2": 38.52
+    },
+    "opus_ft_nodict": {
+      "bleu": 26.87,
+      "chrf2": 50.6
+    },
+    "opus_ft_withdict": {
+      "bleu": 23.21,
+      "chrf2": 47.5
+    }
+  },
+  "en-sw": {
+    "opus_base": {
+      "bleu": 24.08,
+      "chrf2": 52.6
+    },
+    "opus_ft_nodict": {
+      "bleu": 13.74,
+      "chrf2": 43.22
+    },
+    "opus_ft_withdict": {
+      "bleu": 13.2,
+      "chrf2": 42.47
+    }
+  },
+  "en-yo": {
+    "opus_base": {
+      "bleu": 15.86,
+      "chrf2": 34.26
+    },
+    "opus_ft_nodict": {
+      "bleu": 28.92,
+      "chrf2": 48.29
+    },
+    "opus_ft_withdict": {
+      "bleu": 26.54,
+      "chrf2": 45.49
+    }
+  },
+  "en-ha": {
+    "opus_base": {
+      "bleu": 5.43,
+      "chrf2": 19.53
+    },
+    "opus_ft_nodict": {
+      "bleu": 23.67,
+      "chrf2": 48.07
+    },
+    "opus_ft_withdict": {
+      "bleu": 21.78,
+      "chrf2": 46.77
+    }
+  },
+  "en-ig": {
+    "opus_base": {
+      "bleu": 3.57,
+      "chrf2": 15.48
+    },
+    "opus_ft_nodict": {
+      "bleu": 23.28,
+      "chrf2": 49.01
+    },
+    "opus_ft_withdict": {
+      "bleu": 21.69,
+      "chrf2": 47.78
+    }
+  },
+  "en-ee": {
+    "opus_base": {
+      "bleu": 3.38,
+      "chrf2": 15.39
+    },
+    "opus_ft_nodict": {
+      "bleu": 31.02,
+      "chrf2": 55.46
+    },
+    "opus_ft_withdict": {
+      "bleu": 27.28,
+      "chrf2": 51.38
+    }
+  },
+  "en-sn": {
+    "opus_base": {
+      "bleu": 5.68,
+      "chrf2": 19.81
+    },
+    "opus_ft_nodict": {
+      "bleu": 23.42,
+      "chrf2": 53.52
+    },
+    "opus_ft_withdict": {
+      "bleu": 21.53,
+      "chrf2": 53.21
+    }
+  },
+  "fr-tw": {
+    "opus_base": {
+      "bleu": 5.61,
+      "chrf2": 18.1
+    },
+    "opus_ft_nodict": {
+      "bleu": 33.58,
+      "chrf2": 56.77
+    },
+    "opus_ft_withdict": {
+      "bleu": 28.14,
+      "chrf2": 52.59
+    }
+  },
+  "fr-sw": {
+    "opus_base": {
+      "bleu": 8.99,
+      "chrf2": 29.79
+    },
+    "opus_ft_nodict": {
+      "bleu": 30.78,
+      "chrf2": 56.95
+    },
+    "opus_ft_withdict": {
+      "bleu": 29.98,
+      "chrf2": 56.16
+    }
+  },
+  "fr-yo": {
+    "opus_base": {
+      "bleu": 6.68,
+      "chrf2": 21.83
+    },
+    "opus_ft_nodict": {
+      "bleu": 26.29,
+      "chrf2": 44.93
+    },
+    "opus_ft_withdict": {
+      "bleu": 24.78,
+      "chrf2": 43.6
+    }
+  },
+  "fr-ha": {
+    "opus_base": {
+      "bleu": 7.58,
+      "chrf2": 27.51
+    },
+    "opus_ft_nodict": {
+      "bleu": 27.24,
+      "chrf2": 50.33
+    },
+    "opus_ft_withdict": {
+      "bleu": 26.53,
+      "chrf2": 49.51
+    }
+  },
+  "fr-ig": {
+    "opus_base": {
+      "bleu": 7.2,
+      "chrf2": 24.22
+    },
+    "opus_ft_nodict": {
+      "bleu": 27.12,
+      "chrf2": 48.25
+    },
+    "opus_ft_withdict": {
+      "bleu": 26.37,
+      "chrf2": 47.8
+    }
+  },
+  "fr-ee": {
+    "opus_base": {
+      "bleu": 9.61,
+      "chrf2": 29.9
+    },
+    "opus_ft_nodict": {
+      "bleu": 29.91,
+      "chrf2": 52.87
+    },
+    "opus_ft_withdict": {
+      "bleu": 29.15,
+      "chrf2": 52.1
+    }
+  },
+  "fr-sn": {
+    "opus_base": {
+      "bleu": 8.83,
+      "chrf2": 34.78
+    },
+    "opus_ft_nodict": {
+      "bleu": 26.64,
+      "chrf2": 56.99
+    },
+    "opus_ft_withdict": {
+      "bleu": 25.93,
+      "chrf2": 56.47
+    }
+  }
+}
