@@ -12,6 +12,7 @@ Outputs:
   - results/final_paper_benchmarks.md
 """
 
+import argparse
 import gc
 import json
 import logging
