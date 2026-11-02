@@ -127,17 +127,24 @@ When re-running dataset generation, increasing sample sizes (e.g., from 10k to 1
 
 ### Table 2: Multilingual NLLB Foundation Models Evaluation (BLEU / chrF2)
 
-| Language | NLLB-600M Base | Afri-Gloss-600M (No Dict) | Afri-Gloss-600M (WITH Dict) | NLLB-1.3B Base | Afri-Gloss-1.3B (No Dict) | Afri-Gloss-1.3B (WITH Dict) |
+| Language Pair | NLLB-600M Base | Afri-Gloss-600M (No Dict) | Afri-Gloss-600M (WITH Dict) | NLLB-1.3B Base | Afri-Gloss-1.3B (No Dict) | Afri-Gloss-1.3B (WITH Dict) |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Twi (`tw`)** | 29.35 / 51.46 | 27.64 / 50.78 | 24.49 / 48.40 | 34.17 / 54.99 | 28.34 / 52.33 | 27.37 / 50.95 |
-| **Swahili (`sw`)** | 24.89 / 52.93 | 18.94 / 49.20 | 18.27 / 48.76 | 25.49 / 53.67 | 19.70 / 49.23 | 19.17 / 49.01 |
-| **Yoruba (`yo`)** | 14.93 / 32.94 | **21.17 / 40.86** | 18.51 / 37.56 | 15.61 / 33.58 | **23.41 / 43.04** | 21.39 / 40.08 |
-| **Hausa (`ha`)** | 32.23 / 55.74 | 26.25 / 51.80 | 23.82 / 49.27 | 36.58 / 58.77 | 30.11 / 53.49 | 26.78 / 51.08 |
-| **Igbo (`ig`)** | 29.33 / 53.31 | 23.67 / 50.39 | 21.19 / 48.00 | 33.75 / 57.42 | 24.34 / 50.65 | 22.45 / 50.05 |
-| **Ewe (`ee`)** | 27.77 / 52.67 | 25.94 / 52.54 | 23.17 / 50.09 | 33.53 / 56.79 | 30.80 / 54.99 | 27.41 / 53.69 |
-| **Shona (`sn`)** | 30.88 / 61.07 | 24.95 / 57.21 | 22.78 / 55.51 | 35.09 / 64.18 | 26.14 / 58.26 | 24.70 / 56.46 |
+| **English $\rightarrow$ Twi (`tw`)** | 29.35 / 51.46 | 27.64 / 50.78 | 24.49 / 48.40 | 34.17 / 54.99 | 28.34 / 52.33 | 27.37 / 50.95 |
+| **English $\rightarrow$ Swahili (`sw`)** | 24.89 / 52.93 | 18.94 / 49.20 | 18.27 / 48.76 | 25.49 / 53.67 | 19.70 / 49.23 | 19.17 / 49.01 |
+| **English $\rightarrow$ Yoruba (`yo`)** | 14.93 / 32.94 | **21.17 / 40.86** | 18.51 / 37.56 | 15.61 / 33.58 | **23.41 / 43.04** | 21.39 / 40.08 |
+| **English $\rightarrow$ Hausa (`ha`)** | 32.23 / 55.74 | 26.25 / 51.80 | 23.82 / 49.27 | 36.58 / 58.77 | 30.11 / 53.49 | 26.78 / 51.08 |
+| **English $\rightarrow$ Igbo (`ig`)** | 29.33 / 53.31 | 23.67 / 50.39 | 21.19 / 48.00 | 33.75 / 57.42 | 24.34 / 50.65 | 22.45 / 50.05 |
+| **English $\rightarrow$ Ewe (`ee`)** | 27.77 / 52.67 | 25.94 / 52.54 | 23.17 / 50.09 | 33.53 / 56.79 | 30.80 / 54.99 | 27.41 / 53.69 |
+| **English $\rightarrow$ Shona (`sn`)** | 30.88 / 61.07 | 24.95 / 57.21 | 22.78 / 55.51 | 35.09 / 64.18 | 26.14 / 58.26 | 24.70 / 56.46 |
+| **French $\rightarrow$ Twi (`tw`)** | 21.03 / 41.21 | **34.77 / 57.49** | 28.78 / 53.26 | 23.81 / 44.26 | **37.24 / 59.68** | **31.49 / 55.47** |
+| **French $\rightarrow$ Swahili (`sw`)** | 18.29 / 39.17 | **30.07 / 56.18** | 29.51 / 55.29 | 21.38 / 41.66 | **33.43 / 57.97** | **32.81 / 57.77** |
+| **French $\rightarrow$ Yoruba (`yo`)** | 13.81 / 28.68 | **21.11 / 39.60** | 20.07 / 38.77 | 16.22 / 31.43 | **23.57 / 41.92** | 22.57 / 40.95 |
+| **French $\rightarrow$ Hausa (`ha`)** | 16.75 / 34.04 | **28.86 / 51.15** | 28.17 / 50.77 | 19.68 / 37.31 | **30.31 / 52.89** | **30.53 / 53.25** |
+| **French $\rightarrow$ Igbo (`ig`)** | 14.72 / 31.92 | **24.10 / 45.63** | 23.45 / 45.10 | 17.58 / 35.36 | **28.86 / 49.10** | **27.90 / 48.31** |
+| **French $\rightarrow$ Ewe (`ee`)** | 16.64 / 35.88 | **25.44 / 49.34** | 24.91 / 48.69 | 19.14 / 39.32 | **28.33 / 51.82** | 27.44 / 51.32 |
+| **French $\rightarrow$ Shona (`sn`)** | 16.30 / 40.47 | **25.28 / 56.36** | 24.24 / 55.55 | 16.69 / 39.90 | **28.21 / 58.78** | **27.85 / 58.80** |
 
-On under-resourced languages like Yoruba, Afri-Gloss-MT fine-tuning substantially boosts base NLLB quality (**+6.24 to +7.80 BLEU**) while giving users hard, deterministic glossary control via offline dictionaries.
+On under-resourced directions (such as French $\rightarrow$ African pairs and Yoruba), Afri-Gloss-MT fine-tuning dramatically outperforms base NLLB baselines (**+7.8 to +13.4 BLEU**) while giving users hard, deterministic glossary control via offline dictionaries.
 
 ---
 

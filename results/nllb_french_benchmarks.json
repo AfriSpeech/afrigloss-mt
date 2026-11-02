@@ -1,0 +1,202 @@
+{
+  "600m": {
+    "tw": {
+      "base": {
+        "bleu": 21.03,
+        "chrf2": 41.21
+      },
+      "ft_nodict": {
+        "bleu": 34.77,
+        "chrf2": 57.49
+      },
+      "ft_withdict": {
+        "bleu": 28.78,
+        "chrf2": 53.26
+      }
+    },
+    "sw": {
+      "base": {
+        "bleu": 18.29,
+        "chrf2": 39.17
+      },
+      "ft_nodict": {
+        "bleu": 30.07,
+        "chrf2": 56.18
+      },
+      "ft_withdict": {
+        "bleu": 29.51,
+        "chrf2": 55.29
+      }
+    },
+    "yo": {
+      "base": {
+        "bleu": 13.81,
+        "chrf2": 28.68
+      },
+      "ft_nodict": {
+        "bleu": 21.11,
+        "chrf2": 39.6
+      },
+      "ft_withdict": {
+        "bleu": 20.07,
+        "chrf2": 38.77
+      }
+    },
+    "ha": {
+      "base": {
+        "bleu": 16.75,
+        "chrf2": 34.04
+      },
+      "ft_nodict": {
+        "bleu": 28.86,
+        "chrf2": 51.15
+      },
+      "ft_withdict": {
+        "bleu": 28.17,
+        "chrf2": 50.77
+      }
+    },
+    "ig": {
+      "base": {
+        "bleu": 14.72,
+        "chrf2": 31.92
+      },
+      "ft_nodict": {
+        "bleu": 24.1,
+        "chrf2": 45.63
+      },
+      "ft_withdict": {
+        "bleu": 23.45,
+        "chrf2": 45.1
+      }
+    },
+    "ee": {
+      "base": {
+        "bleu": 16.64,
+        "chrf2": 35.88
+      },
+      "ft_nodict": {
+        "bleu": 25.44,
+        "chrf2": 49.34
+      },
+      "ft_withdict": {
+        "bleu": 24.91,
+        "chrf2": 48.69
+      }
+    },
+    "sn": {
+      "base": {
+        "bleu": 16.3,
+        "chrf2": 40.47
+      },
+      "ft_nodict": {
+        "bleu": 25.28,
+        "chrf2": 56.36
+      },
+      "ft_withdict": {
+        "bleu": 24.24,
+        "chrf2": 55.55
+      }
+    }
+  },
+  "1.3b": {
+    "tw": {
+      "base": {
+        "bleu": 23.81,
+        "chrf2": 44.26
+      },
+      "ft_nodict": {
+        "bleu": 37.24,
+        "chrf2": 59.68
+      },
+      "ft_withdict": {
+        "bleu": 31.49,
+        "chrf2": 55.47
+      }
+    },
+    "sw": {
+      "base": {
+        "bleu": 21.38,
+        "chrf2": 41.66
+      },
+      "ft_nodict": {
+        "bleu": 33.43,
+        "chrf2": 57.97
+      },
+      "ft_withdict": {
+        "bleu": 32.81,
+        "chrf2": 57.77
+      }
+    },
+    "yo": {
+      "base": {
+        "bleu": 16.22,
+        "chrf2": 31.43
+      },
+      "ft_nodict": {
+        "bleu": 23.57,
+        "chrf2": 41.92
+      },
+      "ft_withdict": {
+        "bleu": 22.57,
+        "chrf2": 40.95
+      }
+    },
+    "ha": {
+      "base": {
+        "bleu": 19.68,
+        "chrf2": 37.31
+      },
+      "ft_nodict": {
+        "bleu": 30.31,
+        "chrf2": 52.89
+      },
+      "ft_withdict": {
+        "bleu": 30.53,
+        "chrf2": 53.25
+      }
+    },
+    "ig": {
+      "base": {
+        "bleu": 17.58,
+        "chrf2": 35.36
+      },
+      "ft_nodict": {
+        "bleu": 28.86,
+        "chrf2": 49.1
+      },
+      "ft_withdict": {
+        "bleu": 27.9,
+        "chrf2": 48.31
+      }
+    },
+    "ee": {
+      "base": {
+        "bleu": 19.14,
+        "chrf2": 39.32
+      },
+      "ft_nodict": {
+        "bleu": 28.33,
+        "chrf2": 51.82
+      },
+      "ft_withdict": {
+        "bleu": 27.44,
+        "chrf2": 51.32
+      }
+    },
+    "sn": {
+      "base": {
+        "bleu": 16.69,
+        "chrf2": 39.9
+      },
+      "ft_nodict": {
+        "bleu": 28.21,
+        "chrf2": 58.78
+      },
+      "ft_withdict": {
+        "bleu": 27.85,
+        "chrf2": 58.8
+      }
+    }
+  }
+}

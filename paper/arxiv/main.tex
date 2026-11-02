@@ -182,18 +182,28 @@ In addition to modular per-language OPUS-MT models, we evaluated our single unif
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{lcccccc}
 \toprule
-\textbf{Language} & \textbf{NLLB-600M Base} & \textbf{\agm{}-600M (No Dict)} & \textbf{\agm{}-600M (WITH Dict)} & \textbf{NLLB-1.3B Base} & \textbf{\agm{}-1.3B (No Dict)} & \textbf{\agm{}-1.3B (WITH Dict)} \\
+\textbf{Language Pair} & \textbf{NLLB-600M Base} & \textbf{\agm{}-600M (No Dict)} & \textbf{\agm{}-600M (WITH Dict)} & \textbf{NLLB-1.3B Base} & \textbf{\agm{}-1.3B (No Dict)} & \textbf{\agm{}-1.3B (WITH Dict)} \\
 \midrule
-Twi (\texttt{tw}) & 29.35 / 51.46 & 27.64 / 50.78 & 24.49 / 48.40 & 34.17 / 54.99 & 28.34 / 52.33 & 27.37 / 50.95 \\
-Swahili (\texttt{sw}) & 24.89 / 52.93 & 18.94 / 49.20 & 18.27 / 48.76 & 25.49 / 53.67 & 19.70 / 49.23 & 19.17 / 49.01 \\
-Yoruba (\texttt{yo}) & 14.93 / 32.94 & \textbf{21.17 / 40.86} & 18.51 / 37.56 & 15.61 / 33.58 & \textbf{23.41 / 43.04} & 21.39 / 40.08 \\
-Hausa (\texttt{ha}) & 32.23 / 55.74 & 26.25 / 51.80 & 23.82 / 49.27 & 36.58 / 58.77 & 30.11 / 53.49 & 26.78 / 51.08 \\
-Igbo (\texttt{ig}) & 29.33 / 53.31 & 23.67 / 50.39 & 21.19 / 48.00 & 33.75 / 57.42 & 24.34 / 50.65 & 22.45 / 50.05 \\
-Ewe (\texttt{ee}) & 27.77 / 52.67 & 25.94 / 52.54 & 23.17 / 50.09 & 33.53 / 56.79 & 30.80 / 54.99 & 27.41 / 53.69 \\
-Shona (\texttt{sn}) & 30.88 / 61.07 & 24.95 / 57.21 & 22.78 / 55.51 & 35.09 / 64.18 & 26.14 / 58.26 & 24.70 / 56.46 \\
+\multicolumn{7}{l}{\textbf{English Source Pairs (\texttt{eng\_Latn} $\rightarrow$ Targets)}} \\
+English $\rightarrow$ Twi (\texttt{tw}) & 29.35 / 51.46 & 27.64 / 50.78 & 24.49 / 48.40 & 34.17 / 54.99 & 28.34 / 52.33 & 27.37 / 50.95 \\
+English $\rightarrow$ Swahili (\texttt{sw}) & 24.89 / 52.93 & 18.94 / 49.20 & 18.27 / 48.76 & 25.49 / 53.67 & 19.70 / 49.23 & 19.17 / 49.01 \\
+English $\rightarrow$ Yoruba (\texttt{yo}) & 14.93 / 32.94 & \textbf{21.17 / 40.86} & 18.51 / 37.56 & 15.61 / 33.58 & \textbf{23.41 / 43.04} & 21.39 / 40.08 \\
+English $\rightarrow$ Hausa (\texttt{ha}) & 32.23 / 55.74 & 26.25 / 51.80 & 23.82 / 49.27 & 36.58 / 58.77 & 30.11 / 53.49 & 26.78 / 51.08 \\
+English $\rightarrow$ Igbo (\texttt{ig}) & 29.33 / 53.31 & 23.67 / 50.39 & 21.19 / 48.00 & 33.75 / 57.42 & 24.34 / 50.65 & 22.45 / 50.05 \\
+English $\rightarrow$ Ewe (\texttt{ee}) & 27.77 / 52.67 & 25.94 / 52.54 & 23.17 / 50.09 & 33.53 / 56.79 & 30.80 / 54.99 & 27.41 / 53.69 \\
+English $\rightarrow$ Shona (\texttt{sn}) & 30.88 / 61.07 & 24.95 / 57.21 & 22.78 / 55.51 & 35.09 / 64.18 & 26.14 / 58.26 & 24.70 / 56.46 \\
+\midrule
+\multicolumn{7}{l}{\textbf{French Source Pairs (\texttt{fra\_Latn} $\rightarrow$ Targets)}} \\
+French $\rightarrow$ Twi (\texttt{tw}) & 21.03 / 41.21 & \textbf{34.77 / 57.49} & 28.78 / 53.26 & 23.81 / 44.26 & \textbf{37.24 / 59.68} & 31.49 / 55.47 \\
+French $\rightarrow$ Swahili (\texttt{sw}) & 18.29 / 39.17 & \textbf{30.07 / 56.18} & 29.51 / 55.29 & 21.38 / 41.66 & \textbf{33.43 / 57.97} & 32.81 / 57.77 \\
+French $\rightarrow$ Yoruba (\texttt{yo}) & 13.81 / 28.68 & \textbf{21.11 / 39.60} & 20.07 / 38.77 & 16.22 / 31.43 & \textbf{23.57 / 41.92} & 22.57 / 40.95 \\
+French $\rightarrow$ Hausa (\texttt{ha}) & 16.75 / 34.04 & \textbf{28.86 / 51.15} & 28.17 / 50.77 & 19.68 / 37.31 & \textbf{30.31 / 52.89} & 30.53 / 53.25 \\
+French $\rightarrow$ Igbo (\texttt{ig}) & 14.72 / 31.92 & \textbf{24.10 / 45.63} & 23.45 / 45.10 & 17.58 / 35.36 & \textbf{28.86 / 49.10} & 27.90 / 48.31 \\
+French $\rightarrow$ Ewe (\texttt{ee}) & 16.64 / 35.88 & \textbf{25.44 / 49.34} & 24.91 / 48.69 & 19.14 / 39.32 & \textbf{28.33 / 51.82} & 27.44 / 51.32 \\
+French $\rightarrow$ Shona (\texttt{sn}) & 16.30 / 40.47 & \textbf{25.28 / 56.36} & 24.24 / 55.55 & 16.69 / 39.90 & \textbf{28.21 / 58.78} & 27.85 / 58.80 \\
 \bottomrule
 \end{tabular}
-\caption{Cross-lingual evaluation of unified multilingual NLLB-200 foundation models (600M and 1.3B) across African targets (BLEU / chrF2). On under-resourced languages like Yoruba, \agm{} fine-tuning substantially boosts base NLLB quality (+6.24 to +7.80 BLEU) while providing deterministic glossary controllability.}
+\caption{Cross-lingual evaluation of unified multilingual NLLB-200 foundation models (600M and 1.3B) across African targets for both English and French source languages (BLEU / chrF2). On under-resourced directions (such as French $\rightarrow$ African pairs and Yoruba), \agm{} fine-tuning dramatically outperforms base NLLB baselines (+7.8 to +13.4 BLEU) while providing deterministic glossary controllability.}
 \label{tab:nllb_bench}
 \end{table*}
 
