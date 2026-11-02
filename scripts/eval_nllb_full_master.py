@@ -41,18 +41,18 @@ OUT_JSON = RESULTS_DIR / "nllb_benchmarks.json"
 LANGS = ["tw", "sw", "yo", "ha", "ig", "ee", "sn"]
 
 
-def load_test_pairs(lang: str, num_samples: int = 300) -> Tuple[List[str], List[str]]:
+def load_test_pairs(lang: str, src_lang: str = "en", num_samples: int = 250) -> Tuple[List[str], List[str]]:
     """Load test sources and references."""
     cache_dir = REPO_ROOT / "data" / "official_opus_testsets"
 
-    if lang in ["tw", "sw", "ha", "ig", "ee", "sn"]:
+    if src_lang == "en" and lang in ["tw", "sw", "ha", "ig", "ee", "sn"]:
         pairs = download_official_opus_testset(lang, cache_dir)[:num_samples]
         sources = [p[0] for p in pairs]
         refs = [p[1] for p in pairs]
         return sources, refs
 
-    # For Yoruba, load held-out test split
-    test_jsonl = REPO_ROOT / "data" / f"gloss_dataset_en_{lang}_full" / "test.jsonl"
+    # For French or Yoruba, load held-out test split from dataset
+    test_jsonl = REPO_ROOT / "data" / f"gloss_dataset_{src_lang}_{lang}_full" / "test.jsonl"
     sources = []
     refs = []
     with open(test_jsonl) as f:
@@ -66,11 +66,11 @@ def load_test_pairs(lang: str, num_samples: int = 300) -> Tuple[List[str], List[
     return sources, refs
 
 
-def load_dict_for_lang(lang: str) -> GlossaryDictionary:
+def load_dict_for_lang(lang: str, src_lang: str = "en") -> GlossaryDictionary:
     """Load grounded dictionary."""
     candidates = [
-        REPO_ROOT / "data" / "dictionaries" / f"en_{lang}.tsv",
-        REPO_ROOT / "data" / "dictionaries" / f"eng_{normalize_lang_code(lang)}.tsv",
+        REPO_ROOT / "data" / "dictionaries" / f"{src_lang}_{lang}.tsv",
+        REPO_ROOT / "data" / "dictionaries" / f"{'eng' if src_lang=='en' else 'fra'}_{normalize_lang_code(lang)}.tsv",
     ]
     for c in candidates:
         if c.exists():
@@ -96,13 +96,14 @@ def generate_nllb_translations(model, tokenizer, sources, tgt_token_id, batch_si
     return hyps
 
 
-def eval_nllb_size(size: str, base_id: str, adapter_dir: str, num_samples: int = 300, batch_size: int = 16):
+def eval_nllb_size(size: str, base_id: str, adapter_dir: str, src_lang: str = "en", num_samples: int = 250, batch_size: int = 16):
     logger.info("=" * 65)
-    logger.info(f"STARTING EVALUATION FOR NLLB-{size.upper()} ({base_id})")
+    logger.info(f"STARTING EVALUATION FOR NLLB-{size.upper()} ({base_id}) [Source: {src_lang.upper()}]")
     logger.info("=" * 65)
 
     results = {}
-    tokenizer = AutoTokenizer.from_pretrained(base_id, src_lang="eng_Latn")
+    src_nllb = "fra_Latn" if src_lang == "fr" else "eng_Latn"
+    tokenizer = AutoTokenizer.from_pretrained(base_id, src_lang=src_nllb)
 
     # 1. Evaluate Base Model across all languages
     logger.info(f"Loading Base {base_id} into GPU...")
@@ -113,8 +114,8 @@ def eval_nllb_size(size: str, base_id: str, adapter_dir: str, num_samples: int =
     test_data_by_lang = {}
 
     for l in LANGS:
-        sources, refs = load_test_pairs(l, num_samples=num_samples)
-        d = load_dict_for_lang(l)
+        sources, refs = load_test_pairs(l, src_lang=src_lang, num_samples=num_samples)
+        d = load_dict_for_lang(l, src_lang=src_lang)
         dict_sources = []
         for s in sources:
             p, _ = inject_dictionary_terms(s, d)
@@ -173,16 +174,25 @@ def eval_nllb_size(size: str, base_id: str, adapter_dir: str, num_samples: int =
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Evaluate NLLB across African target languages")
+    parser.add_argument("--src-lang", default="en", choices=["en", "fr"], help="Source language (en or fr)")
+    parser.add_argument("--samples", type=int, default=250, help="Test samples count per language")
+    parser.add_argument("--batch-size", type=int, default=16, help="Batch size")
+    args = parser.parse_args()
+
     all_nllb_results = {}
     t0 = time.time()
+    out_file = RESULTS_DIR / f"nllb_{'french' if args.src_lang=='fr' else 'english'}_benchmarks.json"
 
     # 1. Evaluate NLLB-600M
     res_600m = eval_nllb_size(
         size="600m",
         base_id="facebook/nllb-200-distilled-600M",
         adapter_dir=str(REPO_ROOT / "checkpoints/afrigloss_nllb_600m_multilingual/final"),
-        num_samples=300,
-        batch_size=16,
+        src_lang=args.src_lang,
+        num_samples=args.samples,
+        batch_size=args.batch_size,
     )
     all_nllb_results["600m"] = res_600m
 
@@ -191,20 +201,21 @@ def main():
         size="1.3b",
         base_id="facebook/nllb-200-1.3B",
         adapter_dir=str(REPO_ROOT / "checkpoints/afrigloss_nllb_1.3b_multilingual/final"),
-        num_samples=300,
-        batch_size=16,
+        src_lang=args.src_lang,
+        num_samples=args.samples,
+        batch_size=args.batch_size,
     )
     all_nllb_results["1.3b"] = res_1_3b
 
     elapsed = time.time() - t0
     logger.info(f"All NLLB evaluations completed in {elapsed:.1f}s ({elapsed/60:.2f} mins)!")
 
-    with open(OUT_JSON, "w") as f:
+    with open(out_file, "w") as f:
         json.dump(all_nllb_results, f, indent=2)
 
     # Print summary table
     print("\n" + "=" * 90)
-    print("NLLB MULTILINGUAL BENCHMARK RESULTS (BLEU / chrF2):")
+    print(f"NLLB MULTILINGUAL BENCHMARK RESULTS ({args.src_lang.upper()} SOURCE) (BLEU / chrF2):")
     print("=" * 90)
     print(f"{'Language':12s} | {'NLLB-600M Base':18s} | {'FT-600M (No Dict)':18s} | {'NLLB-1.3B Base':18s} | {'FT-1.3B (No Dict)':18s}")
     print("-" * 90)
