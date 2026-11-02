@@ -122,7 +122,7 @@ Evaluated directly on the **exact official Helsinki-NLP test sets** (`https://ob
 
 For the complete technical breakdown, latency benchmarks, and language analysis, see **[MODELS_RANKING.md](MODELS_RANKING.md)**.
 
-### Head-to-Head Comparison WITH Dictionary (BLEU / chrF2):
+### 🇬🇧 English $\rightarrow$ African Targets (WITH Dictionary):
 
 | Target African Language | Family | Afri-Gloss OPUS-MT (77M) | Afri-Gloss NLLB-600M | Afri-Gloss NLLB-1.3B | 🥇 Best Model (Quality Winner) |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -133,6 +133,20 @@ For the complete technical breakdown, latency benchmarks, and language analysis,
 | **Igbo (`ig`)** | Igboid | 21.69 / 47.78 | 21.19 / 48.00 | **22.45 / 50.05** | 🥇 **NLLB-1.3B** (+2.27 chrF2 over OPUS) |
 | **Swahili (`sw`)** | Bantu | 13.20 / 42.47 | 18.27 / 48.76 | **19.17 / 49.01** | 🥇 **NLLB-1.3B** (+5.97 BLEU over OPUS) |
 | **Yoruba (`yo`)** | Defoid | **26.54 / 45.49** | 18.51 / 37.56 | 21.39 / 40.08 | 🥇 **OPUS-MT** (+5.15 BLEU over NLLB-1.3B) |
+
+---
+
+### 🇫🇷 French $\rightarrow$ African Targets: Quality Leaps & Performance:
+
+| Target African Language | Family | Original OPUS Base (BLEU / chrF2) | Afri-Gloss-MT (No Dict) | Afri-Gloss-MT (**WITH Dict**) | Quality Leap ($\Delta$BLEU / $\Delta$chrF2) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **French $\rightarrow$ Twi (`tw`)** | Kwa | 5.61 / 18.10 | 33.58 / 56.77 | **28.14 / 52.59** | **+27.97 / +38.67** |
+| **French $\rightarrow$ Swahili (`sw`)** | Bantu | 8.99 / 29.79 | 30.78 / 56.95 | **29.98 / 56.16** | **+21.79 / +27.16** |
+| **French $\rightarrow$ Ewe (`ee`)** | Gbe | 9.61 / 29.90 | 29.91 / 52.87 | **29.15 / 52.10** | **+20.30 / +22.97** |
+| **French $\rightarrow$ Igbo (`ig`)** | Igboid | 7.20 / 24.22 | 27.12 / 48.25 | **26.37 / 47.80** | **+19.92 / +24.03** |
+| **French $\rightarrow$ Hausa (`ha`)** | Chadic | 7.58 / 27.51 | 27.24 / 50.33 | **26.53 / 49.51** | **+19.66 / +22.82** |
+| **French $\rightarrow$ Yoruba (`yo`)** | Defoid | 6.68 / 21.83 | 26.29 / 44.93 | **24.78 / 43.60** | **+19.61 / +23.10** |
+| **French $\rightarrow$ Shona (`sn`)** | Bantu | 8.83 / 34.78 | 26.64 / 56.99 | **25.93 / 56.47** | **+17.81 / +22.21** |
 
 ### Production Selection Rules:
 1. 🏆 **Top Overall Quality:** Use **[`AfriSpeech/afrigloss-nllb-1.3b`](https://huggingface.co/AfriSpeech/afrigloss-nllb-1.3b)** — wins 6 out of 7 African languages, delivering the highest grammatical fluency and handling complex Bantu concordial noun prefixes with high precision.
